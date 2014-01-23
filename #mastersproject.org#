@@ -1,0 +1,591 @@
+#+STARTUP: latexpreview
+#+TITLE: SMC RESEARCH PROJECT 2013-2014: Evaluation of Pitch-Class Set Similarity Measures for Tonal Analysis
+#+AUTHOR: NICHOLAS HARLEY
+
+* Meeting with Agustin 11/12/13 11am
+** Rough methodology
+  - use equivelant pcsets to KK profiles
+  - get matrices of similarities from various measures
+  - map geometries using MDS
+  - find low dimensional projections
+** Which categories?
+  - for tonal context modelling what is the distance between categories
+  - how to make a pcset equivelant to KK profiles for example? binary/triad?
+** Which measures?
+  - can ic be used?
+  - IcVSIM for example?
+** Art Samplanski (2005, Music Theory Online)
+  - trichords, tetrachords, pentachords
+  - under Tn/I equivelance
+  - ANGLE, IcVSIM and ISIM2 (use icv)
+  - RECREL (castren), ATMEMB, ATMEMB2 (Rahn) (use substet embedding)
+  - doesnt talk about visualisation
+* presentation 12/12/13
+TITLE: Evaluation of Pitch-Class Set Similarity Measures for Tonal Analysis
+** Motivation
+- there are many of these measure from mathematics and pitch class set theory but their practical value is not well known outside highly theoretical circles
+- in MIR for example the more commonly used similarity measures have little or no musical or perceptual relevance for example euclidean distance
+- many people in MIR and other areas might be put off by the apparent complexity of this mathematics
+** Goal
+- the goal is to therefore provide some characterisation of these measures that is widely relevant to many applications in tonal analysis
+** Methodology
+- the way this will be done will be first to thoroughly survey all the relevant techniques and specific capabilities
+- then to look closely at their implicit pitch-spaces via MDS 
+- this is a method of mapping a geomtric spaces based on the relative distance between a collection of objects 
+- most important will be to try and find low dimensional projections of these spaces for visualisation (which is always a useful thing)
+- and also to characterise the local stress of these projections, so how distorted do they become when you reduce the dimensionality
+** Evaluation
+- finally for evaluation it will be necessary to try and use these spaces for some analysis. 
+- so, I will attempt to integrate them with the work that Agustin has been doing and his framework for tonal analysis
+- and with this we can perform case studies using real musical examples that already have been subjected to some analysis so we have something to reference and compare with with 
+
+* Similarity Measures
+** intro
+   - the problem of how to assess similarity of pc-set-classes
+   - variety of similarity measures have been proposed over the years ([[list][see the list]])
+     - and arguments about the merits of these measures now occupy a number of journal pages.
+     - Surveys/critiques of most measures can be found in [[Castren,%201994][Castren]], [[Isaacson,%201990][Isaacson]], and [[Scott%20&%20Isaacson,%201998][Scott & Isaacson]]
+   - Some fundamental questions remain unresolved:
+     1. What constitutes a "good" measure of pcset similarity?
+	- one that mirrors our "musical intuitions"?
+	- See [[Quinn,%202001][Quinn, 2001]] and [[Isaacson,%201996][Isaacson, 1996]] for discussion of issues
+     2. what musical properties does each function measure?
+	- this question is more readily amenable to analysis and should be answered first
+	- This question is approached by [[Samplaski,%202005][Samplaski]] 
+** Comparison Table
+
+| Measure     | Author           |    Year | based on | Card | Discr  | Equiv | L |
+|-------------+------------------+---------+----------+------+--------+-------+---|
+| [[Teitelbaum,%201965][s.i.]]        | Teitelbaum       |    1965 | IcV      | same | good   |       | 2 |
+| [[Forte,%201973][R relations]] | Forte            |    1973 | IcV      | same | binary |       |   |
+| [[Morris,%201979][SIM]]         | Morris           |    1979 | IcV      | ~any |        |       | 1 |
+| [[Morris,%201979][ASIM]]        | Morris           |    1979 | IcV      | any  |        |       | 1 |
+| [[Morris,%201979][K]]           | Morris           |    1979 |          |      |        |       | 1 |
+| [[Morris,%201979][AK]]          | Morris           |    1979 |          |      |        |       | 1 |
+| [[Lewin,%201979-80][REL2]]        | Lewin            | 1979-80 |          |      | good   |       | 2 |
+| [[Rahn,%201979-80][MEMB]]        | Rahn             | 1979-80 | IcV      |      |        |       |   |
+| [[ATMEMB]]      | Rahn             | 1979-80 | Subset   |      |        |       |   |
+| [[Lord,%201981][sf]]          | Lord             |    1981 |          | Same |        |       | 1 |
+| [[AMEMB][AMEMB2]]      | Isaacson (Rahn)  |    1990 | Subset   |      |        |       |   |
+| [[Isaacson,%201990][IcVSIM]]      | Isaacson         |    1990 |          | any  | good   |       | 2 |
+| [[Isaacson,%201996][ISIM2]]       | Isaacson         |    1996 |          |      |        |       |   |
+| [[Scott%20&%20Isaacson,%201998][ANGLE]]       | Scott & Isaacson |    1999 | IcV      | any  |        |       | 2 |
+| [[Castren,%201994][RECREL]]      | Castren          |    1994 | Subset   | any  |        | Tn    |   |
+| [[Castren,%201994][%REL]]        | Castren          |    1994 | Subset   |      |        |       | 1 |
+| cos         | Rogers           |    1992 |          |      |        |       | 2 |
+| IcVD1       | Rogers           |    1992 |          |      |        |       | 1 |
+| IcVD2       | Rogers           |    1992 |          |      |        |       | 2 |
+| StatCor     |                  |         |          |      |        |       | 2 |
+
+* MDS on Pcsets using distance function
+   - resulting geometries will tell us something about what properties of pcsets the functions are measuring
+   - if the geometries produced by different functions match up save for rotation, translation, or reflection, then,
+     - either a) measuring the same constructs, whatever those might be
+     - or b) measuring constructs that, while different, are themselves functions of some other underlying construct(s)
+   - Only such functions as give distinct proximity/distance ratings can be so evaluated (not [[Forte,%201973][Rn]])
+   - interval-class vector or subset
+   - matrices of ratings will be symmetrical
+     - configurations might be reflections or rotations of each other
+     - require a reference function to compare with
+     - use simplest MDS which is result-invariant with respect to axial reflection and rotation
+     - Procrustes rotation ([[Samplaski,%202005][Samplaski]] paragraph 28)
+   - no noise
+     - measures are formal abstract functions
+   - dimensionality of solutions depends on how many data points [[Samplaski,%202005][samplaski]] paragraph 33
+* Castren, 1994							:RECREL:%REL:
+  - uses subset content
+  - RECREL
+
+* Forte, 1973								 :Rn:
+  - =THE STRUCTURE OF ATONAL MUSIC=
+  - Rn
+  - Compares IcVs
+  - indicates degree of correspondence between respective terms of the [[V][IcVs]] of a pair of sets
+  - same cardinality
+  - lacks discriminating power: only three classes of similiarity with which to categorise 
+  - Rn relations do not form a complete system
+    - many pairs of IcVs are in none of the Rn relations (Rnone)
+  - is binary so *cannot create distamce matrix*
+  - Does not categorise [[Z-Relation][Z-related]] sets
+* Isaacson, 1990					      :IcVSIM:AMEMB2:
+  - =Similarity of Interval-Class Content Between Pitch-Class Sets: The IcVSIM Relation=
+  - Isaacson Suggests three criteria for a similarity measure
+    1. provide a distinc value for every pair of sets
+    2. be useful (not just usable) for sets of any size
+    3. provide a wide range of discrete values
+  
+  - addresses short comings of Lord, Morris, Lewin, Forte Teitelbaum etc
+  - Same degree of distinction as [[Teitelbaum,%201965][s.i.]]
+  - any cardinality
+    - by comparing the relative intervallic emphasis in two pcsets, regardless of the absolute difference of the IcV entries
+    - Mathematically IcVSIM is a scalled version of s.i.
+
+** the function
+   - arithmetic differences between respective entries in the IcVs of two sets
+     - Like Lord, Morris and Teitelbaum
+   - intermediate step: IdV: interval difference vector
+   - standard deviation function to measure to measure the degree of variance in the IdV values
+     - measure of the dispersion of frequency distribution
+** 
+     \begin{equation}
+     IcVSIM(X,Y) = \sigma (IdV)
+     \end{equation}
+     where
+     \begin{equation}
+     IdV = [(y_{1}-x_{1})(y_{2}-x_{2})...(y_{6}-x_{6})] 
+     \end{equation}
+     and
+     \begin{equation}
+     \sigma =  \sqrt {\frac {\sum (IdV_{i}- \overline {IdV})^{2}}{6}}
+     \end{equation}
+     where
+     \begin{equation}     
+     IdV_{i}
+     \end{equation} 
+     is the ith term of the interval-difference vector and
+     \begin{equation}
+     \overline {IdV} 
+     \end{equation} 
+     is the average (mean) of the terms in the IdV
+* Isaacson, 1996						       :ISIM:
+  - =Issues in the study of similarity in atonal music=
+  - Good discussion of similarity over all
+  - ISIM2
+  - weighted version of IcVSIM
+  - [[Samplaski,%202005][Samplaski]] found this to be inconsistent with itself
+
+* Lewin, 1979-80							:REL:
+  - =A Response to a Response: On PCSet Relatedness=
+  - criticises Rahns (x_{i}+y_{i}) as "arithmetic awkwardness"
+  - REL_{2}(X,Y) \frac{2\times \sum \sqrt{(x_{i}y_{i})}}{\sqrt(\#X(\#X-1)\#Y(\#Y-1))} 
+  - multiplies rather than adds corresponding IcV entries
+  - REL_{2} increases as corresponding IcV entries increase
+  - As cardinality increases, range of REL_{2} decreases
+  - high level of distinction
+* Lord, 1981								 :sf:
+  - =Intervallic Similarity Relations in Atonal Set Analysis=
+  - sf(X,Y)
+  - sf \left ( X,Y \right ) = \frac{\sum \left | X_{i} - Y_{i} \right |}{2}
+    - X and Y are any pcset of from 3 to 9 notes
+    - X_{i} = IcV(X) and Y_{i} = IcV(Y)
+  - half sum of absolute values of the differences between corresponding IcV entries of the sets
+  - sf is a subset of [[Morris,%201979][SIM]]
+  - Same cardinality
+  - Lords values can be inferred from [[Morris,%201979][Morris]]'
+
+* Morris, 1979						      :SIM:ASIM:K:AK:
+  - =A SIMILARITY INDEX FOR PITCH-CLASS SETS=
+  - SIM(X,Y)
+  - SIM \left ( X, Y \right ) = \sum \left | X_{i} - Y_{i} \right |
+    - X and Y are any pcset of from 3 to 9 notes
+    - X_{i} = IcV(X) and Y_{i} = IcV(Y)
+  - sum of the absolute values of the differences between corresponding IcV entries for the sets
+  - Produces 15 unique values:
+    - four each for trichords and tetrachords
+    - three each for pentachords and hexachords
+  - Any size/cardinality
+    - but there is "diminishing return" ([[Isaacson,%201990][so says Isaacson]]) as the difference between the cardinalities of the two sets increases
+    - values of SIM increase as the difference in cardinality between sets increases
+    - ASIM(X,Y): values are weighted by dividing them by the sum of the cardinalities of the sets
+* Rahn, 1979-80						  :MEMB:TMEMB:ATMEMB:
+  - MEMB_{n}(J,X,Y)
+    - measures similarity by counting the number of subsets J of size n embedded manually in X and Y
+  - MEMB_{2} = \left ( X, Y \right ) = \sum \left ( x_{i} + y_{i} \right )
+    - such that \left ( x_{i} > 0 \right ) and \left ( y_{i} > 0 \right )
+  - ics must appear in both pc sets to be counted
+  - not very good when c ardinalities differ greatly
+** TMEMB
+** AMEMB
+   - [[Isaacson,%201990][Isaacson]] describes a scaled version: AMEMB
+   - Applies a normalisation factor equivelant to that used by Rahn to derive [[ATMEMB]] from [[TMEMB]]
+     - AMEMB_{2}=\frac{\sum \left ( x_{i}+y_{i} \right)}{\frac{(\#X(\#X-1)+\#Y(\#Y-1))}{2}}
+     - such that \left ( x_{i} > 0 \right ) and \left ( y_{i} > 0 \right )
+     - range of values decreases as cardinality increases
+     - AMEMB increases as cardinality increases - troubling  
+** ATMEMB
+* Scott & Isaacson, 1998					      :ANGLE:
+  - *The Interval Angle: A Similarity Measure for Pitch-Class Sets*
+  - ANGLE
+  - STATEMENT 11
+    - can be generalized for figured-bass
+    - The new construction can distinguish between
+major and minor chords and between different doublings and different inversions of the chords
+  - STATEMENT 12
+    - ANGLE M 
+    - further extension to ANGLE
+* Teitelbaum, 1965							 :si:
+  - =Intervallic Relations in Atonal Music=
+  - Greater discrimincation than Forte, Morris, Lord
+  - s.i. - Similarity Index
+  - s.i.(X,Y) = \sqrt{\sum (x_{i}-y_{i})^{2}}
+  - same cardinality
+  - vlaues approach 0 when the pcsets being compared are in a close intervallic relationship
+  - high level of distinction (almost as high as [[Lewin,%201979-80][Lewin]]'s REL)
+  - can compare the intervallic similarity of sets with the same cardinality to a reference
+  - evaluable to some degree by MDS, but not very attractive
+
+* Samplaski, 2005							:MDS:
+=Mapping the Geometries of Pitch-Class Set Similarity Measures via Multidimensional Scaling=
+** methodology
+   - 6 pcset similarity measures investigated
+     - *3 interval based*
+       1. [[Scott%20&%20Isaacson,%201998][ANGLE]]
+       2. [[Isaacson,%201990][IcVSIM]]
+       3. [[Isaacson,%201996][ISIM2]]
+     - *3 subset based* use subset embedding
+       1. [[Castren,%201994][RECREL]]
+       2. [[ATMEMB]]
+       3. [[AMEMB]]
+   - *3 cardinalities* under [[TnI][Tn/I]]-equivelance
+     - trichords: 3
+     - tetrachords: 4
+     - pentachords: 5
+     - ratings for each cardinality of set-class separately as well as contiguously grouped together (3+4, 4+5, 3+4+5) were studied
+   - [[MDS]] applied to matrices of (dis)similarities
+   - based on goodness-of-fit analysis...
+     - four-dimensional geometric solutions were found for the icv-based measure
+     - five-dimensional solutions were found for the subset based measures
+** motivation
+   1. Visualisation
+      - similarity measures yield alot of data
+   2. not satisfied with [[Scott%20&%20Isaacson,%201998][scott and isaacoson]] conclusions about correlation
+      - correlations (as single, all-subsuming numbers for pairs of measures) do nothing to show what constructs might underlie the ratings being produced.
+   3. geometric visualisation allows a "reality check"
+      - there might be problems with a measure's numerical ratings that are not evident from inspection of them
+   4. [[MDS%20on%20Pcsets%20using%20distance%20function][see here]]
+** Conclusions
+   The overall results are generally consistent with the idea that these functions all measure constructs relating to familiar scales (diatonic, hexatonic, octatonic, etc.). The results are also compared with several systems of pcset genera. ISIM2 was found to be inconsistent with itself in terms of the geometries it produced. Several set-classes had coordinates near zero along various dimensions in the derived configurations, indicating that in a formal quantitative sense they do not possess the corresponding musical properties being measured; this may raise questions concerning the relative aesthetic worth of some such set-classes.
+** more
+   - [[CA]] paragraph 18-19
+   - [[robustness]] paragraph 20, paragraphs 52-53
+   - [[PMDS]] note
+* Forte, 1988							     :genera:
+  - =Pitch-Class Set Genera and the Origin of Modern Harmonic Species=
+  - [[Samplaski,%202005][Samplaski]] paragraph 58
+* Parks, 1989							     :genera:
+  - =The Music of Claude Debussy=
+  - [[Samplaski,%202005][Samplaski]] paragraph 59-60
+* Quinn, 1997 							  :genera:CA:
+  - =On Similarity, Relations, and Similarity Relations=
+  - [[Samplaski,%202005][Samplaski]] paragraph 61
+  - used [[CA]] on ratings from similarity measures
+  - found correspondence among measures
+  - defined 8 genera
+    - there were some "fence sitters"
+    - argued strongly for a fuzzy set theory of pcset similarity
+* Quinn, 2001								 :CA:
+  - =Listening to similarity relations=
+  - What constitutes a good similarity measure?
+    1. The ways in which we are accustomed to talking about similarity relations are not as productive as they seem to be, and there are better ways to do it.
+    2. Comparison of various similarity relations from such a different point of view shows that they are more related to each other, and to a lot of other theory, than they appear to be in traditional modes of discourse.
+  - [[Samplaski,%202005][Samplaski]] paragraphs 62-63
+    - found clusters using monte carlo analysis
+* AMartorellPHD
+** Chroma extraction
+
+- Midi
+- Audio
+  - HPCP
+  - mirchromagram (MIR toolbox for matlab)(Lartillot & Toiviainen, 2007)
+- Pitch profiles are reduced to one octave (pitch-class)
+
+** Mutiscale Segmentation
+
+- Adaptation of methods used in 
+  - (Gomez, 2006)
+  - (Sapp, 2005)
+
+** Chroma Segmentation and Symmetrisation
+
+- Each segment gives a pitch-cass profile
+- output for midi and audio is 2-D matrix containing the multi-scale pitch-class-distribution time series.
+
+** Key Estimation
+
+- KK key finding algorithm
+  - correlate pitch-class profile with ring-shifted versions of KK profiles
+- Output is 24-D of key strengths
+
+** Projection of estimates in pitch-space
+
+- 24-D estimates of all frames are projected in a space of inter-key distances
+- 2 methods are used
+  1. multidimensional unfolding (Krumhansl, 1990)
+     - finds tonal centroid in 2-D KK space (angle based)
+  2. Compare pitch-class profile with SOM trained with the 24 KK profiles
+
+** Colouring method
+
+- Sapp, 2005 maps categorical keys to colours
+- this must be adapted to the continuous pitchspace
+  - unique colour for each position
+  - perceptual difference between colours according to difference
+  - smooth continuity across double circularity of torus
+- CIELAB is a perceptual colour space
+
+** representing keyscape
+
+- each frame is given a colour from the pitchspace and ploted in 3d (time, timescale, centroid location(colour))
+
+** Ambiguity 
+
+*** Type I
+
+*Space Suffices*
+
+- Projections in pitch space not subject to high stress
+
+*** Type II
+
+*Space does not suffice*
+
+- stress induced by the unfolding method is too large
+- produces meaningless centroids
+
+- estimation method could provide a reasonable description of segment in 12-D
+- but the torus surface does not suffice for representing estimations as a single point
+
+- when segments PC profile doesnt strongly correlate with kk profiles
+
+segments cannot be considered as tonal with respect to the key categories and their neighbouring differences
+
+*** More on Ambiguity
+
+**** (Temperly, 2008)
+
+- "tonal clarity": relative strength between most probable and second most probable
+- does not consider the viscinity of involved candidates
+- "tonalness": temperly's definition of tonalness is appropriate for *type 1*
+
+- extreme abiguity: low clarity and tonalness 
+- corresponds to *type II*
+
+- mirkeyclarity from MIR Toolbox is similar to SOM activations for confidence scapes
+
+** Different categorical spaces
+
+- different contextual categories
+- multidimensional scaling problem
+
+*analytical potential of interfacing keyscapes and pitch-spaces for different contextual categories*
+
+** Tonal Context Generalised
+=Among the possible conceptual frameworks for describing tonal content, we will adopt the most systematic one, namely pitch-class set analysis, as it also provides a exible and widespread analytical lexicon.=
+*** Set class description
+
+- Unordered pitch-class set/pc-set 
+- interval classes (ignoring direction)
+- interval vector (6-D data structure)
+
+- class equivelance: Two arbitrary pc-sets are equivelant if they belong to the same class
+
+- cardinality: the number of elements in a set (the simplest equivelance but not useful)
+- interval vector equivelance: groups pc-sets sharing same interval vector
+- 197 different iv types: can describe any segment of music
+- transpositional set class: (Tn-equivelance)share similar sonority in many musical contexts (348 types)
+- inversion/transpositional set-class: TnI equivelance
+
+*** segmentation
+- must be neutral
+- not something to be imposed but rather something to be discovere
+* Software
+** SPSS
+   - Performs MDS
+   - one of the most widely available statistical packages
+   - used by [[Samplaski,%202005][Samplaski, 2005]]
+   - [[http://www-01.ibm.com/software/analytics/spss/]]
+** PROSCAL
+   - MacKay and Zinnes (1999)
+   - program that does [[PMDS]]
+   - more computationally expensive
+   - [[http://www.proscal.com/]]
+* Geomtric set-class spaces
+
+- many geometric set class spaces have been proposed
+- they show sophisticated relational properties amoung sets
+- but usage is contrained by cardinality
+
+** Cohn, 2003
+** Quinn, 2006/2007
+** Tymoczko, 2012
+* GLOSSARY
+** pc
+PITCH-CLASS. A set of all pitches that are enharmonically identical and/or related by any number of octaves. There are twelve pcs, numbered from 0 to 11. pc 0 contains all C naturals, all B sharps, all D double-flats; pc 1 contains all Dbs, all C#s; pc 2 contains all Ds, all C##s, all Ebbs, and so forth-pc 11 which contains all Bs, A##s, and Cbs.
+From [[Morris,%201979][Morris]]
+** ic
+INTERVAL CLASS. A set of all interval that differ by multiples of 12 semi-tones and/or are complementary respect with to the octave. There are six ics, numbered
+from 1 to 6. ic 1 contains all minor 2nds, all major 7ths, all diminished octaves, all augmented 8ves, all min 9ths, etc.; ic 2 contains all major 2nds, all dim 3rds, all aug 6ths, all min 7ths, all maj 9ths,etc. -and so forth-ic 6 contains all tritones, and intervals of a tritone plus any amount of octaves. The ic may also be defined as the set of intervals between any of the members of one pc and any of the members of another. The intervals between any D # and any F are all members of ic 2.
+From [[Morris,%201979][Morris]]
+** set
+An unordered collection of pcs without replication. The set (0,3,4) is the same as (0,4,3) and (4,3,0), etc. A particular set may be denoted by a capital letter. For instance, T = (0,3,4). There are 4,096 distinct sets.
+From [[Morris,%201979][Morris]]
+** SC
+SET-CLASS. A collection of sets related to one another by Tn and/or I.
+From [[Morris,%201979][Morris]]
+** Tn 
+Tn TRANSPOSITION by 'n' semitones 'higher'. To transpose a set we add n to each pc in the set; if the sum exceeds 11, we reduce it by 12. If the set (8,5,7) is subjected to T5, the result is 8+5, 5+5, and 7+5 or (1,10,0). If W=(8,5,7), then (1,10,0) may be written T5W.
+From [[Morris,%201979][Morris]]
+** I
+INVERSION. An operation on pcs which sends, 1 to 11 and vice- versa, 2 to 10 and the reverse, 3 to 9, 4 to 8, 5 to 7, while 0 and 6 remain the same. The inversion of the set (6,8,4,3) is (6,4,8,9) (and vice-versa). If (6,8,4,3) = D, then ID = (6,4,8,9).
+From [[Morris,%201979][Morris]]
+** TnI
+Inversion followed by transposition. T5I of (7,9.4) is produced by taking the inversion which is (5,3,8) and transposing it by T5 which results in (10,8,1). If our original set is L, then T5IL= (10,8,1).
+From [[Morris,%201979][Morris]]
+** Invariance 
+A set is invariant if it remains unchanged after transformation under Tn or I or both. T4I of the set H which is (3,1,8) results in invariances since 3 becomes 9+4 or 1, 1 becomes 11+4 or 3, and 8 becomes 4+4 or 8. We say that our set is invariant under T4I. T4H= H
+From [[Morris,%201979][Morris]]
+** V
+INTERVAL-CLASS-VECTOR. A listing of the amount of ics of each type in a particular set. V(Y) is the interval-class-vector associated with the set Y. A V is an array of six numbers square brackets. The first number is called V1 and gives the amount of ic Is in the set; the second number or argument, V2, is the number of ic 2s in the set; etc., to the sixth argument, V6, which gives the number of ic 6s. In the expression, V(B) = [1,1,1,0,0,0], we are asserting the set B has one ic 1, one ic 2, one ic 3, and no ic 4, 5, or 6. The set (5,7,8) could be B. We may determine the V of any set by examining all pairs of pcs in the set, finding the ic for each pair, and registering it in the appropriate argument in the array. If the set R is (8,4,2,0) the ic for 8 and 4 is 4; the ic for 8 and 2 is 6; the ic for 8 and 0 is 4; the ic for 4 and 2 is 2; for 4 and 0 we have 4 and for 2 and 0 we have 2. Thus, V(R) = [0,2,0,3,0,1].
+From [[Morris,%201979][Morris]]
+** #R
+Where R is a set, #R denotes its cardinality, is, the number that of pcs in R.
+From [[Morris,%201979][Morris]]
+** #(V)R
+The number of ics in V(R). Where R contains n pcs (n = #R), 4V(R) is equal to the sum of whole numbers starting with 1 and ending with (n-1). A set of seven pcs has 1+2+3+4+5+6 or 21 ics.
+From [[Morris,%201979][Morris]]
+** Membership \in
+5 \in (8,5,7) d \in R (a pc named d is a member of the set R). 
+From [[Morris,%201979][Morris]]
+** Inclusion \subset
+R \subset T if every pc in set R is also in set T (R is a sub-set of T).
+(7,5,8) \subset (8,5,3,7,0)
+From [[Morris,%201979][Morris]]
+** | x | (Absolute Value) 
+Take the positive sign of the expression enclosed in Is. | 5 | = 5; | -7 | = (+)7; | 7-2 | = | 2-7 |.
+From [[Morris,%201979][Morris]]
+** Genera
+   - classical
+     - an object either belongs or does not
+   - fuzzy
+     - an object has a probability of belonging
+   - many genera systems have been proposed
+     - Ericksson, 1986
+     - [[Forte,%201988][Forte, 1988]]
+     - [[Parks,%201989][Parks, 1989]]
+     - [[Quinn,%201997][Quinn, 1997]]
+     - [[Quinn,%202001][Quinn, 2001]]
+   - Some dont relate directly to pcsets: e.g., Hanson, 1960; Harris, 1989; Hindemith, 1937/42; Wolpert, 1951, 1972
+** Z-Relation
+   - Same icv but not related by TnI
+** robustness
+  - whether changing the set of objects being compared alters the perceived/computed similarity between the original set of objects.
+  - "yields consistent relative MDS geometries, save for scaling, regardless of surrounding context" [[Samplaski,%202005][samp]] paragraph 21
+  - [[Samplaski,%202005][Samplaski]] tested robustness of similarity measures by analysing cardinalities in isolation as well as combinations of contiguous cardinalities
+** Significance
+  - the probability that the observed result might have occurred by chance
+  - [[Samplaski,%202005][Samplaski]] paragraph 27
+** MDS
+*** non-metric MDS
+    - Shepard (1962), Kruskal (1964a, 1964b)
+    - assumes that the distance or proximity values of the matrix are directly related by some unknown function to distances between the objects in some underlying abstract N-dimensional Euclidean space, whose distance metric is the generalized version of the formula familiar from Cartesian geometry, SQRT(x2 + y2 + z2 + ...).
+    - distances are symmetric
+*** Issues
+    1. how do we determine the best [[dimensionality]]?
+       - important to minimize the number of dimensions
+	 - for visualisation
+	 - and parsiomony of explanation
+	   - as the number of free parameters increases there become too few constraints on the possible configuration.
+       - For a given dimensionality, we obtain two values: [[Stress][stress]] and [[r2]]
+       - the number of objects should be at least 3-4 times greater than the highest anticipated dimensionality. [[Samplaski,%202005][samplaski]] paragraph 17
+    2. inherent underlying [[asymmetry][asymmetries]]?
+       - [[Samplaski,%202005][samplaski]] paragraph 12
+       - a number of models for dealing with this
+	 - [[ASCAL]]
+    3. [[Exemplars]]
+*** Stress
+    - *goodness of fit measure* 
+    - Discrepancies between the actual data values and the derived underlying distances are accounted for in a goodness-of-fit measure called "stress": as the number of dimensions increases, stress decreases, and choosing between configurations of different dimensionalities becomes an issue. (Samplaski)
+*** r2
+    - r-squared
+    - percentage of the variability of the data being explained by the solution
+*** elbows
+    - plot the stress and r2 values for several dimensionalities
+    - look for "elbows" (inflection points) in the plots.
+    - If an elbow exists, then the higher-dimensional solutions are not giving significant additional explanation--the plot suddenly flattens out.
+    - [[Samplaski,%202005][samplaski]] paragraph 17
+*** dimensionality
+    - choose dimensionality on the bases of clarity and logical interpretation.
+    - one dimension above or below "optimal" as indicated by the stress/r2 values might be better:
+      1. if there is a clear interpretation given an added dimension; or
+      2. if one configuration is easier to visualize (e.g 3-D vs 4-D solution),
+	 - especially in a situation where it is unclear what can be gained in explanatory power by using the extra dimension.
+*** asymmetry
+    -poor fit can be caused by several factors
+*** Exemplars
+    - In an MDS analysis of N objects, one of which is an exemplar, the only way to minimize distortion (i.e., stress) is to place the exemplar at the center of the configuration and arrange the other objects around it.
+    - [[Samplaski,%202005][samplaski]] note 15
+*** INDSCAL
+    - deals with idiosyncrasies of subjects ratings
+    - takes one matrix per subject
+    - [[Samplaski,%202005][samplaski]] paragraph 13
+*** ASCAL
+     - deals with possible asymmetries underlying the data
+     - [[Samplaski,%202005][samplaski]] paragraph 14
+*** CA
+    - *cluster analysis*
+    - (Tversky, 1977; Tversky and Gati, 1982; Tversky and Hutchinson, 1986)
+    - helps with problem of highly seperable dimensions
+    - There is a family of CA models, but they all work similarly: given a proximity or distance matrix, some method is used to pick the pair of objects most like each other, group them into a single cluster, and derive a new reduced matrix. When the process is finished, the objects will be grouped into a binary tree structure (exactly two branches descend from each node, and the objects are "leaves" at the termini of the final branches), where the distance between any pair of objects is related to the length of the path along the branches separating them.
+*** PMDS
+    - *Probabalistic MDS*
+    - [[Samplaski,%202005][Samplaski]] paragraph 23
+    - assumed there is euclidean space
+    - onjects are probability distributions
+    - variance
+    - PMDS is a technique still under development (2005)
+    - [[PROSCAL]]
+
+* Toroidal space
+** Krumhansl Kessler
+
+- Measure tonal stability
+- Probetone technique
+- obtained 12-D key profiles
+- compute inter-key correlations
+- matrix of dissimilarities fed a 
+- non-metric multi-dimensional scaling algorithm (Shepard, 1962) 
+- found optimal euclidean solution in 4-D (4-D KK space)
+- minimised stress between dissimilarities and spacial distances 
+- Two circular structures stand out
+- 4-D KK space can be though of as 3-D toroidal surface (3-D KK space)
+- Unfold toroidal surface to get 2-D KK space
+- Each dimensional reduction results in a distortion
+
+These spaces are assumed to represent internalised knowledge about tonal hierarchies so can be used for testing models of tonal induction
+
+- Any segment can be projected into the space so as to find the closeness to the categories
+- 4-D space is a fixed scaffold
+- multidimensional unfolding technique (Coombs, 1964)
+- tonal =centroid= can be tracked in low dimensional space over time
+
+** other toroidal surfaces
+*** implicit 
+
+- webers lattice (weber, 1821)
+- schoenbergs chrarts of regions (Schoenburg, 1969)
+
+*** Explicit
+
+- (Werts, 1983)
+- (Lerdahl, 2001)
+
+** Other multidimensional scaling solotions
+
+- (Kohonen, 1997)
+- Fourier analysis of key profiles (Krumhansl, 1990)
+- Machine learning analysis of music corpora (Purwins, 2005)
+
+** several hierarchical categories in the same space
+
+- Lerdahl's Chordal-regional-space (lerdahl, 2001)
+- Chew's spiral array (Chew, 2000)
+- Tillmann 2000, 2003
+Cannot be visualised so well
+
+** SOM
+
+some modalities of ambiguity can be captured as a centroid can appear between keys
+
+- Self-organising maps (kohonen, 1997)
+- Neural networks
+ when trained with the KK-profiles

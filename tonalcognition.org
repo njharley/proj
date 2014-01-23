@@ -1,0 +1,61 @@
+<2013-11-28 Thu>
+
+* Temporal multi-scale considerations in the modelling of tonal cognition from continuous rating experiments
+
+** Abstract
+
+What is the impact of time-scale in the evaluation of a simple tonal induction model?
+
+Concurent probe-tone method is used to capture continuous ratings of percieved relative stability of pitch class.
+
+Segment audio into frames (multiple time-scales)
+get pitch class profile for each frame
+for each time scale, the time series is compared with the empirical annotations
+
+What are empirical annotations?
+
+the commonly used frame to frame metrics
+1. compare the 12d vecotrs from rating and and the model.
+2. correlation of the 24 key activation strengths (KKs key profiles)
+what are the metric artifacts from no 2?
+
+best time scale is longer than the shor-term memory conventions.
+
+** introduction
+tonal context induction (sense of key)
+modelled cognitively or computationally
+but what is tonality?
+and what time scale is required?
+
+concurrent probe tone method
+used to evaluate computational models of tonality induction
+these models usually have fixed time scale
+
+** empirical methodologies
+stop and rate restrospective Krumhansl1(1990) - provide control over experiment variables but not as realistic. but how does tonal cognition unfold in time...
+
+conccurent probe tone technique (toivianinen & krumhansl 2003)
+music is played with a probe tone. listener drags a slider
+however this changes the musical reality.
+what psychological effect it has?
+how to calibrate rating responses?
+consistent use of of continuous scales
+motoric mediation
+all has a big effect
+
+** timescale
+
+timescale is a fundamental parameter for models
+with symboloic data using beats or bars
+in audio domain with overlapping sliding window
+models inspired by audio processing use decay constant for leaky memory
+
+the time scale selection should fall within the short-term memory contraints (3-8s)
+
+*** previous considerations
+
+leman (2000) echo constant
+
+Toivianinen (2008) manipulation of the memory decay constant as interactive parameter (but no empirical evaluation done)
+
+Chew 2006 different window sizes based on spiral array for modelling tonal boundaries

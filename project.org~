@@ -1,0 +1,266 @@
+* Toroidal space
+
+** Krumhansl Kessler
+
+- Measure tonal stability
+- Probetone technique
+- obtained 12-D key profiles
+- compute inter-key correlations
+- matrix of dissimilarities fed a 
+- non-metric multi-dimensional scaling algorithm (Shepard, 1962) 
+- found optimal euclidean solution in 4-D (4-D KK space)
+- minimised stress between dissimilarities and spacial distances 
+- Two circular structures stand out
+- 4-D KK space can be though of as 3-D toroidal surface (3-D KK space)
+- Unfold toroidal surface to get 2-D KK space
+- Each dimensional reduction results in a distortion
+
+These spaces are assumed to represent internalised knowledge about tonal hierarchies so can be used for testing models of tonal induction
+
+- Any segment can be projected into the space so as to find the closeness to the categories
+- 4-D space is a fixed scaffold
+- multidimensional unfolding technique (Coombs, 1964)
+- tonal =centroid= can be tracked in low dimensional space over time
+
+** other toroidal surfaces
+*** implicit 
+
+- webers lattice (weber, 1821)
+- schoenbergs chrarts of regions (Schoenburg, 1969)
+
+*** Explicit
+
+- (Werts, 1983)
+- (Lerdahl, 2001)
+
+** Other multidimensional scaling solotions
+
+- (Kohonen, 1997)
+- Fourier analysis of key profiles (Krumhansl, 1990)
+- Machine learning analysis of music corpora (Purwins, 2005)
+
+** several hierarchical categories in the same space
+
+- Lerdahl's Chordal-regional-space (lerdahl, 2001)
+- Chew's spiral array (Chew, 2000)
+- Tillmann 2000, 2003
+
+Cannot be visualised so well
+
+** SOM
+
+some modalities of ambiguity can be captured as a centroid can appear between keys
+
+- Self-organising maps (kohonen, 1997)
+- Neural networks
+ when trained with the KK-profiles
+
+* Martorell
+
+** Chroma extraction
+
+- Midi
+- Audio
+  - HPCP
+  - mirchromagram (MIR toolbox for matlab)(Lartillot & Toiviainen, 2007)
+- Pitch profiles are reduced to one octave (pitch-class)
+
+** Mutiscale Segmentation
+
+- Adaptation of methods used in 
+  - (Gomez, 2006)
+  - (Sapp, 2005)
+
+** Chroma Segmentation and Symmetrisation
+
+- Each segment gives a pitch-cass profile
+- output for midi and audio is 2-D matrix containing the multi-scale pitch-class-distribution time series.
+
+** Key Estimation
+
+- KK key finding algorithm
+  - correlate pitch-class profile with ring-shifted versions of KK profiles
+- Output is 24-D of key strengths
+
+** Projection of estimates in pitch-space
+
+- 24-D estimates of all frames are projected in a space of inter-key distances
+- 2 methods are used
+  1. multidimensional unfolding (Krumhansl, 1990)
+     - finds tonal centroid in 2-D KK space (angle based)
+  2. Compare pitch-class profile with SOM trained with the 24 KK profiles
+
+** Colouring method
+
+- Sapp, 2005 maps categorical keys to colours
+- this must be adapted to the continuous pitchspace
+  - unique colour for each position
+  - perceptual difference between colours according to difference
+  - smooth continuity across double circularity of torus
+- CIELAB is a perceptual colour space
+
+** representing keyscape
+
+- each frame is given a colour from the pitchspace and ploted in 3d (time, timescale, centroid location(colour))
+
+** Ambiguity 
+
+*** Type I
+
+*Space Suffices*
+
+- Projections in pitch space not subject to high stress
+
+*** Type II
+
+*Space does not suffice*
+
+- stress induced by the unfolding method is too large
+- produces meaningless centroids
+
+- estimation method could provide a reasonable description of segment in 12-D
+- but the torus surface does not suffice for representing estimations as a single point
+
+- when segments PC profile doesnt strongly correlate with kk profiles
+
+segments cannot be considered as tonal with respect to the key categories and their neighbouring differences
+
+*** More on Ambiguity
+
+**** (Temperly, 2008)
+
+- "tonal clarity": relative strength between most probable and second most probable
+- does not consider the viscinity of involved candidates
+- "tonalness": temperly's definition of tonalness is appropriate for *type 1*
+
+- extreme abiguity: low clarity and tonalness 
+- corresponds to *type II*
+
+- mirkeyclarity from MIR Toolbox is similar to SOM activations for confidence scapes
+
+** Different categorical spaces
+
+- different contextual categories
+- multidimensional scaling problem
+
+*analytical potential of interfacing keyscapes and pitch-spaces for different contextual categories*
+
+* Tonal Context Generalised
+
+Among the possible conceptual frameworks for describing tonal content, we will adopt the most systematic one, namely pitch-class set analysis, as it also provides a exible and widespread analytical lexicon.
+
+** Set class description
+
+- Unordered pitch-class set/pc-set 
+- interval classes (ignoring direction)
+- interval vector (6-D data structure)
+
+- class equivelance: Two arbitrary pc-sets are equivelant if they belong to the same class
+
+- cardinality: the number of elements in a set (the simplest equivelance but not useful)
+- interval vector equivelance: groups pc-sets sharing same interval vector
+- 197 different iv types: can describe any segment of music
+- transpositional set class: (Tn-equivelance)share similar sonority in many musical contexts (348 types)
+- inversion/transpositional set-class: TnI equivelance
+
+** segmentation
+
+- must be neutral
+- not something to be imposed but rather something to be discovered 
+
+
+* Proposal
+** distances
+*** Similarity of pc-sets
+**** REL Lewin, 1979
+- any cardinality
+  
+**** Forte, 1973
+- Rn
+- same cardinality
+- indicates degree of correspondence
+- *is binary so cannot create distamce matrix*
+**** Tietelbaum, 1965
+- Similarity index (s.i.)
+- s.i.(X,Y) = square root of the sum of the squares of the differences between corresponding terms of the IcVs
+- same cardinality
+- while evaluable to some degree by MDS, is still not very attractive
+**** Morris, 1979-80
+- SIM
+- SIM(X,Y) = sum of the absolute values of the differences between corresponding IcV entries for the sets
+**** Rahn, 1979-80
+- MEMBn(J,X,Y)
+- ATMEMB 
+- ATEMB2
+  - subset based measure (Samplaski)
+**** Lewin, 1979-80
+- REL2(X,Y)
+- multiplies rather than adds corresponding IcV entries
+**** Lord, 1981
+- sf
+- sf(X,Y) = half sum of absolute values of the differences between corresponding IcV| entries of the sets
+**** Isaacson, 1990
+*IcVSIM*
+- addresses short comings of above methods
+- any cardinality
+1. provide distinc value for each pair of sets
+2. be useful for sets of any size
+3. provide a wide range of discrete values
+*ISIM*
+- inconsistent with itself
+
+**** Scott & Issacson
+- ANGLE
+**** Castren
+- uses subset content
+- RECREL (Castren)
+
+** MDS
+
+*multidimentsional scaling and cluster analysis*
+
+- Shepard (1962)
+- Kruskal (1964a, 1964b) 
+- abstract N-dimensional euclidean space
+- formula familia from cartesian geometry sqrt(x**2 + y**2 etc)
+
+*** MDS on Pcsets using distance function
+- resulting geometries will tell us something about what properties of pcsets the functions are measuring
+- if the geometries produced by different functions match up save for rotation, translation, or reflection, then,
+  - either a) measuring the same constructs, whatever those might be
+  - or b) measuring constructs that, while different, are themselves functions of some other underlying construct(s)
+
+** Stress
+
+*goodness of fit measure*
+
+- how do we dtermine the  best dimensionality for a solution?
+- INDSCAL
+- ASCAL
+  - dimensional weighting
+
+** CA
+
+*cluster analysis*
+
+There is a family of CA models, but they all work similarly: given a proximity or distance matrix, some method is used to pick the pair of objects most like each other, group them into a single cluster, and derive a new reduced matrix. When the process is finished, the objects will be grouped into a binary tree structure (exactly two branches descend from each node, and the objects are "leaves" at the termini of the final branches), where the distance between any pair of objects is related to the length of the path along the branches separating them.
+
+** PMDS
+
+*Probabalistic MDS*
+
+- assumed there si euclidean space
+- onjects are probability distributions
+- variance
+- PMDS is a technique still under development (2005)
+
+** Geomtric set-class spaces
+
+- many geometric set class spaces have been proposed
+- they show sophisticated relational properties amoung sets
+- but usage is contrained by cardinality
+
+*** Cohn, 2003
+*** Quinn, 2006/2007
+*** Tymoczko, 2012
+    
