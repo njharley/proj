@@ -25,22 +25,22 @@ if card<1 || card>12
 end
 sub = zeros(1,351);
 primebin = zeros(1,12);
-primebin(prime+1) = 1;
-primeor = dlmread('protoprimeOrdered.txt');
-top = [1 7 26 69 135 215 281 324 343 349 350 351];
-for i = 1:top(card)
-    loc = unique(primeor(i,:))+1;
-    primeorbin = zeros(1,12);
-    primeorbin(loc) = 1; 
+primebin(prime+1) = 1;                % 12D binary pc vector
+primeor = dlmread('protoprimeOrdered.txt'); % primes with zero padding to 12
+top = [1 7 26 69 135 215 281 324 343 349 350 351]; % row indicies of changes in cardinality
+for i = 1:top(card)                   % for each prime form (row in primeor) up to the cardinality of the input set
+    loc = unique(primeor(i,:))+1;     % remove zeros and add 1 to indicate indices for primeorbin
+    primeorbin = zeros(1,12);         %initialize 12D pc vector
+    primeorbin(loc) = 1;              % create 12D pc vector of primeor
     % ring shift primeorbin and count inclusion matches
-    for j = 0:11
-         m(j+1,:) = circshift(primeorbin,[0 j]);
+    for j = 0:11                      % shift it 12 times for (shift 0 is itself)
+         m(j+1,:) = circshift(primeorbin,[0 j]); % create row in m for each shifted primeorbin
     end
-    m = unique(m,'rows'); % to eliminate doubling tritones in primeorbin
-    count = 0;
-    for j = 1:size(m,1)
-        if isequal(primebin&m(j,:),m(j,:))
-            count = count+1;
+    m = unique(m,'rows');             % remove identicle rows to eliminate doubling tritones in primeorbin
+    count = 0; 
+    for j = 1:size(m,1)               % for each shift...
+        if isequal(primebin&m(j,:),m(j,:)) % check if the primeorbin is equal to primebin
+            count = count+1;          % count the number of 
         end
     end
     sub(i) = count;
