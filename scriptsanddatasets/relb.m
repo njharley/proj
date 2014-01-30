@@ -2,6 +2,7 @@ function relxy = relb(primex,primey)
 
 % computes Lewin's REL between two set-classes, given as their primes, 1 x card vectors (0-11)
 % Martorell, A. (2012) - Music Technology Group, Universitat Pompeu Fabra (Barcelona)
+%% modified to add interval vector at the front of the subset vector
 
 load pcsetdata.mat
 subx = subrel(primex);
@@ -13,9 +14,7 @@ for i = 1:top
 end
 %num = dist(subx,suby');
 relxy = num / sqrt(sum(subx)*sum(suby));
-
 %-----------------------------------------------------
-
 function sub = subrel(prime)
 
 % computes SUB function from a set-class, given as its prime
@@ -24,9 +23,10 @@ card = size(prime,2);
 if card<1 || card>12
     error('Out of cardinality range (1-12)'); return
 end
-
+% sub modified to include the interval vector on the front
 sub = zeros(1,357);
-sub(1:6) = getiv(prime);
+sub(1:6) = getiv(prime);              % getiv returns the iv of prime (1,6)
+
 primebin = zeros(1,12);
 primebin(prime+1) = 1;                % 12D binary pc vector
 primeor = dlmread('protoprimeOrdered.txt'); % primes with zero padding to 12
@@ -46,7 +46,7 @@ for i = 1:top(card)                   % for each prime form (row in primeor) up 
             count = count+1;          % count the number of 
         end
     end
-    sub(i+6) = count;
+    sub(i+6) = count;                 % start adding after the iv
 end
 
 
