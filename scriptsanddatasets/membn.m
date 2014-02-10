@@ -27,7 +27,7 @@ for i = 1:size(A,1)
     a = unique(A(i,:));
     embAX = emb(a,primex); 
     embAY = emb(a,primey);
-    if embAX != 0 && embAY != 0
+    if embAX ~= 0 && embAY ~= 0
         membn = membn + embAX + embAY;
     end
 end
