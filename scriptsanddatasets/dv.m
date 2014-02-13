@@ -1,4 +1,4 @@
-% returns the difference vector of x and y
+% returns the difference vector of x and y from isaacson
 
 function dfvc = dv(x, y)
 	dfvc = [];

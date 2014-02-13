@@ -1,13 +1,18 @@
 % returns %RELn of given x, y and n
 
-function prelnxy = preln(primex, primey, n)
+function [wdvt prelnxy] = preln(primex, primey, n)
 
 	ncvx = ncv(primex, n); % nCVs
 	ncvy = ncv(primey, n);
 
-	ncpvx = pncv(ncvx); % convert nCVs into nC%Vs
-	ncpvy = pncv(ncvy);
+	pncvx = pncv(ncvx); % convert nCVs into nC%Vs
+	pncvy = pncv(ncvy);
 
-	dfvc = dv(ncpvx, ncpvy); % get difference vector
-	prelnxy = sum(dfvc); % card of vector
+	[dvxy dvyx] = dv2(pncvx, pncvy); % get castrens 2 asymmetric difference vectors
+	prelnxy = sum(dvxy) + sum(dvyx); % card of vector
 	prelnxy = prelnxy/2; % divide by two
+
+	%%% output the WDV 
+
+	[wdvxy wdvyx] = wdv(dvxy, dvyx);
+	wdvt = wdvyx+wdvxy;
