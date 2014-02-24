@@ -25,7 +25,7 @@ if card<1 || card>12
 end
 % sub modified to include the interval vector on the front
 sub = zeros(1,357);
-sub(1:6) = ncv(prime,2);              % ncv(prime,2) returns the iv of prime (1,6)
+sub(1:6) = nCV(prime,2);              % ncv(prime,2) returns the iv of prime (1,6)
 
 primebin = zeros(1,12);
 primebin(prime+1) = 1;                % 12D binary pc vector

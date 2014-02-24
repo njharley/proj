@@ -1,20 +1,23 @@
-% returns %RELn of given x, y and n
-% CASTREN, 1994
-
-function [wdvt prelnxy] = pRELn(primex, primey, n)
+function [notinx notiny wdvx_index wdvy_index] = ccGroup(primex,primey,n)
 
 	pncvx = pnCV(primex, n);
 	pncvy = pnCV(primey, n);
 
-	[dvxy dvyx] = Asymmetric_DV(pncvx, pncvy); 	% get castrens 2 asymmetric difference vectors
-	
-	prelnxy = sum(dvxy) + sum(dvyx); 			% card of vector
-	prelnxy = prelnxy/2; 						% divide by two
+	[dv(1,:) dv(2,:)] = Asymmetric_DV(pncvx, pncvy);
 
-	%%% output the WDV 
-	[wdvt(1,:) wdvt(2,:)] = Weighted_DV(dvxy, dvyx);
+	wdvx_index = find(dv(1,:));
+	wdvy_index = find(dv(2,:));
 
-	%wdvt = wdvyx+wdvxy;
+	primeor = dlmread('protoprimeOrdered.txt');
+    top = [1 7 26 69 135 215 281 324 343 349 350 351];
+
+    a = primeor(top(n-1)+1:top(n),:);
+
+	difference_group_x = a(wdvx_index,:);
+	difference_group_y = a(wdvy_index,:);
+
+	notinx = difference_group_y;
+	notiny = difference_group_x;
 
 % COMPUTES THE SUBSET CLASS PERCENTAGE VECTOR 
 function pncv = pnCV(primex, n)

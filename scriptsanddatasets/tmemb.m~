@@ -1,7 +1,0 @@
-function tmembxy = tmemb(primex, primey)
-
-tmemb = 0;
-for n = 2:12
-    membnxy = membn(primex, primey, n);
-    tmemb = tmemb + membnxy;
-end

@@ -1,6 +1,6 @@
-%%% REL CALCULATED THE WAY KUUSI DOES IT
+%%% THE SAME AS relb BUT USING emb AND NCV
 
-function rel = RELc(primex, primey)
+function rel = RELd(primex, primey)
 
 	cardx = size(primex,2);
 	cardy = size(primey,2);
@@ -11,15 +11,22 @@ function rel = RELc(primex, primey)
 	top = [1 7 26 69 135 215 281 324 343 349 350 351];
 	A = primeor(1:top(nmax),:);
 	
-	num = 0;
 	subx = [];
 	suby = [];
 
-	for i = 2:top(nmax)
+	subx(1:6) = nCV(primex,2);
+	suby(1:6) = nCV(primey,2);
+
+	for i = 1:top(nmax)
 		a = unique(A(i,:));
 		subx(end+1) = EMB(a,primex);
 		suby(end+1) = EMB(a,primey);
-		num = num + sqrt(subx(end)*suby(end));
+	end
+
+	num = 0;
+	top = max(find(subx>0,1,'last'),find(suby>0,1,'last'));
+	for i = 1:top
+    	num = num + sqrt(subx(i)*suby(i));
 	end
 
 	rel = num / sqrt(sum(subx)*sum(suby));

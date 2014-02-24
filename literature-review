@@ -1,3 +1,4 @@
+#+STARTUP: indent
 #+TITLE: Evaluation of SetPitch-Class Set Similarity Measures for Tonal Analysis 
 
 * Pitch class set theory analysis
@@ -10,36 +11,63 @@
 creates a music theory analogous to mathematical set theory
 
 ** Pitch-set class
-- *Pitch-class* (Babbit, 1955) is defined, for the TET system, as an integer representing the residue class modulo 12 of a pitch, 
-- Unordered pitch-class set is a set of pitch-classes without repetitions in which the order of succession of the elements in the set is not of interest.
-- In the TET 12 system, there exist 4096 distinct pc-sets, so a vocabulary of 4096 symbols is required for describing any possible segment of music. 
-- Any pc-set can also be represented by its intervalic content (Hanson, 1960). 
-- Intervals considered regardless of their direction are referred to as interval classes. 
-- There exist 6 different interval classes, spanning from 1 to 6 semitones. 
-- The total account of interval classes in a pc-set can be arranged as a 6-dimensional data structure coined as an interval vector (Forte, 1964). 
+- *Pitch-class* (Babbit, 1955) is defined, for the TET system, as an
+  integer representing the residue class modulo 12 of a pitch,
+- Unordered pitch-class set is a set of pitch-classes without
+  repetitions in which the order of succession of the elements in the
+  set is not of interest.
+- In the TET 12 system, there exist 4096 distinct pc-sets, so a
+  vocabulary of 4096 symbols is required for describing any possible
+  segment of music.
+- Any pc-set can also be represented by its intervalic content
+  (Hanson, 1960).
+- Intervals considered regardless of their direction are referred to
+  as interval classes.
+- There exist 6 different interval classes, spanning from 1 to 6
+  semitones.
+- The total account of interval classes in a pc-set can be arranged as
+  a 6-dimensional data structure coined as an interval vector (Forte,
+  1964).
 
 ** Class Equivelance
 
-- Two arbitrary pc-sets are considered equivalent if and only if they belong to the same class.
+- Two arbitrary pc-sets are considered equivalent if and only if they
+  belong to the same class.
 - Cardinality: referred to as the number of elements in the set
-- Cardinality is the simplest equivalence (Rahn, 1980, p. 74). 
-- However, the radical differences among the possible sonorities within a given cardinality does not provide a proper equivalence domain in many practical cases.
+- Cardinality is the simplest equivalence (Rahn, 1980, p. 74).
+- However, the radical differences among the possible sonorities
+  within a given cardinality does not provide a proper equivalence
+  domain in many practical cases.
 
 *** iv Equiveance
-- Interval vector equivalence (iv-equivalence) groups pc-sets sharing the same interval vector. 
-- It is thus possible to map any segment of music to one of the 197 different iv-types. 
+- Interval vector equivalence (iv-equivalence) groups pc-sets sharing
+  the same interval vector.
+- It is thus possible to map any segment of music to one of the 197
+  different iv-types.
 
 *** Tn Equivelance
-- Two pc-sets related to each other by transposition belong to the same set class, transpositional and they share a similar sonority in many musical contexts. 
-- For instance, this applies to all pentatonic segments of music, for which we say that they are Tn-equivalent or that they are of the same Tn-type. There exist 348 distinct Tn-types 
+- Two pc-sets related to each other by transposition belong to the
+  same set class, transpositional and they share a similar sonority in
+  many musical contexts.
+- For instance, this applies to all pentatonic segments of music, for
+  which we say that they are Tn-equivalent or that they are of the
+  same Tn-type. There exist 348 distinct Tn-types
 
 *** TnI Equivelance
-- The inversional/transpositional set-class (TnI-equivalence, or Tn/TnI-type) groups all the pc-sets that are related by transposition and/or inversion of their intervals (Forte, 1964). 
-- For instance, all major and minor triads are TnI-equivalent (any major triad can be transformed into any minor triad by inversion and transposition), although not Tn-equivalent (no major triad can be transformed into any minor triad by only transposition). 
+- The inversional/transpositional set-class (TnI-equivalence, or
+  Tn/TnI-type) groups all the pc-sets that are related by
+  transposition and/or inversion of their intervals (Forte, 1964).
+- For instance, all major and minor triads are TnI-equivalent (any
+  major triad can be transformed into any minor triad by inversion and
+  transposition), although not Tn-equivalent (no major triad can be
+  transformed into any minor triad by only transposition).
 - The TnI-equivalence maps any pc-set to one of the 220 distinct TnI-types. 
 
 *** Z-relation
-Both iv and TnI-equivalence share most of their classes, with some exceptions, named Z-relations (Forte, 1964) or isomeric relations (Hanson, 1960), for which the same interval vector does not group pitch-class sets under TnI-equivalence (Lewin, 1959).
+Both iv and TnI-equivalence share most of their classes, with some
+exceptions, named Z-relations (Forte, 1964) or isomeric relations
+(Hanson, 1960), for which the same interval vector does not group
+pitch-class sets under TnI-equivalence (Lewin, 1959).
 
 * Similarity Measures
 ** What are measures?

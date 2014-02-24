@@ -1,4 +1,4 @@
-function atmembxy = atmemb(primex, primey)
+function atmembxy = ATMEMB(primex, primey)
 
 cardx = size(primex, 2);
 cardy = size(primey, 2);
@@ -11,4 +11,4 @@ if cardy<1 || cardy>12
     error('Y out of cardinality range (1-12)'); return
 end
 
-    atmembxy = tmembxy(primex,primey)/((2^cardx)+(2^cardy)-(cardx + cardy + 2));
+    atmembxy = (TMEMB(primex,primey))/((2^cardx)+(2^cardy)-(cardx + cardy + 2));

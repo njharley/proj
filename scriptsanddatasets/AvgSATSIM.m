@@ -1,4 +1,5 @@
 function avgss = AvgSATSIM(primex, primey)
+	
 	cardx = size(primex, 2);
 	cardy = size(primey, 2);
 	nmax = min(cardx, cardy)-1;
