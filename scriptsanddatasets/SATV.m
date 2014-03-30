@@ -1,7 +1,7 @@
 function satv = SATV(primex, nn)
 
 	mm = minmax(size(primex, 2), nn);
-	ncvX = NCV(primex, nn);
+	ncvX = nCV(primex, nn);
 
 	satv = [];
 
@@ -28,7 +28,7 @@ function mm = minmax(n,nn)
 	ivs = [];
 	for i = (top(n-1)+1):top(n)
 		a = unique(primeor(i,:));
-		ivs(end+1,:) = NCV(a,nn);
+		ivs(end+1,:) = nCV(a,nn);
 	end
 
 	mm = [];

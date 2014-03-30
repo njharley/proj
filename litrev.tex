@@ -1,0 +1,1453 @@
+% Created 2014-03-27 Thu 15:17
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage{natbib}
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Literature Review}
+\author{Nicholas Harley}
+\date{\today}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.9.3f}}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\vspace*{1cm}
+
+\section{Introduction}
+\label{sec-1}
+
+\begin{itemize}
+\item objectives
+\item description of tonality
+\item similarity
+\item visualisation
+\item introduce musicological/perceptual ingrediets to MIR
+\end{itemize}
+\section{Tonality}
+\label{sec-2}
+\subsection{Defining Tonality}
+\label{sec-2-1}
+
+Tonality is a notoriously complex musical phenomenon and numerous
+definitions have been proposed from a variety of viewpoints. Perhaps
+the most general definition is that provided by Hyer2013: ``\ldots{} refers
+to the systematic arrangements of pitch phenomena and relations
+between them''. Explanations of tonality have been provided through
+many different disciplines (acoustics, music theory, linguistics,
+cognitive psychology) and a detailed discussion of these areas is
+certainly beyond the scope of this work. However, it is generally
+agreed that tonality is an abstract cultural and cognitive contruct
+that can have many different physical representations.
+
+\citep{Babbitt1965} proposed three domains to categorise different
+types of representation of music: acoustic (physical), auditory
+(percieved), graphemic (notated). Western music theory provides a
+lexicon for describing abstract tonal objects with terms such as note,
+chord and key. These objects have a hierarchical relationship and the
+meaning of these labels is highly dependent on musical context and the
+scale of obsevation. Musicological descriptions, which constitute the
+majority of reasoning about tonailty, reside mainly in the Babbitt's
+graphemic domain, although arguably they refelct some aspects of the
+other two. Each domain, whilst connected to every other, provides only
+a projection of the musical whole and definitions of tonality that
+confine themselves to just one will certainly be incomplete. However,
+they provide a convenient framework for the discussion that follows.
+\subsection{Modelling Tonality}
+\label{sec-2-2}
+
+The challenge of mathematically modelling aspects of tonality has been
+approached in numerous ways and from differnt domains. In the
+graphemic domain, musicologists and composers have proposed
+theoretical models, attempting to rethink tonal theory from a
+mathematical perspective. These models employ different branches of
+mathematics such as geometry (\citep{Tymoczko2012}) or group theory
+(Steven Ring) to describe harmonic structure. From the auditory
+domain, cognitive psychologists have built models on tonal induction
+based on preceptual ratings of tonal stimuli (\citep{Krumhansl1990}).
+\subsubsection{Tonality as Context}
+\label{sec-2-2-1}
+
+Many models approach the concept of tonality as a context, within
+which the relations and hierarchies of tonal phenomena can be
+understood. A sense of tonality can be induced when musical stimuli
+resembles some a priori contextual category. For western music of the
+major-minor period, key signatures comprise a collection of categories
+that give context to the tonal components of
+music. \citep{Martorel2013} identifies three important aspects of
+tonality as context: dimensionality (the relatedness of categories),
+ambiguity (reference to two or more categories simultaneously) and
+timing (the dynamics of tonal context). Adequate models of tonality
+should be capable of quantifying these aspects.
+\subsubsection{Tonality in MIR}
+\label{sec-2-2-2}
+
+The MIR community is primarily concerned with the extraction of tonal
+descriptors from audio signals such as chord and key estimates. Most
+systems use chroma features as a prelimiary step, obtained by mapping
+STFT or constant Q transform (REF) energies to chroma bins. Template
+matching is used to compare the chroma vectors to a tonal model using
+some distance measure. A commonly used tonal model for key estimation
+are the KK-profiles (\citep{Krumhansl1990}) (used by ). Distance
+measures such as inner product (eg in ) and fuzzy distance (eg in )
+are used to compare vectors. Statistical methods such as HMMs have
+been used for chord and key tracking tracking (REF). Of addition
+interest in the field is the concept of musical similarity (for music
+recommendation, structure analysis and cover detection, for
+example). Foote1999 computed self-similarity matrices for
+visualisation of structure by correlating the MFCC feature vector
+time-series. Gomez2006 proposed the application of this method to
+tonal feature vectors.
+\subsubsection{Similarity}
+\label{sec-2-2-3}
+
+The importance of defining the similarity or closeness between musical
+phenomena, be it theoretical, physical or perceptual, is central to
+almost every model of tonality and often leads to a geometric
+configuration tonal objects. The concept of similarity and distance is
+discussed further in Chapter \ref{sec-5} where a review
+of spatial models of tonality is given.
+\subsection{The Semantic Gap}
+\label{sec-2-3}
+\subsubsection{Acoustic Domain}
+\label{sec-2-3-1}
+
+\citep{Wiggins2009} discusses, what is refered to in MIR as, the
+``Semantic Gap'': the inability of systems to achieve success rates
+beyond a conspicous boundary. He examines the fundamental
+methodological groundings of MIR in terms of Babbitts three domains,
+discussing the limits of each representation and regarding the
+discarnate nature of music. He concludes that the audio signal
+(acoustic domain) simply connot contain all of the information that
+systems seek to retrieve. He points towards the the auditory domain as
+the chief residence of music information and urges for in not to be
+overlooked in MIR and wider music research.
+\subsubsection{Graphemic Domain}
+\label{sec-2-3-2}
+
+Furthermore he criticises the purely graphemic approach and the
+tendency of music research to presuppose musicological
+axioms. \citep{Wiggins2012} argues that music (tonal) theory is,
+rather than a theory in the scientific sense, a highly developed folk
+psychology (internal human theory for explaining common
+behaviour). Thus, the rules of music theory are not like scientific
+laws but rather abstract descriptions of a specific musical
+behavior. This idea challenges the validity of formalizing such rules
+in mathematics and promts the question, ``What is actually being
+modelled?'' He concludes that to apply mathematical models to muscial
+output alone (scales or chords) without consideration of the musical
+mind is a scientific failure.
+\subsubsection{Problems}
+\label{sec-2-3-3}
+
+The two assersions of Wiggins sit contrary to a number of the aspects
+of the tonal models discussed in Chapter \ref{sec-2-2}. Firstly,
+the major-minor paradigm, upon which so many approaches are based,
+whilst certainly possessing cognitive significance, is still a
+musicological concept and therefore a misleading basis for both
+mathematical and cognitive approaches. A second problem is that of the
+numerical methods used by some MIR systems, in particular, distance
+measures. As will be discussed in Chapter XXXX, similary (and by
+extension distance) is a central part of the auditory domain. MIR
+systems often uses distance measures from mathematics such as
+Mahalanobis (Tzanetakis99) or Cosine (Foote00) with little
+consideration of their perceptual or musical significance.
+\subsection{Systemasticity}
+\label{sec-2-4}
+
+Having cautioned against a purely musicological approach,
+\citep{Wiggins2009} proposes a compromise: to adopt a bottom-up
+approach to music theory, exploring the concepts through systematic
+mid-level representations. He states that ``\ldots{}methods starting at, for
+example, the musical surface of notes is a useful way of
+proceeding\ldots{}'' The concept of musical surface is illustrated by
+\citet[pp. 159]{Huovinen2007} with a metaphore: ``\ldots{}to approach a
+musical landscape not by drawing a map, which necessarily confines
+itself to a limited set of structurally important features, but by
+presenting a bird’s-eye view of the musical surface – an aerial
+photograph, as it were, which details the position of every pitched
+component.'' 
+
+\citep{Martorell2013} also advocates this approach, observing that
+surface description influences analyitcal observation and, for an
+unbiased view, the analyst must be provided with the adequate raw
+materials with which to make more indepth observation. Such a
+systematic, descriptive model would be fundamentally independent of
+high level concepts such as chords and key but, at the same time,
+capable of capturing them. \citep{Martorell2013} also disusses the
+importance of systemasticity in terms of the dimensionality, ambiguity
+and timing. He finds that models based on the major-minor paradigm are
+incapable of adequately describing tonal ambiguity even in some
+westerm music (\citep[chap. 3]{Martorell2013}).
+
+With a systematic description of the musical surface, theories and
+models from different domains can be gathered and evaluted together in
+the same analytical arena, thus helping to bridge the gap between
+traditional musicology, cognitive psycology and MIR.
+\section{Pitch Class Set Theory}
+\label{sec-3}
+
+One such method availble for systematic description of the musical
+surface is Pitch class set theory. PC-set theory is a system for
+analysing the pitch content of music. It uses class equivelance
+relations to reduce the ammount of data required to describe any
+sequence of pitches.
+\subsection{Pitch Class}
+\label{sec-3-1}
+
+Pitch-class set theory uses octave equivelance. A Pitch-Class (PC) is
+a number indicating the position of a note within the octave. For
+example, in western equal temperement (TET) the octave is divided in
+to 12 steps. Each of these notes is given a number from 0-11.
+\begin{table}[htb]
+\caption{Pitch classes} 
+\begin{center}
+\begin{tabular}{lrrrrrrrrrrrr}
+ Note  &  C  &  C\#  &  D  &  D\#  &  E  &  F  &  F\#  &  G  &  G\#  &  A  &  A\#  &   B  \\
+ PC    &  0  &    1  &  2  &    3  &  4  &  5  &    6  &  7  &    8  &  9  &   10  &  11  \\
+\end{tabular}
+\end{center}
+\end{table}
+
+A PC-set is a collection of PCs ignoring any repetitions and the order
+in which they occur. PC-sets are notated as follows \{0,1,2,3,4\} with
+PCs ordered from lowest to highest as a convention.
+
+Example: Pitch-set S = \{A4,C5,E5,A5\} (A minor chord) so PC-set S =
+\{9,0,4,9\} = \{0,4,9\}
+
+The cardinality of a set, denoted \#S, is the number of PCs it
+contains. There are 4096 (2$^{\mathrm{12}}$) unique PC-sets and any segment of
+music can be represented as a PC-set. Ignoring the octave, the order
+of the notes and whether they occur simultaneously or in sequence
+means PC-sets are abstract objects with many different musical
+manifestations.
+\subsection{Set Classification}
+\label{sec-3-2}
+
+Defining equivelance classes of PC-sets further reduces the total
+number of tonal objects. A Set Class (SC) is a group of PC-sets
+related by a transformation or group of transformations. The two types
+of transformation commonly used are transposition and inversion. A
+transposition, Tn(S), transposes the set S by the interval n (by
+adding n to all PCs). An inversion, I(S), inverts the set S meaning
+all PCs are replaced by their inverse (11-PC). 
+
+Example: S = \{0,4,9\}, T3(S) = \{3,7,0\} = \{0,3,7\}
+
+Example: S = \{0,4,9\}, I(S) = \{11,7,2\} = \{2,7,11\}
+
+From these two transformations it is possible to define three types of
+SC.
+
+\begin{table}[htb]
+\caption{SC types} 
+\begin{center}
+\begin{tabular}{ll}
+ Transpositional (Tn)  &  All PC-sets that can be transformed to each by  \\
+                       &  transposition belong to the same class.         \\
+                       &  There are 348 distinct Tn types.                \\
+ Inversional (I)       &  All PC-sets that can be transformed to each     \\
+                       &  otherby inversion belong to the same SC.        \\
+                       &  There are 197 distinct I types. All PC-sets     \\
+ Transpositional/      &  that can be transformed to each other by        \\
+ Inversional (Tn/I)    &  transposition, inversion or both belong to the  \\
+                       &  same SC. There are 220 distinct Tn/I types.     \\
+\end{tabular}
+\end{center}
+\end{table}
+
+
+The Prime Form of a PC-set is a convention for denoting the SC it
+belongs to. The convention was introduced by Allan Forte for Tn/I
+types and has since been adopted by the majority of theorists. In
+addition he devised a system for ordering Tn/I SCs and assigning to
+each one a number. For example, the Forte number 3-11 refers to the
+11th SC of cardinality 3. This convension has been modified for use
+with Tn types by adding A and B to the names of inversionally related
+SCs.
+
+One additional concept is that of cardinality class (nC) which refers
+to all the SCs of cardinality n. Cardinality class 2 is commonly
+refered to as Interval class (IC). There are 6 distinct intervall
+classes.
+
+\begin{table}[htb]
+\caption{Forte's Prime form and numbering convention} 
+\begin{center}
+\begin{tabular}{ll}
+ PC-set             &  \{1,4,9\}  \\
+ Prime Form (Tn/I)  &  \{0,3,7\}  \\
+ Prime Form (Tn)    &  \{0,4,7\}  \\
+ Forte Name (Tn/I)  &  3-11       \\
+ Forte Name (Tn)    &  3-11B      \\
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{table}[htb]
+\caption{SC type} 
+\begin{center}
+\begin{tabular}{lr}
+ Object type  &  No. Objects  \\
+\hline
+ Pitch        &           88  \\
+ Pitch set    &         3e26  \\
+ PC           &           12  \\
+ PC-set       &         4096  \\
+ Tn-Type      &          348  \\
+ I-Type       &          197  \\
+ Tn/I-Type    &          200  \\
+\end{tabular}
+\end{center}
+\end{table}
+\subsection{Vector Analysis}
+\label{sec-3-3}
+\subsubsection{Membership and Inclusion}
+\label{sec-3-3-1}
+
+Two concepts that are crucial in PC-set theory are Membership and
+Inclusion. Membership of a set is denoted q $\in$ S and means that PC p
+is a member of set S. Inclusion in a set is denoted Q $\subset$ S and
+means that all members of Q are also members of set S. Q is said to be
+a subset of S.
+
+Example: 4 $\in$ \{0,4,9\}
+
+Example: \{0,4,9\} $\subset$ \{0,1,4,5,9\}
+\subsubsection{Embedding Number}
+\label{sec-3-3-2}
+
+Lewin \citep{Lewin1979} applied these concepts to SCs to develop his
+Embedding Number, EMB(X,Y). Given two SCs, X and Y, EMB(X,Y) is the
+number of instances of SC X which are included in (are subsets of) SC
+Y.
+
+Example: X = \{0,4\} and Y = \{0,4,8\} so EMB(X,Y) = 3
+\subsubsection{Subset Vectors}
+\label{sec-3-3-3}
+
+An n-class subset vector of X, nCV(X), is therefore an array of values
+of EMB(A,X) where A is each of the SCs in the cardinality class
+nC. The Interval-Class Vector (ICV) is a special instance of the nCV
+with n equal to 2.
+
+Example: X = \{0,4,9\}, 2CV(X) = ICV(X) = [0 0 1 1 1 0]
+
+Subset vectors forms the basis of the majority of analysis performed
+by PC-set theorists. In addition, many theorists have proposed
+modifications to the basic nCV to suit their specific purposes and
+some of these modifications will be discussed in context where
+necessary.
+\subsection{PC-Set Similarity}
+\label{sec-3-4}
+\subsubsection{Similarity Relations}
+\label{sec-3-4-1}
+
+The assessment of similarity between SCs has been discussed in the
+literature for decades and a large number theoretical models have been
+proposed. Different models approaches the problem from different
+conceptual standpoints and theorists have different opinions about the
+contributing factors. All these models are described under the blanket
+term ``similarity relations''. Despite the perennial fascination with
+the concept, little or no concensus exits as to what constitutes a
+good similarity relation.
+
+Extensive analysis and comparison of many similarity relations has
+been done by \citep{Isaacson1992}, \citep{Buchler1997},
+\citep{Hermann1994} and \citep{Castren1994}. In addition 
+
+Castren provides a comprehensive and indepth review of a large number
+of similarity relations and categorises them according to some
+fundamental principles.
+
+Plain Relations: Plain relations, such as Forte's R-relations
+(citep\{Forte1973\}), do not produce a range of values indicating
+similarity. Instead they indicate whether the the SCs are related in a
+specific way which in turn may give some indication of whether they
+are similar.
+
+Single Subset nC: Single subset nC relations consider subsets of a
+particular cardinality that are contained in two SCs. This done by
+comparing the nCVs of the two SCs for a certain value of n. Many of
+the relations in this category compre the ICVs (2CVs). The measures of
+\citep{Morris1979}, \citep{Teitelbaum1965}, \citep{Lord1981},
+\citep{Isaacson1990}, \citep{Rahn1979}, \citep{Rogers1999} are all
+included in this category.
+
+Total measure: Total measures consider the subsets of all
+cardinalities contained within in two SCs. All the relevant nCVs are
+compared to produce a final value. Total measures have been proposed
+by \citep{Rahn1979}, \citep{Lewin1979}, \citep{Castren1994} and
+\citep{Buchler1997}.
+
+In addtion to his categorisation, \citep{Castren1994} proposes several
+criteria which a good similarity relation should meet.
+
+\begin{itemize}
+\item criteria
+\begin{itemize}
+\item Isaacson
+\item Buchler
+\item Hermann
+\item Castren
+\item vast number of measure
+\item how to limit the scope
+\item won't consider: set complexes, permutation families, regions,
+    harmonic genera, ordering of sets
+\item context free, non transitive
+\item only the with SC types based on Tn/TnI
+\item vector based
+\end{itemize}
+\item all these similarity measure are pure quantitive not qualitative. is
+  there perceptual relevance?
+\end{itemize}
+\subsubsection{Similarity Measures}
+\label{sec-3-4-2}
+\subsection{Perceptual relevance}
+\label{sec-3-5}
+\subsubsection{Octave equivelance}
+\label{sec-3-5-1}
+
+\begin{itemize}
+\item Pitch is a percept that derives from a particular harmonic structure
+  and is roughly proportional to the logarithm of the fundamental
+  frequency. This allows pitch to be modelled as a straight line,
+  finite at both ends.
+\item Music psychologists have observed a strong perceptual similarity
+  between pitches with fundamental frequencies in the ratio of 2:1
+  (REF). This property of octave similarity leads the straight line
+  model of pitch to be bent into a helix.
+\item Division of the octave into a number of categories is thought to
+  offer a more effecient cognitive representation in memory and thus
+  confers evolutionary advantage. The resulting pitch equivelance
+  classes are implicitly learned through exposure at an early age. TET
+  has 12 pitch equivelance classes which in PC-set theory are modelled
+  as a circular projection of the pitch helix.
+\item Thus the fundamental compent of PC-set theory would appear to have a
+  solid basis in percepton.
+\item Bruner1988 investigated the percieved similarity of pairs of chords
+  with varying numbers of octave related pitches. He found that in
+  general chords with identical PC contents were percieved as more
+  similar than chords with near identicle PC contents.
+\item Bruner1993 carried out further experiments using hexchords. In these
+  experiemts shared PC contents of two chords did not appear to
+  influence the subjects' similarity ratings, a result that would
+  appear to contradict his earlier study.
+\end{itemize}
+\subsubsection{Set class equivelance}
+\label{sec-3-5-2}
+
+\begin{itemize}
+\item Some researchers have attempted to examine whether there is
+  percieved equivelance between different manifestations of a
+  PC-set. Krumhansl et al, 1987 presented subjects with sequences of
+  tones derived by transforming two different PC-sets. They noted that
+  subjects were able to distinguish between the different sets both in
+  neutral and musical contexts.
+\item Millar1984 investigated the peceptual similarity of different
+  PC-sets derived from the same set class under Tn/I
+  classification. Subjects were presented with 3 note melodies and
+  asked to judge which was equivelant to a reference melody. Some
+  melodies preserved the SC identity whilst others did not. He found
+  transpositions to be percieved more similar than inversions and in
+  addition he descovered that the order of the notes and
+  melodic contour was a strong factor in perceived similarity.
+\item Some authors have questioned the perceptual relevance of using Tn/I
+  equivelance as a basis for set classification. Deutsch, 1982 seems
+  unconvinced by evidence for the perceptual similarity of inverted
+  intervals. Cross, 1985 is also sceptical and uses the example of
+  major and minor triads which, while perceptually distinct, are
+  equivelant under Tn/I.
+\end{itemize}
+\subsubsection{Percieved vs Theoretical Similarity}
+\label{sec-3-5-3}
+
+\begin{itemize}
+\item A number of studies have been done on the connection between
+  perceptual similarity ratings and the theoretical values obtained
+  from some PC-set similarity measures.
+\item Bruner1984 used multidimensional scaling on subjects' similarity
+  ratings between trichords and tetrachords and on the similarity
+  values obtained from SIM (\citep{Morris1979}). She compared the
+  2-dimensional solutions and found there to be little
+  correlation.
+\item Gibson1986 investigated notraditional chords. He compared subjects'
+  ratings with similarity assessments calculated from Forte's
+  R-relations (\citep{Forte1973}) and Lord's similarity function
+  (\citep{Lord1981}). He also concluded there was little
+  correspondence between the two.
+\item Stammers1994 compared subjects' ratings of 4 note melodes with the
+  theoretical values obtained from SIM (\citep{Morris1979}). She found
+  the ratings of subjects with more musical training to be more
+  correlated with the SIM values.
+\item Lane1997 compared subjects' ratings of pitch sequences with
+  corresponding values of seven ICV-based similarity measures: ASIM,
+  MEMB2, REL2, s.i., IcVSIM and AMEMB2 concluded there to be a strong
+  relation.
+\item citep\{Kuusi2001\} investigated the connection between theoretical
+  similarity and percieved similarity. Subjects were asked to rate the
+  closeness of pentachords and their ratings were compared to the
+  theoretical values obtained from 9 theoretical similarity
+  measures. He found there to be a connection between aurally
+  estimated ratings and the theoritcal values and concluded that the
+  abstract properties of set-classes do have some perceptual
+  relevance.
+\end{itemize}
+\subsection{PC set theory for Analysis}
+\label{sec-3-6}
+
+\begin{itemize}
+\item Little has been done
+\item Isaacson
+\item Huovinen, Tenkanen
+\item Martorell timescale
+\end{itemize}
+\section{Multi Dimensional Scaling}
+\label{sec-4}
+
+\begin{itemize}
+\item overview
+\item different techniques
+\item dimensionality
+\item stress
+\item goodness of fit
+\item Samplaski etc
+\end{itemize}
+\section{Spatial Models of Tonality}
+\label{sec-5}
+\subsection{Similarity and Distance}
+\label{sec-5-1}
+
+Judgements of similarity form the basis of many cognitive processes
+including the perception of tonality. Similarity between two objects
+is often concieved as being inversly related to distance between them
+in geometric space. For example, some tonal objects (chords, for
+example) are percieved as close to one another whereas others are
+further apart. In addition, the number of dimensions of the geometric
+space is in connection with the number of independent properties that
+are relevant for similarity comparisons.\citep{Gardenfors1995}
+suggests that humans are naturally predisposed to create spatial
+cognitive representations of percetual stimulai due to the geometric
+nature of the world we have evolved to inhabit. Therefore spatial
+modelling of tonalilty, as well as helping to visualise the complex
+multidimenstional relationships between tonal phenomena, has the
+potential to refelct cognitive aspects of the way they are percieved.
+\subsection{Spatial Representations}
+\label{sec-5-2}
+
+Throughout history theorists have proposed many spatial
+representations of tonality from different domains. From the graphemic
+domain, \citep{Heinichen1728}, \citep{Webber1817} and
+\citep{Schoenberg1948} all proposed simple 2-dimensional charts to
+display the proximity between keys. For representation of chords,
+\citep{Riemann} models major and minor triads as regions in a
+2-dimensional space whilst \citep{Tymoczko2011} propeses a vaireiety
+high dimensional, non-euclidean chord spaces that reflect the
+theoretical principles of voice leading. From the acoustic domain,
+\citep{Shepard1982} proposes a five-dimensional model to represent
+interval relations between pitches. Some theorists have attepted
+encorporate relations between several levels of tonal hierarchy into
+one configuration. The ``spiral array'' of \citep{Chew2000} is a
+three-dimensional mathematcal model which simulataneously captures the
+relations between pitches, chords and keys. The chordal-regional space
+of \citep{Lerdahl2001} models the relations between chords within a
+certain key.
+\subsection{Cognitive Psychology}
+\label{sec-5-3}
+
+The auditory domain has been addressed through congnitive psychology
+by \citep{Krumhansl1990} who used the probe-tone methodology
+(\citep{Krumhansl1979}) to establish major and minor key profiles (12
+dimensional vectors containing the perceptual stability ratings of
+each of the 12 pitch classes within a major or minor context). These
+profiles, know as Krumhansl-Kessler profiles (KK-profiles), show the
+hierarchy of pitches in major and minor keys. Correlating each of the
+24 major and minor profile produced a matrix of pairwise distances
+which was fed to a dimensional scaling algorithm. The resulting
+geometrical solution was found to have a double circular property
+(circle of fifths and relative-parallel relations) which can be
+modelled as the surface a 3D torus. Many spatial models of tonality
+have this double circular property whether it is implicit
+(\citep{Weber1821}, \citep{Schoenberg1948}) or stated explicitly
+(\citep{Lerdahl2001}).
+\subsection{Set-Class Spaces}
+\label{sec-5-4}
+
+Most of these models are limited to description of music in the
+major-minor paradigm and are not capable of generalirzing beyond the
+``western common practice''. PC-set theory, once again, provides a
+possible means to generalise to any kind of pitch-based music. By
+considering a collection of tonal objects described by SCs, a
+geometric space can be contructued to model their relations based on
+some theoreitcal principle. Some PC-set theorists have proposed
+explicit geomtric spaces to model relations between SCs. The distances
+in these spaces are expressed by models of similarity based on voice
+leading (\citep{Cohn2003,Tymoczko2012}) or ICVs and the Fourier
+transform (\citep{Quinn2006, Quinn2007}). However, these models are
+only designed to represent SCs of one cardinality class at a time and
+cannot model the relation between any collection of pitches.
+
+Alternative spatial models are provided by the implicit geometries of
+the values produced by the SC similarity measures discussed in chapter
+XXXX. Samplaski applied MDS to the values produced from 6 similarity
+measures.
+\subsection{Time}
+\label{sec-5-5}
+
+\begin{itemize}
+\item Tonality and time \citep{Martorell2013}
+\end{itemize}
+\section{SC Similarity Measures}
+\label{sec-6}
+\subsection{MORRIS}
+\label{sec-6-1}
+\subsubsection{K}
+\label{sec-6-1-1}
+\begin{itemize}
+
+\item Details
+\label{sec-6-1-1-1}%
+\begin{itemize}
+\item ICV based
+\item Measures similarity
+\item Max sim: 55
+\item Min sim: 0
+\item Average: 10
+\item Distinc values: 35
+\item 1 to 1 correspondence
+\item Castren criteria met: C1, C2, C3.3 C3.4, C4
+\item Problems: scale of values not the same for all value groups.
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-1-1-2}%
+$$
+k=\frac{\left(\#ICV\left(R\right)+\#ICV\left(S\right)-SIM\left(R,S\right)\right)}{2}
+$$ 
+Rahn writes it differently (as a funtion of X and Y) 
+$$
+k\left(X,Y\right)=\frac{\left(\#ICV\left(X\right)+\#ICV\left(Y\right)-SIM\left(X,Y\right)\right)}{2}
+$$
+or from castren
+$$ k(X,Y)= \sum_{i=1}^{6}{MIN(x_{i},y_{i})} $$
+\end{itemize} % ends low level
+\subsubsection{SIM}
+\label{sec-6-1-2}
+\begin{itemize}
+
+\item Description\\
+\label{sec-6-1-2-1}%
+Presented in Morris(1979-80)
+
+\item Details
+\label{sec-6-1-2-2}%
+\begin{itemize}
+\item ICV based
+\item 1 to 1 correspondence
+\item Measures dissimilarity
+\item Max sim: 0
+\item Min sim: 65
+\item Average: 13
+\item Distinc values: 44
+\item Castren criteria met: C1, C2, C3.3, C3.4, C4
+\item Problems: scale not the same for all value groups. course resolution
+  when cardinalityies differ greatly
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-1-2-3}%
+$$ 
+SIM\left(X,Y\right)=\sum_{i=1}^{6}\left|x_{i}-y_{i}\right| 
+$$ 
+or 
+$$
+SIM\left(X,Y\right)=\#DV\left(ICV\left(X\right),ICV\left(Y\right)\right)
+$$
+\end{itemize} % ends low level
+\subsubsection{ASIM}
+\label{sec-6-1-3}
+\begin{itemize}
+
+\item Description\\
+\label{sec-6-1-3-1}%
+Absolute SIM
+Scaled version of SIM
+
+\item Details
+\label{sec-6-1-3-2}%
+\begin{itemize}
+\item ICV based
+\item 1 to 1 correspondence
+\item Max sim: 0
+\item Min sim: 1
+\item Average: 0.42
+\item Distinct values: 79
+\item Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4
+\item Problems: Fixed the scale of values, but still coarse resolution
+  when cardinalities differ greatly. Scaling is done as the last step.
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-1-3-3}%
+$$
+ASIM\left(X,Y\right)=\frac{SIM\left(X,Y\right)}{\left(\#ICV\left(X\right)+\#ICV\left(Y\right)\right)}
+$$
+\end{itemize} % ends low level
+\subsection{LORD}
+\label{sec-6-2}
+\subsubsection{sf}
+\label{sec-6-2-1}
+\begin{itemize}
+
+\item Description
+\label{sec-6-2-1-1}%
+\begin{itemize}
+\item Presented in Lord(1981)
+\item similar to sim but developed independently
+\item sf is subset of SIM
+\end{itemize}
+
+\item Details
+\label{sec-6-2-1-2}%
+\begin{itemize}
+\item ICV based
+\item 1 to 1 correspondence
+\item Same cardinality only
+\item Max sim: 0
+\item Min sim: 9
+\item Average: 3
+\item Distinct values: 10
+\item Castren criteria met: C3.3, C3.4, C4
+\item Problems: Fixed the scale of values, but still coarse resolution
+  when cardinalities differ greatly. Scaling is done as the last step.
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-2-1-3}%
+$$ sf\left(X,Y\right)=\frac{\sum_{i=1}^{6}\left|x_{i}-y_{i}\right|}{2} $$
+or 
+$$ sf\left(X,Y\right)=\frac{\#DV\left(ICV\left(X\right),ICV\left(Y\right)\right)}{2} $$
+or
+$$ sf(X,Y)=\frac{SIM(X,Y)}{2} $$
+\end{itemize} % ends low level
+\subsection{TEITELBAUM}
+\label{sec-6-3}
+\subsubsection{s.i.}
+\label{sec-6-3-1}
+\begin{itemize}
+
+\item Details
+\label{sec-6-3-1-1}%
+\begin{itemize}
+\item ICV based
+\item Same cardinality only
+\item 1 to 1 correspondence
+\item Z-related sets not compared
+\item Max sim: sqrt 2 = 1.41
+\item Min sim: sqrt 72 = 8.49
+\item Average: 2.85
+\item Distinc values: 31
+\item Castren criteria met: C3.3 C3.4
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-3-1-2}%
+$$ 
+s.i.(X,Y)=\sqrt{\sum_{i=1}^{6}(x_{i}-y_{i})^{2}} 
+$$
+or
+$$ s.i.(X,Y)=\sqrt{ \#DV( ICV(X), ICV(Y) )^{2}  }  $$
+\end{itemize} % ends low level
+\subsection{ROGERS}
+\label{sec-6-4}
+\subsubsection{IcVD1}
+\label{sec-6-4-1}
+\begin{itemize}
+
+\item Description
+\label{sec-6-4-1-1}%
+\begin{itemize}
+\item from Rogers(1992)
+\item modification of SIM
+\end{itemize}
+
+\item Details
+\label{sec-6-4-1-2}%
+\begin{itemize}
+\item ICV based
+\item 1 to 1 correspondence
+\item Max sim: 0
+\item Min sim: 2
+\item Average: 0.59
+\item Distinct values: 140
+\item Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4
+\item vector components are scaled before being summed
+\item Related to \%REL2
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-4-1-3}%
+$$
+IcVD_{1}(X,Y)=\sum_{i=1}^{6}{\left|\frac{x_{i}}{\#ICV(X)}+\frac{y_{i}}{\#ICV(Y)}\right|}
+$$
+\end{itemize} % ends low level
+\subsubsection{IcVD2}
+\label{sec-6-4-2}
+\begin{itemize}
+
+\item Description
+\label{sec-6-4-2-1}%
+\begin{itemize}
+\item from rogers 1992
+\item modification of SIM
+\item 
+\end{itemize}
+
+\item Details
+\label{sec-6-4-2-2}%
+\begin{itemize}
+\item ICV based
+\item 1 to 1 correspondence
+\item Max sim: 0
+\item Min sim: 1.41
+\item Average: 0.54
+\item Distinc values: 133
+\item Castren criteria met: C1, C2, C3.1, C3.2, C3.4
+\item Problems: does not produce uniform values for comparable cases
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-4-2-3}%
+$$
+IcVD_{2}(X,Y)=\sqrt{\sum{\left(\frac{x_{i}}{\sqrt{\sum{x_{i}^{2}}}}-\frac{y_{i}}{\sqrt{\sum{y_{i}^{2}}}}\right)}^{2}}
+$$
+\end{itemize} % ends low level
+\subsubsection{COS$\theta$}
+\label{sec-6-4-3}
+\begin{itemize}
+
+\item Description
+\label{sec-6-4-3-1}%
+\begin{itemize}
+\item from rogers (1992)
+\item geometric approach
+\end{itemize}
+
+\item Details
+\label{sec-6-4-3-2}%
+\begin{itemize}
+\item ICV based
+\item 1 to many correspondence
+\item Max sim: 1
+\item Min sim: 0
+\item Average: 0.81
+\item Distinct values: 92
+\item Castren criteria met: C1, C2, C3.1, C3.2, C3.4
+\item Problems: C4
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-4-3-3}%
+$$
+Cos\theta(X,Y)=\frac{\sum{x_i.y_i}}{\sqrt{\sum{(x_i)^2}}.\sqrt{\sum{(y_i)^2}}}
+$$
+\end{itemize} % ends low level
+\subsection{ISAACSON}
+\label{sec-6-5}
+\subsubsection{AMEMB2}
+\label{sec-6-5-1}
+\begin{itemize}
+
+\item Description
+\label{sec-6-5-1-1}%
+\begin{itemize}
+\item from Isaacson 1990
+\item modification of rahns MEMB2
+\item divide MEMB2 values by total number of entries in the ICVs of X and
+  Y.
+\end{itemize}
+
+\item Details
+\label{sec-6-5-1-2}%
+\begin{itemize}
+\item ICV based
+\item 1 to 1 correspondence
+\item Max sim: 1
+\item Min sim: 0
+\item Average:
+\item Distinct values:
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-5-1-3}%
+$$ AMEMB_{2}=\frac{\sum \left( x_{i}+y_{i} \right)}{\frac{\left(\#X\left(\#X-1\right)+\#Y\left(\#Y-1\right)\right)}{2}} $$
+such that $$ \left(x_{i}>0\right) $$ and $$ \left(y_{i}>0\right) $$
+\end{itemize} % ends low level
+\subsubsection{IcVSIM}
+\label{sec-6-5-2}
+\begin{itemize}
+
+\item Description
+\label{sec-6-5-2-1}%
+\begin{itemize}
+\item Interval class vector similarity relation
+\item the standard deviation of the entries in the idv of two sets
+\item Same degree of distinction as s.i.
+\item any cardinality
+\item Mathematically IcVSIM is a scalled version of s.i.
+\end{itemize}
+
+\item Details
+\label{sec-6-5-2-2}%
+\begin{itemize}
+\item ICV based
+\item 1 to 1 correspondence
+\item Max sim: 0
+\item Min sim: 3.64
+\item Average: 1.2
+\item Distinct values: 121
+\item Castren criteria met: C1, C2, C3.4
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-5-2-3}%
+$$ IcVSIM\left(X,Y\right)=\sigma\left(IdV\right) $$
+where 
+$$ IdV=[(y_{1}-x_{1})(y_{2}-x_{2})...(y_{6}-x_{6})] $$
+and
+$$ \sigma=\sqrt{\frac{\sum(IdV_{i}-\overline{IdV})^{2}}{6}} $$
+where
+$$IdV_{i}$$ is the ith term of the interval-difference vector and
+$$\overline {IdV}$$ is the average (mean) of the terms in the IdV
+Also
+$$ s.i.(X,Y)=\sqrt{\sum_{i=1}^{6}{IdV_{i}}^{2}} $$
+\end{itemize} % ends low level
+\subsubsection{ISIM2}
+\label{sec-6-5-3}
+\begin{itemize}
+
+\item Description
+\label{sec-6-5-3-1}%
+\begin{itemize}
+\item Saled version of IcVSIM
+\item The square root is taken of each term in the ICV
+\end{itemize}
+
+\item Details
+\label{sec-6-5-3-2}%
+\begin{itemize}
+\item ICV based
+\item 1 to 1 correspondence
+\end{itemize}
+\end{itemize} % ends low level
+\subsubsection{ANGLE}
+\label{sec-6-5-4}
+\begin{itemize}
+
+\item Description
+\label{sec-6-5-4-1}%
+\begin{itemize}
+\item Same as Cos$\theta$ from Rogers
+\end{itemize}
+
+\item Details
+\label{sec-6-5-4-2}%
+\begin{itemize}
+\item ICV based
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-5-4-3}%
+$$ ANGLE(X,Y)= \arccos{\frac{ICV(X) \cdot
+ICV(Y)}{|ICV(X)|\times |ICV(Y)|}} $$ 
+where the numberator is the dot product of the ICVs 
+and the denominator is the product of the magnitudes
+\end{itemize} % ends low level
+\subsection{RAHN}
+\label{sec-6-6}
+\subsubsection{AK}
+\label{sec-6-6-1}
+\begin{itemize}
+
+\item Description
+\label{sec-6-6-1-1}%
+\begin{itemize}
+\item from rahn (1979-80)
+\item Absolute (Adjusted) K
+\item took morris' k and used it as similarity measure
+\item related to ASIM
+\end{itemize}
+
+\item Details
+\label{sec-6-6-1-2}%
+\begin{itemize}
+\item ICV based
+\item 1 to 1 correspondence
+\item Max sim: 1
+\item Min sim: 0
+\item Average: 0.58
+\item Distinct values: 78
+\item Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4
+\item Problems: single scale of values (C4), but poor discrimination for
+  some value groups.
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-6-1-3}%
+$$ ak\left(X,Y\right)=\frac{2\times k\left(X,Y\right)}{\#ICV\left(X\right)+\#ICV\left(Y\right)} $$
+$$ Ak(X,Y)=1-ASIM(X,Y) $$
+\end{itemize} % ends low level
+\subsubsection{MEMBn}
+\label{sec-6-6-2}
+\begin{itemize}
+
+\item Description
+\label{sec-6-6-2-1}%
+\begin{itemize}
+\item from rahn (1979-80)
+\item Mutual Embedding
+\item preliminary step towards other measures
+\end{itemize}
+
+\item Details
+\label{sec-6-6-2-2}%
+\begin{itemize}
+\item nCV based
+\item 1 to many correspondence
+\item one cardinality at a time
+\item Max sim: 121
+\item Min sim: 0
+\item Average: 30
+\item Distinc values: 79
+\item Castren criteria met: C1, C2, C3.3, C3.4, C4
+\item Problems: does not produce uniform scale of values for all value
+  groups.
+\item by setting n to 2 it compares ICVs
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-6-2-3}%
+$$ MEMB_{n}\left(J,X,Y\right)=EMB\left(J,X\right)+EMB\left(J,Y\right) $$
+for all J such that
+$$ \#J=n $$
+and
+$$ EMB\left(J,X\right)>0 $$ and $$ EMB\left(J,Y\right)>0 $$
+so\ldots{}
+$$ MEMB_{\#X}\left( X,X,Y \right)=EMB\left( X,Y \right) + 1 $$
+\end{itemize} % ends low level
+\subsubsection{TMEMB}
+\label{sec-6-6-3}
+\begin{itemize}
+
+\item Description
+\label{sec-6-6-3-1}%
+\begin{itemize}
+\item total mutual embedding
+\item from rahn (1979-80)
+\item total measure
+\end{itemize}
+
+\item Details
+\label{sec-6-6-3-2}%
+\begin{itemize}
+\item nCV based
+\item 1 to many correspondence
+\item Max sim: 6118
+\item Min sim: 0
+\item Average: 131
+\item Distinct values: 877
+\item Castren Criteria met: C1, C2, C3.3, C4, C5
+\item Problems: Different value scales for different value groups
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-6-3-3}%
+$$ TMEMB\left(X,Y\right)=\sum_{n=2}^{12}MEMB_{n}\left(J,X,Y\right) $$
+\end{itemize} % ends low level
+\subsubsection{ATMEMB}
+\label{sec-6-6-4}
+\begin{itemize}
+
+\item Description
+\label{sec-6-6-4-1}%
+\begin{itemize}
+\item from rahn (1989-80)
+\item total measure
+\item Absolute (Adjusted) TMEMB
+\item ATMEMB is related to TMEMB the same way ASIM is to SIM and AK to K
+\end{itemize}
+
+\item Details
+\label{sec-6-6-4-2}%
+\begin{itemize}
+\item nCV based
+\item 1 to many correspondence
+\item total measures
+\item Differentiates between Z-related pairs and I related
+\item Max sim: 1
+\item Min sim: 0
+\item Average: 0.45
+\item Distinct values: 101
+\item Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4, C5
+\item Problems: Castren says: ``divisor term is flawed\ldots{} high degrees of
+  similarity between SCs of clearly different cardinalities. General
+  reliability and usefulness is difficulty to determine''
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-6-4-3}%
+$$ ATMEMB\left(X,Y\right)=\frac{TMEMB\left(X,Y\right)}{2^{\#X}+2^{\#Y}-\left(\#X+\#Y+2\right)} $$
+\end{itemize} % ends low level
+\subsection{LEWIN}
+\label{sec-6-7}
+\subsubsection{REL}
+\label{sec-6-7-1}
+\begin{itemize}
+
+\item Description
+\label{sec-6-7-1-1}%
+\begin{itemize}
+\item Presented in Lewin 1979-80
+\item probablistic approach to pc-set theory
+\item multiplying components has an effect similar to MEMBn (only
+  non-zero)
+\item by multiplying and sqrting - geometric mean
+\end{itemize}
+
+\item Details
+\label{sec-6-7-1-2}%
+\begin{itemize}
+\item nCV based
+\item total measure
+\item discriminates Z and I related sets
+\item 1 to many correspondence
+\item Max sim: 1
+\item Min sim: 0
+\item Average: 0.57
+\item Distinct values: 91
+\item Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4, C5
+\item Problems
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-7-1-3}%
+$$ REL(A,B)=\frac{\sum_{i=1}^{357}\sqrt{sub(A,i).sub(B,i)}}{\sqrt{\sum_{i=1}^{357}sub(A,i).\sum_{i=1}^{357}sub(B,i)}} $$
+or
+$$ REL(X,Y)=\frac{ \sum_{A\in TEST}{\sqrt{EMB(A,X) \times EMB(A,Y)}} }{\sqrt{TOTAL(X)\times TOTAL(Y)}}  $$
+Were TEST cotains all SCs of cardinality 2 to MIN(\#X,\#Y)
+\end{itemize} % ends low level
+\subsubsection{REL2}
+\label{sec-6-7-2}
+\begin{itemize}
+
+\item Description
+\label{sec-6-7-2-1}%
+\begin{itemize}
+\item A specialised version of \ref{sec-6-7-1} that measures only intervallic
+  similarity
+\item criticises Rahns (x$_{i}$+y$_{i}$) as ``arithmetic awkwardness''
+\item Multiplies corresponding IcV entries
+\item REL2 increases as corresponding IcV entries increase
+\item As cardinality increases, range of REL decreases
+\item high level of distinction
+\item produces max similarity only when IcVs are identical
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-7-2-2}%
+$$ REL_{2}(X,Y)\frac{2\times\sum\sqrt{(x_{i}y_{i})}}{\sqrt(\#X(\#X-1)\#Y(\#Y-1))} $$
+\end{itemize} % ends low level
+\subsection{CASTREN}
+\label{sec-6-8}
+\subsubsection{\%RELn}
+\label{sec-6-8-1}
+\begin{itemize}
+
+\item Asymmetric Difference vector
+\label{sec-6-8-1-1}%
+
+\item nC\%V
+\label{sec-6-8-1-2}%
+
+\item Description
+\label{sec-6-8-1-3}%
+\begin{itemize}
+\item Presented in castren
+\item Modification of sf but using nC\%V
+\item integral part of recrel
+\end{itemize}
+
+\item Details
+\label{sec-6-8-1-4}%
+\begin{itemize}
+\item nC\%V based
+\item one cardinality at a time
+\item 1 to 1 correspondence
+\item sometimes discriminate between I related SCsx
+\item Max sim: 0
+\item Min sim: 100
+\item Average: 30
+\item Distinct values: 85
+\item Castren criteria met: C1, C2, C3.1, C3.2, C3.3, C3.4, C4
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-8-1-5}%
+$$ \%REL_n(X,Y)=\frac{\sum_{i=1}^{p}|x_i-y_i|}{2} $$
+where xi and yi are values in the nC\%V and p is the length of the nC\%V.
+or
+$$ \%REL_{n}\left(X,Y\right)=\frac{\#DV\left(nC\%V(X),nC\%V(Y)\right)}{2} $$
+\end{itemize} % ends low level
+\subsubsection{T\%REL}
+\label{sec-6-8-2}
+\begin{itemize}
+
+\item Description
+\label{sec-6-8-2-1}%
+\begin{itemize}
+\item total percentage measure
+\item total meaure
+\end{itemize}
+
+\item Details
+\label{sec-6-8-2-2}%
+\begin{itemize}
+\item nC\%V based
+\item 1 to 1 correspondence
+\item total measure
+\item discriminated z and I related SCs
+\item Max sim: 0
+\item Min sim: 100
+\item Average: 63
+\item Distinct values: 79
+\item Castren criteria met: C1, C2, C3.1, C3.2, C3.3, C3.4, C4, C5
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-8-2-3}%
+$$ T\%REL(X,Y)=\frac{\sum_{n=2}^{m}{\%REL_n\left(X,Y\right)}}{m-1} $$
+where
+if $$ \#X\neq \#Y, m = MIN(\#X, \#Y)$$ else $$ m = \#X-1  $$
+\end{itemize} % ends low level
+\subsubsection{RECREL}
+\label{sec-6-8-3}
+\begin{itemize}
+
+\item Comparison Procedure
+\label{sec-6-8-3-1}%
+\begin{enumerate}
+\item Branches
+\item Levels
+\item Weighting
+\item Final Value
+\end{enumerate}
+\end{itemize} % ends low level
+\subsection{BUCHLER}
+\label{sec-6-9}
+\subsubsection{SATSIM}
+\label{sec-6-9-1}
+\begin{itemize}
+
+\item Description
+\label{sec-6-9-1-1}%
+\begin{itemize}
+\item orgininally meant to compare ICVs but can be adapted
+\end{itemize}
+
+\item SATV
+\label{sec-6-9-1-2}%
+\begin{itemize}
+\item need to define. Saturation vector
+\item extent to which an SC is saturated with a subclass
+\end{itemize}
+
+\item Formula\\
+\label{sec-6-9-1-3}%
+$$ 
+SATSIM_{n}(X,Y)= \frac{\sum_{i=1}^{p}{\left|SATV_{A}(X)_{i}-SATV_{row}(Y)_{i}\right|+\left|SATV_{A}(Y)_{i}-SATV_{row}(X)_{i}\right|}}{\sum_{i=1}^{p}{\left|SATV_{A}(X)_{i}-SATV_{B}(X)_{i}\right|+\left|SATV_{A}(Y)_{i}-SATV_{B}(Y)_{i}\right|}}
+$$
+where p is the length of the SATVs
+\end{itemize} % ends low level
+\subsubsection{CSATSIM}
+\label{sec-6-9-2}
+\begin{itemize}
+
+\item Description
+\label{sec-6-9-2-1}%
+\begin{itemize}
+\item uses CSATV
+\end{itemize}
+
+\item 
+%
+\end{itemize} % ends low level
+\subsubsection{AvgSATSIM}
+\label{sec-6-9-3}
+\begin{itemize}
+
+\item Formula\\
+\label{sec-6-9-3-1}%
+$$ AvgSATSIM(X,Y)= \sum_{n=2}^{m-1}{SATSIM_{n}(X,Y)} $$
+where $$ m = MIN(\#X,\#Y)  $$
+\end{itemize} % ends low level
+\subsubsection{TSATSIM}
+\label{sec-6-9-4}
+\begin{itemize}
+
+\item Description
+\label{sec-6-9-4-1}%
+\begin{itemize}
+\item Extension of SATSIMn
+\item quotient of sum of SATSIMn numerators by denominators
+\item very close to AvgSATSIM
+\item Total measure
+\end{itemize}
+\end{itemize} % ends low level
+\subsection{Comparison Table}
+\label{sec-6-10}
+
+\begin{table}[htb]
+\caption{Comparison table of similarity measures} 
+\begin{center}
+\begin{tabular}{llll}
+\hline
+             &  SIMILARITY  &  VECTOR    &               \\
+ THEORIST    &  MEASURE     &  TYPE      &  CARDINALITY  \\
+\hline
+ TEITELBAUM  &  s.i.        &  INTERVAL  &  SAME         \\
+\hline
+ LORD        &  sf          &  INTERVAL  &  SAME         \\
+\hline
+             &  SIM         &  INTERVAL  &  SAME         \\
+             &  K           &  INTERVAL  &  SAME         \\
+ MORRIS      &  ASIM        &  INTERVAL  &  ANY          \\
+\hline
+             &  IcVD1       &  INTERVAL  &  ANY          \\
+             &  IcVD2       &  INTERVAL  &  ANY          \\
+ ROGERS      &  COS         &  INTERVAL  &  ANY          \\
+\hline
+             &  AMEMB2      &  INTERVAL  &  ANY          \\
+             &  IcVSIM      &  INTERVAL  &  ANY          \\
+             &  ISIM2       &  INTERVAL  &  ANY          \\
+ ISAACSON    &  ANGLE       &  INTERVAL  &  ANY          \\
+\hline
+             &  AK          &  INTERVAL  &  ANY          \\
+             &  MEMBn       &  SUBSET    &  ANY          \\
+             &  TMEMB       &  SUBSET    &  ANY          \\
+ RAHN        &  ATMEMB      &  SUBSET    &  ANY          \\
+\hline
+             &  REL2        &  INTERVAL  &  ANY          \\
+ LEWIN       &  REL         &  SUBSET    &  ANY          \\
+\hline
+             &  \%RELn      &  SUBSET    &  ANY          \\
+             &  T\%REL      &  SUBSET    &  ANY          \\
+ CASTREN     &  RECREL      &  SUBSET    &  ANY          \\
+\hline
+             &  SATSIM      &  INTERVAL  &  ANY          \\
+             &  CSATSIM     &  INTERVAL  &  ANY          \\
+             &  TSATSIM     &  SUBSET    &  ANY          \\
+ BUCHLER     &  AvgSATSIM   &  SUBSET    &  ANY          \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\subsection{Comparison Table 2}
+\label{sec-6-11}
+
+\begin{table}[htb]
+\caption{Comparison table 2 of similarity measures} 
+\begin{center}
+\begin{tabular}{llllrr}
+\hline
+             &  SIMILARITY  &  VECTOR  &               &  MEASURE  &        Min  \\
+ THEORIST    &  MEASURE     &  TYPE    &  CARDINALITY  &     TYPE  &        Min  \\
+\hline
+             &  K           &  ICV     &  SAME         &        1  &       0-55  \\
+             &  SIM         &  ICV     &  SAME         &        1  &       65-0  \\
+ MORRIS      &  ASIM        &  ICV     &  ANY          &        1  &        1-0  \\
+\hline
+ LORD        &  sf          &  ICV     &  SAME         &        1  &        9-0  \\
+\hline
+ TEITELBAUM  &  s.i.        &  ICV     &  SAME         &        1  &  8.49-1.41  \\
+\hline
+             &  IcVD1       &  ICV     &  ANY          &        1  &        2-0  \\
+             &  IcVD2       &  ICV     &  ANY          &        1  &             \\
+ ROGERS      &  COS         &  ICV     &  ANY          &        1  &             \\
+\hline
+             &  AMEMB2      &  ICV     &  ANY          &        1  &             \\
+             &  IcVSIM      &  ICV     &  ANY          &        1  &             \\
+             &  ISIM2       &  ICV     &  ANY          &        1  &             \\
+ ISAACSON    &  ANGLE       &  ICV     &  ANY          &        1  &             \\
+\hline
+             &  AK          &  ICV     &  ANY          &        1  &             \\
+             &  MEMBn       &  nCV     &  ANY          &        1  &             \\
+             &  TMEMB       &  nCV     &  ANY          &        2  &             \\
+ RAHN        &  ATMEMB      &  nCV     &  ANY          &        2  &             \\
+\hline
+             &  REL2        &  ICV     &  ANY          &        1  &             \\
+ LEWIN       &  REL         &  nCV     &  ANY          &        2  &             \\
+\hline
+             &  \%RELn      &  nCV     &  ANY          &        1  &             \\
+             &  T\%REL      &  nCV     &  ANY          &        2  &             \\
+ CASTREN     &  RECREL      &  nCV     &  ANY          &        2  &             \\
+\hline
+             &  SATSIM      &  nCV     &  ANY          &        1  &             \\
+             &  CSATSIM     &  ICV     &  ANY          &        1  &             \\
+             &  TSATSIM     &  nCV     &  ANY          &        2  &             \\
+ BUCHLER     &  AvgSATSIM   &  nCV     &  ANY          &        2  &             \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\section{Glossary}
+\label{sec-7}
+
+\begin{itemize}
+\item PC: pitch class
+\item set: unordered PC set
+\item SC: set class
+\item nC: Cardinality class, nC
+\item IC: interval class, 2C
+\item Tn: transposition
+\item I: Inversion
+\item TnI: Transposition/Inversion
+\item Prime Form: PC set represetning all members of an SC
+\item ICV: Interval class vector
+\item nCV: n-Subset class vector
+\item nC\%V: n-subset class percetage vector
+\item SATV: saturation vector
+\item CSATV: cyclic saturation vectors
+\item DV: difference vector
+\item \#X: cardinality, set or vector
+\end{itemize}
+\section{Test}
+\label{sec-8}
+
+\citep{Martorell2013}
+
+\bibliographystyle{plainnat}
+\bibliography{/Users/nick/Documents/MendeleyDesktop/library.bib}
+
+\end{document}

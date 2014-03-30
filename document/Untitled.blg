@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Untitled.aux
+The style file: plainnat.bst
+Database file #1: /Users/nick/Documents/MendeleyDesktop/library.bib.bib
+Warning--I didn't find a database entry for "Huovinen"
+Warning--can't use both volume and number fields in Foote2000
+Warning--can't use both volume and number fields in Forte1973
+Warning--can't use both volume and number fields in Gardenfors1995
+Warning--empty school in Kuusi2001
+Warning--empty publisher in Riemann
+You've used 41 entries,
+            2773 wiz_defined-function locations,
+            876 strings with 10471 characters,
+and the built_in function-call counts, 15084 in all, are:
+= -- 1413
+> -- 483
+< -- 50
++ -- 185
+- -- 144
+* -- 1019
+:= -- 2350
+add.period$ -- 135
+call.type$ -- 41
+change.case$ -- 157
+chr.to.int$ -- 41
+cite$ -- 87
+duplicate$ -- 847
+empty$ -- 1444
+format.name$ -- 191
+if$ -- 3177
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 43
+newline$ -- 223
+num.names$ -- 164
+pop$ -- 338
+preamble$ -- 1
+purify$ -- 130
+quote$ -- 0
+skip$ -- 591
+stack$ -- 0
+substring$ -- 577
+swap$ -- 99
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 401
+warning$ -- 5
+while$ -- 169
+width$ -- 0
+write$ -- 566
+(There were 6 warnings)

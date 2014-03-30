@@ -35,7 +35,9 @@ function pncv = pnCV(primex, n)
 function [wdvxy wdvyx] = Weighted_DV(dvxy, dvyx)
 	
 	wdvxy = (dvxy/sum(dvxy))*100;
+	wdvxy(isnan(wdvxy)) = 0; 
 	wdvyx = (dvyx/sum(dvyx))*100;
+	wdvyx(isnan(wdvyx)) = 0;
 
 % RETURNS THE ASYMMETRIC DIFFERENCE VECTOR
 function [dvxy dvyx] = Asymmetric_DV(primex, primey)

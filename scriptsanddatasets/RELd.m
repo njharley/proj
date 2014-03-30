@@ -1,4 +1,4 @@
-%%% THE SAME AS relb BUT USING emb AND NCV
+%%% THE SAME AS relb BUT USING emb AND NCV (the way agustin did it)
 
 function rel = RELd(primex, primey)
 

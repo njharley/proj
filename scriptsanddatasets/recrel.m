@@ -1,10 +1,6 @@
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%%%%%%%%%%% COMPUTES RECREL BASED  %%%%%%%%%%%%
-	%%%%%%%%%%%% ON BUCHLER DESCRIPTION %%%%%%%%%%%%
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 function rr = RECREL(primex, primey)
 
+	% ESTABLISH NMAX
 	cardx = length(primex);
 	cardy = length(primey);
 
@@ -14,6 +10,10 @@ function rr = RECREL(primex, primey)
 		nmax = min(cardx, cardy);
 	end
 	
+	if nmax == 1
+		nmax = 2;
+	end
+
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% CREATE DATA STRUCTURE TO CONTAIN %REL VALUES %
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -41,18 +41,14 @@ function rr = RECREL(primex, primey)
 	end
 
 	no_of_levels = nmax-1;
-
 	b=[];
 
 	for i = 1:length(branch)
-
 		for j = 0:no_of_levels-2
 			branch(i) = getGroupAverages(branch(i), no_of_levels-j);
 		end
 		b(end+1) = branch(i).level1;
-
 	end
-	branch(3)
 	rr =  mean(b); % RECREL IS AVERAGE OF BRANCH VALUES
 
 function branch = getGroupAverages(branch, level_number)

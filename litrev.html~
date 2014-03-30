@@ -1,0 +1,2272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Literature Review</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Literature Review"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-03-24T17:08+0100"/>
+<meta name="author" content="Nicholas Harley"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js">
+/**
+ *
+ * @source: http://orgmode.org/mathjax/MathJax.js
+ *
+ * @licstart  The following is the entire license notice for the
+ *  JavaScript code in http://orgmode.org/mathjax/MathJax.js.
+ *
+ * Copyright (C) 2012-2013  MathJax
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in http://orgmode.org/mathjax/MathJax.js.
+ *
+ */
+
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code below.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code below is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code below.
+*/
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Literature Review</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Introduction</a></li>
+<li><a href="#sec-2">2 Tonality</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Defining Tonality</a></li>
+<li><a href="#sec-2-2">2.2 Modelling Tonality</a></li>
+<li><a href="#sec-2-3">2.3 The Semantic Gap</a></li>
+<li><a href="#sec-2-4">2.4 Systemasticity</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Pitch Class Set Theory</a>
+<ul>
+<li><a href="#sec-3-1">3.1 Pitch Class</a></li>
+<li><a href="#sec-3-2">3.2 Set Classification</a></li>
+<li><a href="#sec-3-3">3.3 Vector Analysis</a></li>
+<li><a href="#sec-3-4">3.4 PC-Set Similarity</a></li>
+<li><a href="#sec-3-5">3.5 Perceptual relevance</a></li>
+<li><a href="#sec-3-6">3.6 PC set theory for Analysis</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Multi Dimensional Scaling</a></li>
+<li><a href="#sec-5">5 Spatial Models of Tonality</a></li>
+<li><a href="#sec-6">6 SC Similarity Measures</a>
+<ul>
+<li><a href="#sec-6-1">6.1 MORRIS</a>
+<ul>
+<li><a href="#sec-6-1-1">6.1.1 K</a></li>
+<li><a href="#sec-6-1-2">6.1.2 SIM</a></li>
+<li><a href="#sec-6-1-3">6.1.3 ASIM</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-2">6.2 LORD</a>
+<ul>
+<li><a href="#sec-6-2-1">6.2.1 sf</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-3">6.3 TEITELBAUM</a>
+<ul>
+<li><a href="#sec-6-3-1">6.3.1 s.i.</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-4">6.4 ROGERS</a>
+<ul>
+<li><a href="#sec-6-4-1">6.4.1 IcVD1</a></li>
+<li><a href="#sec-6-4-2">6.4.2 IcVD2</a></li>
+<li><a href="#sec-6-4-3">6.4.3 COS&theta;</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-5">6.5 ISAACSON</a>
+<ul>
+<li><a href="#sec-6-5-1">6.5.1 AMEMB2</a></li>
+<li><a href="#sec-6-5-2">6.5.2 IcVSIM</a></li>
+<li><a href="#sec-6-5-3">6.5.3 ISIM2</a></li>
+<li><a href="#sec-6-5-4">6.5.4 ANGLE</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-6">6.6 RAHN</a>
+<ul>
+<li><a href="#sec-6-6-1">6.6.1 AK</a></li>
+<li><a href="#sec-6-6-2">6.6.2 MEMBn</a></li>
+<li><a href="#sec-6-6-3">6.6.3 TMEMB</a></li>
+<li><a href="#sec-6-6-4">6.6.4 ATMEMB</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-7">6.7 LEWIN</a>
+<ul>
+<li><a href="#sec-6-7-1">6.7.1 REL</a></li>
+<li><a href="#sec-6-7-2">6.7.2 REL2</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-8">6.8 CASTREN</a>
+<ul>
+<li><a href="#sec-6-8-1">6.8.1 %RELn</a></li>
+<li><a href="#sec-6-8-2">6.8.2 T%REL</a></li>
+<li><a href="#sec-6-8-3">6.8.3 RECREL</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-9">6.9 BUCHLER</a>
+<ul>
+<li><a href="#sec-6-9-1">6.9.1 SATSIM</a></li>
+<li><a href="#sec-6-9-2">6.9.2 CSATSIM</a></li>
+<li><a href="#sec-6-9-3">6.9.3 AvgSATSIM</a></li>
+<li><a href="#sec-6-9-4">6.9.4 TSATSIM</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-10">6.10 Comparison Table</a></li>
+<li><a href="#sec-6-11">6.11 Comparison Table 2</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 Glossary</a></li>
+<li><a href="#sec-8">8 Test</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+
+<ul>
+<li>objectives
+</li>
+<li>description of tonality
+</li>
+<li>similarity
+</li>
+<li>visualisation
+</li>
+<li>introduce musicological/perceptual ingrediets to MIR
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Tonality</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Defining Tonality</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>Tonality is a notoriously complex musical phenomenon and numerous
+definitions have been proposed from a variety of viewpoints. Perhaps
+the most general definition is that provided by Hyer, 2013:
+"&hellip; refers to the systematic arrangements of pitch phenomena and
+relations between them". Explanations of tonality have been provided
+through many different disciplines (acoustics, music theory,
+linguistics, cognitive psychology) but ultimately tonality is a
+perceptual construct which is highly dependent on cultural background
+and musical training.
+</p>
+<p>
+Western music theory provides a lexicon for describing abstract tonal
+objects with terms such as note, chord and key. These objects have a
+hierarchical relationship and the meaning of these labels is highly
+dependent on musical context and the scale of obsevation.
+</p>
+<p>
+Milton Babbitt (ref) proposed three domains to categorise different
+types of representation of music: acoustic (physical), auditory
+(percieved), graphemic (notated). Existing definitions and
+explanations of tonality tend to stem from one of these domains
+however, such a definition will always prove to be incomplete.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Modelling Tonality</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p>The challenge of mathematically modelling aspects tonality has been
+approached in numerous ways. Many musicologists and composers have
+proposed theoretical models attepting to rethink tonal theory from a
+mathematical perspective. 
+</p>
+<p>
+Among models based on perception, Krumhansl is perhaps the most widley
+cited. Based on percieved stability of tones in a given context, probe
+tone, inter-key distance.
+</p>
+<p>
+MIR: extraction of tonal descriptors, chroma
+Key/chord estimation: profiles
+HMMs
+</p>
+<p>
+The importance of defining the similarity or closeness between tonal
+phenomena, be it theoretical or perceptual, is central to many models
+of tonality and often leads to a geometric realtionship between tonal
+objects. The concept of similarity and distance is discussed further
+in chapter XXXXXX.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> The Semantic Gap</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<p>Wiggins 2013, considering music to be a cultural and cognitive
+construct, criticises the tendency of music research to use
+musicoloical axioms (music theory). He argues that music (tonal)
+theory is, rather than a theory in the scientific sense, a highly
+developed folk psychology (internal human theory used to predict and
+explain common behaviour). Thus, the rules of music theory are not
+like scientific laws but rather abstract descriptions of a specific
+musical behavior. This idea challenges the validity of formalizing
+such rules in mathematics and promts the question, "What is actually
+being modelled?" He concludes that to apply mathematical models to
+muscial output alone (scales, chords or audio signals) without
+consideration of the musical mind is a scientific failure and creates
+a "Semantic Gap" (\citet{Wiggins2009}). This semantic gap stands in
+the way of generality in MIR and prevents systems from achieving
+human-like performance.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> Systemasticity</h3>
+<div class="outline-text-3" id="text-2-4">
+
+<p>In view of the points made by Wiggins, it becomes apparent that a
+suitable model of tonality should be independent of high level
+concepts such as key and chord. Instead, it should systematically
+describe the "musical surface". The concept of musical surface is
+illustrated by \citet[pp. 159]{Huovinen2007} with a metaphore: "&hellip;to
+approach a musical landscape not by drawing a map, which necessarily
+confines itself to a limited set of structurally important features,
+but by presenting a bird’s-eye view of the musical surface – an aerial
+photograph, as it were, which details the position of every pitched
+component." (\citep[pp. 159]{Huovinen2007})
+</p>
+<p>
+\citep{Martorell2013} discusses the problem of ambiguity inherent in
+models based apon high level concepts and highlights the importance of
+being systematic in describing the musical surface. He says that the
+surface description influences analyitcal observation and, for an
+unbiased view, the analyst must be provided with the adequate raw
+materials with which to make more indepth observation.
+</p>
+<p>
+With a systematic description of the musical surface, theories and
+models from different domains can be gathered and evaluted together in
+the same analytical arena.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Pitch Class Set Theory</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>One such method availble for systematic description of the musical
+surface is Pitch class set theory. PC-set theory is a system for
+analysing the pitch content of music. It uses class equivelance
+relations to reduce the ammount of data required to describe any
+sequence of pitches.
+</p>
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Pitch Class</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p>Pitch-class set theory uses octave equivelance. A Pitch Class (PC) is
+a number indicating the position of a note within the octave. For
+example, in western equal temperement (TET) the octave is divided in
+to 12 steps. Each of these notes is given a number from 0-11.
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>Pitch classes</caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Note</td><td class="left">C</td><td class="left">C#</td><td class="left">D</td><td class="left">D#</td><td class="left">E</td><td class="left">F</td><td class="left">F#</td><td class="left">G</td><td class="left">G#</td><td class="left">A</td><td class="left">A#</td><td class="left">B</td></tr>
+<tr><td class="left">PC</td><td class="left">0</td><td class="left">1</td><td class="left">2</td><td class="left">3</td><td class="left">4</td><td class="left">5</td><td class="left">6</td><td class="left">7</td><td class="left">8</td><td class="left">9</td><td class="left">10</td><td class="left">11</td></tr>
+</tbody>
+</table>
+
+A PC-set is a collection of PCs ignoring any repetitions and the order
+in which they occur. PC-sets are notated as follows {0,1,2,3,4} with
+PCs ordered from lowest to highest as a convention.
+
+<p>
+Example: Pitch-set S = {A4,C5,E5,A5} (A minor chord) so PC-set S =
+{9,0,4,9} = {0,4,9}
+</p>
+<p>
+The cardinality of a set, denoted #S, is the number of PCs it
+contains. There are 4096 (2<sup>12</sup>) unique PC-sets and any segment of
+music can be represented as a PC-set. Ignoring the octave, the order
+of the notes and whether they occur simultaneously or in sequence
+means PC-sets are abstract objects with many different musical
+manifestations.
+</p></div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Set Classification</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p>Defining equivelance classes of PC-sets further reduces the total
+number of tonal objects. A Set Class (SC) is a group of PC-sets
+related by a transformation or group of transformations. The two types
+of transformation used are transposition and inversion. A
+transposition, Tn(S), transposes the set S by the interval n by adding
+n to all PCs.
+</p>
+<p>
+Example: S = {0,4,9}, T3(S) = {3,7,0} = {0,3,7}
+</p>
+<p>
+An inversion, I(S), inverts the set S meaning all PCs are replaced by
+their inverse (11-PC).
+</p>
+<p>
+Example: S = {0,4,9}, I(S) = {11,7,2} = {2,7,11}
+</p>
+<p>
+From these two transformations it is possible to define three types of
+SC.
+</p><ul>
+<li>Transpositional (Tn)
+<ul>
+<li>All PC-sets that can be transformed to each by transposition
+    belong to the same class. There are 348 distinct Tn SCs.
+</li>
+</ul>
+
+</li>
+<li>Inversional (I)
+<ul>
+<li>All PC-sets that can be transformed to each other by inversion
+    belong to the same SC. There are 197 distinct I types.
+</li>
+</ul>
+
+</li>
+<li>Transpositional-Inversional (Tn/I)
+<ul>
+<li>All PC-sets that can be transformed to each other by
+    transposition, inversion or both belong to the same SC. There are
+    220 distinct Tn/I SCs.
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+<p>
+The Prime Form of a PC-set is a convention for denoting the SC it
+belongs to. The convention was introduced by Allan Forte for Tn/I
+types and has since been adopted by the majority of theorists. In
+addition he devised a system for ordering Tn/I SCs and assigning to
+each one a number. For example, the Forte number 3-11 refers to the
+11th SC of cardinality 3. This convension has been modified for use
+with Tn types by adding A and B to the names of inversionally related
+SCs. 
+</p>
+<p>
+One additional concept is that of cardinality class (nC) which refers
+to all the SCs of cardinality n. Cardinality class 2 is commonly
+refered to as Interval class (IC). There are 6 distinct intervall
+classes.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>Forte's Prime form and numbering convention</caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">PC-set</td><td class="left">{1,4,9}</td></tr>
+<tr><td class="left">Prime Form (Tn/I)</td><td class="left">{0,3,7}</td></tr>
+<tr><td class="left">Prime Form (Tn)</td><td class="left">{0,4,7}</td></tr>
+<tr><td class="left">Forte Name (Tn/I)</td><td class="left">3-11</td></tr>
+<tr><td class="left">Forte Name (Tn)</td><td class="left">3-11B</td></tr>
+</tbody>
+</table>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>SC type</caption>
+<colgroup><col class="left" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Object type</th><th scope="col" class="right">No. Objects</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">Pitch</td><td class="right">88</td></tr>
+<tr><td class="left">Pitch set</td><td class="right">3e26</td></tr>
+<tr><td class="left">PC</td><td class="right">12</td></tr>
+<tr><td class="left">PC-set</td><td class="right">4096</td></tr>
+<tr><td class="left">Tn-Type</td><td class="right">348</td></tr>
+<tr><td class="left">I-Type</td><td class="right">197</td></tr>
+<tr><td class="left">Tn/I-Type</td><td class="right">200</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> Vector Analysis</h3>
+<div class="outline-text-3" id="text-3-3">
+
+<p>Two concepts that are crucial in PC-set theory are Membership and
+Inclusion. Membership of a set is denoted q &isin; S and means that PC p
+is a member of set S. Inclusion in a set is denoted Q &sub; S and
+means that all the PCs in set Q are also members of set S. Q is said
+to be a subset of S.
+</p>
+<p>
+Example: 4 &isin; {0,4,9}
+</p>
+<p>
+Example: {0,4,9} &sub; {0,1,4,5,9}
+</p>
+<p>
+Lewin applied these concepts to SCs to develop his Embedding Number,
+EMB(X,Y). Given two SCs, X and Y, EMB(X,Y) is the number of instances
+of SC X which are included in (are subsets of) SC Y.
+</p>
+<p>
+Example: X = {0,4} and Y = {0,4,8} so EMB(X,Y) = 3
+</p>
+<p>
+An n-class subset vector, nCV(X), is therefore an array of values of
+EMB(A,X) where A is each of the SCs in the cardinality class nC. The
+Interval-Class Vector (ICV) is a special instance of the nCV with n
+equal to 2.
+</p>
+<p>
+Example: X = {0,4,9}, 2CV(X) = ICV(X) = [0 0 1 1 1 0]
+</p>
+<p>
+Vecotor analysis using nCVs forms the basis for the majority of
+analysis performed by PC-set theorists. In addition, many theorists
+have proposed modifications to the basic nCV to suit their specific
+purposes and some of these modifications will be discussed in context
+where necessary.
+</p></div>
+
+</div>
+
+<div id="outline-container-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> PC-Set Similarity</h3>
+<div class="outline-text-3" id="text-3-4">
+
+<p>The assessment of similarity between SCs has been discussed in the
+literature for decades and a large number theoretical models have been
+proposed. Different models approaches the problem from different
+conceptual standpoints and theorists have different opinions about the
+contributing aspects. All these models are described under the blanket
+term "similarity relation". Despite the perennial fascination with the
+concept, little or no concensus exits as to what constitutes a good
+assesment of PC-set similarity.
+</p>
+<p>
+Extensive analysis and comparison of many similarity relations has
+been done by \citep{Isaacson1992}, \citep{Buchler1997},
+\citep{Hermann1994} and \citep{Castren1994}. In addition 
+</p>
+<p>
+Castren provides a comprehensive and indepth review of a large number
+of similarity relations and categorises them according to some
+fundamental principles.
+</p>
+<p>
+Plain Relations: Plain relations, such as Forte's R-relations
+(citep{Forte1973}), do not produce a range of values indicating
+similarity. Instead they indicate whether the the SCs are related in a
+specific way which in turn may give some indication of whether they
+are similar.
+</p>
+<p>
+Single Subset nC: Single subset nC relations consider subsets of a
+particular cardinality that are contained in two SCs. This done by
+comparing the nCVs of the two SCs for a certain value of n. Many of
+the relations in this category compre the ICVs (2CVs). The measures of
+\citep{Morris1979}, \citep{Teitelbaum1965}, \citep{Lord1981},
+\citep{Isaacson1990}, \citep{Rahn1979}, \citep{Rogers1999} are all
+included in this category.
+</p>
+<p>
+Total measure: Total measures consider the subsets of all
+cardinalities contained within in two SCs. All the relevant nCVs are
+compared to produce a final value. Total measures have been proposed
+by \citep{Rahn1979}, \citep{Lewin1979}, \citep{Castren1994} and
+\citep{Buchler1997}.
+</p>
+<p>
+In addtion to his categorisation, \citep{Castren1994} proposes several
+criteria which a good similarity relation should meet.
+</p>
+<ul>
+<li>criteria
+<ul>
+<li>Isaacson
+</li>
+<li>Buchler
+</li>
+<li>Hermann
+</li>
+<li>Castren
+
+</li>
+<li>vast number of measure
+</li>
+<li>how to limit the scope
+</li>
+<li>won't consider: set complexes, permutation families, regions,
+    harmonic genera, ordering of sets
+</li>
+<li>context free, non transitive
+</li>
+<li>only the with SC types based on Tn/TnI
+</li>
+<li>vector based
+
+</li>
+</ul>
+
+</li>
+<li>all these similarity measure are pure quantitive not qualitative. is
+  there perceptual relevance?
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> Perceptual relevance</h3>
+<div class="outline-text-3" id="text-3-5">
+
+<ul>
+<li>Pitch is a percept that derives from a particular harmonic structure
+  and is roughly proportional to the logarithm of the fundamental
+  frequency. This allows pitch to be modelled as a straight line,
+  finite at both ends.
+</li>
+<li>Music psychologists have observed a strong perceptual similarity
+  between pitches with fundamental frequencies in the ratio of 2:1
+  (REF). This property of octave similarity leads the straight line
+  model of pitch to be bent into a helix.
+</li>
+<li>Division of the octave into a number of categories is thought to
+  offer a more effecient cognitive representation in memory and thus
+  confers evolutionary advantage. The resulting pitch equivelance
+  classes are implicitly learned through exposure at an early age. TET
+  has 12 pitch equivelance classes which in PC-set theory are modelled
+  as a circular projection of the pitch helix.
+</li>
+<li>Some researchers have attempted to examine whether there is
+  percieved equivelance between different manifestations of a
+  PC-set. Krumhansl et al, 1987 presented subjects with sequences of
+  tones derived by transforming two different PC-sets. They noted that
+  subjects were able to distinguish between the different sets both in
+  neutral and musical contexts.
+</li>
+<li>Some authors have questioned the perceptual relevance of using Tn/I
+  equivelance as a basis for set classification. Deutsch, 1982 seems
+  unconvinced by evidence for the perceptual similarity of inverted
+  intervals and Cross, 1985 uses the example of major and minor triads
+  which, while perceptually distinct, are equivelant under Tn/I.
+</li>
+<li>The connection between pitch-class set-theoretical abstract concepts
+  and aural estimations.
+</li>
+<li>Bruner1988 investigated the percieved similarity of pairs of chords
+  with varying numbers of octave related pitches. He found that in
+  general chords with identical PC contents were percieved as more
+  similar than chords with near identicle PC contents. 
+</li>
+<li>Bruner1993
+</li>
+<li>Millar1984 investigated the peceptual similarity of different
+  PC-sets derived from the same set class under Tn/I
+  classification. Subjects were presented with 3 note melodies and
+  asked to judge which was equivelant to a reference melody. Some
+  melodies preserved the SC identity whilst others did not. He found
+  transpositions to be percieved more similar than inversions. In
+  addition he descovered that the order of the notes and melodic
+  contour was a strong factor in perceived similarity.
+</li>
+<li>The connection between PC-set theoretical similarity measures and
+  percieved similarity has not recieved much attention. Some theorists
+  have made imprecise comments as to the perceptual relevance of their
+  models.
+</li>
+<li>Kuusi2001 investigated the connection between theoretical similarity
+  and percieved similarity. Subjects were asked to rate the closeness
+  of pentachords and their ratings were compared to the theoretical
+  values obtained from 9 PC-set theoretical similarity measures. He
+  found there to be a connection between aurally estimated ratings and
+  the theoritcal values and concluded that the abstract properties of
+  set-classes do have some perceptual relevance.
+
+</li>
+<li>Connection between theoretical and percieved closeness
+<ul>
+<li>very little work
+</li>
+<li>Morris/Rahn comments
+</li>
+<li>Hermann
+</li>
+<li>Castren
+</li>
+<li>Gibson
+</li>
+<li>Millar etc
+</li>
+<li>Kuusi
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-6" class="outline-3">
+<h3 id="sec-3-6"><span class="section-number-3">3.6</span> PC set theory for Analysis</h3>
+<div class="outline-text-3" id="text-3-6">
+
+<ul>
+<li>Little has been done
+</li>
+<li>Isaacson
+</li>
+<li>Huovinen, Tenkanen
+</li>
+<li>Martorell timescale
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Multi Dimensional Scaling</h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li>overview
+</li>
+<li>different techniques
+</li>
+<li>dimensionality
+</li>
+<li>stress
+</li>
+<li>goodness of fit
+</li>
+<li>Samplaski etc
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Spatial Models of Tonality</h2>
+<div class="outline-text-2" id="text-5">
+
+<ul>
+<li>A way to model and observe the complex nature of tonal systems
+</li>
+<li>MORE: Gardenfors
+</li>
+<li>from 
+</li>
+<li>Riemann
+</li>
+<li>Toroidal pitch spaces
+</li>
+<li>Set class spaces
+</li>
+<li>MDS applied to tonality
+</li>
+<li>SOM
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> SC Similarity Measures</h2>
+<div class="outline-text-2" id="text-6">
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> MORRIS</h3>
+<div class="outline-text-3" id="text-6-1">
+
+
+</div>
+
+<div id="outline-container-6-1-1" class="outline-4">
+<h4 id="sec-6-1-1"><span class="section-number-4">6.1.1</span> K</h4>
+<div class="outline-text-4" id="text-6-1-1">
+
+<ul>
+<li id="sec-6-1-1-1">Details<br/>
+<ul>
+<li>ICV based
+</li>
+<li>Measures similarity
+</li>
+<li>Max sim: 55
+</li>
+<li>Min sim: 0
+</li>
+<li>Average: 10
+</li>
+<li>Distinc values: 35
+</li>
+<li>1 to 1 correspondence
+</li>
+<li>Castren criteria met: C1, C2, C3.3 C3.4, C4
+</li>
+<li>Problems: scale of values not the same for all value groups.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-1-2">Formula<br/>
+$$
+k=\frac{\left(\#ICV\left(R\right)+\#ICV\left(S\right)-SIM\left(R,S\right)\right)}{2}
+$$ 
+Rahn writes it differently (as a funtion of X and Y) 
+$$
+k\left(X,Y\right)=\frac{\left(\#ICV\left(X\right)+\#ICV\left(Y\right)-SIM\left(X,Y\right)\right)}{2}
+$$
+or from castren
+$$ k(X,Y)= \sum_{i=1}^{6}{MIN(x_{i},y_{i})} $$
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-1-2" class="outline-4">
+<h4 id="sec-6-1-2"><span class="section-number-4">6.1.2</span> SIM</h4>
+<div class="outline-text-4" id="text-6-1-2">
+
+<ul>
+<li id="sec-6-1-2-1">Description<br/>
+Presented in Morris(1979-80)
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-2-2">Details<br/>
+<ul>
+<li>ICV based
+</li>
+<li>1 to 1 correspondence
+</li>
+<li>Measures dissimilarity
+</li>
+<li>Max sim: 0
+</li>
+<li>Min sim: 65
+</li>
+<li>Average: 13
+</li>
+<li>Distinc values: 44
+</li>
+<li>Castren criteria met: C1, C2, C3.3, C3.4, C4
+</li>
+<li>Problems: scale not the same for all value groups. course resolution
+  when cardinalityies differ greatly
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-2-3">Formula<br/>
+$$ 
+SIM\left(X,Y\right)=\sum_{i=1}^{6}\left|x_{i}-y_{i}\right| 
+$$ 
+or 
+$$
+SIM\left(X,Y\right)=\#DV\left(ICV\left(X\right),ICV\left(Y\right)\right)
+$$
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-1-3" class="outline-4">
+<h4 id="sec-6-1-3"><span class="section-number-4">6.1.3</span> ASIM</h4>
+<div class="outline-text-4" id="text-6-1-3">
+
+<ul>
+<li id="sec-6-1-3-1">Description<br/>
+Absolute SIM
+Scaled version of SIM
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-3-2">Details<br/>
+<ul>
+<li>ICV based
+</li>
+<li>1 to 1 correspondence
+</li>
+<li>Max sim: 0
+</li>
+<li>Min sim: 1
+</li>
+<li>Average: 0.42
+</li>
+<li>Distinct values: 79
+</li>
+<li>Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4
+</li>
+<li>Problems: Fixed the scale of values, but still coarse resolution
+  when cardinalities differ greatly. Scaling is done as the last step.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-3-3">Formula<br/>
+$$
+ASIM\left(X,Y\right)=\frac{SIM\left(X,Y\right)}{\left(\#ICV\left(X\right)+\#ICV\left(Y\right)\right)}
+$$
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> LORD</h3>
+<div class="outline-text-3" id="text-6-2">
+
+
+</div>
+
+<div id="outline-container-6-2-1" class="outline-4">
+<h4 id="sec-6-2-1"><span class="section-number-4">6.2.1</span> sf</h4>
+<div class="outline-text-4" id="text-6-2-1">
+
+<ul>
+<li id="sec-6-2-1-1">Description<br/>
+<ul>
+<li>Presented in Lord(1981)
+</li>
+<li>similar to sim but developed independently
+</li>
+<li>sf is subset of SIM
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-2-1-2">Details<br/>
+<ul>
+<li>ICV based
+</li>
+<li>1 to 1 correspondence
+</li>
+<li>Same cardinality only
+</li>
+<li>Max sim: 0
+</li>
+<li>Min sim: 9
+</li>
+<li>Average: 3
+</li>
+<li>Distinct values: 10
+</li>
+<li>Castren criteria met: C3.3, C3.4, C4
+</li>
+<li>Problems: Fixed the scale of values, but still coarse resolution
+  when cardinalities differ greatly. Scaling is done as the last step.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-2-1-3">Formula<br/>
+$$ sf\left(X,Y\right)=\frac{\sum_{i=1}^{6}\left|x_{i}-y_{i}\right|}{2} $$
+or 
+$$ sf\left(X,Y\right)=\frac{\#DV\left(ICV\left(X\right),ICV\left(Y\right)\right)}{2} $$
+or
+$$ sf(X,Y)=\frac{SIM(X,Y)}{2} $$
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> TEITELBAUM</h3>
+<div class="outline-text-3" id="text-6-3">
+
+
+</div>
+
+<div id="outline-container-6-3-1" class="outline-4">
+<h4 id="sec-6-3-1"><span class="section-number-4">6.3.1</span> s.i.</h4>
+<div class="outline-text-4" id="text-6-3-1">
+
+<ul>
+<li id="sec-6-3-1-1">Details<br/>
+<ul>
+<li>ICV based
+</li>
+<li>Same cardinality only
+</li>
+<li>1 to 1 correspondence
+</li>
+<li>Z-related sets not compared
+</li>
+<li>Max sim: sqrt 2 = 1.41
+</li>
+<li>Min sim: sqrt 72 = 8.49
+</li>
+<li>Average: 2.85
+</li>
+<li>Distinc values: 31
+</li>
+<li>Castren criteria met: C3.3 C3.4
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-3-1-2">Formula<br/>
+$$ 
+s.i.(X,Y)=\sqrt{\sum_{i=1}^{6}(x_{i}-y_{i})^{2}} 
+$$
+or
+$$ s.i.(X,Y)=\sqrt{ \#DV( ICV(X), ICV(Y) )^{2}  }  $$
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> ROGERS</h3>
+<div class="outline-text-3" id="text-6-4">
+
+
+</div>
+
+<div id="outline-container-6-4-1" class="outline-4">
+<h4 id="sec-6-4-1"><span class="section-number-4">6.4.1</span> IcVD1</h4>
+<div class="outline-text-4" id="text-6-4-1">
+
+<ul>
+<li id="sec-6-4-1-1">Description<br/>
+<ul>
+<li>from Rogers(1992)
+</li>
+<li>modification of SIM
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-4-1-2">Details<br/>
+<ul>
+<li>ICV based
+</li>
+<li>1 to 1 correspondence
+</li>
+<li>Max sim: 0
+</li>
+<li>Min sim: 2
+</li>
+<li>Average: 0.59
+</li>
+<li>Distinct values: 140
+</li>
+<li>Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4
+</li>
+<li>vector components are scaled before being summed
+</li>
+<li>Related to %REL2
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-4-1-3">Formula<br/>
+$$
+IcVD_{1}(X,Y)=\sum_{i=1}^{6}{\left|\frac{x_{i}}{\#ICV(X)}+\frac{y_{i}}{\#ICV(Y)}\right|}
+$$
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-4-2" class="outline-4">
+<h4 id="sec-6-4-2"><span class="section-number-4">6.4.2</span> IcVD2</h4>
+<div class="outline-text-4" id="text-6-4-2">
+
+<ul>
+<li id="sec-6-4-2-1">Description<br/>
+<ul>
+<li>from rogers 1992
+</li>
+<li>modification of SIM
+</li>
+<li>
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-4-2-2">Details<br/>
+<ul>
+<li>ICV based
+</li>
+<li>1 to 1 correspondence
+</li>
+<li>Max sim: 0
+</li>
+<li>Min sim: 1.41
+</li>
+<li>Average: 0.54
+</li>
+<li>Distinc values: 133
+</li>
+<li>Castren criteria met: C1, C2, C3.1, C3.2, C3.4
+</li>
+<li>Problems: does not produce uniform values for comparable cases
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-4-2-3">Formula<br/>
+$$
+IcVD_{2}(X,Y)=\sqrt{\sum{\left(\frac{x_{i}}{\sqrt{\sum{x_{i}^{2}}}}-\frac{y_{i}}{\sqrt{\sum{y_{i}^{2}}}}\right)}^{2}}
+$$
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-4-3" class="outline-4">
+<h4 id="sec-6-4-3"><span class="section-number-4">6.4.3</span> COS&theta;</h4>
+<div class="outline-text-4" id="text-6-4-3">
+
+<ul>
+<li id="sec-6-4-3-1">Description<br/>
+<ul>
+<li>from rogers (1992)
+</li>
+<li>geometric approach
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-4-3-2">Details<br/>
+<ul>
+<li>ICV based
+</li>
+<li>1 to many correspondence
+</li>
+<li>Max sim: 1
+</li>
+<li>Min sim: 0
+</li>
+<li>Average: 0.81
+</li>
+<li>Distinct values: 92
+</li>
+<li>Castren criteria met: C1, C2, C3.1, C3.2, C3.4
+</li>
+<li>Problems: C4
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-4-3-3">Formula<br/>
+$$
+Cos\theta(X,Y)=\frac{\sum{x_i.y_i}}{\sqrt{\sum{(x_i)^2}}.\sqrt{\sum{(y_i)^2}}}
+$$
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-5" class="outline-3">
+<h3 id="sec-6-5"><span class="section-number-3">6.5</span> ISAACSON</h3>
+<div class="outline-text-3" id="text-6-5">
+
+
+</div>
+
+<div id="outline-container-6-5-1" class="outline-4">
+<h4 id="sec-6-5-1"><span class="section-number-4">6.5.1</span> AMEMB2</h4>
+<div class="outline-text-4" id="text-6-5-1">
+
+<ul>
+<li id="sec-6-5-1-1">Description<br/>
+<ul>
+<li>from Isaacson 1990
+</li>
+<li>modification of rahns MEMB2
+</li>
+<li>divide MEMB2 values by total number of entries in the ICVs of X and
+  Y.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-1-2">Details<br/>
+<ul>
+<li>ICV based
+</li>
+<li>1 to 1 correspondence
+</li>
+<li>Max sim: 1
+</li>
+<li>Min sim: 0
+</li>
+<li>Average:
+</li>
+<li>Distinct values:
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-1-3">Formula<br/>
+$$ AMEMB_{2}=\frac{\sum \left( x_{i}+y_{i} \right)}{\frac{\left(\#X\left(\#X-1\right)+\#Y\left(\#Y-1\right)\right)}{2}} $$
+such that $$ \left(x_{i}&gt;0\right) $$ and $$ \left(y_{i}&gt;0\right) $$
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-5-2" class="outline-4">
+<h4 id="sec-6-5-2"><span class="section-number-4">6.5.2</span> IcVSIM</h4>
+<div class="outline-text-4" id="text-6-5-2">
+
+<ul>
+<li id="sec-6-5-2-1">Description<br/>
+<ul>
+<li>Interval class vector similarity relation 
+</li>
+<li>the standard deviation of the entries in the idv of two sets
+</li>
+<li>Same degree of distinction as s.i.
+</li>
+<li>any cardinality
+</li>
+<li>Mathematically IcVSIM is a scalled version of s.i.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-2-2">Details<br/>
+<ul>
+<li>ICV based
+</li>
+<li>1 to 1 correspondence
+</li>
+<li>Max sim: 0
+</li>
+<li>Min sim: 3.64
+</li>
+<li>Average: 1.2
+</li>
+<li>Distinct values: 121
+</li>
+<li>Castren criteria met: C1, C2, C3.4
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-2-3">Formula<br/>
+$$ IcVSIM\left(X,Y\right)=\sigma\left(IdV\right) $$
+where 
+$$ IdV=[(y_{1}-x_{1})(y_{2}-x_{2})...(y_{6}-x_{6})] $$
+and
+$$ \sigma=\sqrt{\frac{\sum(IdV_{i}-\overline{IdV})^{2}}{6}} $$
+where
+$$IdV_{i}$$ is the ith term of the interval-difference vector and
+$$\overline {IdV}$$ is the average (mean) of the terms in the IdV
+Also
+$$ s.i.(X,Y)=\sqrt{\sum_{i=1}^{6}{IdV_{i}}^{2}} $$
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-5-3" class="outline-4">
+<h4 id="sec-6-5-3"><span class="section-number-4">6.5.3</span> ISIM2</h4>
+<div class="outline-text-4" id="text-6-5-3">
+
+<ul>
+<li id="sec-6-5-3-1">Description<br/>
+<ul>
+<li>Saled version of IcVSIM
+</li>
+<li>The square root is taken of each term in the ICV
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-3-2">Details<br/>
+<ul>
+<li>ICV based
+</li>
+<li>1 to 1 correspondence
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-5-4" class="outline-4">
+<h4 id="sec-6-5-4"><span class="section-number-4">6.5.4</span> ANGLE</h4>
+<div class="outline-text-4" id="text-6-5-4">
+
+<ul>
+<li id="sec-6-5-4-1">Description<br/>
+<ul>
+<li>Same as Cos&theta; from Rogers
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-4-2">Details<br/>
+<ul>
+<li>ICV based
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-4-3">Formula<br/>
+$$ ANGLE(X,Y)= \arccos{\frac{ICV(X) \cdot
+ICV(Y)}{|ICV(X)|\times |ICV(Y)|}} $$ 
+where the numberator is the dot product of the ICVs 
+and the denominator is the product of the magnitudes
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-6" class="outline-3">
+<h3 id="sec-6-6"><span class="section-number-3">6.6</span> RAHN</h3>
+<div class="outline-text-3" id="text-6-6">
+
+
+</div>
+
+<div id="outline-container-6-6-1" class="outline-4">
+<h4 id="sec-6-6-1"><span class="section-number-4">6.6.1</span> AK</h4>
+<div class="outline-text-4" id="text-6-6-1">
+
+<ul>
+<li id="sec-6-6-1-1">Description<br/>
+<ul>
+<li>from rahn (1979-80)
+</li>
+<li>Absolute (Adjusted) K
+</li>
+<li>took morris' k and used it as similarity measure
+</li>
+<li>related to ASIM
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-6-1-2">Details<br/>
+<ul>
+<li>ICV based
+</li>
+<li>1 to 1 correspondence
+</li>
+<li>Max sim: 1
+</li>
+<li>Min sim: 0
+</li>
+<li>Average: 0.58
+</li>
+<li>Distinct values: 78
+</li>
+<li>Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4
+</li>
+<li>Problems: single scale of values (C4), but poor discrimination for
+  some value groups.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-6-1-3">Formula<br/>
+$$ ak\left(X,Y\right)=\frac{2\times k\left(X,Y\right)}{\#ICV\left(X\right)+\#ICV\left(Y\right)} $$
+$$ Ak(X,Y)=1-ASIM(X,Y) $$
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-6-2" class="outline-4">
+<h4 id="sec-6-6-2"><span class="section-number-4">6.6.2</span> MEMBn</h4>
+<div class="outline-text-4" id="text-6-6-2">
+
+<ul>
+<li id="sec-6-6-2-1">Description<br/>
+<ul>
+<li>from rahn (1979-80)
+</li>
+<li>Mutual Embedding
+</li>
+<li>preliminary step towards other measures
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-6-2-2">Details<br/>
+<ul>
+<li>nCV based
+</li>
+<li>1 to many correspondence
+</li>
+<li>one cardinality at a time
+</li>
+<li>Max sim: 121
+</li>
+<li>Min sim: 0
+</li>
+<li>Average: 30
+</li>
+<li>Distinc values: 79
+</li>
+<li>Castren criteria met: C1, C2, C3.3, C3.4, C4
+</li>
+<li>Problems: does not produce uniform scale of values for all value
+  groups.
+</li>
+<li>by setting n to 2 it compares ICVs
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-6-2-3">Formula<br/>
+$$ MEMB_{n}\left(J,X,Y\right)=EMB\left(J,X\right)+EMB\left(J,Y\right) $$
+for all J such that
+$$ \#J=n $$
+and
+$$ EMB\left(J,X\right)&gt;0 $$ and $$ EMB\left(J,Y\right)&gt;0 $$
+so&hellip;
+$$ MEMB_{\#X}\left( X,X,Y \right)=EMB\left( X,Y \right) + 1 $$
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-6-3" class="outline-4">
+<h4 id="sec-6-6-3"><span class="section-number-4">6.6.3</span> TMEMB</h4>
+<div class="outline-text-4" id="text-6-6-3">
+
+<ul>
+<li id="sec-6-6-3-1">Description<br/>
+<ul>
+<li>total mutual embedding
+</li>
+<li>from rahn (1979-80)
+</li>
+<li>total measure
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-6-3-2">Details<br/>
+<ul>
+<li>nCV based
+</li>
+<li>1 to many correspondence
+</li>
+<li>Max sim: 6118
+</li>
+<li>Min sim: 0
+</li>
+<li>Average: 131
+</li>
+<li>Distinct values: 877
+</li>
+<li>Castren Criteria met: C1, C2, C3.3, C4, C5
+</li>
+<li>Problems: Different value scales for different value groups
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-6-3-3">Formula<br/>
+$$ TMEMB\left(X,Y\right)=\sum_{n=2}^{12}MEMB_{n}\left(J,X,Y\right) $$
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-6-4" class="outline-4">
+<h4 id="sec-6-6-4"><span class="section-number-4">6.6.4</span> ATMEMB</h4>
+<div class="outline-text-4" id="text-6-6-4">
+
+<ul>
+<li id="sec-6-6-4-1">Description<br/>
+<ul>
+<li>from rahn (1989-80)
+</li>
+<li>total measure
+</li>
+<li>Absolute (Adjusted) TMEMB
+</li>
+<li>ATMEMB is related to TMEMB the same way ASIM is to SIM and AK to K
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-6-4-2">Details<br/>
+<ul>
+<li>nCV based
+</li>
+<li>1 to many correspondence
+</li>
+<li>total measures
+</li>
+<li>Differentiates between Z-related pairs and I related
+</li>
+<li>Max sim: 1
+</li>
+<li>Min sim: 0
+</li>
+<li>Average: 0.45
+</li>
+<li>Distinct values: 101
+</li>
+<li>Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4, C5
+</li>
+<li>Problems: Castren says: "divisor term is flawed&hellip; high degrees of
+  similarity between SCs of clearly different cardinalities. General
+  reliability and usefulness is difficulty to determine"
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-6-4-3">Formula<br/>
+$$ ATMEMB\left(X,Y\right)=\frac{TMEMB\left(X,Y\right)}{2^{\#X}+2^{\#Y}-\left(\#X+\#Y+2\right)} $$
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-7" class="outline-3">
+<h3 id="sec-6-7"><span class="section-number-3">6.7</span> LEWIN</h3>
+<div class="outline-text-3" id="text-6-7">
+
+
+</div>
+
+<div id="outline-container-6-7-1" class="outline-4">
+<h4 id="sec-6-7-1"><span class="section-number-4">6.7.1</span> REL</h4>
+<div class="outline-text-4" id="text-6-7-1">
+
+<ul>
+<li id="sec-6-7-1-1">Description<br/>
+<ul>
+<li>Presented in Lewin 1979-80
+</li>
+<li>probablistic approach to pc-set theory
+</li>
+<li>multiplying components has an effect similar to MEMBn (only
+  non-zero)
+</li>
+<li>by multiplying and sqrting - geometric mean
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-7-1-2">Details<br/>
+<ul>
+<li>nCV based
+</li>
+<li>total measure
+</li>
+<li>discriminates Z and I related sets
+</li>
+<li>1 to many correspondence
+</li>
+<li>Max sim: 1
+</li>
+<li>Min sim: 0
+</li>
+<li>Average: 0.57
+</li>
+<li>Distinct values: 91
+</li>
+<li>Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4, C5
+</li>
+<li>Problems
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-7-1-3">Formula<br/>
+$$ REL(A,B)=\frac{\sum_{i=1}^{357}\sqrt{sub(A,i).sub(B,i)}}{\sqrt{\sum_{i=1}^{357}sub(A,i).\sum_{i=1}^{357}sub(B,i)}} $$
+or
+$$ REL(X,Y)=\frac{ \sum_{A\in TEST}{\sqrt{EMB(A,X) \times EMB(A,Y)}} }{\sqrt{TOTAL(X)\times TOTAL(Y)}}  $$
+Were TEST cotains all SCs of cardinality 2 to MIN(#X,#Y)
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-7-2" class="outline-4">
+<h4 id="sec-6-7-2"><span class="section-number-4">6.7.2</span> REL2</h4>
+<div class="outline-text-4" id="text-6-7-2">
+
+<ul>
+<li id="sec-6-7-2-1">Description<br/>
+<ul>
+<li>A specialised version of <a href="#sec-6-7-1">REL</a> that measures only intervallic
+  similarity
+</li>
+<li>criticises Rahns (x<sub>i</sub>+y<sub>i</sub>) as "arithmetic awkwardness"
+</li>
+<li>Multiplies corresponding IcV entries
+</li>
+<li>REL2 increases as corresponding IcV entries increase
+</li>
+<li>As cardinality increases, range of REL decreases
+</li>
+<li>high level of distinction
+</li>
+<li>produces max similarity only when IcVs are identical
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-7-2-2">Formula<br/>
+$$ REL_{2}(X,Y)\frac{2\times\sum\sqrt{(x_{i}y_{i})}}{\sqrt(\#X(\#X-1)\#Y(\#Y-1))} $$
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-8" class="outline-3">
+<h3 id="sec-6-8"><span class="section-number-3">6.8</span> CASTREN</h3>
+<div class="outline-text-3" id="text-6-8">
+
+
+</div>
+
+<div id="outline-container-6-8-1" class="outline-4">
+<h4 id="sec-6-8-1"><span class="section-number-4">6.8.1</span> %RELn</h4>
+<div class="outline-text-4" id="text-6-8-1">
+
+<ul>
+<li id="sec-6-8-1-1">Asymmetric Difference vector<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-6-8-1-2">nC%V<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-6-8-1-3">Description<br/>
+<ul>
+<li>Presented in castren
+</li>
+<li>Modification of sf but using nC%V
+</li>
+<li>integral part of recrel
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-8-1-4">Details<br/>
+<ul>
+<li>nC%V based
+</li>
+<li>one cardinality at a time
+</li>
+<li>1 to 1 correspondence
+</li>
+<li>sometimes discriminate between I related SCsx
+</li>
+<li>Max sim: 0
+</li>
+<li>Min sim: 100
+</li>
+<li>Average: 30
+</li>
+<li>Distinct values: 85
+</li>
+<li>Castren criteria met: C1, C2, C3.1, C3.2, C3.3, C3.4, C4
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-8-1-5">Formula<br/>
+$$ \%REL_n(X,Y)=\frac{\sum_{i=1}^{p}|x_i-y_i|}{2} $$
+where xi and yi are values in the nC%V and p is the length of the nC%V.
+or
+$$ \%REL_{n}\left(X,Y\right)=\frac{\#DV\left(nC\%V(X),nC\%V(Y)\right)}{2} $$
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-8-2" class="outline-4">
+<h4 id="sec-6-8-2"><span class="section-number-4">6.8.2</span> T%REL</h4>
+<div class="outline-text-4" id="text-6-8-2">
+
+<ul>
+<li id="sec-6-8-2-1">Description<br/>
+<ul>
+<li>total percentage measure
+</li>
+<li>total meaure
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-8-2-2">Details<br/>
+<ul>
+<li>nC%V based
+</li>
+<li>1 to 1 correspondence
+</li>
+<li>total measure
+</li>
+<li>discriminated z and I related SCs
+</li>
+<li>Max sim: 0
+</li>
+<li>Min sim: 100
+</li>
+<li>Average: 63
+</li>
+<li>Distinct values: 79
+</li>
+<li>Castren criteria met: C1, C2, C3.1, C3.2, C3.3, C3.4, C4, C5
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-8-2-3">Formula<br/>
+$$ T\%REL(X,Y)=\frac{\sum_{n=2}^{m}{\%REL_n\left(X,Y\right)}}{m-1} $$
+where
+if $$ \#X\neq \#Y, m = MIN(\#X, \#Y)$$ else $$ m = \#X-1  $$
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-8-3" class="outline-4">
+<h4 id="sec-6-8-3"><span class="section-number-4">6.8.3</span> RECREL</h4>
+<div class="outline-text-4" id="text-6-8-3">
+
+<ul>
+<li id="sec-6-8-3-1">Comparison Procedure<br/>
+<ol>
+<li>Branches
+</li>
+<li>Levels
+</li>
+<li>Weighting
+</li>
+<li>Final Value
+</li>
+</ol>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-9" class="outline-3">
+<h3 id="sec-6-9"><span class="section-number-3">6.9</span> BUCHLER</h3>
+<div class="outline-text-3" id="text-6-9">
+
+
+</div>
+
+<div id="outline-container-6-9-1" class="outline-4">
+<h4 id="sec-6-9-1"><span class="section-number-4">6.9.1</span> SATSIM</h4>
+<div class="outline-text-4" id="text-6-9-1">
+
+<ul>
+<li id="sec-6-9-1-1">Description<br/>
+<ul>
+<li>orgininally meant to compare ICVs but can be adapted
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-9-1-2">SATV<br/>
+<ul>
+<li>need to define. Saturation vector
+</li>
+<li>extent to which an SC is saturated with a subclass
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-9-1-3">Formula<br/>
+$$ 
+SATSIM_{n}(X,Y)= \frac{\sum_{i=1}^{p}{\left|SATV_{A}(X)_{i}-SATV_{row}(Y)_{i}\right|+\left|SATV_{A}(Y)_{i}-SATV_{row}(X)_{i}\right|}}{\sum_{i=1}^{p}{\left|SATV_{A}(X)_{i}-SATV_{B}(X)_{i}\right|+\left|SATV_{A}(Y)_{i}-SATV_{B}(Y)_{i}\right|}}
+$$
+where p is the length of the SATVs
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-9-2" class="outline-4">
+<h4 id="sec-6-9-2"><span class="section-number-4">6.9.2</span> CSATSIM</h4>
+<div class="outline-text-4" id="text-6-9-2">
+
+<ul>
+<li id="sec-6-9-2-1">Description<br/>
+<ul>
+<li>uses CSATV
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li><br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-9-3" class="outline-4">
+<h4 id="sec-6-9-3"><span class="section-number-4">6.9.3</span> AvgSATSIM</h4>
+<div class="outline-text-4" id="text-6-9-3">
+
+<ul>
+<li id="sec-6-9-3-1">Formula<br/>
+$$ AvgSATSIM(X,Y)= \sum_{n=2}^{m-1}{SATSIM_{n}(X,Y)} $$
+where $$ m = MIN(\#X,\#Y)  $$
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-9-4" class="outline-4">
+<h4 id="sec-6-9-4"><span class="section-number-4">6.9.4</span> TSATSIM</h4>
+<div class="outline-text-4" id="text-6-9-4">
+
+<ul>
+<li id="sec-6-9-4-1">Description<br/>
+<ul>
+<li>Extension of SATSIMn
+</li>
+<li>quotient of sum of SATSIMn numerators by denominators
+</li>
+<li>very close to AvgSATSIM
+</li>
+<li>Total measure
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-10" class="outline-3">
+<h3 id="sec-6-10"><span class="section-number-3">6.10</span> Comparison Table</h3>
+<div class="outline-text-3" id="text-6-10">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>Comparison table of similarity measures</caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">SIMILARITY</th><th scope="col" class="left">VECTOR</th><th scope="col" class="left"></th></tr>
+<tr><th scope="col" class="left">THEORIST</th><th scope="col" class="left">MEASURE</th><th scope="col" class="left">TYPE</th><th scope="col" class="left">CARDINALITY</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">TEITELBAUM</td><td class="left">s.i.</td><td class="left">INTERVAL</td><td class="left">SAME</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">LORD</td><td class="left">sf</td><td class="left">INTERVAL</td><td class="left">SAME</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">SIM</td><td class="left">INTERVAL</td><td class="left">SAME</td></tr>
+<tr><td class="left"></td><td class="left">K</td><td class="left">INTERVAL</td><td class="left">SAME</td></tr>
+<tr><td class="left">MORRIS</td><td class="left">ASIM</td><td class="left">INTERVAL</td><td class="left">ANY</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">IcVD1</td><td class="left">INTERVAL</td><td class="left">ANY</td></tr>
+<tr><td class="left"></td><td class="left">IcVD2</td><td class="left">INTERVAL</td><td class="left">ANY</td></tr>
+<tr><td class="left">ROGERS</td><td class="left">COS</td><td class="left">INTERVAL</td><td class="left">ANY</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">AMEMB2</td><td class="left">INTERVAL</td><td class="left">ANY</td></tr>
+<tr><td class="left"></td><td class="left">IcVSIM</td><td class="left">INTERVAL</td><td class="left">ANY</td></tr>
+<tr><td class="left"></td><td class="left">ISIM2</td><td class="left">INTERVAL</td><td class="left">ANY</td></tr>
+<tr><td class="left">ISAACSON</td><td class="left">ANGLE</td><td class="left">INTERVAL</td><td class="left">ANY</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">AK</td><td class="left">INTERVAL</td><td class="left">ANY</td></tr>
+<tr><td class="left"></td><td class="left">MEMBn</td><td class="left">SUBSET</td><td class="left">ANY</td></tr>
+<tr><td class="left"></td><td class="left">TMEMB</td><td class="left">SUBSET</td><td class="left">ANY</td></tr>
+<tr><td class="left">RAHN</td><td class="left">ATMEMB</td><td class="left">SUBSET</td><td class="left">ANY</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">REL2</td><td class="left">INTERVAL</td><td class="left">ANY</td></tr>
+<tr><td class="left">LEWIN</td><td class="left">REL</td><td class="left">SUBSET</td><td class="left">ANY</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">%RELn</td><td class="left">SUBSET</td><td class="left">ANY</td></tr>
+<tr><td class="left"></td><td class="left">T%REL</td><td class="left">SUBSET</td><td class="left">ANY</td></tr>
+<tr><td class="left">CASTREN</td><td class="left">RECREL</td><td class="left">SUBSET</td><td class="left">ANY</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">SATSIM</td><td class="left">INTERVAL</td><td class="left">ANY</td></tr>
+<tr><td class="left"></td><td class="left">CSATSIM</td><td class="left">INTERVAL</td><td class="left">ANY</td></tr>
+<tr><td class="left"></td><td class="left">TSATSIM</td><td class="left">SUBSET</td><td class="left">ANY</td></tr>
+<tr><td class="left">BUCHLER</td><td class="left">AvgSATSIM</td><td class="left">SUBSET</td><td class="left">ANY</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-11" class="outline-3">
+<h3 id="sec-6-11"><span class="section-number-3">6.11</span> Comparison Table 2</h3>
+<div class="outline-text-3" id="text-6-11">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>Comparison table 2 of similarity measures</caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="right" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">SIMILARITY</th><th scope="col" class="left">VECTOR</th><th scope="col" class="left"></th><th scope="col" class="right">MEASURE</th><th scope="col" class="left">Min</th></tr>
+<tr><th scope="col" class="left">THEORIST</th><th scope="col" class="left">MEASURE</th><th scope="col" class="left">TYPE</th><th scope="col" class="left">CARDINALITY</th><th scope="col" class="right">TYPE</th><th scope="col" class="left">Min</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"></td><td class="left">K</td><td class="left">ICV</td><td class="left">SAME</td><td class="right">1</td><td class="left">0-55</td></tr>
+<tr><td class="left"></td><td class="left">SIM</td><td class="left">ICV</td><td class="left">SAME</td><td class="right">1</td><td class="left">65-0</td></tr>
+<tr><td class="left">MORRIS</td><td class="left">ASIM</td><td class="left">ICV</td><td class="left">ANY</td><td class="right">1</td><td class="left">1-0</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">LORD</td><td class="left">sf</td><td class="left">ICV</td><td class="left">SAME</td><td class="right">1</td><td class="left">9-0</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">TEITELBAUM</td><td class="left">s.i.</td><td class="left">ICV</td><td class="left">SAME</td><td class="right">1</td><td class="left">8.49-1.41</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">IcVD1</td><td class="left">ICV</td><td class="left">ANY</td><td class="right">1</td><td class="left">2-0</td></tr>
+<tr><td class="left"></td><td class="left">IcVD2</td><td class="left">ICV</td><td class="left">ANY</td><td class="right">1</td><td class="left"></td></tr>
+<tr><td class="left">ROGERS</td><td class="left">COS</td><td class="left">ICV</td><td class="left">ANY</td><td class="right">1</td><td class="left"></td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">AMEMB2</td><td class="left">ICV</td><td class="left">ANY</td><td class="right">1</td><td class="left"></td></tr>
+<tr><td class="left"></td><td class="left">IcVSIM</td><td class="left">ICV</td><td class="left">ANY</td><td class="right">1</td><td class="left"></td></tr>
+<tr><td class="left"></td><td class="left">ISIM2</td><td class="left">ICV</td><td class="left">ANY</td><td class="right">1</td><td class="left"></td></tr>
+<tr><td class="left">ISAACSON</td><td class="left">ANGLE</td><td class="left">ICV</td><td class="left">ANY</td><td class="right">1</td><td class="left"></td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">AK</td><td class="left">ICV</td><td class="left">ANY</td><td class="right">1</td><td class="left"></td></tr>
+<tr><td class="left"></td><td class="left">MEMBn</td><td class="left">nCV</td><td class="left">ANY</td><td class="right">1</td><td class="left"></td></tr>
+<tr><td class="left"></td><td class="left">TMEMB</td><td class="left">nCV</td><td class="left">ANY</td><td class="right">2</td><td class="left"></td></tr>
+<tr><td class="left">RAHN</td><td class="left">ATMEMB</td><td class="left">nCV</td><td class="left">ANY</td><td class="right">2</td><td class="left"></td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">REL2</td><td class="left">ICV</td><td class="left">ANY</td><td class="right">1</td><td class="left"></td></tr>
+<tr><td class="left">LEWIN</td><td class="left">REL</td><td class="left">nCV</td><td class="left">ANY</td><td class="right">2</td><td class="left"></td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">%RELn</td><td class="left">nCV</td><td class="left">ANY</td><td class="right">1</td><td class="left"></td></tr>
+<tr><td class="left"></td><td class="left">T%REL</td><td class="left">nCV</td><td class="left">ANY</td><td class="right">2</td><td class="left"></td></tr>
+<tr><td class="left">CASTREN</td><td class="left">RECREL</td><td class="left">nCV</td><td class="left">ANY</td><td class="right">2</td><td class="left"></td></tr>
+</tbody>
+<tbody>
+<tr><td class="left"></td><td class="left">SATSIM</td><td class="left">nCV</td><td class="left">ANY</td><td class="right">1</td><td class="left"></td></tr>
+<tr><td class="left"></td><td class="left">CSATSIM</td><td class="left">ICV</td><td class="left">ANY</td><td class="right">1</td><td class="left"></td></tr>
+<tr><td class="left"></td><td class="left">TSATSIM</td><td class="left">nCV</td><td class="left">ANY</td><td class="right">2</td><td class="left"></td></tr>
+<tr><td class="left">BUCHLER</td><td class="left">AvgSATSIM</td><td class="left">nCV</td><td class="left">ANY</td><td class="right">2</td><td class="left"></td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Glossary</h2>
+<div class="outline-text-2" id="text-7">
+
+<ul>
+<li>PC: pitch class
+</li>
+<li>set: unordered PC set
+</li>
+<li>SC: set class
+</li>
+<li>nC: Cardinality class, nC
+</li>
+<li>IC: interval class, 2C
+</li>
+<li>Tn: transposition
+</li>
+<li>I: Inversion
+</li>
+<li>TnI: Transposition/Inversion
+</li>
+<li>Prime Form: PC set represetning all members of an SC
+</li>
+<li>ICV: Interval class vector
+</li>
+<li>nCV: n-Subset class vector
+</li>
+<li>nC%V: n-subset class percetage vector
+</li>
+<li>SATV: saturation vector
+</li>
+<li>CSATV: cyclic saturation vectors
+</li>
+<li>DV: difference vector
+</li>
+<li>#X: cardinality, set or vector
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Test</h2>
+<div class="outline-text-2" id="text-8">
+
+<p>\citep{Martorell2013}
+</p>
+<p>
+\bibliographystyle{plainnat}
+\bibliography{/Users/nick/Documents/MendeleyDesktop/library.bib}
+</p>
+
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2014-03-24T17:08+0100</p>
+<p class="author">Author: Nicholas Harley</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

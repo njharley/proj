@@ -3,23 +3,26 @@
 #+TITLE: SMC RESEARCH PROJECT 2013-2014: Evaluation of Pitch-Class Set Similarity Measures for Tonal Analysis
 #+AUTHOR: NICHOLAS HARLEY
 
-* Comparison Table		]                                     :Table:
+* Comparison Table                                                    :Table:
 
 | Measure     | Theorist         | Date | Cardinality | Type                 |
 |-------------+------------------+------+-------------+----------------------|
 | [[R-relations]] | Forte            | 1973 | SAME        | IcV                  |
+|-------------+------------------+------+-------------+----------------------|
 | [[s.i.]]        | Teitelbaum       | 1965 | SAME        | IcV                  |
 | [[sf]]          | Lord             | 1981 | SAME        | IcV                  |
-| [[REL]]         | Lewin            | 1979 | ANY         | SUBSET (Total)       |
-| [[REL2]]        | Lewin            | 1979 | ANY         | IcV                  |
+| [[K]]           | Morris           | 1979 | SAME        | IcV                  |
 | [[SIM]]         | Morris           | 1979 | ANY*        | IcV                  |
 | [[ASIM]]        | Morris           | 1979 | ANY         | IcV                  |
-| [[K]]           | Morris           | 1979 | SAME        | IcV                  |
-| [[AK]]          | Morris           | 1979 | ANY         | IcV                  |
+| [[AK]]          | Rahn             | 1979 | ANY         | IcV                  |
 | [[MEMB2]]       | Rahn             | 1979 | SAME        | SUBSET               |
-| [[AMEMB2]]      | Isaacson*        | 1990 | ANY         | SUBSET*              |
 | [[ATMEMB]]      | Rahn             | 1979 | ANY         | SUBSET (Total)       |
+| [[EMB]]         | Lewin            | 1977 | -           | SUBSET               |
+| [[REL]]         | Lewin            | 1979 | ANY         | SUBSET (Total)       |
+| [[REL2]]        | Lewin            | 1979 | ANY         | IcV                  |
+| [[AMEMB2]]      | Isaacson*        | 1990 | ANY         | SUBSET*              |
 | [[IcVSIM]]      | Isaacson         | 1990 | ANY         | IcV                  |
+| [[ANGLE]]       | Scott & Isaacson | 1999 | ANY         | IcV                  |
 | [[ISIM2]]       | Isaacson         | 1996 | ANY         | IcV                  |
 | [[IcVD1]]       | Rogers           | 1992 | ANY         | IcV                  |
 | [[IcVD2]]       | Rogers           | 1992 | ANY         | IcV                  |
@@ -28,14 +31,29 @@
 | [[%25REL2][%REL2]]       | Castren          | 1994 | ANY         | IcV                  |
 | [[T%25REL][T%REL]]       | Castren          | 1994 | ANY         | SUBSET (Total)       |
 | [[RECREL]]      | Castren          | 1994 | ANY         | SUBSET (Total)       |
-| [[ANGLE]]       | Scott & Isaacson | 1999 | ANY         | IcV                  |
 | [[SATSIM]]      | Buchler          | 1998 | ANY         | IcV-SATV             |
 | [[CSATSIM]]     | Buchler          | 1998 | ANY         | IcV-SATV             |
 | [[AvgSATSIM]]   | Buchler          | 1998 | ANY         | SUBSET-SATVn (Total) |
 | [[TSATSIM]]     | Buchler          | 1998 | ANY         | SUBSET-SATVn (Total) |
-| [[EMB]]         | Lewin            | 1977 | -           | SUBSET               |
 
 * Theoretical Resemblace Models                          :SimilarityMeasures:
+** R-relations							      :Forte:
+   - Rn
+   - Same cardinality
+   - not a complete system (many IcV pairs have no Rn relation
+   - See [[Isaacson,%201990][Isaacson]] for criticism
+** s.i.                                                          :Teitelbaum:
+*** Description
+    - Greater discrimincation than Forte, Morris, Lord
+    - same cardinality
+    - vlaues approach 0 when the pcsets being compared are in a close
+      intervallic relationship
+    - high level of distinction (almost as high as [[Lewin,%201979-80][Lewin]]'s [[REL2]])
+    - can compare the intervallic similarity of sets with the same
+      cardinality to a reference
+    - evaluable to some degree by MDS, but not very attractive
+*** Formula
+    $$ s.i.(X,Y) = \sqrt{\sum (x_{i}-y_{i})^{2}} $$
 ** REL								      :Lewin:
 FROM: [[Lewin,%201979][Lewin]]
 *** Description
@@ -59,11 +77,6 @@ FROM: [[Lewin,%201979-80][Lewin]], 1979-80
     - produces max similarity only when IcVs are identical
 *** Formula
     $$ REL_{2}(X,Y) \frac{2\times \sum \sqrt{(x_{i}y_{i})}}{\sqrt(\#X(\#X-1)\#Y(\#Y-1))} $$
-** EMB								      :Lewin:
-*** Description
-    - EMB(A,X) is the number of pitch-class sets in set-class A which
-      are subsets of a given pitch-class set in set-class X.
-
 ** IcVSIM							   :Isaacson:
 From: [[Isaacson,%201990][Isaacson, 1990]]
 *** Description
@@ -86,27 +99,9 @@ FROM: [[Isaacson,%201996][Isaacson]]
     - IcV entries are scaled by taking the square root
     - otherwise its the same as [[IcVSIM]]
     - [[Samplaski,%202005][Samplaski]] found ISIM2 to be inconsistent with itself with [[MDS]]
-** s.i.                                                          :Teitelbaum:
-*** Description
-    - Greater discrimincation than Forte, Morris, Lord
-    - same cardinality
-    - vlaues approach 0 when the pcsets being compared are in a close
-      intervallic relationship
-    - high level of distinction (almost as high as [[Lewin,%201979-80][Lewin]]'s [[REL2]])
-    - can compare the intervallic similarity of sets with the same
-      cardinality to a reference
-    - evaluable to some degree by MDS, but not very attractive
-*** Formula
-    $$  s.i.(X,Y) = \sqrt{\sum (x_{i}-y_{i})^{2}} $$
-** R-relations							      :Forte:
-   - Rn
-   - Same cardinality
-   - not a complete system (many IcV pairs have no Rn relation
-   - See [[Isaacson,%201990][Isaacson]] for criticism
 ** SIM								     :Morris:
-   From: [[Morris,%201979][Morris]]
+From: [[Morris,%201979][Morris]]
 *** Description
-
     - sum of the absolute values of the differences between
       corresponding IcV entries for the sets
     - Produces 15 unique values:
@@ -207,7 +202,7 @@ From: [[Lord,%201981][Lord]]
     - Same cardinality
     - Lords values can be inferred from [[Morris,%201979][Morris]]'
 *** Formula
-    $$  sf \left ( X,Y \right ) = \frac{ \sum_{i = 1}^{6} \left | x_{i} - y_{i} \right |}{2}  $$
+    $$ sf\left(X,Y\right)=\frac{\sum_{i=1}^{6}\left|x_{i}-y_{i}\right|}{2} $$
     where X and Y are any pcset from 3 to 9 notes and
     $$ x_{i} = IcV(X)_{i} $$ and $$ y_{i} = IcV(Y)_{i} $$
 ** ANGLE							   :Isaacson:
@@ -268,7 +263,8 @@ from 2 to m-1 (m = min[#X,#Y]).
 *** Description
     - Modification of [[Morris,%201979][Morris]]'s [[SIM]]
 *** Formula
-    $$\%REL_2(X,Y)=IcVd_1(X,Y)\times50 $$
+$$ IcVD_{1}=\sum_{i=1}^{6}{\left|\frac{x_{i}}{\#ICV(X)}+\frac{y_{i}}{\#ICV(Y)}\right|} $$
+$$\%REL_2(X,Y)=IcVd_1(X,Y)\times50 $$
 ** IcVD2							     :Rogers:
 *** Description
     - use IcV like geometric vectors is 6D space
