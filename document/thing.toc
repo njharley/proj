@@ -1,0 +1,100 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {section}{\numberline {2}Tonality}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Defining Tonality}{4}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}\textbf {TODO} General Definition}{4}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Babbitt's Domains}{4}{subsubsection.2.1.2}
+\contentsline {subsection}{\numberline {2.2}Modelling Tonality}{4}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Tonality as Context}{5}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Tonality in MIR}{5}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Similarity}{5}{subsubsection.2.2.3}
+\contentsline {subsection}{\numberline {2.3}The Semantic Gap}{6}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Acoustic Domain}{6}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Graphemic Domain}{6}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Problems}{6}{subsubsection.2.3.3}
+\contentsline {subsection}{\numberline {2.4}Systematicity}{6}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}The Musical Surface}{6}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Systematic Description}{7}{subsubsection.2.4.2}
+\contentsline {section}{\numberline {3}Pitch-Class Set Theory}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Pitch Class}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Set Classification}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Vector Analysis}{9}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Membership and Inclusion}{9}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Embedding Number}{9}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Subset Vectors}{10}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Notation}{10}{subsubsection.3.3.4}
+\contentsline {subsection}{\numberline {3.4}Set-Class Similarity}{11}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Similarity Relations}{11}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Similarity Measures}{11}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Castrens Criteria}{12}{subsubsection.3.4.3}
+\contentsline {subsection}{\numberline {3.5}Perceptual Relevance}{13}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Octave Equivalence}{13}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}Set-Class Equivalence}{14}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}Perceived vs Theoretical Similarity}{14}{subsubsection.3.5.3}
+\contentsline {subsection}{\numberline {3.6}PC-set Theory for Analysis}{15}{subsection.3.6}
+\contentsline {section}{\numberline {4}Multidimensional Scaling}{15}{section.4}
+\contentsline {subsection}{\numberline {4.1}Non-Metric MDS}{16}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Cluster Analysis}{16}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}MDS with Similarity Measures}{16}{subsection.4.3}
+\contentsline {section}{\numberline {5}Spatial Models of Tonality}{16}{section.5}
+\contentsline {subsection}{\numberline {5.1}Similarity and Distance}{16}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Spatial Representations}{17}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Cognitive Psychology}{17}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Set-Class Spaces}{17}{subsection.5.4}
+\contentsline {section}{\numberline {6}Similarity Measure Selection}{19}{section.6}
+\contentsline {subsection}{\numberline {6.1}Criteria}{19}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Cardinality}{20}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}SC-type}{20}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Measure Type}{20}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Trivial Forms}{20}{subsection.6.5}
+\contentsline {section}{\numberline {7}Total Measures}{21}{section.7}
+\contentsline {subsection}{\numberline {7.1}Rahn: ATMEMB}{21}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Lewin: REL}{21}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Castren: RECREL}{21}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Buchler: AvgSATSIM and TSATSIM}{22}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Trivial Forms}{22}{subsection.7.5}
+\contentsline {section}{\numberline {8}Class Scape}{22}{section.8}
+\contentsline {section}{\numberline {9}MDS}{22}{section.9}
+\contentsline {section}{\numberline {10}Structure}{22}{section.10}
+\contentsline {section}{\numberline {11}SC Similarity Measures}{22}{section.11}
+\contentsline {subsection}{\numberline {11.1}MORRIS}{22}{subsection.11.1}
+\contentsline {subsubsection}{\numberline {11.1.1}K}{22}{subsubsection.11.1.1}
+\contentsline {subsubsection}{\numberline {11.1.2}SIM}{23}{subsubsection.11.1.2}
+\contentsline {subsubsection}{\numberline {11.1.3}ASIM}{23}{subsubsection.11.1.3}
+\contentsline {subsection}{\numberline {11.2}LORD}{24}{subsection.11.2}
+\contentsline {subsubsection}{\numberline {11.2.1}sf}{24}{subsubsection.11.2.1}
+\contentsline {subsection}{\numberline {11.3}TEITELBAUM}{24}{subsection.11.3}
+\contentsline {subsubsection}{\numberline {11.3.1}s.i.}{24}{subsubsection.11.3.1}
+\contentsline {subsection}{\numberline {11.4}ROGERS}{25}{subsection.11.4}
+\contentsline {subsubsection}{\numberline {11.4.1}IcVD$_{1}$}{25}{subsubsection.11.4.1}
+\contentsline {subsubsection}{\numberline {11.4.2}IcVD$_{2}$}{25}{subsubsection.11.4.2}
+\contentsline {subsubsection}{\numberline {11.4.3}Cos($\theta $)}{26}{subsubsection.11.4.3}
+\contentsline {subsection}{\numberline {11.5}RAHN}{26}{subsection.11.5}
+\contentsline {subsubsection}{\numberline {11.5.1}AK}{26}{subsubsection.11.5.1}
+\contentsline {subsubsection}{\numberline {11.5.2}MEMB$_{n}$}{26}{subsubsection.11.5.2}
+\contentsline {subsubsection}{\numberline {11.5.3}TMEMB}{27}{subsubsection.11.5.3}
+\contentsline {subsubsection}{\numberline {11.5.4}ATMEMB}{27}{subsubsection.11.5.4}
+\contentsline {subsection}{\numberline {11.6}ISAACSON}{28}{subsection.11.6}
+\contentsline {subsubsection}{\numberline {11.6.1}AMEMB2}{28}{subsubsection.11.6.1}
+\contentsline {subsubsection}{\numberline {11.6.2}IcVSIM}{28}{subsubsection.11.6.2}
+\contentsline {subsubsection}{\numberline {11.6.3}ISIM2}{29}{subsubsection.11.6.3}
+\contentsline {subsubsection}{\numberline {11.6.4}ANGLE (Isaacson \& Scott)}{29}{subsubsection.11.6.4}
+\contentsline {subsection}{\numberline {11.7}LEWIN}{29}{subsection.11.7}
+\contentsline {subsubsection}{\numberline {11.7.1}REL}{29}{subsubsection.11.7.1}
+\contentsline {subsubsection}{\numberline {11.7.2}REL$_{2}$}{30}{subsubsection.11.7.2}
+\contentsline {subsection}{\numberline {11.8}CASTREN}{30}{subsection.11.8}
+\contentsline {subsubsection}{\numberline {11.8.1}Castren's DV}{30}{subsubsection.11.8.1}
+\contentsline {subsubsection}{\numberline {11.8.2}nC\%V}{30}{subsubsection.11.8.2}
+\contentsline {subsubsection}{\numberline {11.8.3}\%REL$_{n}$}{31}{subsubsection.11.8.3}
+\contentsline {subsubsection}{\numberline {11.8.4}T\%REL}{31}{subsubsection.11.8.4}
+\contentsline {subsubsection}{\numberline {11.8.5}RECREL}{31}{subsubsection.11.8.5}
+\contentsline {subsection}{\numberline {11.9}BUCHLER}{32}{subsection.11.9}
+\contentsline {subsubsection}{\numberline {11.9.1}nSATV}{32}{subsubsection.11.9.1}
+\contentsline {subsubsection}{\numberline {11.9.2}SATSIM$_{n}$}{32}{subsubsection.11.9.2}
+\contentsline {subsubsection}{\numberline {11.9.3}\textbf {TODO} CSATSIM}{33}{subsubsection.11.9.3}
+\contentsline {subsubsection}{\numberline {11.9.4}AvgSATSIM}{33}{subsubsection.11.9.4}
+\contentsline {subsubsection}{\numberline {11.9.5}TSATSIM}{33}{subsubsection.11.9.5}
+\contentsline {subsection}{\numberline {11.10}Comparison Table}{33}{subsection.11.10}
+\contentsline {subsection}{\numberline {11.11}Comparison Table 2}{33}{subsection.11.11}
+\contentsline {subsection}{\numberline {11.12}Details Table}{33}{subsection.11.12}
+\contentsline {section}{\numberline {12}PC-set Theory Glossary}{33}{section.12}
+\contentsline {section}{\numberline {13}Chords as PC sets}{36}{section.13}

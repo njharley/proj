@@ -1,4 +1,4 @@
-function pcSetClassAB = getClassAB(forteNameAB)
+function [idx pcSetClassAB] = getClassAB(forteNameAB)
 
 	forteNamesAB = textread('forteNamesAB.txt', '%s');
 	x = -1;
@@ -11,5 +11,6 @@ function pcSetClassAB = getClassAB(forteNameAB)
 		error('Incorrect Forte Name'); return
 	end
 	
+	idx = x;
 	primeor = dlmread('protoprimeOrdered.txt');
 	pcSetClassAB = unique(primeor(x,:));

@@ -1,6 +1,6 @@
-#+LaTeX_CLASS: article
-#+STARTUP: indent
 #+STARTUP: latexpreview
+#+STARTUP: indent
+#+LaTeX_CLASS: article
 #+LATEX_HEADER: \usepackage[round]{natbib}
 #+TITLE: Evaluation of Pitch-Class Set Similarity Measures for Tonal Analysis (Literature Review)
 #+AUTHOR: Nicholas Harley - Masters Thesis UPF
@@ -19,7 +19,7 @@ review containing background information and some basic
 theory. Chapter [[Tonality]] addresses the challenges and problems
 involved in descriptive modelling of tonality as a means of
 justification for the proposed approach. Chapter [[Pitch-Class Set
-Theory]] introduced the basic concepts of PC-set theory including
+Theory]] introduces the basic concepts of PC-set theory including
 set-class similarity measures. Chapter [[Multidimensional Scaling]]
 gives a basic description of MDS techniques and how they can play a
 role in set-class analysis. Chapter [[Spatial Models of Tonality]]
@@ -27,18 +27,17 @@ contains a review of the relevant tonal models that exist so as to
 give context work that follows.
 * Tonality
 ** Defining Tonality
-*** General Definition
+*** TODO General Definition
 Tonality is a notoriously complex musical phenomenon and numerous
 definitions have been proposed from a variety of viewpoints. Perhaps
-the most general definition is that provided by Hyer (cited in
-\citealt[pp. 6]{Martorell2013}): "... refers to the systematic
-arrangements of pitch phenomena and relations between
-them." Explanations of tonality have been provided through many
-different disciplines (acoustics, music theory, linguistics, cognitive
-psychology) and a detailed discussion of these areas is certainly
-beyond the scope of this work. However, it is generally agreed that
-tonality is an abstract cultural and cognitive construct that can have
-many different physical representations.
+the most general definition is that provided by Hyer /citep(Hyer2013):
+"... refers to the systematic arrangements of pitch phenomena and
+relations between them." Explanations of tonality have been provided
+through many different disciplines (acoustics, music theory,
+linguistics, cognitive psychology) and a detailed discussion of these
+areas is certainly beyond the scope of this work. However, it is
+generally agreed that tonality is an abstract cultural and cognitive
+construct that can have many different physical representations.
 *** Babbitt's Domains
 \citet{Babbitt1965} proposed three domains to categorise different
 types of representation of music: acoustic (physical), auditory
@@ -51,9 +50,9 @@ majority of reasoning about tonaility, reside mainly in the Babbitt's
 graphemic domain, although arguably they reflect some aspects of the
 other two. Each domain, whilst connected to every other, provides only
 a projection of the musical whole and examination of tonality from
-from just one type of description is unlikely to a definitive
-definition. However, these three domains provide a convenient
-framework for the discussion that follows.
+just one will most likley result in an incomplete picture. However,
+these three domains provide a convenient framework for the discussion
+that follows.
 ** Modelling Tonality
 The challenge of mathematically modelling aspects of tonality has been
 approached in numerous ways and from different domains. In the
@@ -68,7 +67,7 @@ based on perceptual ratings of tonal stimuli \citep{Krumhansl1990}.
 Many models approach the concept of tonality as a context, within
 which the relations and hierarchies of tonal phenomena can be
 understood. A sense of tonality can be induced when musical stimuli
-resembles some a priori contextual category. For western music of the
+resemble some a priori contextual category. For western music of the
 major-minor period, key signatures comprise a collection of categories
 that give context to the tonal components of
 music. \citet{Martorell2013} identifies three important aspects of
@@ -180,19 +179,16 @@ sequence of pitches. This chapter will outline the basic principles. A
 glossary of terms is included in [[PC-set Theory Glossary]] to assist with
 the number of new terms that will be introduced.
 ** Pitch Class
-Pitch-class set theory uses octave equivalence. A pitch-class (PC) is
-a number indicating the position of a note within the octave. For
-example, in Western equal temperament (TET) the octave is divided in
-to 12 steps. Each of these notes is given a number from 0-11 (Table
-1).
-
-A PC-set is a collection of PCs ignoring any repetitions and the order
-in which they occur. PC-sets are notated as follows {0,1,2,3,4} with
-PCs ordered from lowest to highest as a convention (Example 1).
-
-The cardinality of a set, denoted #S, is the number of PCs it contains
-(Example 2). There are 4096 (2^12) unique PC-sets and any segment of
-music can be represented as a PC-set.
+Pitch-class set theory uses octave equivalence. In Western equal
+temperament (TET), a pitch-class (PC) is an integer representing the
+residue class modulo 12 of a pitch /citep(Babbit1955) and indicates
+the position of a note within the octave. A PC-set is a collection of
+PCs ignoring any repetitions and the order in which they
+occur. PC-sets are notated as follows {0,1,2,3,4} with PCs ordered
+from lowest to highest as a convention (Example 1). The cardinality of
+a set, denoted #S, is the number of PCs it contains (Example 2). There
+are 4096 (2^12) unique PC-sets with which any segment of music can be
+represented.
 
 #+CAPTION: Notes and corresponding pitch-classes
 #+NAME: tab:pitch classes
@@ -209,8 +205,8 @@ number of tonal objects. A set-class (SC) is a group of PC-sets
 related by a transformation or group of transformations. The two types
 of transformation commonly used are transposition and inversion. A
 transposition, Tn(S), transposes the set, S, by the interval, n, (by
-adding n to all PCs, Example 3). An inversion, I(S), inverts the set S
-replacing all PCs with their inverse (11-PC, Example 4). From these
+adding n to all PCs, Example 3). An inversion, I(S), inverts the set
+S, replacing all PCs with their inverse (12-PC, Example 4). From these
 two transformations it is possible to define three types of SC: Tn,
 TnI and I, although I-types are not commonly used.
 
@@ -241,7 +237,7 @@ to the names of inversionally related SCs.
 
 One additional concept is that of cardinality-class (nC), which refers
 to all the SCs of cardinality n. Cardinality-class 2 is commonly
-referred to as interval-class (IC). There are 6 distinct
+referred to as interval-class (IC) and there are 6 distinct
 interval-classes.
 #+CAPTION: Forte's Prime form and numbering convention
 #+NAME: tab:fortename
@@ -253,15 +249,32 @@ interval-classes.
 
 #+CAPTION: Numbers of objects
 #+NAME: tab:sctype
-| Object type  | No. Objects |
-|--------------+-------------|
-| Pitch        |          88 |
-| Pitch set    |        3e26 |
-| PC           |          12 |
-| PC-set       |        4096 |
-| Tn-Type SC   |         348 |
-| I-Type SC    |         197 |
-| TnI-Type SC  |         200 |
+| Object type | No. Objects |
+|-------------+-------------|
+| Pitch       |          88 |
+| Pitch set   |        3e26 |
+| PC          |          12 |
+| PC-set      |        4096 |
+| Tn-Type SC  |         348 |
+| I-Type SC   |         197 |
+| TnI-Type SC |         220 |
+
+#+CAPTION: Cardinality Class
+#+NAME: tab:nc
+| nC  | Tn | I | TnI |
+|-----+----+---+-----|
+| 1C  |  1 | 1 |   1 |
+| 2C  |  6 | 6 |   6 |
+| 3C  | 19 |   |     |
+| 4C  |    |   |     |
+| 5C  |    |   |     |
+| 6C  |    |   |     |
+| 7C  |    |   |     |
+| 8C  |    |   |     |
+| 9C  | 19 |   |     |
+| 10C |  6 |   |     |
+| 11C |  1 |   |     |
+| 12C |  1 |   |     |
 ** Vector Analysis
 *** Membership and Inclusion
 Two concepts that are crucial in PC-set theory are membership and
@@ -276,16 +289,18 @@ is a member of set S (Example 5). Inclusion in a set is denoted Q
 \citet{Lewin1979} applied these concepts to SCs to develop his
 Embedding Number, EMB(X,Y). Given two SCs, X and Y, EMB(X,Y) is the
 number of instances of SC, X, which are included in (are subsets of)
-SC, Y (Example 7).
+SC, Y (Example 7). X is ring-shifted 11 times and each unique
+resulting set which is included in Y adds one to the embedding number.
 #+NAME: tab:embeddingnumnber
 | Example 7: | Embedding Number | X = {0,4} and Y = {0,4,8} |
 |            |                  | so EMB(X,Y) = 3           |
 *** Subset Vectors
 An n-class subset vector of X, nCV(X), is an array of values of
-EMB(A,X) where A is each of the SCs in the cardinality-class nC
+EMB(A,X) where A is each of the SCs in the cardinality-class, nC
 (Example 8). The Interval-Class Vector (ICV) is a special instance of
 the nCV with n equal to 2. Vector cardinality, denoted #nCV(X), is the
-sum of all the terms (Example 9).
+sum of all the terms (Example 9). The length of a subset vector is
+given by #nC.
 
 Subset vectors form the basis of the majority of analysis performed
 by PC-set theorists. In addition, many theorists have proposed
@@ -297,7 +312,20 @@ necessary.
 | Example 8: | Subset Vector      | S = {0,4,9}                     |
 |            |                    | 2CV(S) = ICV(S) = [0 0 1 1 1 0] |
 | Example 9: | Vector Cardinality | #ICV(S) = 0+0+1+1+1+0 = 3       |
-** PC-Set Similarity
+*** Notation
+**** Difference Vector
+$$DV(nCV(X),nCV(Y))=\left|nCV(X)-nCV(Y)\right|$$
+**** Magnitude
+- length vector
+$$\left\|nCV(X)\right\|=\sqrt{\sum_{i=1}^{\#nC}{(nCV(X)_{i})^{2}}}$$
+**** Unit Vector
+$$\hat{nCV(X)}=\frac{nCV(X)}{\left\|nCV(X)\right\|}$$
+**** Euclidean Distance
+$$d(X,Y)=\sqrt{\sum_{i=1}^{n}{(X_{i}-Y_{i})^{2}}}=\left\|DV(X,Y)\right\|$$
+**** Geometric Mean
+$$ GM(x,y)=\sqrt{x\times y}$$
+$$ GMV(nCV(X),nCV(Y))=[ ]  $$
+** Set-Class Similarity
 *** Similarity Relations
 The assessment of similarity between two SCs has been discussed in the
 literature for decades and a large number theoretical models have been
@@ -377,14 +405,14 @@ REVIEW).
 |            | REL2       | ICV    | ANY  | nC      |
 | LEWIN      | REL        | nCV    | ANY  | TOTAL   |
 |------------+------------+--------+------+---------|
-|            | %RELn      | nCV    | ANY  | nC      |
-|            | T%REL      | nCV    | ANY  | TOTAL   |
-| CASTREN    | RECREL     | nCV    | ANY  | TOTAL   |
+|            | %RELn      | nC%V   | ANY  | nC      |
+|            | T%REL      | nC%V   | ANY  | TOTAL   |
+| CASTREN    | RECREL     | nC%V   | ANY  | TOTAL   |
 |------------+------------+--------+------+---------|
-|            | SATSIM     | nCV    | ANY  | nC      |
-|            | CSATSIM    | ICV    | ANY  | nC      |
-|            | TSATSIM    | nCV    | ANY  | TOTAL   |
-| BUCHLER    | AvgSATSIM  | nCV    | ANY  | TOTAL   |
+|            | SATSIM     | nSATV  | ANY  | nC      |
+|            | CSATSIM    | CSATV  | ANY  | nC      |
+|            | TSATSIM    | nSATV  | ANY  | TOTAL   |
+| BUCHLER    | AvgSATSIM  | nSATV  | ANY  | TOTAL   |
 |------------+------------+--------+------+---------|
 *** Castrens Criteria
 In addition to his categorisation, \citet{Castren1994} proposes several
@@ -393,7 +421,6 @@ criteria will be used in assessing the specific capabilities of
 various similarity measures. 
 
 Castren says that a similarity measure should:
-
 - C1: allow comparisons between SCs of different cardinalities
 - C2: provide a distinct value for every pair of SCs
 - C3: provide a comprehensible scale of values such that
@@ -408,7 +435,7 @@ Castren says that a similarity measure should:
   cardinalities
 - C6: observe also the mutual embeddable subset-classes not in common
   between the SCs being compared.
-** Perceptual relevance
+** Perceptual Relevance
 The many equivalence relations used in PC-set theory give rise to a
 highly abstract description of musical objects. Thus, an important
 question to be asked is whether these theoretical assumptions and
@@ -509,9 +536,10 @@ SC.
 \citet{Huovinen2007} used a pentachordal tail segmentation policy
 (each successive note defines a segment that includes the preceding
 four notes) and compared these segments to comparison sets 7-1
-(chromaticism) and 7-35 (diatonicism) using the REL distance. They
-claim that the visual results of their analysis "reflect pertinent
-aspects of our listening experience" \citep[pp. 204]{Huovinen}.
+(chromaticism) and 7-35 (diatonicism) using the REL distance
+([[REL)]]. They claim that the visual results of their analysis "reflect
+pertinent aspects of our listening experience"
+\citep[pp. 204]{Huovinen}.
 
 \citet[chap. 5.3]{Martorell2013} uses a more systematic approach to
 segmentation using multiple time scales. He proposes the class-scape,
@@ -620,12 +648,12 @@ possible means to generalise to any kind of pitch-based music. By
 considering a collection of tonal objects described by SCs, a
 geometric space can be constructed to model their relations based on
 some theoretical principle. Some PC-set theorists have proposed
-explicit geometric spaces to model relations between SCs. The distances
-in these spaces are expressed by models of similarity based on voice
-leading \citep{Cohn2003,Tymoczko2012} or ICVs and the Fourier
+explicit geometric spaces to model relations between SCs. The
+distances in these spaces are expressed by models of similarity based
+on voice leading \citep{Cohn2003,Tymoczko2012} or ICVs and the Fourier
 transform \citep{Quinn2006, Quinn2007}. However, these models are only
 designed to represent SCs of one cardinality-class at a time and
-cannot model the relations between any collections of pitches.
+cannot model the relations between arbitrary collections of pitches.
 
 Alternative spatial models are provided by the implicit geometries of
 the values produced by the SC similarity measures discussed in [[PC-Set
@@ -644,415 +672,597 @@ they measure constructs relating to familiar scales (diatonic,
 hexatonic, octatonic, etc.).
 
 \pagebreak
-* SC Similarity Measures                                           :noexport:
+* Similarity Measure Selection
+In this section, the similarity measures will be discussed in relation
+to Castren's criteria in order to gauge their suitability for use in
+systematic surface description models. The most suitable measures will
+be subjected to a more thorough analysis over the course of the work.
+** Criteria
+[[tab:criteria]] shows the various criteria met by each of the similarity
+measures.
+#+CAPTION: Castrens Criteria
+#+NAME: tab:criteria
+|------------+----+----+------+------+------+------+----+----+----|
+| SIMILARITY | C1 | C2 | C3.1 | C3.2 | C3.3 | C3.4 | C4 | C5 | C6 |
+| MEASURE    |    |    |      |      |      |      |    |    |    |
+|------------+----+----+------+------+------+------+----+----+----|
+| s.i.       |    |    |      |      | X    | X    |    |    |    |
+| sf         |    |    |      |      | X    | X    | X  |    |    |
+| IcVSIM     | X  | X  |      |      |      | X    |    |    |    |
+| ISIM2      | X  | X  |      |      |      | X    |    |    |    |
+| K          | X  | X  |      |      | X    | X    | X  |    |    |
+| SIM        | X  | X  |      |      | X    | X    | X  |    |    |
+| MEMBn      | X  | X  |      |      | X    | X    | X  |    |    |
+| AMEMB2     | X  | X  | X    |      |      |      |    |    |    |
+| ASIM       | X  | X  | X    | X    |      | X    | X  |    |    |
+| IcVD1      | X  | X  | X    | X    |      | X    | X  |    |    |
+| IcVD2      | X  | X  | X    | X    |      | X    |    |    |    |
+| COS        | X  | X  | X    | X    |      | X    |    |    |    |
+| ANGLE      | X  | X  | X    | X    |      | X    |    |    |    |
+| AK         | X  | X  | X    | X    |      | X    | X  |    |    |
+| SATSIM     | X  | X  | X    |      |      |      |    |    |    |
+| CSATSIM    | X  | X  | X    |      |      |      |    |    |    |
+| REL2       |    |    |      |      |      |      |    |    |    |
+| %RELn      | X  | X  | X    | X    | X    | X    | X  |    |    |
+| TMEMB      | X  | X  |      |      | X    |      | X  | X  |    |
+| ATMEMB     | X  | X  | X    | X    |      | X    | X  | X  |    |
+| TSATSIM    | X  | X  | X    | X    |      | X    |    | X  |    |
+| AvgSATSIM  | X  | X  | X    | X    |      | X    |    | X  |    |
+| REL        | X  | X  | X    | X    |      | X    | X  | X  |    |
+| T%REL      | X  | X  | X    | X    | X    | X    | X  | X  |    |
+| RECREL     | X  | X  | X    | X    | X    | X    | X  | X  | X  |
+|------------+----+----+------+------+------+------+----+----+----|
+** Cardinality
+Measures which fail to meet criteria C1, i.e. that cannot compare SCs
+of different cardinalities, are clearly inadequate for systematic
+analysis of music, which might require the comparison of any two
+arbitrary segments regardless of how many PCs they contain. Both
+s.i. ([[s.i.]]) and sf ([[sf]]) were proposed specifically for SCs of the same
+cardinality and so will be excluded from further discussion. Some
+other measures which were intended to compare SCs of different
+cardinalities nonetheless have problems. Measures such as SIM ([[SIM]])
+and K ([[K]]) give unintuitive values when the cardinalities of the SCs
+being compared differ greatly and, in addition, the range of values
+produced depends on the cardinality of the sets (failure to meet
+criteria C3.1). Measures of this type will also be excluded.
+** SC-type
+An important consideration when using similarity measures is the type
+of SC being compared. Many of the measures are designed for comparison
+of TnI-type SCs, however, owing to issues riased in [[Perceptual
+Relevance]] regarding the perceptual relevance of invertionally related
+sets, here, measures will be selected for use with Tn-type SCs. This
+means that the measure should be able to discrimate between
+inversionally related sets. All the measures which exclusivly consider
+interval content in the comparison procedure can automatically be
+discounted as inversionally related sets have identical ICVs.
+** Measure Type
+Although many theorists have suposed that dyad-class subsets are of
+paramount importance in similarity judgments, no thorough
+investigation has been carried out as to the exact perceptual
+significance of subset cardinality. Single nC measures presupose that
+subsets of one particular cardinality contribute to similarity above
+all others. In the interest of systematicity, we will not make this
+assumption instead assuming that subsets of all cardinalities are
+relevant and should be considered. Similarity measures that consider
+all subset cardinalities meet criteria C5 and are total
+measures. These total measures will selected for further investigation
+throughout the work.
+** Trivial Forms
+Three of the 351 Tn-type SCs are known as trivial forms: 1-1, 11-1 and
+12-1. Due to their lack of musical or harmonic significance, these SCs
+are usually excluded from the work of SC-theorists. However, it is
+important that they be included in any systematic description and that
+their similarity to other sets be given a meaningful value. The next
+chapter will discuss each of the total measures and specify how each
+of the trivial forms is to be dealt with if it was not made explicit
+by the theorist. 
+
+The total measures which will be discussed make comparisons based on
+the subset content of a set. SC 1-1, which has no subsets, is rarely
+accounted for in such measures and in these cases a simple method will
+be used: Comparisons involving X = SC 1-1 and Y will be given the
+value 1/#Y. Thus the value will be the ratios of the cardinalities
+with 1 indicating maximum similarity.
+#+CAPTION: Trivial Forms
+#+NAME: tab:trivialforms
+|  1-1 | {0}                         |
+| 11-1 | {0,1,2,3,4,5,6,7,8,9,10}    |
+| 12-1 | {0,1,2,3,4,5,6,7,8,9,10,11} |
+* Total Measures
+In this chapter each of the total measures examined in terms of its
+particular abilities and discriminatory power.
+** Rahn: ATMEMB
+Details on how to calculate ATMEMB are give in [[ATMEMB]]. In his analysis
+of the measure, Castren concludes that "divisor term is flawed,
+resulting in values suggesting suspiciously high degrees of
+dissimilarity between SCs of clearly different cardinalities. The
+general reliability and usefulness of the measure is difficulty to
+determine" \citep[pp. 89]{Castren1994}. The trivial forms 11-1 and
+12-1 are accommodated explicitly by the fomulation of
+\citet{Rahn1979}, however SC 1-1 is not and thus values will be
+obtained using the method specified in [[Trivial Forms]].
+** Lewin: REL
+Details on how to calculate REL are given in [[REL]]. From the basic
+equation it is possible to define three different formulations
+depending on the exact nature of SUB(X). In each formulation the
+trivial forms 11-1 and 12-1 are accomodated. The three formulations
+are as follows:
+1) SUB(X) consists of the concatenated nCVs from 2 to 12. Here
+   comparisons involving SC 1-1 will be evalueted with the method
+   specified in [[Trivial Forms]].
+2) SUB(X) consists of the concatenated nCVs from 1-12 (1CV(X)
+   = #X). This formulation accomodates SC 1-1.
+3) \citet{Martorell2013} specifies an alternative formulation where
+   SUB(X) begins with the ICV (2CV) followed by the concatenated nCVs
+   from 1-12. This formulation accomodates SC 1-1.
+** Buchler: AvgSATSIM and TSATSIM
+Details on how to calculate AvgSATSIM and TSATSIM are given in
+[[AvgSATSIM]] and [[TSATSIM]] respectively. Comparisons involving SC 1-1 are
+not accommodated and thus the method specified in [[Trivial Forms]] will
+be used to provide values. Comparisons involving SCs 11-1 and 12-1 are
+accommodated except for the comparison involving both. This is because
+their MAX_{n}(#X) and MIN_{n}(#X) vectors are equal and thus all terms
+of the nSATVs are 0. The value for this comparison will be set to 0
+(indicating maximal similarity). For comparisons involving ICs the
+value will be given by SATSIM_{2}(X,Y).
+** Castren: T%REL and RECREL
+Details on how to calculate T%REL and RECREL are given in [[T%REL]] and
+[[RECREL]] respectively. Comparisons involving SCs 11-1 and 12-1 are
+accommodated in both by Castren's formulation. Comparisons involving
+SC 1-1 will be given values by the method specified in [[Trivial
+Forms]].
+
+- Castren comments that some T%REL values are too high.
+- The basic algorithm provided by Castren for calculating RECREL is
+  not feasible for large sets. Compaisons of such sets require tables
+  of pre-computed branch values.
+- 
+** Scale of Values
+The values of each measure will be adjusted to the same scale for
+comparability by the same method as \citet[pp. 48]{Kuusi2001}). This
+scale is from 0 to 100 with with 0 indicating maximum similarity. The
+modified values will be signalled with the -prime.
+- ATMEMB-prime(X,Y) = (1-ATMEMB(X,Y))*100
+- REL-prime(X,Y) = (1-REL(X,Y))*100
+- AvgSATSIM-prime(X,Y) = AvgSATSIM(X,Y)*100
+- TSATSIM-prime(X,Y) = TSATSIM(X,Y)*100
+- T%REL-prime(X,Y) = T%REL(X,Y)
+- RECREL-prime(X,Y) = RECREL(X,Y)
+* Class Scape
+* MDS
+* Structure
+* SC Similarity Measures
 ** MORRIS
 *** K
-**** Details
-- ICV based
-- Measures similarity
-- Max sim: 55
-- Min sim: 0
-- Average: 10
-- Distinc values: 35
-- 1 to 1 correspondence
-- Castren criteria met: C1, C2, C3.3 C3.4, C4
+Presented in \citet[pp. 448]{Morris1979}, the K measure gives the
+number of intervals-classes (dyad-classes) shared by two SCs, X and Y.
+$$ K(X,Y)= \sum_{i=1}^{6}{MIN(x_{i},y_{i})} $$
+#+NAME: tab:k
+| SC Type:        | TnI                |
+| Cardinality:    | Any                |
+| Vector Type:    | ICV                |
+| Max Similarity: | 55                 |
+| Min Similarity: | 0                  |
+| Average Value:  | 10                 |
+| No. Values:     | 35                 |
+| Criteria Met:   | C1,C2,C3.3,C3.4,C4 |
+| I-related:      | No                 |
+| Z-related:      | No                 |
 - Problems: scale of values not the same for all value groups.
-**** Formula
-$$
-k=\frac{\left(\#ICV\left(R\right)+\#ICV\left(S\right)-SIM\left(R,S\right)\right)}{2}
-$$ 
-Rahn writes it differently (as a funtion of X and Y) 
-$$
-k\left(X,Y\right)=\frac{\left(\#ICV\left(X\right)+\#ICV\left(Y\right)-SIM\left(X,Y\right)\right)}{2}
-$$
-or from castren
-$$ k(X,Y)= \sum_{i=1}^{6}{MIN(x_{i},y_{i})} $$
 *** SIM
-**** Description
-Presented in Morris(1979-80)
-**** Details
-- ICV based
-- 1 to 1 correspondence
-- Measures dissimilarity
-- Max sim: 0
-- Min sim: 65
-- Average: 13
-- Distinc values: 44
-- Castren criteria met: C1, C2, C3.3, C3.4, C4
+Presented in \citet[pp. 446]{Morris1979}, SIM compares the ICVs of
+two SCs (the value is the cardinality of the DV).
+$$SIM\left(X,Y\right)=\sum_{i=1}^{6}\left|x_{i}-y_{i}\right|$$
+or
+$$SIM\left(X,Y\right)=\#DV\left(ICV\left(X\right),ICV\left(Y\right)\right)$$
+SIM is a function of K:
+$$SIM(X,Y) = \#ICV(X) + \#ICV(Y) - 2.K(X,Y)$$
+#+NAME: tab:sim
+| SC Type:        | TnI                |
+| Cardinality:    | Any                |
+| Vector Type:    | ICV                |
+| Max Similarity: | 0                  |
+| Min Similarity: | 65                 |
+| Average Value:  | 13                 |
+| No. Values:     | 44                 |
+| Criteria Met:   | C1,C2,C3.3,C3.4,C4 |
+| I-related:      | No                 |
+| Z-related:      | No                 |
 - Problems: scale not the same for all value groups. course resolution
-  when cardinalityies differ greatly
-**** Formula
-$$ 
-SIM\left(X,Y\right)=\sum_{i=1}^{6}\left|x_{i}-y_{i}\right| 
-$$ 
-or 
-$$
-SIM\left(X,Y\right)=\#DV\left(ICV\left(X\right),ICV\left(Y\right)\right)
-$$
+  when cardinalities differ greatly
 *** ASIM
-**** Description
-Absolute SIM
-Scaled version of SIM
-**** Details
-- ICV based
-- 1 to 1 correspondence
-- Max sim: 0
-- Min sim: 1
-- Average: 0.42
-- Distinct values: 79
-- Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4
-- Problems: Fixed the scale of values, but still coarse resolution
-  when cardinalities differ greatly. Scaling is done as the last step.
-**** Formula
-$$
-ASIM\left(X,Y\right)=\frac{SIM\left(X,Y\right)}{\left(\#ICV\left(X\right)+\#ICV\left(Y\right)\right)}
-$$
+Presented in \citet[pp. 450]{Morris1979}, ASIM (Absolute SIM) is a
+scaled version of SIM to address criteria C3.1.
+$$ASIM\left(X,Y\right)=\frac{SIM\left(X,Y\right)}{\#ICV\left(X\right)+\#ICV\left(Y\right)}$$
+#+NAME: tab:asim
+| SC Type:        | TnI                     |
+| Cardinality:    | Any                     |
+| Vector Type:    | ICV                     |
+| Max Similarity: | 0                       |
+| Min Similarity: | 1                       |
+| Average Value:  | 0.42                    |
+| No. Values:     | 79                      |
+| Criteria Met:   | C1,C2,C3.1,C3.2,C3.4,C4 |
+| I-related:      | No                      |
+| Z-related:      | No                      |
+Problems: Fixed the scale of values, but still coarse resolution when
+cardinalities differ greatly. Scaling is done as the last step.
 ** LORD
 *** sf
-**** Description
-- Presented in Lord(1981)
-- similar to sim but developed independently
-- sf is subset of SIM
-**** Details
-- ICV based
-- 1 to 1 correspondence
-- Same cardinality only
-- Max sim: 0
-- Min sim: 9
-- Average: 3
-- Distinct values: 10
-- Castren criteria met: C3.3, C3.4, C4
-- Problems: Fixed the scale of values, but still coarse resolution
-  when cardinalities differ greatly. Scaling is done as the last step.
-**** Formula
-$$ sf\left(X,Y\right)=\frac{\sum_{i=1}^{6}\left|x_{i}-y_{i}\right|}{2} $$
-or 
-$$ sf\left(X,Y\right)=\frac{\#DV\left(ICV\left(X\right),ICV\left(Y\right)\right)}{2} $$
-or
-$$ sf(X,Y)=\frac{SIM(X,Y)}{2} $$
+Presented in \cite[pp. 93]{Lord1981}, sf (Similarity Function) is
+similar to SIM but developed independently. sf is a subset of SIM:
+$$sf\left(X,Y\right)=\frac{\#DV\left(ICV\left(X\right),ICV\left(Y\right)\right)}{2}=\frac{SIM(X,Y)}{2}$$
+#+NAME: tab:sf
+| SC Type:        | TnI          |
+| Cardinality:    | Same         |
+| Vector Type:    | ICV          |
+| Max Similarity: | 0            |
+| Min Similarity: | 9            |
+| Average Value:  | 3            |
+| No. Values:     | 10           |
+| Criteria Met:   | C3.3,C3.4,C4 |
+| I-related:      | No           |
+| Z-related:      | No           |
 ** TEITELBAUM
 *** s.i.
-**** Details
-- ICV based
+Presented in \citet[pp. 88]{Teitelbaum1965}, s.i. (Similarity Index)
+is the Euclidean distance between the carteasian coordinates defined
+by the ICVs of two SCs. This is equivelant to the magnitude of the
+difference vector.
+$$s.i.(X,Y)=\sqrt{\sum_{i=1}^{6}(x_{i}-y_{i})^{2}}=\left\|DV(ICV(X),ICV(Y))\right\|$$
+#+NAME: tab:si
+| SC Type:        |       TnI |
+| Cardinality:    |      Same |
+| Vector Type:    |       ICV |
+| Max Similarity: |      1.41 |
+| Min Similarity: |      8.49 |
+| Average Value:  |      2.85 |
+| No. Values:     |        31 |
+| Criteria Met:   | C3.3,C3.4 |
+| I-related:      |        No |
+| Z-related:      |        No |
 - Same cardinality only
-- 1 to 1 correspondence
 - Z-related sets not compared
-- Max sim: sqrt 2 = 1.41
-- Min sim: sqrt 72 = 8.49
-- Average: 2.85
-- Distinc values: 31
-- Castren criteria met: C3.3 C3.4
-**** Formula
-$$ 
-s.i.(X,Y)=\sqrt{\sum_{i=1}^{6}(x_{i}-y_{i})^{2}} 
-$$
-or
-$$ s.i.(X,Y)=\sqrt{ \#DV( ICV(X), ICV(Y) )^{2}  }  $$
 ** ROGERS
-*** IcVD1
-**** Description
-- from Rogers(1992)
-- modification of SIM
-**** Details
-- ICV based
-- 1 to 1 correspondence
-- Max sim: 0
-- Min sim: 2
-- Average: 0.59
-- Distinct values: 140
-- Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4
-- vector components are scaled before being summed
-- Related to %REL2
-**** Formula
-$$
-IcVD_{1}(X,Y)=\sum_{i=1}^{6}{\left|\frac{x_{i}}{\#ICV(X)}+\frac{y_{i}}{\#ICV(Y)}\right|}
-$$
-*** IcVD2
-**** Description
-- from rogers 1992
-- modification of SIM
-- 
-**** Details
-- ICV based
-- 1 to 1 correspondence
-- Max sim: 0
-- Min sim: 1.41
-- Average: 0.54
-- Distinc values: 133
-- Castren criteria met: C1, C2, C3.1, C3.2, C3.4
+*** IcVD_{1}
+Presented in \citet{Rogers1992}, IcVD_{1} (Distance Formula 1) is a
+modification of SIM ([[SIM]]). The ICV components are scaled before being
+summed. IcVD_{1} is related to Castren's %REL_{2} ([[%REL_{n}]]):
+\%REL_{2}(X,Y) = IcVD_{1}(X,Y)\times 50.  
+
+$$IcVD_{1}(X,Y)=\#DV\left(\frac{ICV(X)}{\#ICV(X)},\frac{ICV(Y)}{\#ICV(Y)}\right)$$
+
+#+NAME: tab:icvd1
+| SC Type:        | TnI                     |
+| Cardinality:    | Any                     |
+| Vector Type:    | ICV                     |
+| Max Similarity: | 0                       |
+| Min Similarity: | 2                       |
+| Average Value:  | 0.59                    |
+| No. Values:     | 140                     |
+| Criteria Met:   | C1,C2,C3.1,C3.2,C3.4,C4 |
+| I-related:      | No                      |
+| Z-related:      | No                      |
+*** IcVD_{2}
+Presented in \citet{Rogers1992}, IcVD_{2} (Distance Formula 2) is
+similar to s.i. ([[s.i.]]), but instead returns the Euclidean distance
+between the ends of the normalised ICVs.
+$$IcVD_{2}(X,Y)=\left\|DV(\hat{ICV(X)},\hat{ICV(Y)})\right\|$$
+#+NAME: tab:icvd2
+| SC Type:        | TnI                  |
+| Cardinality:    | Any                  |
+| Vector Type:    | ICV                  |
+| Max Similarity: | 0                    |
+| Min Similarity: | 1.41                 |
+| Average Value:  | 0.54                 |
+| No. Values:     | 133                  |
+| Criteria Met:   | C1,C2,C3.1,C3.2,C3.4 |
+| I-related:      | No                   |
+| Z-related:      | No                   |
 - Problems: does not produce uniform values for comparable cases
-**** Formula
-$$
-IcVD_{2}(X,Y)=\sqrt{\sum{\left(\frac{x_{i}}{\sqrt{\sum{x_{i}^{2}}}}-\frac{y_{i}}{\sqrt{\sum{y_{i}^{2}}}}\right)}^{2}}
-$$
-*** COS\theta
-**** Description
-- from rogers (1992)
-- geometric approach
-**** Details
-- ICV based
-- 1 to many correspondence
-- Max sim: 1
-- Min sim: 0
-- Average: 0.81
-- Distinct values: 92
-- Castren criteria met: C1, C2, C3.1, C3.2, C3.4
+*** Cos(\theta)
+Presented in \citet{Rogers1992}, Cos\theta, gives the cosine of the
+angle between the ICVs in six-dimensional euclidean space. As the
+angle decreases the similarity approaches 1.
+$$Cos\theta(X,Y)=\frac{ICV(X)\cdot ICV(Y)}{\left\|ICV(X)\right\|\times\left\|ICV(Y)\right\|}$$
+#+NAME: tab:costheta
+| SC Type:        | TnI                  |
+| Cardinality:    | Any                  |
+| Vector Type:    | ICV                  |
+| Max Similarity: | 1                    |
+| Min Similarity: | 0                    |
+| Average Value:  | 0.81                 |
+| No. Values:     | 92                   |
+| Criteria Met:   | C1,C2,C3.1,C3.2,C3.4 |
+| I-related:      | No                   |
+| Z-related:      | No                   |
 - Problems: C4
-**** Formula
-$$
-Cos\theta(X,Y)=\frac{\sum{x_i.y_i}}{\sqrt{\sum{(x_i)^2}}.\sqrt{\sum{(y_i)^2}}}
-$$
-** ISAACSON
-*** AMEMB2
-**** Description
-- from Isaacson 1990
-- modification of rahns MEMB2
-- divide MEMB2 values by total number of entries in the ICVs of X and
-  Y.
-**** Details
-- ICV based
-- 1 to 1 correspondence
-- Max sim: 1
-- Min sim: 0
-- Average:
-- Distinct values:
-**** Formula
-$$ AMEMB_{2}=\frac{\sum \left( x_{i}+y_{i} \right)}{\frac{\left(\#X\left(\#X-1\right)+\#Y\left(\#Y-1\right)\right)}{2}} $$
-such that $$ \left(x_{i}>0\right) $$ and $$ \left(y_{i}>0\right) $$
-*** IcVSIM
-**** Description
-- Interval class vector similarity relation 
-- the standard deviation of the entries in the idv of two sets
-- Same degree of distinction as s.i.
-- any cardinality
-- Mathematically IcVSIM is a scalled version of s.i.
-**** Details
-- ICV based
-- 1 to 1 correspondence
-- Max sim: 0
-- Min sim: 3.64
-- Average: 1.2
-- Distinct values: 121
-- Castren criteria met: C1, C2, C3.4
-**** Formula
-$$ IcVSIM\left(X,Y\right)=\sigma\left(IdV\right) $$
-where 
-$$ IdV=[(y_{1}-x_{1})(y_{2}-x_{2})...(y_{6}-x_{6})] $$
-and
-$$ \sigma=\sqrt{\frac{\sum(IdV_{i}-\overline{IdV})^{2}}{6}} $$
-where
-$$IdV_{i}$$ is the ith term of the interval-difference vector and
-$$\overline {IdV}$$ is the average (mean) of the terms in the IdV
-Also
-$$ s.i.(X,Y)=\sqrt{\sum_{i=1}^{6}{IdV_{i}}^{2}} $$
-*** ISIM2
-**** Description
-- Scaled version of IcVSIM
-- The square root is taken of each term in the ICV
-**** Details
-- ICV based
-- 1 to 1 correspondence
-*** ANGLE
-**** Description
-- Same as Cos\theta from Rogers
-**** Details
-- ICV based
-**** Formula
-$$ ANGLE(X,Y)= \arccos{\frac{ICV(X) \cdot
-ICV(Y)}{|ICV(X)|\times |ICV(Y)|}} $$ 
-where the numberator is the dot product of the ICVs 
-and the denominator is the product of the magnitudes
 ** RAHN
 *** AK
-**** Description
-- from rahn (1979-80)
-- Absolute (Adjusted) K
-- took morris' k and used it as similarity measure
-- related to ASIM
-**** Details
-- ICV based
-- 1 to 1 correspondence
-- Max sim: 1
-- Min sim: 0
-- Average: 0.58
-- Distinct values: 78
-- Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4
+Presented in /citet[pp. 489]{Rahn1979}, AK is an absolute or adjusted
+version of Morris' K ([[K]]), addressing the C3.1 criteria. AK is related
+to Morris' ASIM: AK(X,Y)=1-ASIM(X,Y).
+$$AK\left(X,Y\right)=\frac{2K\left(X,Y\right)}{\#ICV\left(X\right)+\#ICV\left(Y\right)}$$
+#+NAME: tab:ak
+| SC Type:        | TnI                     |
+| Cardinality:    | Any                     |
+| Vector Type:    | ICV                     |
+| Max Similarity: | 1                       |
+| Min Similarity: | 0                       |
+| Average Value:  | 0.58                    |
+| No. Values:     | 78                      |
+| Criteria Met:   | C1,C2,C3.1,C3.2,C3.4,C4 |
+| I-related:      | No                      |
+| Z-related:      | No                      |
 - Problems: single scale of values (C4), but poor discrimination for
   some value groups.
-**** Formula
-$$ ak\left(X,Y\right)=\frac{2\times k\left(X,Y\right)}{\#ICV\left(X\right)+\#ICV\left(Y\right)} $$
-$$ Ak(X,Y)=1-ASIM(X,Y) $$
-*** MEMBn
-**** Description
-- from rahn (1979-80)
-- Mutual Embedding
-- preliminary step towards other measures
-**** Details
-- nCV based
-- 1 to many correspondence
-- one cardinality at a time
-- Max sim: 121
-- Min sim: 0
-- Average: 30
-- Distinc values: 79
-- Castren criteria met: C1, C2, C3.3, C3.4, C4
+*** MEMB_{n}
+Presented in \citet[pp. 492]{Rahn1979}, MEMB_{n} (Mutual Embedding
+Number) compares the nCVs of two SCs for one nC at a time. It meausres
+the mutual embedding of subsets such that only non-zero components of
+the nCVs contribute. By setting n = 2 (MEMB_{2}) it compares ICVs.
+$$MEMB_{n}\left(X,Y\right)=\sum_{i=1}^{\#nC}{nCV(X)_{i}+nCV(Y)_{i}}$$
+such that nCV(X)_{i}>0 and nCV(Y)_{i}>0. 
+#+NAME: tab:membn
+| SC Type:        | TnI or Tn          |
+| Cardinality:    | Any                |
+| Vector Type:    | nCV                |
+| Max Similarity: | 121                |
+| Min Similarity: | 0                  |
+| Average Value:  | 30                 |
+| No. Values:     | 79                 |
+| Criteria Met:   | C1,C2,C3.3,C3.4,C4 |
+| I-related:      | Yes*               |
+| Z-related:      | Yes*               |
 - Problems: does not produce uniform scale of values for all value
   groups.
-- by setting n to 2 it compares ICVs
-**** Formula
-$$ MEMB_{n}\left(J,X,Y\right)=EMB\left(J,X\right)+EMB\left(J,Y\right) $$
-for all J such that
-$$ \#J=n $$
-and
-$$ EMB\left(J,X\right)>0 $$ and $$ EMB\left(J,Y\right)>0 $$
-so...
-$$ MEMB_{\#X}\left( X,X,Y \right)=EMB\left( X,Y \right) + 1 $$
 *** TMEMB
-**** Description
-- total mutual embedding
-- from rahn (1979-80)
-- total measure
-**** Details
-- nCV based
-- 1 to many correspondence
-- Max sim: 6118
-- Min sim: 0
-- Average: 131
-- Distinct values: 877
-- Castren Criteria met: C1, C2, C3.3, C4, C5
+Presented in \citet[pp. 492]{Rahn1979}, TMEMB (Total Mutual Embedding
+Number) counts the mutually embedded subsets of every
+cardinality. TMEMB is a total measure.
+$$TMEMB\left(X,Y\right)=\sum_{n=2}^{12}MEMB_{n}\left(X,Y\right)$$
+#+NAME: tab:tmemb
+| SC Type:        | TnI or Tn        |
+| Cardinality:    | Any              |
+| Vector Type:    | nCV              |
+| Max Similarity: | 6118             |
+| Min Similarity: | 0                |
+| Average Value:  | 131              |
+| No. Values:     | 877              |
+| Criteria Met:   | C1,C2,C3.3,C4,C5 |
+| I-related:      | Yes              |
+| Z-related:      | Yes              |
 - Problems: Different value scales for different value groups
-**** Formula
-$$ TMEMB\left(X,Y\right)=\sum_{n=2}^{12}MEMB_{n}\left(J,X,Y\right) $$
 *** ATMEMB
-**** Description
-- from rahn (1989-80)
-- total measure
-- Absolute (Adjusted) TMEMB
-- ATMEMB is related to TMEMB the same way ASIM is to SIM and AK to K
-**** Details
-- nCV based
-- 1 to many correspondence
-- total measures
-- Differentiates between Z-related pairs and I related
-- Max sim: 1
-- Min sim: 0
-- Average: 0.45
-- Distinct values: 101
-- Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4, C5
-- Problems: Castren says: "divisor term is flawed... high degrees of
-  similarity between SCs of clearly different cardinalities. General
-  reliability and usefulness is difficulty to determine"
-**** Formula
-$$ ATMEMB\left(X,Y\right)=\frac{TMEMB\left(X,Y\right)}{2^{\#X}+2^{\#Y}-\left(\#X+\#Y+2\right)} $$
+Presented in \citet[pp. 494]{Rahn1979}, ATMEMB (Adjusted Total Mutual
+Embedding Number) is a scaled version of TMEMB to address criteria
+C3.1 (like SIM and ASIM; A and AK). ATMEMB is a total measure.
+$$ATMEMB\left(X,Y\right)=\frac{TMEMB\left(X,Y\right)}{2^{\#X}+2^{\#Y}-\left(\#X+\#Y+2\right)}$$
+#+NAME: tab:atmemb
+| SC Type:        |                  TnI or Tn |
+| Cardinality:    |                        Any |
+| Vector Type:    |                        nCV |
+| Max Similarity: |                          1 |
+| Min Similarity: |                          0 |
+| Average Value:  |                       0.45 |
+| No. Values:     |                        101 |
+| Criteria Met:   | C1,C2,C3.1,C3.2,C3.4,C4,C5 |
+| I-related:      |                        Yes |
+| Z-related:      |                        Yes |
+** ISAACSON
+*** AMEMB2
+Proposed by \citet[pp. 8]{Isaacson1990}, AMEMB_{2} (Adjusted MEMB_{2})
+is a scaled version MEMB_{2} ([[MEMB_{n}]]), measuring the mutual
+embedding of ICs.
+
+$$AMEMB_{2}=\frac{2 \times
+MEMB_{2}(X,Y)}{\left(\#X\left(\#X-1\right)+\#Y\left(\#Y-1\right)\right)}$$
+#+NAME: tab:amemb2
+| SC Type:        | TnI |
+| Cardinality:    | Any |
+| Vector Type:    | ICV |
+| Max Similarity: | 1   |
+| Min Similarity: | 0   |
+| Average Value:  |     |
+| No. Values:     |     |
+| Criteria Met:   |     |
+*** IcVSIM
+Presented in \citet[pp. 18]{Isaacson1990}, IcVSIM (Interval-Class
+Vector Similarity Relation) is the standard deviation of the entries
+in the ICVs of two SCs. IcVSIM is a scaled version of
+s.i. ([[s.i.]]). IdV_{i} is the ith term in the vector defined by
+ICV(X)-ICV(Y) and $\overline{DV}$ is the average (mean) of its
+entries.
+$$IcVSIM(X,Y)=\sqrt{\frac{\sum(IdV_{i}-\overline{IdV})^{2}}{6}}$$
+#+NAME: tab:icvsim
+| SC Type         | TnI        |
+| Cardinality:    | Any        |
+| Vector Type:    | ICV        |
+| Max Similarity: | 0          |
+| Min Similarity: | 3.64       |
+| Average Value:  | 1.2        |
+| No. Values:     | 121        |
+| Criteria Met:   | C1,C2,C3.4 |
+| I-related:      | No         |
+| Z-related:      | No         |
+*** ISIM2
+Presented in \citet{Isaacson1996}, ISIM2 is a scaled version of IcVSIM
+([[IcVSIM]]). The squre root is taken of each term in the ICVs. Isaacson
+argues that each additional instance of an IC contributes less to
+similitude. However, \citet{Samplaski2005a} found ISIM2 to be
+inconsistent with itself when applying MDS to the values produced.
+#+NAME: tab:isim2
+| SC Type         | TnI        |
+| Cardinality:    | Any        |
+| Vector Type:    | ICV        |
+| Max Similarity: |            |
+| Min Similarity: |            |
+| Average Value:  |            |
+| No. Values:     |            |
+| Criteria Met:   | C1,C2,C3.4 |
+*** ANGLE (Isaacson & Scott)
+\citet{Scott1998} propose a geometric method which is identical to
+that of Cos/theta ([[Cos(\theta)]]) but instead gives the size of the
+angle in degrees. $$ANGLE(X,Y) = \arccos{Cos\theta(X,Y)}$$
+#+NAME: tab:isim2
+| SC Type         | TnI                  |
+| Cardinality:    | Any                  |
+| Vector Type:    | ICV                  |
+| Max Similarity: |                      |
+| Min Similarity: |                      |
+| Average Value:  |                      |
+| No. Values:     |                      |
+| Criteria Met:   | C1,C2,C3.1,C3.2,C3.4 |
+| I-related:      | No                   |
+| Z-related:      | No                   |
 ** LEWIN
 *** REL
-**** Description
-- Presented in Lewin 1979-80
-- probablistic approach to pc-set theory
-- multiplying components has an effect similar to MEMBn (only
-  non-zero)
-- by multiplying and sqrting - geometric mean
-**** Details
-- nCV based
-- total measure
-- discriminates Z and I related sets
-- 1 to many correspondence
-- Max sim: 1
-- Min sim: 0
-- Average: 0.57
-- Distinct values: 91
-- Castren criteria met: C1, C2, C3.1, C3.2, C3.4, C4, C5
-- Problems
-**** Formula
-$$ REL(A,B)=\frac{\sum_{i=1}^{357}\sqrt{sub(A,i).sub(B,i)}}{\sqrt{\sum_{i=1}^{357}sub(A,i).\sum_{i=1}^{357}sub(B,i)}} $$
-or
-$$ REL(X,Y)=\frac{ \sum_{A\in TEST}{\sqrt{EMB(A,X) \times EMB(A,Y)}} }{\sqrt{TOTAL(X)\times TOTAL(Y)}}  $$
-Were TEST cotains all SCs of cardinality 2 to MIN(#X,#Y)
-*** REL2
-**** Description
-- A specialised version of [[REL]] that measures only intervallic
-  similarity
-- criticises Rahns (x_{i}+y_{i}) as "arithmetic awkwardness"
-- Multiplies corresponding IcV entries
-- REL2 increases as corresponding IcV entries increase
-- As cardinality increases, range of REL decreases
-- high level of distinction
-- produces max similarity only when IcVs are identical
-**** Formula
+Presented in \citet{Lewin1979}, REL compares the nCVs of two SCs for
+all the nCs. Like MEMB_{n} ([[MEMB_{n}]]), REL only considers non-zero
+entries however, this is achieved by multiplication (taking the
+geometric mean) of corresponding nCV terms.
+
+$$REL(X,Y)=\frac{\sum_{i=1}^{p}{\sqrt{SUB(X)_{i}\times SUB(Y)_{i}}}}{\sqrt{\#SUB(X)\times \#SUB(Y)}}$$
+
+$$REL(X,Y)=\frac{\#GMV(SUB(X),SUB(Y))}{GM(\#SUB(X),\#SUB(Y))}$$
+
+where SUB(X) consists of concatenated nCVs and has a length p.
+#+NAME: tab:rel
+| SC Type:        | TnI or Tn                  |
+| Cardinality:    | Any                        |
+| Vector Type:    | nCV                        |
+| Max Similarity: | 1                          |
+| Min Similarity: | 0                          |
+| Average Value:  | 0.57                       |
+| No. Values:     | 91                         |
+| Criteria Met:   | C1,C2,C3.1,C3.2,C3.4,C4,C5 |
+| I-related:      | Yes                        |
+| Z-related:      | Yes                        |
+*** REL_{2}
+\citet{Rahn1979} suggested a number of manifestations of the basic REL
+concept including REL_{2} which measures only intervallic similarity.
 $$ REL_{2}(X,Y)\frac{2\times\sum\sqrt{(x_{i}y_{i})}}{\sqrt(\#X(\#X-1)\#Y(\#Y-1))} $$
+#+NAME: tab:rel
+| SC Type:        | TnI                  |
+| Cardinality:    | Any                  |
+| Vector Type:    | ICV                  |
+| Max Similarity: | 1                    |
+| Min Similarity: | 0                    |
+| Average Value:  |                      |
+| No. Values:     |                      |
+| Criteria Met:   | C1,C2,C3.1,C3.2,C3.4 |
 ** CASTREN
-*** %RELn
-**** Asymmetric Difference vector
-**** nC%V
-**** Description
-- Presented in castren
-- Modification of sf but using nC%V
-- integral part of recrel
-**** Details
-- nC%V based
-- one cardinality at a time
-- 1 to 1 correspondence
-- sometimes discriminate between I related SCsx
-- Max sim: 0
-- Min sim: 100
-- Average: 30
-- Distinct values: 85
-- Castren criteria met: C1, C2, C3.1, C3.2, C3.3, C3.4, C4
-**** Formula
-$$ \%REL_n(X,Y)=\frac{\sum_{i=1}^{p}|x_i-y_i|}{2} $$
-where xi and yi are values in the nC%V and p is the length of the nC%V.
-or
-$$ \%REL_{n}\left(X,Y\right)=\frac{\#DV\left(nC\%V(X),nC\%V(Y)\right)}{2} $$
+*** Castren's Difference Vector
+Castren specifies a different type of DV, which we shall call cDV to
+distinguish it from the regular DV. It consistes of two rows,
+$cDV_{x}(X,Y)=X-Y$ and $cDV_{y}(X,Y)=Y-X$. Any negative values in
+either of the rows are set to zero.  In addition Castren defines the
+weighted difference vector (wcDV) of two vectors X and Y as:
+$$wcDV=\frac{cDV(X,Y)}{\#cDV(X,Y)}\times 100$$
+*** nC%V
+Presented in \citet{Castren1994} for use in %REL_{n}, nC%V(X) (n-class
+subset percentage vector) gives the percentage subset-class contents
+of an SC, X. The 2C%V is the Interval percentage vector.
+$$nC\%V(X)=\frac{nCV(X)}{\#nCV(X)}\times 100$$
+*** %REL_{n}
+Presented in \citet{Castren1994}, %REL_{n} (Percentage Relation) is a
+modification of sf ([[sf]]) using the nC%Vs ([[nC%V]]) instead of
+ICVs. %REL_{n} can be used as a stand-alone measure, however it is
+primarily intended as an intermediate step in T%REL and RECREL ([[T%REL]]
+and [[RECREL]]). $$\%REL_n(X,Y)=\frac{\#DV(nC\%V(X),nC\%V(Y))}{2}$$
+#+NAME: tab:%reln
+| SC Type         | TnI or Tn                    |
+| Cardinality:    | Any                          |
+| Measure Type:   | Single nC                    |
+| Vector Type:    | nC%V                         |
+| Max Similarity: | 0                            |
+| Min Similarity: | 100                          |
+| Average Value:  | 30                           |
+| No. Values:     | 85                           |
+| Criteria Met:   | C1,C2,C3.1,C3.2,C3.3,C3.4,C4 |
+| I-related:      | Sometimes                    |
+| Z-related:      | Sometimes                    |
 *** T%REL
-**** Description
-- total percentage measure
-- total meaure
-**** Details
-- nC%V based
-- 1 to 1 correspondence
-- total measure
-- discriminated z and I related SCs
-- Max sim: 0
-- Min sim: 100
-- Average: 63
-- Distinct values: 79
-- Castren criteria met: C1, C2, C3.1, C3.2, C3.3, C3.4, C4, C5
-**** Formula
-$$ T\%REL(X,Y)=\frac{\sum_{n=2}^{m}{\%REL_n\left(X,Y\right)}}{m-1} $$
-where
-if $$ \#X\neq \#Y, m = MIN(\#X, \#Y)$$ else $$ m = \#X-1  $$
+Presented in \citet{Castren1994}, T%REL (Total Percentage Relation) is
+the mean average of the vlaues of %REL_{n} for all values of $n$ from $2$
+to $m$ where, if $\#X\neq\#Y$, $m = MIN(\#X,\#Y)$ else $m=\#X-1$.
+$$T\%REL(X,Y)=\frac{\sum_{n=2}^{m}{\%REL_n\left(X,Y\right)}}{m-1}$$
+#+NAME: tab:t%rel
+| SC Type:        | TnI or Tn                       |
+| Cardinality:    | Any                             |
+| Measure Type:   | Total                           |
+| Vector Type:    | nC%V                            |
+| Max Similarity: | 0                               |
+| Min Similarity: | 100                             |
+| Average Value:  | 63                              |
+| No. Values:     | 79                              |
+| Criteria Met:   | C1,C2,C3.1,C3.2,C3.3,C3.4,C4,C5 |
+| I-related:      | Yes                             |
+| Z-related:      | Yes                             |
 *** RECREL
-**** Comparison Procedure
-1. Branches
-2. Levels
-3. Weighting
-4. Final Value
+Presented in \citet{Castren1994}, RECREL (Recursive Relation)
+recursively compares the subsets and subsets of subsets of two SCs
+using %REL_{n} ([[%REL_{n}]]). The comparison procedure is quite
+complicated and potentially involves evaluating %REL_{n} thousands of
+times.
+#+NAME: tab:t%rel
+| SC Type:        | TnI or Tn |
+| Cardinality:    | Any       |
+| Measure Type:   | Total     |
+| Vector Type:    | nC%V      |
+| Max Similarity: | 0         |
+| Min Similarity: | 100       |
+| Average Value:  |           |
+| No. Values:     | 89        |
+| Criteria Met:   | All       |
+| I-related:      | Yes       |
+| Z-related:      | Yes       |
 ** BUCHLER
-*** SATSIM
-**** Description
-- orgininally meant to compare ICVs but can be adapted
-**** SATV
-- need to define. Saturation vector
-- extent to which an SC is saturated with a subclass
-**** Formula
-$$ 
-SATSIM_{n}(X,Y)= \frac{\sum_{i=1}^{p}{\left|SATV_{A}(X)_{i}-SATV_{row}(Y)_{i}\right|+\left|SATV_{A}(Y)_{i}-SATV_{row}(X)_{i}\right|}}{\sum_{i=1}^{p}{\left|SATV_{A}(X)_{i}-SATV_{B}(X)_{i}\right|+\left|SATV_{A}(Y)_{i}-SATV_{B}(Y)_{i}\right|}}
-$$
-where p is the length of the SATVs
-*** CSATSIM
+*** nSATV
+Presented in \citet[chap. 2.3]{Buchler1997} nSATV(X) (Saturation
+Vector) is a dual vector consisting of two rows, nSATV_{A}(X) and
+nSATV_{B}(X). It shows extent to which an SC is saturated with
+subclasses of cardinality n. The steps for computing nSATV(X) are
+as follows:
+
+1. Compute the nCVs for all SCs of cardinality #X.
+2. Find the minimum and maximum values for each vector position. These
+   values form vectors $Max_{n}(\#X)$ and $Min_{n}(\#X)$.
+3. Compute the following two vectors:
+   $MaxMinus=DV(nCV(X),Max_{n}(\#X))$ and $MinPlus=DV(nCV(X),Min_{n}(\#X))$
+4. $nSATV_{A}(X)_{i}=MIN(MaxMinus_{i},MinPlus_{i})$ and
+   $nSATV_{B}(X)_{i}=MAX(MaxMinus_{i},MinPlus_{i})$
+5. If $MaxMinus_{i}=MinPlus_{i}$, $nSATV_{A}(X)_{i}=MaxMinus_{i}$
+   and $nSATV_{B}(X)_{i}=MinPlus_{i}$
+*** SATSIM_{n}
+Presented in \citet[chap. 2.4]{Buchler1997}, SATSIM_{n} (Saturation
+Similarity index) compares the nSATVs of two SCs and involves the
+following steps:
+1) Calculate nSATV(X) and nSATV(Y)
+2) Calculate the vectors nSATV_{row}(X) and nSATV_{row}(Y).
+3) The function "row" maps the MaxMinus values of one nSATV to the
+   MaxMinus values of the other. If nSATV_{A}(X)_{i} is a MaxMinus
+   value and nSATV_{A}(X)_{i} is also a MaxMinus value, row = A
+   (nSATV_{row}(X)_{i} = nSATV_{A}(X)_{i}), otherwise row = B.
+4) Finally SATSIM_{n}(X,Y) is given by the formula:
+
+$$SATSIM_{n}(X,Y)=\frac{\#DV(nSATV_{A}(X),nSATV_{row}(Y))+\#DV(nSATV_{A}(Y),SATV_{row}(X))}{\#DV(nSATV_{A}(X),SATV_{B}(X))+\#DV(SATV_{A}(Y),SATV_{B}(Y))}$$
+*** CSATSIM                                                      :noexport:
+- cyclic saturation similarity
 **** Description
 - uses CSATV
-**** 
 *** AvgSATSIM
-**** Formula
-$$ AvgSATSIM(X,Y)= \sum_{n=2}^{m-1}{SATSIM_{n}(X,Y)} $$
-where $$ m = MIN(\#X,\#Y)  $$
+Presented in \citet[chap. 2.10]{Buchler1997}, AvgSATSIM (Average
+Saturation Similarity index) is the mean of SATSIM_{n} values where
+$m=MIN(\#X,\#Y)$.
+
+$$ AvgSATSIM(X,Y)=\frac{\sum_{n=2}^{m-1}{SATSIM_{n}(X,Y)}}{m-2}$$
 *** TSATSIM
-**** Description
-- Extension of SATSIMn
-- quotient of sum of SATSIMn numerators by denominators
-- very close to AvgSATSIM
-- Total measure
+Presented in \citet[chap. 2.10]{Buchler1997}, TSATSIM (Total
+Saturartion Vector Similarity index) is an extension of
+SATSIM_{n}. TSATSIM is the quotient of the sum of all SATSIM_{n}
+numerators and denominators for all values of n from 2 to m-1 where
+$m=MIN(\#X,\#Y)$.
 ** Comparison Table
 #+CAPTION: Comparison table of similarity measures
 #+NAME: tab:comparison table
@@ -1097,96 +1307,145 @@ where $$ m = MIN(\#X,\#Y)  $$
 ** Comparison Table 2
 #+CAPTION: Comparison table 2 of similarity measures
 #+NAME: tab:comparison table2
-|------------+------------+--------+------+---------+-----------|
-|            | SIMILARITY | VECTOR |      | MEASURE |       Min |
-| THEORIST   | MEASURE    | TYPE   | CARD |    TYPE |       Min |
-|------------+------------+--------+------+---------+-----------|
-|            | K          | ICV    | SAME |       1 |      0-55 |
-|            | SIM        | ICV    | SAME |       1 |      65-0 |
-| MORRIS     | ASIM       | ICV    | ANY  |       1 |       1-0 |
-|------------+------------+--------+------+---------+-----------|
-| LORD       | sf         | ICV    | SAME |       1 |       9-0 |
-|------------+------------+--------+------+---------+-----------|
-| TEITELBAUM | s.i.       | ICV    | SAME |       1 | 8.49-1.41 |
-|------------+------------+--------+------+---------+-----------|
-|            | IcVD1      | ICV    | ANY  |       1 |       2-0 |
-|            | IcVD2      | ICV    | ANY  |       1 |           |
-| ROGERS     | COS        | ICV    | ANY  |       1 |           |
-|------------+------------+--------+------+---------+-----------|
-|            | AMEMB2     | ICV    | ANY  |       1 |           |
-|            | IcVSIM     | ICV    | ANY  |       1 |           |
-|            | ISIM2      | ICV    | ANY  |       1 |           |
-| ISAACSON   | ANGLE      | ICV    | ANY  |       1 |           |
-|------------+------------+--------+------+---------+-----------|
-|            | AK         | ICV    | ANY  |       1 |           |
-|            | MEMBn      | nCV    | ANY  |       1 |           |
-|            | TMEMB      | nCV    | ANY  |       2 |           |
-| RAHN       | ATMEMB     | nCV    | ANY  |       2 |           |
-|------------+------------+--------+------+---------+-----------|
-|            | REL2       | ICV    | ANY  |       1 |           |
-| LEWIN      | REL        | nCV    | ANY  |       2 |           |
-|------------+------------+--------+------+---------+-----------|
-|            | %RELn      | nCV    | ANY  |       1 |           |
-|            | T%REL      | nCV    | ANY  |       2 |           |
-| CASTREN    | RECREL     | nCV    | ANY  |       2 |           |
-|------------+------------+--------+------+---------+-----------|
-|            | SATSIM     | nCV    | ANY  |       1 |           |
-|            | CSATSIM    | ICV    | ANY  |       1 |           |
-|            | TSATSIM    | nCV    | ANY  |       2 |           |
-| BUCHLER    | AvgSATSIM  | nCV    | ANY  |       2 |           |
-|------------+------------+--------+------+---------+-----------|
-* Examples                                                         :noexport:
-Examples 1-9 demonstrate the PC-set theoretical principles described
-in Chapter [[Pitch-Class Set Theory]]
-#+NAME: tab:pcset
-| Example 1: | PC-set             | Pitch-set | S        | $=$       | {A4,C5,E5,A5} (A minor) |
-|            |                    | PC-set    | S        | $=$       | {9,0,4,9} = {0,4,9}     |
-|            |                    |           |          |           |                         |
-| Example 2: | Cardinality        |           | #S       | $=$       | 3                       |
-|            |                    |           |          |           |                         |
-| Example 3: | Transposition      |           | S        | $=$       | {0,4,9}                 |
-|            |                    |           | T3(S)    | $=$       | {3,7,0} = {0,3,7}       |
-|            |                    |           |          |           |                         |
-| Example 4: | Inversion          |           | S        | $=$       | {0,4,9}                 |
-|            |                    |           | I(S)     | $=$       | {11,7,2} = {2,7,11}     |
-|            |                    |           |          |           |                         |
-| Example 5: | Membership         |           | 4        | $\in$     | {0,4,9}                 |
-|            |                    |           |          |           |                         |
-| Example 6: | Inclusion          |           | {0,4,9}  | $\subset$ | {0,1,4,5,9}             |
-|            |                    |           |          |           |                         |
-| Example 7: | Embedding Number   |           | X        | $=$       | {0,4}                   |
-|            |                    |           | Y        | $=$       | {0,4,8}                 |
-|            |                    |           | EMB(X,Y) | $=$       | 3                       |
-|            |                    |           |          |           |                         |
-| Example 8: | Subset Vector      |           | S        | $=$       | {0,4,9}                 |
-|            |                    |           | 2CV(S)   | $=$       | ICV(S) = [0 0 1 1 1 0]  |
-|            |                    |           |          |           |                         |
-| Example 9: | Vector Cardinality |           | #ICV(S)  | $=$       | 0+0+1+1+1+0 = 3         |
-#+TBLFM: $7={@4$1,@5$3,@5$7,@5$1} (A minor)
+|------------+--------+------+---------+-----------+---------------------------------|
+| SIMILARITY | VECTOR |      | MEASURE |       Min | Criteria                        |
+| MEASURE    | TYPE   | CARD |    TYPE |       Min |                                 |
+|------------+--------+------+---------+-----------+---------------------------------|
+| K          | ICV    | SAME |       1 |      0-55 | C1,C2,C3.3,C3.4,C4              |
+| SIM        | ICV    | SAME |       1 |      65-0 | C1,C2,C3.3,C3.4,C4              |
+| ASIM       | ICV    | ANY  |       1 |       1-0 | C1,C2,C3.1,C3.2,C3.4,C4         |
+|------------+--------+------+---------+-----------+---------------------------------|
+| sf         | ICV    | SAME |       1 |       9-0 | C3.3, C3.4, C4                  |
+|------------+--------+------+---------+-----------+---------------------------------|
+| s.i.       | ICV    | SAME |       1 | 8.49-1.41 | C3.3, C3.4                      |
+|------------+--------+------+---------+-----------+---------------------------------|
+| IcVD1      | ICV    | ANY  |       1 |       2-0 | C1,C2,C3.1,C3.2,C3.4,C4         |
+| IcVD2      | ICV    | ANY  |       1 |    1.41-0 | C1,C2,C3.1,C3.2,C3.4            |
+| COS        | ICV    | ANY  |       1 |       0-1 | C1,C2,C3.1,C3.2,C3.4            |
+|------------+--------+------+---------+-----------+---------------------------------|
+| AMEMB2     | ICV    | ANY  |       1 |       0-1 |                                 |
+| IcVSIM     | ICV    | ANY  |       1 |    3.64-0 | C1, C2, C3.4                    |
+| ISIM2      | ICV    | ANY  |       1 |           |                                 |
+| ANGLE      | ICV    | ANY  |       1 |       0-1 |                                 |
+|------------+--------+------+---------+-----------+---------------------------------|
+| AK         | ICV    | ANY  |       1 |       0-1 | C1,C2,C3.1,C3.2,C3.4,C4         |
+| MEMBn      | nCV    | ANY  |       1 |     0-121 | C1,C2,C3.3,C3.4,C4              |
+| TMEMB      | nCV    | ANY  |       2 |    0-6118 | C1,C2,C3.3,C4,C5                |
+| ATMEMB     | nCV    | ANY  |       2 |       0-1 | C1,C2,C3.1,C3.2,C3.4,C4,C5      |
+|------------+--------+------+---------+-----------+---------------------------------|
+| REL2       | ICV    | ANY  |       1 |           |                                 |
+| REL        | nCV    | ANY  |       2 |       0-1 | C1,C2,C3.1,C3.2,C3.4,C4,C5      |
+|------------+--------+------+---------+-----------+---------------------------------|
+| %RELn      | nC%V   | ANY  |       1 |     100-0 | C1,C2,C3.1,C3.2,C3.3,C3.4,C4    |
+| T%REL      | nC%V   | ANY  |       2 |     100-0 | C1,C2,C3.1,C3.2,C3.3,C3.4,C4,C5 |
+| RECREL     | nC%V   | ANY  |       2 |     100-0 | ALL                             |
+|------------+--------+------+---------+-----------+---------------------------------|
+| SATSIM     | SATV   | ANY  |       1 |           | C1,C2,C3.1                      |
+| CSATSIM    | ICV    | ANY  |       1 |           | C1,C2,C3.1                      |
+| TSATSIM    | SATV   | ANY  |       2 |           | C1,C2,C3.1                      |
+| AvgSATSIM  | SATV   | ANY  |       2 |           | C1,C2,C3.1                      |
+|------------+--------+------+---------+-----------+---------------------------------|
+** Details Table
+#+CAPTION: Comparison table 2 of similarity measures
+#+NAME: tab:comparison table2
+|------------+--------+------+---------+------+------+------+----------|
+| SIMILARITY | VECTOR |      | MEASURE |      |      |      |          |
+| MEASURE    | TYPE   | CARD |    TYPE |  Min |  Max |  Avg | No. Vals |
+|------------+--------+------+---------+------+------+------+----------|
+| K          | ICV    | SAME |       1 |    0 |   55 |   10 |       35 |
+| SIM        | ICV    | SAME |       1 |   65 |    0 |   13 |       44 |
+| ASIM       | ICV    | ANY  |       1 |    1 |    0 | 0.42 |       79 |
+|------------+--------+------+---------+------+------+------+----------|
+| sf         | ICV    | SAME |       1 |    9 |    0 |    3 |       10 |
+|------------+--------+------+---------+------+------+------+----------|
+| s.i.       | ICV    | SAME |       1 | 8.49 | 1.41 | 2.85 |       31 |
+|------------+--------+------+---------+------+------+------+----------|
+| IcVD1      | ICV    | ANY  |       1 |    2 |    0 | 0.59 |      140 |
+| IcVD2      | ICV    | ANY  |       1 | 1.41 |    0 | 0.54 |      133 |
+| COS        | ICV    | ANY  |       1 |    0 |    1 | 0.81 |       92 |
+|------------+--------+------+---------+------+------+------+----------|
+| AMEMB2     | ICV    | ANY  |       1 |    0 |    1 |      |          |
+| IcVSIM     | ICV    | ANY  |       1 | 3.64 |    0 |  1.2 |      121 |
+| ISIM2      | ICV    | ANY  |       1 |      |      |      |          |
+| ANGLE      | ICV    | ANY  |       1 |    0 |    1 |      |          |
+|------------+--------+------+---------+------+------+------+----------|
+| AK         | ICV    | ANY  |       1 |    0 |    1 | 0.58 |       78 |
+| MEMBn      | nCV    | ANY  |       1 |    0 |  121 |   30 |       79 |
+| TMEMB      | nCV    | ANY  |       2 |    0 | 6118 |  131 |      877 |
+| ATMEMB     | nCV    | ANY  |       2 |    0 |    1 | 0.45 |      101 |
+|------------+--------+------+---------+------+------+------+----------|
+| REL2       | ICV    | ANY  |       1 |      |      |      |          |
+| REL        | nCV    | ANY  |       2 |    0 |    1 | 0.57 |       91 |
+|------------+--------+------+---------+------+------+------+----------|
+| %RELn      | nC%V   | ANY  |       1 |  100 |    0 |   30 |       85 |
+| T%REL      | nC%V   | ANY  |       2 |  100 |    0 |   63 |       79 |
+| RECREL     | nC%V   | ANY  |       2 |  100 |    0 |   40 |       89 |
+|------------+--------+------+---------+------+------+------+----------|
+| SATSIM     | SATV   | ANY  |       1 |      |      |      |          |
+| CSATSIM    | ICV    | ANY  |       1 |      |      |      |          |
+| TSATSIM    | SATV   | ANY  |       2 |      |      |      |          |
+| AvgSATSIM  | SATV   | ANY  |       2 |      |      |      |          |
+|------------+--------+------+---------+------+------+------+----------|
 * PC-set Theory Glossary
 - PC: pitch-class
 - set: Unordered PC-set
 - SC: Set-class
 - nC: Cardinality-class
+- #nC: The number of SCs in nC
 - IC: Interval-class, 2C
-- Tn: Transposition
-- I: Inversion
-- TnI: Transposition/Inversion
+- Tn(X): Transposition of set X by n
+- I(X): Inversion of set X
 - Tn-Type: Transpositional SC-type
 - I-Type: Inversional SC-type
-- TnI: Transpositional/inversional SC-type
+- TnI-Type: Transpositional/inversional SC-type
 - Prime Form: PC-set representing all members of an SC
-- ICV: Interval-class vector
+- ICV: Interval-class vector, 2CV
 - nCV: n-class subset vector
-- nC%V: n-subset class percentage vector
+- nC%V: n-class subset percentage vector
 - SATV: Saturation vector
-- CSATV: Cyclic saturation vectors
+- CSATV: Cyclic saturation vector
 - DV: Difference vector
 - #X: Set cardinality
 - #nCV: Vector cardinality
+- Trivial forms: 
 
 \bibliographystyle{plainnat}
 \bibliography{/Users/nick/Documents/MendeleyDesktop/library.bib}
-
-
-
+* Chords as PC sets
+Relevant chords and their SCs
+#+CAPTION: Chord types and their SCs
+#+NAME: tab:chordSC
+|------------------------+--------------------+------------+-------|
+|                        | PC-Set             | Forte Name |       |
+| Chord                  | (Prime Form)       |  (Tn-type) | index |
+|------------------------+--------------------+------------+-------|
+| maj                    | {0,4,7}            |      3-11B |    25 |
+| min                    | {0,3,7}            |      3-11A |    24 |
+| dim                    | {0,3,6}            |       3-10 |    23 |
+| aug                    | {0,4,8}            |       3-12 |    26 |
+| sus4                   | {0,2,7}            |        3-9 |    22 |
+| sus2                   | {0,2,7}            |        3-9 |    22 |
+|------------------------+--------------------+------------+-------|
+| maj7                   | {0,1,5,8}          |       4-20 |    57 |
+| min7                   | {0,3,5,8}          |       4-26 |    64 |
+| hdim7                  | {0,2,5,8}          |      4-27A |    65 |
+| 7                      | {0,3,6,8}          |      4-27B |    66 |
+| dim7                   | {0,3,6,9}          |       4-28 |    67 |
+| min(7)                 | {0,1,4,8}          |      4-19A |    55 |
+| aug(7)                 | {0,3,4,8}          |      4-19B |    56 |
+| maj(9)                 | {0,2,4,7}          |      4-22A |    59 |
+| min(9)                 | {0,2,3,7}          |      4-14A |    46 |
+| maj6                   | {0,3,5,8}          |       4-26 |    64 |
+| min6                   | {0,1,5,8}          |       4-20 |    57 |
+| sus4(7)                | {0,2,6,7}          |      4-16B |    51 |
+| sus4(b7)               | {0,2,5,7}          |       4-23 |    61 |
+|------------------------+--------------------+------------+-------|
+| 9                      | {0,2,4,6,9}        |       5-34 |   129 |
+| maj9/authentic cadence | {0,1,3,5,8}        |      5-27A |   116 |
+| min9                   | {0,3,5,7,8}        |      5-27B |   117 |
+|------------------------+--------------------+------------+-------|
+| Pentatonic             | {0,2,4,7,9}        |       5-35 |   130 |
+| Wholetone              | {0,2,4,6,8,10}     |       6-35 |   192 |
+| Diatonic               | {0,1,3,5,6,8,10}   |       7-35 |   276 |
+| Octatonic              | {0,1,3,4,6,7,9,10} |       8-28 |   322 |
+|------------------------+--------------------+------------+-------|

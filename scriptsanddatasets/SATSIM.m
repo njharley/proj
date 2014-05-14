@@ -1,8 +1,8 @@
 function ss = SATSIM(primex, primey, nn)
 
 	% CALCULATE SATURATION VECTOR
-	satvX = SATV(primex, nn);
-	satvY = SATV(primey, nn);
+	satvX = SATV(primex, nn)
+	satvY = SATV(primey, nn)
 	
 	row = Row(satvX, satvY);
 	num = [];
@@ -12,7 +12,8 @@ function ss = SATSIM(primex, primey, nn)
 		num(n) = abs(satvX(2,n)-satvY(row(n),n)) + abs(satvY(2,n)-satvX(row(n),n));
 		denom(n) = abs(satvX(2,n)+satvX(3,n)) + abs(satvY(2,n)+satvY(3,n));
 	end
-
+	num
+	denom
 	ss = sum(num)/sum(denom);
 
 function row = Row(satvX, satvY)

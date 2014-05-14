@@ -3,9 +3,11 @@
 
 function [wdvt prelnxy] = pRELn(primex, primey, n)
 
+	% GET nC%Vs FOR X AND Y
 	pncvx = pnCV(primex, n);
 	pncvy = pnCV(primey, n);
 
+	% GET THE ASYMMETRIC DIFFERENCE VECTOR 
 	[dvxy dvyx] = Asymmetric_DV(pncvx, pncvy); 	% get castrens 2 asymmetric difference vectors
 	
 	prelnxy = sum(dvxy) + sum(dvyx); 			% card of vector

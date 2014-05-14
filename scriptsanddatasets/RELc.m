@@ -3,6 +3,18 @@
 
 function rel = RELc(primex, primey)
 
+	load allemb
+	subx = [allemb(primex,2:7) allemb(primex,:)];
+	suby = [allemb(primey,2:7) allemb(primey,:)];
+
+	num = sum(sqrt(subx.*suby));
+	denom = sqrt(sum(subx)*sum(suby));
+	rel = num/denom;
+
+
+
+function getRELc(primex, primey)
+
 	cardx = size(primex,2);
 	cardy = size(primey,2);
 
