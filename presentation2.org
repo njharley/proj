@@ -1,0 +1,40 @@
+
+
+* Introduction
+- title
+- about pc-set theory for decriptive modelling of tonality.
+
+* Done
+** Literature Review
+1) overview of pc-set theory
+   - aimed at wider community of music researchers
+   - framed more practically than theoretically
+   - standardised notation etc
+
+2) survey of 25+ set class similarity measures and models
+   - which all use different techniques and theoretical principles
+   - and all the while trying to shed some light on the practical
+     implications of the techniques.
+** Measure selection
+- then, interms of selecting which of these measures to use it was
+  neccessary to
+  1) categorise the different techniques
+  2) specified some very broad criteria
+- and so i was able to select 6 measures from 4 theorists that seemed
+  to most suitable for use descriptive tonal models.
+- then computed tables of values for all pairs of SCs
+** Analysed chord dictionary
+- analysing the values produced by comparisons between standard chord
+  types for example those used in chord estimation algorithms for
+  mirex.
+- See plot
+* To Do
+** Selection of repetior
+- what chords occur in different types of rerpetoire for example early
+  polyphony.
+- which measures handle or best descriminate between these chord
+  types.
+** Visualisation of repertoire
+- integration into Agustins framework for tonal analysis
+- Class-scapes:
+- can act as a test bench
