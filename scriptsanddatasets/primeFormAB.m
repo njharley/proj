@@ -6,24 +6,24 @@ function prime = primeFormAB(pcs)
 
 	normal = sort(unique(pcs));
 	normal0 = normal;
-	normal0(end+1) = normal(1)+12
+	normal0(end+1) = normal(1)+12;
 
 	for i = 1:size(normal,2)
 		span(i) = normal0(i+1)-normal0(i);
 	end
-	span
+	span;
 
 	index = find(span==max(span));
 
 	for i = 1:length(index)
 		m(i,:) = circshift(normal, [0 size(normal)-index(i)-1]);
 	end
-	m
+	m;
 
 	for i = 1:size(m,1)
 		m(i,:) = m(i,:)-m(i,1);
 	end
-	m
+	m;
 
 	for i = 1:size(m,1)
 		for j = 1:size(m,2)
@@ -32,7 +32,7 @@ function prime = primeFormAB(pcs)
 			end
 		end
 	end
-	m
+	m;
 
 	for i = size(m,1)
 		mm = m(i,:);
@@ -41,7 +41,7 @@ function prime = primeFormAB(pcs)
 			spans(i,j) = mm(j+1)-mm(j);
 		end
 	end
-	spans
+	spans;
 
 	for i = 1:size(m,1)
 

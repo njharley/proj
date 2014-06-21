@@ -4,7 +4,7 @@ function allRELTable = calcAllREL()
 	load allemb
 
 	for i = 1:351
-		for j = i:351
+		for j = 1:351
 			[allRELTable(i,j,1) allRELTable(i,j,2) AllRELTable(i,j,3)] = getRELValue(i,j);
 		end
 	end

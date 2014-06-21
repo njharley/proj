@@ -1,7 +1,7 @@
 function rr = RECREL2(x,y)
 
-	cardx = getCard(x);
-	cardy = getCard(y);
+	cardx = getCard(x)
+	cardy = getCard(y)
 
 	%% get nmax
 	if cardx == cardy
@@ -13,9 +13,12 @@ function rr = RECREL2(x,y)
 		nmax = 2;
 	end
 
+	nmax
 	%% calculate the value for each branch
 	branchValues = [];
 	for n = 2:nmax
+		disp('branch')
+		disp(n)
 		branchValues(end+1) = Branch(x,y,n,100);
 	end
 
@@ -32,7 +35,7 @@ function value = Branch(x,y,n,weight)
 	ncpvY = nCpVs{n}(y,:);
 
 	dv = getDV(ncpvX,ncpvY);
-	wDV = getWDV(dv);
+	wDV = getWDV(dv)
 	reln = (sum(dv(1,:)+dv(2,:))/2)*weight/100;
 	if n < 3
 		value = reln;
@@ -40,6 +43,7 @@ function value = Branch(x,y,n,weight)
 		subGroup = getSubGroup(wDV, n);
 		value = reln*(getSubValues(wDV, n, top, subGroup));
 	end
+	value
 
 function value = getSubValues(wDV, n, top, subGroup)
 	wghts = (wDV(1,subGroup(:,1)).*wDV(2,subGroup(:,2)))/100;

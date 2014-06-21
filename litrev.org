@@ -1,9 +1,11 @@
 #+STARTUP: latexpreview
 #+STARTUP: indent
 #+LaTeX_CLASS: article
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 #+LATEX_HEADER: \usepackage[round]{natbib}
 #+LATEX_HEADER: \usepackage[nonumberlist]{glossaries}
-#+LATEX_HEADER: \makeglossaries
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \setlist{nolistsep}
 
 #+LATEX_HEADER:\newglossaryentry{pc}{name={PC}, description={Pitch Class}}
 #+LATEX_HEADER:\newglossaryentry{pcset}{name={PC-Set}, description={Pitch Class Set}}
@@ -25,9 +27,12 @@
 #+LATEX_HEADER:\newglossaryentry{hashx}{name={\#X}, description={Set cardinality}}
 #+LATEX_HEADER:\newglossaryentry{hashncv}{name={\#nCV}, description={Vector cardinality}}
 #+LATEX_HEADER:\newglossaryentry{trivialform}{name={Trivial Form}, description={SCs 1-1, 11-1 and 12-1}}
+
+#+LATEX_HEADER: \makeglossaries
 \clearpage
 \glsaddall
-\printglossary
+\printglossary[title=PC-Set Theory Glossary]
+\%makeindex -s doc.ist -o doc.gls doc.glo
 \clearpage
 #+TITLE: Evaluation of Pitch-Class Set Similarity Measures for Tonal Analysis (Literature Review)
 #+AUTHOR: Nicholas Harley - Masters Thesis UPF
@@ -56,7 +61,7 @@ give context work that follows.
 *** General Definition
 Tonality is a notoriously complex musical phenomenon and numerous
 definitions have been proposed from a variety of viewpoints. Perhaps
-the most general definition is that provided by Hyer \citet(Hyer2013):
+the most general definition is that provided by \citet(Hyer2013):
 "... refers to the systematic arrangements of pitch phenomena and
 relations between them." Explanations of tonality have been provided
 through many different disciplines (acoustics, music theory,
@@ -97,10 +102,11 @@ resemble some a priori contextual category. For western music of the
 major-minor period, key signatures comprise a collection of categories
 that give context to the tonal components of
 music. \citet{Martorell2013} identifies three important aspects of
-tonality as context: dimensionality (the relatedness of categories),
-ambiguity (reference to two or more categories simultaneously) and
-timing (the dynamics of tonal context). He highlights the importance
-of a models capability to describe these aspects.
+tonality as context: dimensionality (the relatedness or "closeness" of
+categories), ambiguity (reference to two or more categories
+simultaneously) and timing (the dynamics of tonal context). He
+highlights the importance of a models capability to describe these
+aspects. 
 *** Tonality in MIR
 The MIR community is primarily concerned with the extraction of tonal
 descriptors from audio signals such as chord and key estimates. Most
@@ -108,17 +114,17 @@ systems use chroma features as a preliminary step, obtained by mapping
 STFT or CQ transform energies to chroma bins. Template matching is
 used to compare the chroma vectors to a tonal model (contextual
 category) using some distance measure. A commonly used tonal model for
-key estimation are the KK-profiles \citep{Krumhansl1990} (e.g. in
-\citealt{Gomez2006}). Distance measures such as inner product (e.g. in
-\citealt{Gomez2006}) and fuzzy distance (e.g. in
-\citealt{Purwins2000}) are used to compare vectors. Statistical
-methods, such as HMMs, have been used for chord and key tracking
-\citep{Chai2005}. Of addition interest in the field is the concept of
-musical similarity (for music recommendation, structure analysis,
-cover detection etc.). \citet{Foote2000} computed self-similarity
-matrices for visualisation of structure by correlating the MFCC
-feature vector time-series. \citet{Gomez2006} proposed the application
-of this method to tonal feature vectors.
+key estimation are the KK-profiles \citep{Krumhansl1990} ([[Cognitive
+Psychology]]) (e.g. in \citealt{Gomez2006}). Distance measures such as
+inner product (e.g. in \citealt{Gomez2006}) and fuzzy distance
+(e.g. in \citealt{Purwins2000}) are used to compare
+vectors. Statistical methods, such as HMMs, have been used for chord
+and key tracking \citep{Chai2005}. Of addition interest in the field
+is the concept of musical similarity (for music recommendation,
+structure analysis, cover detection etc.). \citet{Foote2000} computed
+self-similarity matrices for visualisation of structure by correlating
+the MFCC feature vector time-series. \citet{Gomez2006} proposed the
+application of this method to tonal feature vectors.
 *** Similarity
 The importance of defining the similarity or closeness between musical
 phenomena, be it theoretical, physical or perceptual, is central to
@@ -201,11 +207,11 @@ One such method available for systematic description of the musical
 surface is Pitch class set theory. PC-set theory is a system for
 analysing the pitch content of music. It uses class equivalence
 relations to reduce the amount of data required to describe any
-sequence of pitches. This chapter will outline the basic principles.
+collection of pitches. This chapter will outline the basic principles.
 ** Pitch Class
 Pitch-class set theory uses octave equivalence. In Western equal
 temperament (TET), a pitch-class (PC) is an integer representing the
-residue class modulo 12 of a pitch /citep(Babbit1955) and indicates
+residue class modulo 12 of a pitch \citep(Babbit1955) and indicates
 the position of a note within the octave. A PC-set is a collection of
 PCs ignoring any repetitions and the order in which they
 occur. PC-sets are notated as follows {0,1,2,3,4} with PCs ordered
@@ -232,32 +238,38 @@ transposition, Tn(S), transposes the set, S, by the interval, n, (by
 adding n to all PCs, Example 3). An inversion, I(S), inverts the set
 S, replacing all PCs with their inverse (12-PC, Example 4). From these
 two transformations it is possible to define three types of SC: Tn,
-TnI and I, although I-types are not commonly used.
+TnI and I.
 
 #+NAME: tab:transpostionandinversion
 | Example 3: | Transposition | S = {0,4,9}, T3(S) = {3,7,0} = {0,3,7}  |
 | Example 4: | Inversion     | S = {0,4,9}, I(S) = {11,7,2} = {2,7,11} |
 
+\begin{description}[style=multiline,leftmargin=2.5cm,font=\normalfont]
+\item[Transpositional (Tn)] All PC-sets that can be transformed to each by transposition belong to the same class.There are 348 distinct Tn types.
+\item[Inversional (I)] All PC-sets that can be transformed to each other by inversion belong to the same SC. There are 197 distinct I types.
+\item[Transpositional/Inversional (TnI)] All PC-sets that can be transformed to each other by transposition, inversion or both belong to the same SC. There are 220 distinct TnI types.
+\end{description}
+
 #+NAME: tab:sctypes
 | Transpositional (Tn): | All PC-sets that can be transformed to each |
 |                       | by transposition belong to the same class.  |
-|                       | There are 348 distinct Tn types.            |
+|                       | There are 351 distinct Tn types.            |
 | Inversional (I):      | All PC-sets that can be transformed to each |
 |                       | other by inversion belong to the same SC.   |
-|                       | There are 197 distinct I types.             |
+|                       | There are 200 distinct I types.             |
 | Transpositional/      | All PC-sets that can be transformed to each |
 | Inversional (TnI):    | other by transposition, inversion or both   |
 |                       | belong to the same SC.                      |
-|                       | There are 220 distinct TnI types.           |
+|                       | There are 223 distinct TnI types.           |
 
 The Prime Form of a PC-set is a convention for denoting the SC it
 belongs to. The convention was introduced by Allan Forte
 \citep{Forte1973} for TnI types and has since been adopted by the
 majority of theorists. In addition, he devised a system for ordering
-TnI-type SCs and assigning to each one a number. For example, the
-Forte number 3-11 refers to the 11th SC of cardinality 3. This
-convention has been modified for use with Tn types by adding A and B
-to the names of inversionally related SCs.
+TnI-type SCs and assigning to each one a cardinality-ordinal
+number. For example, the Forte number 3-11 refers to the 11th SC of
+cardinality 3. This convention has been modified for use with Tn types
+by adding A and B to the names of inversionally related SCs.
 
 One additional concept is that of cardinality-class (nC), which refers
 to all the SCs of cardinality n. Cardinality-class 2 is commonly
@@ -285,20 +297,21 @@ interval-classes.
 
 #+CAPTION: Cardinality Class
 #+NAME: tab:nc
-| nC  | Tn | I | TnI |
-|-----+----+---+-----|
-| 1C  |  1 | 1 |   1 |
-| 2C  |  6 | 6 |   6 |
-| 3C  | 19 |   |     |
-| 4C  |    |   |     |
-| 5C  |    |   |     |
-| 6C  |    |   |     |
-| 7C  |    |   |     |
-| 8C  |    |   |     |
-| 9C  | 19 |   |     |
-| 10C |  6 |   |     |
-| 11C |  1 |   |     |
-| 12C |  1 |   |     |
+|     |        | $\#nC$ |        |
+| n   |     Tn |      I |    TnI |
+|-----+--------+--------+--------|
+| 1C  |      1 |      1 |      1 |
+| 2C  |      6 |      6 |      6 |
+| 3C  |     19 |     12 |     12 |
+| 4C  |     43 |     28 |     29 |
+| 5C  |     66 |     35 |     38 |
+| 6C  |     80 |     35 |     50 |
+| 7C  |     66 |     35 |     38 |
+| 8C  |     43 |     28 |     29 |
+| 9C  |     19 |     12 |     12 |
+| 10C |      6 |      6 |      6 |
+| 11C |      1 |      1 |      1 |
+| 12C |      1 |      1 |      1 |
 ** Vector Analysis
 *** Membership and Inclusion
 Two concepts that are crucial in PC-set theory are membership and
@@ -324,7 +337,7 @@ EMB(A,X) where A is each of the SCs in the cardinality-class, nC
 (Example 8). The Interval-Class Vector (ICV) is a special instance of
 the nCV with n equal to 2. Vector cardinality, denoted #nCV(X), is the
 sum of all the terms in the vector (Example 9). The length of a subset
-vector is given by #nC.
+vector is given by the number of SCs in the cardinality class, #nC.
 
 Subset vectors form the basis of the majority of analysis performed
 by PC-set theorists. In addition, many theorists have proposed
@@ -337,18 +350,21 @@ necessary.
 |            |                    | 2CV(S) = ICV(S) = [0 0 1 1 1 0] |
 | Example 9: | Vector Cardinality | #ICV(S) = 0+0+1+1+1+0 = 3       |
 *** Notation
-**** Difference Vector
-$$DV(nCV(X),nCV(Y))=\left|nCV(X)-nCV(Y)\right|$$
-**** Magnitude
-- length vector
+Some additional vector notation is required for the comparison
+procedures of the similarity measures described in [[Set-Class
+Similarity]].
+\begin{description}
+\item[Difference Vector] is the absolute
+difference between corresponding terms in the nCVs of two SCs, X and Y:\\
+$$DV(nCV(X),nCV(Y))=\left|nCV(X)-nCV(Y)\right|$$ \item[Vector
+Magnitude] is the length of the nCV in euclidean space:\\
 $$\left\|nCV(X)\right\|=\sqrt{\sum_{i=1}^{\#nC}{(nCV(X)_{i})^{2}}}$$
-**** Unit Vector
-$$\hat{nCV(X)}=\frac{nCV(X)}{\left\|nCV(X)\right\|}$$
-**** Euclidean Distance
+\item[Unit Vector] is the normalised nCV (unit length):\\
+$$\hat{nCV(X)}=\frac{nCV(X)}{\left\|nCV(X)\right\|}$$ \item[Euclidean
+Distance] is the distance between the points defined by two nCVs in
+n-dimensional Euclidean space:\\
 $$d(X,Y)=\sqrt{\sum_{i=1}^{n}{(X_{i}-Y_{i})^{2}}}=\left\|DV(X,Y)\right\|$$
-**** Geometric Mean
-$$ GM(x,y)=\sqrt{x\times y}$$
-$$ GMV(nCV(X),nCV(Y))=[ ]  $$
+\end{description}
 ** Set-Class Similarity
 *** Similarity Relations
 The assessment of similarity between two SCs has been discussed in the
@@ -378,7 +394,7 @@ similarity measures can only be approached by narrowing the focus to a
 specific type. Here we will focus on measures that use the Tn and
 TnI-type SCs ([[Set Classification]]), and furthermore we will only
 consider those methods based on vector analysis ([[Vector
-Analysis]]). These measure usually involve the comparison of the SC's
+Analysis]]). These measure usually involve the comparison of the SCs'
 nCVs. Of this (still sizeable) subset, \citet{Castren1994} identifies
 two main categories.
 #+NAME: tab:measuretypes
@@ -390,13 +406,13 @@ two main categories.
 |                 | relevant nCVs are compared to produce a final value. |
 
 Table 4 shows the majority of the Tn and TnI-Type, vector based
-similarity measures from the PC-set theoretical literature. Vector
-Type indicates whether the measure compares ICVs or nCVs. Card
-(Cardinality) indicates whether the measure is capable of comparing
-SCs of different cardinalities while the Measure Type indicates which
-of Castren's categories it belongs to. nC indicates it is a Single nC
-measure and TOTAL indicates it is a Total Measure. All these measure
-are described more thoroughly in [[SC Similarity Measures]].
+similarity measures from the PC-set theoretical literature organised
+by theorist. Vector Type indicates whether the measure compares ICVs
+or nCVs. Card (Cardinality) indicates whether the measure is capable
+of comparing SCs of different cardinalities while the Measure Type
+indicates which of Castren's categories it belongs to. nC indicates it
+is a Single nC measure and TOTAL indicates it is a Total Measure. All
+these measure are described more thoroughly in [[SC Similarity Measures]].
 
 #+CAPTION: Comparison table of similarity measures
 #+NAME: tab:comparisontable
@@ -468,9 +484,9 @@ contains a summary and discussion of some relevant studies.
 *** Octave Equivalence
 Pitch is a percept that derives from a particular harmonic structure
 and is roughly proportional to the logarithm of the fundamental
-frequency. This allows pitch to be modelled as a straight line. Music
-psychologists have observed a strong perceptual similarity between
-pitches with fundamental frequencies in the ratio of 2:1. This
+frequency. This allows pitch to be perceptually modelled as a straight
+line. Music psychologists have observed a strong perceptual similarity
+between pitches with fundamental frequencies in the ratio of 2:1. This
 property of octave similarity leads the straight line model of pitch
 to be bent into a helix. Division of the octave into a number of
 categories is thought to offer a more efficient cognitive
@@ -485,10 +501,10 @@ have a solid basis in perception.
 \citet{Gibson1988} investigated the perceived similarity of pairs of
 chords with varying numbers of octave related pitches. He found that
 in general chords with identical PC contents were perceived as more
-similar than chords with near identical PC contents, regardless of
-the octave. However, in further studies he his findings suggest that
-there are other factors that play a significant role
-\citep{Gibson1993}.
+similar than chords with near identical PC contents, regardless of the
+octave of the pitch components. However, in further studies he his
+findings suggest that there are other factors that play a significant
+role \citep{Gibson1993}.
 *** Set-Class Equivalence
 Some researchers have attempted to examine whether there is perceived
 equivalence between different manifestations of a
@@ -506,12 +522,12 @@ transpositions to be perceived more similar than inversions and in
 addition she discovered that the order of the notes and melodic
 contour was a strong factor in perceived similarity.
 
-Some authors have questioned the perceptual relevance of using TnI
-equivalence as a basis for set classification. \citet{Deutsch1982}
+Some authors have questioned the perceptual relevance of using TnI and
+I equivalence as a basis for set classification. \citet{Deutsch1982}
 seems unconvinced by evidence for the perceptual similarity of
 inverted intervals. This can be illustrated by the example of major
 and minor triads which, while perceptually distinct, are equivalent
-under TnI.
+under TnI and I equivalence.
 *** Perceived vs Theoretical Similarity
 A number of studies have been done to ascertain the connection between
 perceptual similarity ratings and the theoretical values obtained from
@@ -521,8 +537,8 @@ mentioned here.
 
 \citet{Bruner1984} used multidimensional scaling on subjects'
 similarity ratings between trichords and tetrachords and on the
-similarity values obtained from SIM. She compared the 2-dimensional
-solutions and found there to be little correlation.
+similarity values obtained from SIM. She compared the
+2-dimensional solutions and found there to be little correlation.
 
 \citet{Gibson1986} investigated non-traditional chords. He compared
 subjects' ratings with similarity assessments calculated from Forte's
@@ -550,7 +566,7 @@ the outcome.
 ** PC-set Theory for Analysis
 PC-set theory as means for descriptive modelling of tonality is not
 widely known outside of highly theoretical circles and the use of
-PC-set similarity measures seems mainly restricted to the theorists
+set-class similarity measures seems mainly restricted to the theorists
 who proposed them (for example, \citealt{Isaacson1996}). The basic
 premise is simple: a musical piece is segmented and each segment
 described by its SC. Similarity measures can be used to assess the
@@ -571,8 +587,70 @@ a two-dimensional visualisation of a piece of music with time on the
 x-axis and segmentation time-scale on the y-axis. A single SC can be
 represented by highlighting the segment or alternatively each segment
 can be shaded according to its REL distance from a comparison SC. He
-emphasises that class-scape is an exploratory tool rather than an
+emphasises that the class-scape is an exploratory tool rather than an
 automated analysis system.
+
+Perhaps the most crucial aspect of using SC descriptions for tonal
+analysis is the way in which a piece of music is segmented. The issue
+of segmentation will be discussed further in Chapter [[Segmentation]].
+** Chords as PC-Sets
+So far, PC-set theory and the similarity measures have been discussed
+with only the broadest reference to familiar musical or musicologial
+concepts. In order to use these techniques for real music description
+and analysis some effort should be made to link SC theoretical
+concepts to musicological ones.
+
+The table below shows a collection of familiar chord types, cadence
+types and scale types with their corresponding Tn-type prime-form SC,
+Forte Name and index number (the position in an ordered list of all
+351 Tn-type SCs). The table is divided into five vertical segments:
+three-note chords, four-note chords, five-note chords, cadences and
+scales.
+
+In PC-set theory it is only the chord type that is relevant seeing as
+transpositionally related (Tn-type) SCs are considered equivelant. For
+example all major chords are considered equivelant regardless of the
+root.
+#+CAPTION: Chord types and their SCs
+#+NAME: tab:chordSC
+|------------+--------------------+------------+-------|
+|            | Tn-Type SC         | Forte Name |       |
+| Chord      | (Prime Form)       | (Tn-type)  | index |
+|------------+--------------------+------------+-------|
+| maj        | {0,4,7}            | 3-11B      |    25 |
+| min        | {0,3,7}            | 3-11A      |    24 |
+| dim        | {0,3,6}            | 3-10       |    23 |
+| aug        | {0,4,8}            | 3-12       |    26 |
+| sus4       | {0,2,7}            | 3-9        |    22 |
+| sus2       | {0,2,7}            | 3-9        |    22 |
+|------------+--------------------+------------+-------|
+| maj7       | {0,1,5,8}          | 4-20       |    57 |
+| min7       | {0,3,5,8}          | 4-26       |    64 |
+| hdim7      | {0,2,5,8}          | 4-27A      |    65 |
+| 7          | {0,3,6,8}          | 4-27B      |    66 |
+| dim7       | {0,3,6,9}          | 4-28       |    67 |
+| min(7)     | {0,1,4,8}          | 4-19A      |    55 |
+| aug(7)     | {0,3,4,8}          | 4-19B      |    56 |
+| maj(9)     | {0,2,4,7}          | 4-22A      |    59 |
+| min(9)     | {0,2,3,7}          | 4-14A      |    46 |
+| maj6       | {0,3,5,8}          | 4-26       |    64 |
+| min6       | {0,1,5,8}          | 4-20       |    57 |
+| sus4(7)    | {0,2,6,7}          | 4-16B      |    51 |
+| sus4(b7)   | {0,2,5,7}          | 4-23       |    61 |
+|------------+--------------------+------------+-------|
+| 9          | {0,2,4,6,9}        | 5-34       |   129 |
+| maj9       | {0,1,3,5,8}        | 5-27A      |   116 |
+| min9       | {0,3,5,7,8}        | 5-27B      |   117 |
+|------------+--------------------+------------+-------|
+| V-I/IV-I   | {0,1,3,5,8}        | 5-27A      |   116 |
+| V7-I       | {0,1,3,5,6,8}      | 6-Z25A     |   176 |
+| V-IV       | {0,2,4,6,7,9}      | 6-33B      |   189 |
+|------------+--------------------+------------+-------|
+| Pentatonic | {0,2,4,7,9}        | 5-35       |   130 |
+| Wholetone  | {0,2,4,6,8,10}     | 6-35       |   192 |
+| Diatonic   | {0,1,3,5,6,8,10}   | 7-35       |   276 |
+| Octatonic  | {0,1,3,4,6,7,9,10} | 8-28       |   322 |
+|------------+--------------------+------------+-------|
 * Multidimensional Scaling
 Multidimensional scaling (MDS) is a numerical visualisation technique
 that, given a matrix of pairwise distances between objects, provides a
@@ -594,7 +672,7 @@ values: Stress and r^2.
 |        | the distortion that occurs in a given number of dimensions. |
 |        | As the number of dimensions increases the stress decreases. |
 | $r^2$  | $r^2$ is the percentage variability of the data being       |
-|        | explained by the solution                                   |
+|        | explained by the solution.                                  |
 By plotting stress against r^2 for a number of dimensionalities is
 possible to observe the point at which additional dimensions do not
 significantly improve the solution (the "elbow"). Ultimately, the
@@ -617,6 +695,8 @@ that two different measures that are both self-consistent may produce
 very different geometries from the same group of SCs. The question
 then is, what exactly do the measures measure?
 * Spatial Models of Tonality
+This chapter describes existing attempts to characterise the
+dimensionality of tonality as context.
 ** Similarity and Distance
 Judgements of similarity form the basis of many cognitive processes
 including the perception of tonality. Similarity between two objects
@@ -650,8 +730,8 @@ simultaneously captures the relations between pitches, chords and
 keys. The "chordal-regional space" of \citet{Lerdahl2001a} models the
 relations between chords within a certain key.
 ** Cognitive Psychology
-The auditory domain has been addressed through cognitive psychology
-by \citet{Krumhansl1990} who used the probe-tone methodology
+The auditory domain has been addressed through cognitive psychology by
+\citet{Krumhansl1990} who used the probe-tone methodology
 \citep{Krumhansl1979} to establish major and minor key profiles
 (12-dimensional vectors containing the perceptual stability ratings of
 each of the 12 pitch classes within a major or minor context). These
@@ -695,13 +775,25 @@ from similarity measure tend to agree (with some exceptions) and that
 they measure constructs relating to familiar scales (diatonic,
 hexatonic, octatonic, etc.).
 * Similarity Measure Selection
-In this section, the large number of SC similarity measures from the
-literature will be discussed in relation to Castren's criteria (see
-[[Castren's Criteria]]) in order to gauge their suitability for use in
-systematic surface description models. The most suitable measures will
-be subjected to a more thorough analysis over the course of the work.
+So far, PC-set theory has been presented as viable means for
+systematic decriptive modelling of tonality and brief reference has
+been made to the extensive existing literature on SC similarity
+measures ([[Set-Class Similarity]]). In this section, the large number of
+measures will be discussed in relation to Castren's criteria
+([[Castren's Criteria]]) in order to gauge their suitability for use in
+systematic surface description models. The most suitable models will
+be adopted for examination over the course of the work.
 ** Criteria
-#+CAPTION: Castrens Criteria
+Castren's criteria (see [[Castren's Criteria]]) for similarity measures
+provide a basis for assement of similarity measures for our
+purposes. A detailed descriptions and justification for the criteria
+can be found in \citet[chap. 2]{Castren1994}, however here we will
+focus on one or two specific aspects. The table below shows the list
+of similarity measures with marks indicating whether each of the
+criteria is met. In sections [[Cardinality]] to [[Measure Type]] specific
+criteria are used to exclude measures from further consideration with
+justification in terms of systematicity and perceptual relevance.
+#+CAPTION: Castren's Criteria
 #+NAME: tab:criteria
 |------------+----+----+------+------+------+------+----+----+----|
 | SIMILARITY | C1 | C2 | C3.1 | C3.2 | C3.3 | C3.4 | C4 | C5 | C6 |
@@ -741,33 +833,49 @@ arbitrary segments regardless of how many PCs they contain. Both
 s.i. ([[s.i.]]) and sf ([[sf]]) were proposed specifically for SCs of the same
 cardinality and so will be excluded from further discussion. Some
 other measures which were intended to compare SCs of different
-cardinalities nonetheless have problems. Many measures such as SIM
-([[SIM]]) and K ([[K]]) give unintuitive values when the cardinalities of the
-SCs being compared differ greatly and, in addition, the range of
-values produced depends on the cardinality of the sets (failure to
-meet criteria C3.1). Measures of this type will also be excluded.
-** SC-type
+cardinalities nonetheless have problems. Measures such as SIM ([[SIM]])
+and K ([[K]]) give unintuitive values when the cardinalities of the SCs
+being compared differ greatly and, in addition, the range of values
+produced depends on the cardinality of the sets (failure to meet
+criteria C3.1). Measures of this type will also be excluded.
+** SC-Type
 An important consideration when using similarity measures is the type
 of SC being compared. Many of the measures are designed for comparison
 of TnI-type SCs, however, owing to issues riased in [[Perceptual
 Relevance]] regarding the perceptual relevance of invertionally related
 sets, here, measures will be selected for use with Tn-type SCs. This
 means that the measure should be able to discrimate between
-inversionally related sets. All the measures which exclusivly consider
-interval content in the comparison procedure can automatically be
-discounted, as inversionally related sets have identical ICVs.
+inversionally related sets. All the single-nC measures which
+exclusivly consider interval content (ICVs) in the comparison
+procedure can therefore be discounted, as inversionally related sets
+have identical ICVs.
 ** Measure Type
-Although many theorists have suposed that interval-class subsets are
+Although many theorists have supposed that interval-class subsets are
 of paramount importance in similarity judgments, no thorough
 investigation has been carried out as to the exact perceptual
-significance of subset cardinality. Single nC measures presupose that
+significance of subset cardinality. Single-nC measures presupose that
 subsets of one particular cardinality contribute to similarity above
 all others. In the interest of systematicity, we will not make this
 assumption instead assuming that subsets of all cardinalities are
 equally relevant and should be considered. Similarity measures that
-consider all subset cardinalities meet criteria C5 and are total
-measures. These total measures will selected for further investigation
-throughout the work.
+exhaustively consider all subset cardinalities meet criteria C5 and
+are total measures (see [[Similarity Measures]]). The six total measures
+from [[Similarity Measures]] shall therefore become the focus of this
+work.
+* Total Measures
+In previous chapters we have examined the fundamental aspects of tonal
+models and proposed PC-set theory as a descriptive tool, potentially
+capable of capturing the three important elements of tonality as
+context. Through a desire for both perceptual relevance and
+systematicity a subset of these techniques has been identified as most
+pertinent, specifically Tn-type SCs and total similarity measures.
+
+In this chapter the six total similarity measures will be examined
+more closely and placed in practical context through examination of
+the values they produce. Section [[Trivial Froms]] describes the concept
+of trivial forms and for each measure the method for handling these
+cases is described. Section [[Total Measure Comparison]] gives a brief
+comparison of the measures.
 ** Trivial Forms
 Three of the 351 Tn-type SCs are known as trivial forms: 1-1, 11-1 and
 12-1. Due to their lack of musical or harmonic significance, these SCs
@@ -789,9 +897,6 @@ indicating maximum similarity.
 |  1-1 | {0}                         |
 | 11-1 | {0,1,2,3,4,5,6,7,8,9,10}    |
 | 12-1 | {0,1,2,3,4,5,6,7,8,9,10,11} |
-* Total Measures
-In this chapter each of the total measures examined in more detail and
-assessed terms of its particular abilities and discriminatory power.
 ** Rahn: ATMEMB
 Details on how to calculate ATMEMB are give in [[ATMEMB]]. In his analysis
 of the measure, Castren concludes that "divisor term is flawed,
@@ -811,8 +916,8 @@ are as follows:
 1) SUB(X) consists of the concatenated nCVs from 2 to 12. Here
    comparisons involving SC 1-1 will be evaluated with the method
    specified in [[Trivial Forms]].
-2) SUB(X) consists of the concatenated nCVs from 1 to 12 (1CV(X)
-   = #X). This formulation accommodates SC 1-1.
+2) SUB(X) consists of the concatenated nCVs from 1 to 12 ($1CV(X) =
+   \#X%). This formulation accommodates SC 1-1.
 3) \citet{Martorell2013} specifies an alternative formulation where
    SUB(X) begins with the ICV (2CV) followed by the concatenated nCVs
    from 1 to 12. This formulation accommodates SC 1-1.
@@ -831,88 +936,145 @@ Details on how to calculate T%REL and RECREL are given in [[T%REL]] and
 [[RECREL]] respectively. Comparisons involving SCs 11-1 and 12-1 are
 accommodated in both by Castren's formulation. Comparisons involving
 SC 1-1 will be given values by the method specified in [[Trivial
-Forms]].
-
-- Castren comments that some T%REL values are too high.
-- The basic algorithm provided by Castren for calculating RECREL is
-  not feasible for large sets. Compaisons of such sets require tables
-  of pre-computed branch values.
+Forms]]. Castren comments that some T%REL values are too high to be
+intuitvely plausible. Finally, it should be noted that the basic
+algorithm provided by Castren for calculating RECREL is not feasible
+for large sets. Compaisons of such sets require tables of pre-computed
+branch values.
 ** Scale of Values
 The values of each measure will be adjusted to the same scale for
 comparability by the same method as \citet[pp. 48]{Kuusi2001}). This
 scale is from 0 to 100 with with 0 indicating maximum similarity. The
 modified values will be signalled by adding the symbol "prime" to the
 name.
+#+CAPTION: Adjustment for MEASURE-prime scale
+#+NAME: tab:measureprime
+| Measure-prime(X,Y)  |
+|---------------------|
+| (1-ATMEMB(X,Y))*100 |
+| (1-REL(X,Y))*100    |
+| T%REL(X,Y)          |
+| RECREL(X,Y)         |
+| AvgSATSIM(X,Y)*100  |
+| TSATSIM(X,Y)*100    |
+
 - ATMEMB-prime(X,Y) = (1-ATMEMB(X,Y))*100
 - REL-prime(X,Y) = (1-REL(X,Y))*100
 - AvgSATSIM-prime(X,Y) = AvgSATSIM(X,Y)*100
 - TSATSIM-prime(X,Y) = TSATSIM(X,Y)*100
 - T%REL-prime(X,Y) = T%REL(X,Y)
 - RECREL-prime(X,Y) = RECREL(X,Y)
-* Analysis of Chord Dictionary
-- generated a dictionary of chord types from mirex
-- convert chord types into Tn-Type SCs
-- examine values
-- Analyse corpora: what chords are used in what kind of music
-- billboard data set
-- which measure best handle/discriminate between these chords
-** Chords as PC sets
-- Chord types taken from mirex
-- scale types
-- cadence types
+** Comparison of Chord Types
+- plots for chord types
 
-#+CAPTION: Chord types and their SCs
-#+NAME: tab:chordSC
-|------------+--------------------+------------+-------|
-|            | PC-Set             | Forte Name |       |
-| Chord      | (Prime Form)       | (Tn-type)  | index |
-|------------+--------------------+------------+-------|
-| maj        | {0,4,7}            | 3-11B      |    25 |
-| min        | {0,3,7}            | 3-11A      |    24 |
-| dim        | {0,3,6}            | 3-10       |    23 |
-| aug        | {0,4,8}            | 3-12       |    26 |
-| sus4       | {0,2,7}            | 3-9        |    22 |
-| sus2       | {0,2,7}            | 3-9        |    22 |
-|------------+--------------------+------------+-------|
-| maj7       | {0,1,5,8}          | 4-20       |    57 |
-| min7       | {0,3,5,8}          | 4-26       |    64 |
-| hdim7      | {0,2,5,8}          | 4-27A      |    65 |
-| 7          | {0,3,6,8}          | 4-27B      |    66 |
-| dim7       | {0,3,6,9}          | 4-28       |    67 |
-| min(7)     | {0,1,4,8}          | 4-19A      |    55 |
-| aug(7)     | {0,3,4,8}          | 4-19B      |    56 |
-| maj(9)     | {0,2,4,7}          | 4-22A      |    59 |
-| min(9)     | {0,2,3,7}          | 4-14A      |    46 |
-| maj6       | {0,3,5,8}          | 4-26       |    64 |
-| min6       | {0,1,5,8}          | 4-20       |    57 |
-| sus4(7)    | {0,2,6,7}          | 4-16B      |    51 |
-| sus4(b7)   | {0,2,5,7}          | 4-23       |    61 |
-|------------+--------------------+------------+-------|
-| 9          | {0,2,4,6,9}        | 5-34       |   129 |
-| maj9       | {0,1,3,5,8}        | 5-27A      |   116 |
-| min9       | {0,3,5,7,8}        | 5-27B      |   117 |
-|------------+--------------------+------------+-------|
-| V-I/IV-I   | {0,1,3,5,8}        | 5-27A      |   116 |
-| V7-I       | {0,1,3,5,6,8}      | 6-Z25A     |   176 |
-| V-IV       | {0,2,4,6,7,9}      | 6-33B      |   189 |
-|------------+--------------------+------------+-------|
-| Pentatonic | {0,2,4,7,9}        | 5-35       |   130 |
-| Wholetone  | {0,2,4,6,8,10}     | 6-35       |   192 |
-| Diatonic   | {0,1,3,5,6,8,10}   | 7-35       |   276 |
-| Octatonic  | {0,1,3,4,6,7,9,10} | 8-28       |   322 |
-|------------+--------------------+------------+-------|
+For a preliminary idea of the utility of the total measures it is
+useful to visualise the vlaues produced for comparisons involving the
+common tonal objects described in [[Chords as PC-Sets]]. This information
+can be visualised as 2D grids with each square corresponding to the
+comparison between two tonal objects and coloured according the
+distance between them i.e. the value of MEASURE-prime (see [[Scale of
+Values]]).
 
-* Class Scape
-- from martorell
-- visualise examples of corpora using class-scape
-* MDS
+%#+CAPTION: ATMEMB distance between chord types
+- Six such plots are shown below, one for each total measure.
+- What can been seen?
+- which measures discriminate what?
+- eliminate some measures?
+** Total Measure Comparison
+- plot difference between plots
+- correlate chord comparison values
+- correlation of all values
+** Conclusions
+- not suitable for common chord recognition or differentiation
+- segmentation?!
+- subclass vectors
+*** Measure descrimination
+- which measures best descriminate between different SC dictionaries?
+- what sets could be best for comparison sets in class scapes?
+- compare/look at graphs from [[Comparison of Measures]
+* Practical Analysis
+** Repertoire
+What are the SC contents of different repertiore.
+
+In addition it is also useful to understand the tonal or chordal
+content of some specific music. This section details existing analysis
+and annotations of the tonal content of some music collections.
+*** Billboard Chords
+The McGill Billboard data set constitutes an expert ground truth for
+chord recognition algorithms in MIR. It contains detailed
+transcriptions of the chords for more than one thousand songs selected
+at random from Billboard magazine’s “Hot 100”
+charts. \citet[pp. 637]{Burgoyne2011} privides the frequency
+distribution of the 50 most common chord types in the data set. Major
+chords alone account for more than half of the data set, followed by
+minor chords and the basic 7th chords. No information is given as to
+the scales or modes used.
+*** Beatles Chords
+\citet[chap. 6]{Harte2010} provides a collection chord transcriptions
+for 180 Beatles songs and statistical analysis of the
+collection. Again, over 70% by both occurence and time are major and
+minor chords.
+*** Diatoniscm in Bach and Victoria
+A Matorell. MIDI format
+  - Bach WTC
+    - Major mode preludes
+  - Victoria
+    - Ionian mode
+*** Josquin?
 - 
+*** Essen Collection
+- 10000 folk songs
+- MIDI format
+
+* Segmentation
+- As mentioned in [[PC-set Theory for Analysis]], the basic steps required
+  for analysis are as follows:
+  1. Segment the piece of music
+  2. Represent each segment with its SC
+  3. Interpretation of the data through visualisation
+** Issues with segmentation
+- segmentation is a vital step
+** Systematic Segmentation
+- a martorell
+- exhaustivly records every change in pc material
+** Class Scape
+- 3d sparse matrix
+- single class representation
+- multiclass representation using similarity measures
+- debussy violes
+- how to choose a comparison set
+** Class Matrix
+- remove timescale information
+** Class Vector
+- %time of class matrix
+- diatoniscm example
+** Class Segment
+- class v average segment length
+** Cardinality Segment
+- cardinality v average segment length
+* Visualisation
+- proposes 3 methods for visualising sc descriptions of segmented
+  pieces.
+** Distance Plot
+- A simple visualisation technique involves segmenting the piece and
+  plotting the distance between each segment and a comparison set.
+- what comparison set?
+- what segmentation?
+- which measure?
+- recurring patterns?
+** Auto-correlation
+- recurring patterns cause peaks
+- structural segmentation
+** Self-similarity matrix
+- reveals structure
+* Analysis Tool
+- in the spirit of martorell
+- for exploratory analysis
+* MDS
 - Visualisation of values using MDS
-* Structure
-- cadential sets
-- autocorrelation
-- self-similarity matrix
-- Analysis of structure
+- r2 against stress for different measures
+- comparison
+- visualisation
 * Latex Stuff
 \clearpage
 \bibliographystyle{plainnat}
@@ -921,6 +1083,31 @@ name.
 \clearpage
 \appendix
 * SC Similarity Measures
+This chapter contains a concise summary of the SC similarity measures
+from the literature organised by theorist. Each section specifies the
+publication in which the measure was proposed and brief description of
+the theoretical approach adopted by the theorist. A mathmatical
+formula is given where possible using standard notation. A reference
+for notation can be found in [[Notation]] and commonly used symbols are
+defined in the glossary. Where are mathematical formula does suffice,
+the comparison proceedure is described in words. In addition, each
+section contains a table specifying important statistics:
+- SC-Type: the type of SC the measure compares (Tn or TnI)
+- Cardinality: whether the measure can compare SCs of different
+  cardinalities.
+- Vector Type: the type of vector used in the comparison procedure
+  (see [[Vector Analysis]]).
+- Max Similarity: the value that indicates maximum similarity from all
+  possible comparisons.
+- Min Similarity: the value that indicates minimum similarity from all
+  possible comparisons.
+- Average Value: the average value from all possible comparisons.
+- No. Values: the number of distinct values produced from all possible
+  comparisons.
+- Criteria Met: a list of Castren's criter which the measure meets.
+- I-related: whether the measure descriminates between inversionally
+  related sets.
+- Z-related: whether the measure discriminated between Z-related sets.
 ** MORRIS
 *** K
 Presented in \citet[pp. 448]{Morris1979}, the K measure gives the
@@ -1212,8 +1399,6 @@ entries however, this is achieved by multiplication (taking the
 geometric mean) of corresponding nCV terms.
 
 $$REL(X,Y)=\frac{\sum_{i=1}^{p}{\sqrt{SUB(X)_{i}\times SUB(Y)_{i}}}}{\sqrt{\#SUB(X)\times \#SUB(Y)}}$$
-
-$$REL(X,Y)=\frac{\#GMV(SUB(X),SUB(Y))}{GM(\#SUB(X),\#SUB(Y))}$$
 
 where SUB(X) consists of concatenated nCVs and has a length p.
 #+NAME: tab:rel
