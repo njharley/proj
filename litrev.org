@@ -34,7 +34,7 @@
 \printglossary[title=PC-Set Theory Glossary]
 \%makeindex -s doc.ist -o doc.gls doc.glo
 \clearpage
-#+TITLE: Evaluation of Pitch-Class Set Similarity Measures for Tonal Analysis (Literature Review)
+#+TITLE: Evaluation of Pitch-Class Set Similarity Measures for Tonal Analysis (Draft)
 #+AUTHOR: Nicholas Harley - Masters Thesis UPF
 * Introduction
 The objectives of the present work are principally concerned with
@@ -965,8 +965,6 @@ name.
 - T%REL-prime(X,Y) = T%REL(X,Y)
 - RECREL-prime(X,Y) = RECREL(X,Y)
 ** Comparison of Chord Types
-- plots for chord types
-
 For a preliminary idea of the utility of the total measures it is
 useful to visualise the vlaues produced for comparisons involving the
 common tonal objects described in [[Chords as PC-Sets]]. This information
@@ -975,25 +973,28 @@ comparison between two tonal objects and coloured according the
 distance between them i.e. the value of MEASURE-prime (see [[Scale of
 Values]]).
 
-%#+CAPTION: ATMEMB distance between chord types
-- Six such plots are shown below, one for each total measure.
-- What can been seen?
-- which measures discriminate what?
-- eliminate some measures?
+- Figure XXXX shows
+- These plots form a useful reference guide when selecting parameter
+  in values for the visualisation techniques described in
+  [[Visualisation]].
 ** Total Measure Comparison
 - plot difference between plots
 - correlate chord comparison values
 - correlation of all values
 ** Conclusions
-- not suitable for common chord recognition or differentiation
-- segmentation?!
-- subclass vectors
-*** Measure descrimination
-- which measures best descriminate between different SC dictionaries?
-- what sets could be best for comparison sets in class scapes?
-- compare/look at graphs from [[Comparison of Measures]
-* Practical Analysis
-** Repertoire
+- general comments about measure discrimination
+- chord comparison plots
+  - for choosing a comparison set
+  - maximum discrimination
+- class scape comparison
+- measures tend to agree
+  - high degree of correlation
+- time scale
+- mir chord recognition
+- repertiore
+  - billboard
+  - beatles
+*** Repertoire
 What are the SC contents of different repertiore.
 
 In addition it is also useful to understand the tonal or chordal
@@ -1014,60 +1015,94 @@ the scales or modes used.
 for 180 Beatles songs and statistical analysis of the
 collection. Again, over 70% by both occurence and time are major and
 minor chords.
-*** Diatoniscm in Bach and Victoria
-A Matorell. MIDI format
-  - Bach WTC
-    - Major mode preludes
-  - Victoria
-    - Ionian mode
-*** Josquin?
-- 
-*** Essen Collection
-- 10000 folk songs
-- MIDI format
-
 * Segmentation
-- As mentioned in [[PC-set Theory for Analysis]], the basic steps required
-  for analysis are as follows:
-  1. Segment the piece of music
-  2. Represent each segment with its SC
-  3. Interpretation of the data through visualisation
-** Issues with segmentation
-- segmentation is a vital step
+- As mentioned in [[PC-set Theory for Analysis]], segmentation is a very
+  important stage of the analysis. The segmentation policy used
+  strongly influeces the SC content that can be observed, with larger
+  segments tending to contain higher cardinality sets.
+- Using a sliding window to segment the music requires careful
+  consideration of the specific window length and hop size depending
+  not only on the type and cardinality of sets that the analyst
+  desires to observe but also on the way in which the data will then
+  be visualised. 
+- In this chapter we outline two segmentation policies:
+  - A sliding window with fixed window length and hopsize.
+  - The systematic segmentation policy of \citet{Martorell2013}.
 ** Systematic Segmentation
-- a martorell
-- exhaustivly records every change in pc material
-** Class Scape
-- 3d sparse matrix
-- single class representation
-- multiclass representation using similarity measures
-- debussy violes
-- how to choose a comparison set
-** Class Matrix
-- remove timescale information
-** Class Vector
-- %time of class matrix
-- diatoniscm example
-** Class Segment
-- class v average segment length
-** Cardinality Segment
-- cardinality v average segment length
+- \citet{Martorell2013} specifies a fully systematic segmentation
+  policy which exhaustivly records every change in the PC material of
+  a piece. The segments are of variable length but together capture
+  the entire SC contents of the music. With each segment indexed in
+  time by its center, the data structure, known as a cass-scape, is a
+  sparse 3-dimensional binary matrix with axes representing time,
+  time-scale (segment length) and set class.
+- Two, more compact, representations of this data are the class-matrix
+  and class-vector.
+- Class-matrix: The class-matrix is a 2d projection the class-scape
+  obtained by removing the time-scale information. This, in effect,
+  acts to expand each point to the actual duration of the segment it
+  represents.
+- Class-vector: The class-vector is a further reduction of data
+  showing the relative active duration of each class in the
+  class-matrix and is expressed as a percentage of the total duration
+  of the piece.
+- EXAMPLE:
+** Sliding Window
+- Segmentation using a sliding window with fixed window and hop size
+  is used to obtain a SC time series of one specific time-scale. This
+  time series is then used for the visualisation techniques outlined
+  in the next chapter.
+- The purpose of the sliding window is to allow the analyst to focus
+  on particular sets or tune in to one particular cardinality. This
+  tuning process is performed through selection of an appropriate
+  window and hop size.
+- The selection of window and hop size can be informed by exploration
+  of the data obtained from the systematic segmentation.
+- SC v seg length
+- Cardinality v seg length
 * Visualisation
 - proposes 3 methods for visualising sc descriptions of segmented
   pieces.
 ** Distance Plot
-- A simple visualisation technique involves segmenting the piece and
-  plotting the distance between each segment and a comparison set.
-- what comparison set?
-- what segmentation?
-- which measure?
+- A simple visualisation technique involves segmenting the piece with
+  a fixed sliding window and then calculating the distance of each
+  segment to a comparison set. The resulting distance time series can
+  visualised with a simple line plot.
+- Example: ???
+- how was the segmentation done and why?
+- how was the comparison set chosen?
+- Compare plots with the different measures.
 - recurring patterns?
 ** Auto-correlation
-- recurring patterns cause peaks
-- structural segmentation
+- The distance plots described in the previous section can give a
+  basic view of the tonal progression of a piece. In many cases they
+  contain recurring patterns where passages with similar SC content
+  produce similar curves. A further visualisation technique is
+  autocorrelation. By autocorrelating the distance plot it may be
+  possible to capture some structural elements of the piece. The
+  autocorrelation time series will contain peaks corresponding to
+  "similar" passages. For example, an piece with a structure of A-B-A
+  will have an autocorrelation plot with a slight peak corresponding
+  to beginning of the repeat of section A. 
+
+- Example:
+
+- Structural segmentation
 ** Self-similarity matrix
-- reveals structure
+- As an alternative to using a specific comparison set, the distance
+  of a segment to other segments in the piece could be observed. A
+  systematic way of doing this is computing the self-similarity matrix
+  which provides a simples means for descovery of repetitions in a
+  time series. The patterns present in a visualisation of a
+  self-similarity matrix can indicate similar passages and structural
+  elements of a piece.
+- Example: ????
+** Conclusions
+- 
 * Analysis Tool
+- Due to the complex relationship between the selection of the various
+  parameters involved in this kind of analysis, it is desireable to
+  work in an interactive and exploratory environment. 
 - in the spirit of martorell
 - for exploratory analysis
 * MDS
@@ -1075,6 +1110,8 @@ A Matorell. MIDI format
 - r2 against stress for different measures
 - comparison
 - visualisation
+* Conclusions
+* Future Work
 * Latex Stuff
 \clearpage
 \bibliographystyle{plainnat}
@@ -1089,7 +1126,7 @@ publication in which the measure was proposed and brief description of
 the theoretical approach adopted by the theorist. A mathmatical
 formula is given where possible using standard notation. A reference
 for notation can be found in [[Notation]] and commonly used symbols are
-defined in the glossary. Where are mathematical formula does suffice,
+defined in the glossary. Where a mathematical formula does suffice,
 the comparison proceedure is described in words. In addition, each
 section contains a table specifying important statistics:
 - SC-Type: the type of SC the measure compares (Tn or TnI)

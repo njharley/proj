@@ -66,12 +66,13 @@ function loadfile_Callback(hObject, eventdata, handles)
     tempo = gettempo(nmat);
 
     axes(handles.proll);
-    pianoroll(nmat,'num','beat');
+    pianoroll(nmat,'num','sec');
+    axis off
 
-  	[m,I] = max(nmat(:,6));
+  	[m,I] = max(nmat(:,1));
   	global endtime;
-  	endtime = m+nmat(I,7);
- 	xlim([0 endtime]);
+  	endtime = m+nmat(I,2);
+ 	%xlim([0 endtime]);
 
 	cM = storedStructure.cMtn;
 	cV = storedStructure.cVtn;
@@ -94,7 +95,8 @@ function loadfile_Callback(hObject, eventdata, handles)
 			end
 		end
 	end
-	%xlim([0 endtime])
+	set(gca,'xtick',[]);
+	xlim([0 endtime])
 	ylim([1 351]);
 	axes(handles.classvector);
 	bar(cV);
@@ -135,16 +137,16 @@ function plotdistance_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 	win = get(handles.windowsize,'Value')*10;
-    set(handles.WindowSize,'String',['Window Size = ' num2str(win) 's']);
+    set(handles.WindowSize,'String',['Window Size = ' num2str(win) 'beats']);
 	hop = get(handles.hopsize,'Value')*10;
-	set(handles.HopSize,'String',['Hop Size = ' num2str(hop) 's']);
+	set(handles.HopSize,'String',['Hop Size = ' num2str(hop) 'beats']);
 
 	global orderedtn;
 	load pcsetdata
 
 	global nmat;
 	%qnmat = quantize(nmat, 1/32, 1/32, 1/32);
-	pds = movewindow(nmat,win,hop,'sec','pcdist1');
+	pds = movewindow(nmat,win,hop,'beat','pcdist1');
 
 	load TotalMeasuresPrime
 
@@ -177,7 +179,7 @@ function plotdistance_Callback(hObject, eventdata, handles)
 	bar(storedStructure.cVtn);
 	hold on;
 	plot(classhis,'-r','LineWidth',2);
-	xlim([1 351]);
+	xlim([1 351]); ylim([0 1]);
 
 	axes(handles.distanceplot);
 	cla;
@@ -389,3 +391,17 @@ function playfile_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
     global nmat;
     playmidi(nmat);
+
+
+% --- Executes on button press in class.
+function class_Callback(hObject, eventdata, handles)
+% hObject    handle to class (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in card.
+function card_Callback(hObject, eventdata, handles)
+% hObject    handle to card (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
