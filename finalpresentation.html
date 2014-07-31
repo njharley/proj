@@ -1,0 +1,3033 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>finalpresentation</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="finalpresentation"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-07-02T14:11+0200"/>
+<meta name="author" content="Nick"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">finalpresentation</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Title</a></li>
+<li><a href="#sec-2">2 Outline</a></li>
+<li><a href="#sec-3">3 Introduction</a>
+<ul>
+<li><a href="#sec-3-1">3.1 Tonal Analysis</a></li>
+<li><a href="#sec-3-2">3.2 Pitch Class Set Theory</a></li>
+<li><a href="#sec-3-3">3.3 Similarity Measures</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Tonal Analysis</a></li>
+<li><a href="#sec-5">5 Pitch Class Set Theory</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Introduction</a></li>
+<li><a href="#sec-5-2">5.2 Basics</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 Similarity Measures</a>
+<ul>
+<li><a href="#sec-6-1">6.1 Introduction</a></li>
+<li><a href="#sec-6-2">6.2 Total Measures</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 Pitch Class Set Analysis</a>
+<ul>
+<li><a href="#sec-7-1">7.1 Basics</a></li>
+<li><a href="#sec-7-2">7.2 Previous Work</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 Segmentation</a>
+<ul>
+<li><a href="#sec-8-1">8.1 Example</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9 Visualisation</a>
+<ul>
+<li><a href="#sec-9-1">9.1 Distance Plot</a></li>
+<li><a href="#sec-9-2">9.2 autocorrelation</a></li>
+<li><a href="#sec-9-3">9.3 Self-similarity matrix</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10 Analysis Tool</a></li>
+<li><a href="#sec-11">11 Conclusions</a></li>
+<li><a href="#sec-12">12 Future work</a></li>
+<li><a href="#sec-13">13 New Presentation Outline</a>
+<ul>
+<li><a href="#sec-13-1">13.1 Title Slide</a></li>
+<li><a href="#sec-13-2">13.2 Introduction</a>
+<ul>
+<li><a href="#sec-13-2-1">13.2.1 Definitions</a></li>
+<li><a href="#sec-13-2-2">13.2.2 Problem</a></li>
+<li><a href="#sec-13-2-3">13.2.3 Objectives</a></li>
+</ul>
+</li>
+<li><a href="#sec-13-3">13.3 Systematic Description</a></li>
+<li><a href="#sec-13-4">13.4 Set Class Theory</a>
+<ul>
+<li><a href="#sec-13-4-1">13.4.1 Basics</a></li>
+<li><a href="#sec-13-4-2">13.4.2 Justify and position</a></li>
+</ul>
+</li>
+<li><a href="#sec-13-5">13.5 Similarity Measures</a>
+<ul>
+<li><a href="#sec-13-5-1">13.5.1 Introduction</a></li>
+<li><a href="#sec-13-5-2">13.5.2 Survey</a></li>
+<li><a href="#sec-13-5-3">13.5.3 Total Measures</a></li>
+</ul>
+</li>
+<li><a href="#sec-13-6">13.6 Set Class Analysis</a></li>
+<li><a href="#sec-13-7">13.7 Segmentation</a>
+<ul>
+<li><a href="#sec-13-7-1">13.7.1 Systematic</a></li>
+<li><a href="#sec-13-7-2">13.7.2 Sliding Window</a></li>
+</ul>
+</li>
+<li><a href="#sec-13-8">13.8 Representation</a>
+<ul>
+<li><a href="#sec-13-8-1">13.8.1 Distance Plot</a></li>
+<li><a href="#sec-13-8-2">13.8.2 autocorrelation</a></li>
+<li><a href="#sec-13-8-3">13.8.3 Self-similarity matrix</a></li>
+</ul>
+</li>
+<li><a href="#sec-13-9">13.9 Analysis Tool</a></li>
+<li><a href="#sec-13-10">13.10 Conclusions</a></li>
+<li><a href="#sec-13-11">13.11 Future work</a></li>
+</ul>
+</li>
+<li><a href="#sec-14">14 Agustin Comments</a></li>
+<li><a href="#sec-15">15 Presentation Script</a>
+<ul>
+<li><a href="#sec-15-1">15.1 Title slide</a></li>
+<li><a href="#sec-15-2">15.2 outline</a></li>
+<li><a href="#sec-15-3">15.3 Introduxtion - Definitions</a></li>
+<li><a href="#sec-15-4">15.4 Problem</a></li>
+<li><a href="#sec-15-5">15.5 Objectives</a></li>
+<li><a href="#sec-15-6">15.6 Systematic Description</a></li>
+<li><a href="#sec-15-7">15.7 Set Class Theory - What?</a></li>
+<li><a href="#sec-15-8">15.8 Set Class Theory - Why?</a></li>
+<li><a href="#sec-15-9">15.9 Similarity Measures - What?</a></li>
+<li><a href="#sec-15-10">15.10 Similarity Measures - Survey</a></li>
+<li><a href="#sec-15-11">15.11 Similarity Measures - survey 2</a></li>
+<li><a href="#sec-15-12">15.12 Segmentation</a></li>
+<li><a href="#sec-15-13">15.13 Systematic Segmentation</a></li>
+<li><a href="#sec-15-14">15.14 Class Matrix and vector</a></li>
+<li><a href="#sec-15-15">15.15 Sliding Window</a></li>
+<li><a href="#sec-15-16">15.16 Sliding window card avg</a></li>
+<li><a href="#sec-15-17">15.17 Sliding window sc avg</a></li>
+<li><a href="#sec-15-18">15.18 Sliding window class vec + slding content</a></li>
+<li><a href="#sec-15-19">15.19 Representation</a></li>
+<li><a href="#sec-15-20">15.20 Distance Plot</a></li>
+<li><a href="#sec-15-21">15.21 Autocorrelation</a></li>
+<li><a href="#sec-15-22">15.22 Self-Similarity Matrix</a></li>
+<li><a href="#sec-15-23">15.23 Analysis Tool</a></li>
+<li><a href="#sec-15-24">15.24 Conclusions</a></li>
+<li><a href="#sec-15-25">15.25 Future Work</a></li>
+</ul>
+</li>
+<li><a href="#sec-16">16 Presentation Script again</a>
+<ul>
+<li><a href="#sec-16-1">16.1 Introduction</a>
+<ul>
+<li><a href="#sec-16-1-1">16.1.1 Definitions</a></li>
+<li><a href="#sec-16-1-2">16.1.2 Problem</a></li>
+<li><a href="#sec-16-1-3">16.1.3 Objectives</a></li>
+</ul>
+</li>
+<li><a href="#sec-16-2">16.2 Methodology</a>
+<ul>
+<li><a href="#sec-16-2-1">16.2.1 Systematic description</a></li>
+<li><a href="#sec-16-2-2">16.2.2 Set class theory - what?</a></li>
+<li><a href="#sec-16-2-3">16.2.3 Set class theory - why?</a></li>
+<li><a href="#sec-16-2-4">16.2.4 Set Class Similarity Measures - What and Why</a></li>
+<li><a href="#sec-16-2-5">16.2.5 Set Class Similarity Measures - Survey</a></li>
+<li><a href="#sec-16-2-6">16.2.6 Segmentation</a></li>
+<li><a href="#sec-16-2-7">16.2.7 Segmentation - Fully systematic</a></li>
+<li><a href="#sec-16-2-8">16.2.8 Segmentation - Fully Systematic</a></li>
+<li><a href="#sec-16-2-9">16.2.9 Segmentation - Sliding window</a></li>
+<li><a href="#sec-16-2-10">16.2.10 segmentation - sliding window</a></li>
+<li><a href="#sec-16-2-11">16.2.11 Segmentation - sliding window</a></li>
+</ul>
+</li>
+<li><a href="#sec-16-3">16.3 Representaion</a>
+<ul>
+<li><a href="#sec-16-3-1">16.3.1 Representation</a></li>
+<li><a href="#sec-16-3-2">16.3.2 Distance plot</a></li>
+<li><a href="#sec-16-3-3">16.3.3 Autocorrelation</a></li>
+<li><a href="#sec-16-3-4">16.3.4 SSM</a></li>
+<li><a href="#sec-16-3-5">16.3.5 Analysis Tool</a></li>
+</ul>
+</li>
+<li><a href="#sec-16-4">16.4 Conclusions</a></li>
+<li><a href="#sec-16-5">16.5 Further Work</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Title</h2>
+<div class="outline-text-2" id="text-1">
+
+<ul>
+<li>Evaluation of PC-Set Similarity Measures for Tonal Analysis
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Outline</h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Introduction</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Tonal Analysis</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ol>
+<li>describe/model
+</li>
+<li>find patterns
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Pitch Class Set Theory</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<ul>
+<li>a descriptive tool
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> Similarity Measures</h3>
+<div class="outline-text-3" id="text-3-3">
+
+<ul>
+<li>what?
+<ul>
+<li>theoretical models
+</li>
+<li>different approaches
+</li>
+</ul>
+
+</li>
+<li>similarity is important
+<ul>
+<li>dimensionality
+</li>
+<li>visualisation (distance)
+</li>
+<li>perception
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Tonal Analysis</h2>
+<div class="outline-text-2" id="text-4">
+
+<ol>
+<li>describe/model
+<ul>
+<li>describe what?
+<ul>
+<li>describe musical surface
+</li>
+</ul>
+
+</li>
+<li>describe how?
+<ul>
+<li>systematically
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li>find patterns
+<ul>
+<li>visualise data
+</li>
+<li>retrieve traditional musicology
+</li>
+<li>augment traditional musicology
+</li>
+</ul>
+
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Pitch Class Set Theory</h2>
+<div class="outline-text-2" id="text-5">
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Introduction</h3>
+<div class="outline-text-3" id="text-5-1">
+
+<ul>
+<li>what?
+<ul>
+<li>pitches as numbers
+</li>
+<li>equivelance relations
+</li>
+</ul>
+
+</li>
+<li>Why?
+<ul>
+<li>mid level description
+</li>
+<li>systematic
+</li>
+<li>perceptual relevant
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Basics</h3>
+<div class="outline-text-3" id="text-5-2">
+
+<ul>
+<li>Pitch class
+</li>
+<li>PC-set
+</li>
+<li>Set Class
+</li>
+<li>SC Similarity
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Similarity Measures</h2>
+<div class="outline-text-2" id="text-6">
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Introduction</h3>
+<div class="outline-text-3" id="text-6-1">
+
+<ul>
+<li>What?
+<ul>
+<li>theoretical models of similarity
+</li>
+<li>many different models and approaches
+</li>
+</ul>
+
+</li>
+<li>Why?
+<ul>
+<li>visualisation
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Total Measures</h3>
+<div class="outline-text-3" id="text-6-2">
+
+<ul>
+<li>Subset vector based
+</li>
+<li>consider subsets of all sizes
+</li>
+<li>6 total measures
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Pitch Class Set Analysis</h2>
+<div class="outline-text-2" id="text-7">
+
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Basics</h3>
+<div class="outline-text-3" id="text-7-1">
+
+<ul>
+<li>segment
+</li>
+<li>describe each segment
+</li>
+<li>visualise
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> Previous Work</h3>
+<div class="outline-text-3" id="text-7-2">
+
+<ul>
+<li>class scape
+</li>
+<li>work in midi domain
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Segmentation</h2>
+<div class="outline-text-2" id="text-8">
+
+<ul>
+<li>why is it important (timing/scale of oberservation)
+</li>
+<li>two segmentation policies
+<ol>
+<li>systematic segmentation
+<ul>
+<li>retrieve the entire sc contents of a piece
+</li>
+</ul>
+
+</li>
+<li>sliding window
+<ul>
+<li>for visualisation
+</li>
+</ul>
+
+</li>
+</ol>
+
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Example</h3>
+<div class="outline-text-3" id="text-8-1">
+
+<ul>
+<li>complete sc contents example
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Visualisation</h2>
+<div class="outline-text-2" id="text-9">
+
+
+</div>
+
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Distance Plot</h3>
+<div class="outline-text-3" id="text-9-1">
+
+<ul>
+<li>what?
+<ul>
+<li>time series of distances between segments and comparison set
+</li>
+</ul>
+
+</li>
+<li>how?
+<ul>
+<li>segmentation (window and hop size selection)
+</li>
+<li>comparison set selection
+</li>
+</ul>
+
+</li>
+<li>peaks
+</li>
+<li>recurring patterns in the curve
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-2" class="outline-3">
+<h3 id="sec-9-2"><span class="section-number-3">9.2</span> autocorrelation</h3>
+<div class="outline-text-3" id="text-9-2">
+
+<ul>
+<li>autocorrelate distance plot
+</li>
+<li>peaks
+</li>
+<li>reveals structure
+</li>
+<li>example plot
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-3" class="outline-3">
+<h3 id="sec-9-3"><span class="section-number-3">9.3</span> Self-similarity matrix</h3>
+<div class="outline-text-3" id="text-9-3">
+
+<ul>
+<li>no comparison set
+</li>
+<li>systematically compare all segments
+</li>
+<li>reveals structure
+</li>
+<li>example plot
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Analysis Tool</h2>
+<div class="outline-text-2" id="text-10">
+
+<ul>
+<li>many parameters
+</li>
+<li>exploratory tool
+</li>
+<li>demonstration
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Conclusions</h2>
+<div class="outline-text-2" id="text-11">
+
+<ul>
+<li>systematic mid-level descriptions are a starting point for many
+  applications
+</li>
+<li>pc set theory
+</li>
+<li>similarity measures
+</li>
+<li>visualisation techniques
+</li>
+<li>analysis tool
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Future work</h2>
+<div class="outline-text-2" id="text-12">
+
+<ul>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> New Presentation Outline</h2>
+<div class="outline-text-2" id="text-13">
+
+
+</div>
+
+<div id="outline-container-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> Title Slide</h3>
+<div class="outline-text-3" id="text-13-1">
+
+<ul>
+<li>name
+</li>
+<li>title
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13-2" class="outline-3">
+<h3 id="sec-13-2"><span class="section-number-3">13.2</span> Introduction</h3>
+<div class="outline-text-3" id="text-13-2">
+
+
+</div>
+
+<div id="outline-container-13-2-1" class="outline-4">
+<h4 id="sec-13-2-1"><span class="section-number-4">13.2.1</span> Definitions</h4>
+<div class="outline-text-4" id="text-13-2-1">
+
+<p>BRIEFLY EXPLAIN THE TITLE AS A ANTECEDENT TO THE PROBLEMS AND
+OBJECTIVES.
+</p><ul>
+<li>Tonal Analysis:
+<ol>
+<li>description
+</li>
+<li>representation
+</li>
+</ol>
+
+</li>
+<li>Set class theory
+<ul>
+<li>tool for the description stage
+</li>
+</ul>
+
+</li>
+<li>Similarity measures
+<ul>
+<li>tool for the representation stage
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13-2-2" class="outline-4">
+<h4 id="sec-13-2-2"><span class="section-number-4">13.2.2</span> Problem</h4>
+<div class="outline-text-4" id="text-13-2-2">
+
+<p>EXPLAIN THE TWO MAIN ASPECTS OF THE RESEARCH PROBLEM
+</p><ol>
+<li>Existing descriptions of tonality lack depth
+<ul>
+<li>chord and key
+</li>
+<li>template matching
+</li>
+<li>major-minor paradigm
+</li>
+</ul>
+
+</li>
+<li>Use of non-musical similarity measures
+<ul>
+<li>euclidean distance
+</li>
+<li>correlation
+</li>
+<li>counter-intuitive
+</li>
+<li>not musically or perceptually relevant
+</li>
+</ul>
+
+</li>
+</ol>
+
+<p>SEMANTIC GAP
+</p></div>
+
+</div>
+
+<div id="outline-container-13-2-3" class="outline-4">
+<h4 id="sec-13-2-3"><span class="section-number-4">13.2.3</span> Objectives</h4>
+<div class="outline-text-4" id="text-13-2-3">
+
+<ol>
+<li>SYSTEMATIC description of tonality
+<ul>
+<li>To adopt a SYSTEMATIC approach to description of tonality.
+</li>
+</ul>
+
+</li>
+<li>Use Set class theory
+<ul>
+<li>To justify set class analysis as a systematic descriptive tool
+     capable of relating useful musical information as well as having
+     a degree of perceptual relevance.
+</li>
+<li>To position set class analysis among existing methods of tonal
+     description such as chroma vector time-series.
+</li>
+</ul>
+
+</li>
+<li>Survey set class similarity measures
+<ul>
+<li>comprehensive and practical
+</li>
+<li>To examine the measures in terms of systematicity and perceptual
+     relevance.
+</li>
+</ul>
+
+</li>
+<li>To develop techniques for the representation of set class
+   information
+<ul>
+<li>appropriate representations of the data from set class
+     descriptions so as to expose meaningful musical information.
+</li>
+</ul>
+
+</li>
+<li>To utilise set class similarity in these representations.
+</li>
+<li>To evaluate the analytical potential of this approach
+<ul>
+<li>The analytical potential of the model will be evidenced through
+     specific analysis examples.
+</li>
+<li>these examples will constitue preliminary experiments and
+     exploration of the techniques. a proof of concept.
+</li>
+</ul>
+
+</li>
+</ol>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13-3" class="outline-3">
+<h3 id="sec-13-3"><span class="section-number-3">13.3</span> Systematic Description</h3>
+<div class="outline-text-3" id="text-13-3">
+
+<p>OBJECTIVE 1: WHAT DOES IT MEAN TO BE SYSTEMATIC.
+</p><ul>
+<li>mid-level approach
+</li>
+<li>musical surface of notes
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13-4" class="outline-3">
+<h3 id="sec-13-4"><span class="section-number-3">13.4</span> Set Class Theory</h3>
+<div class="outline-text-3" id="text-13-4">
+
+<p>THE TOOL USED FOR SYSTEMATIC DESCRIPTION
+</p>
+</div>
+
+<div id="outline-container-13-4-1" class="outline-4">
+<h4 id="sec-13-4-1"><span class="section-number-4">13.4.1</span> Basics</h4>
+<div class="outline-text-4" id="text-13-4-1">
+
+<p>DESCRIBE THE BASIC PRINCIPLES IN SET CLASS THEORY.
+</p><ul>
+<li>Pitch class
+</li>
+<li>PC-set
+</li>
+<li>Set Class
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13-4-2" class="outline-4">
+<h4 id="sec-13-4-2"><span class="section-number-4">13.4.2</span> Justify and position</h4>
+<div class="outline-text-4" id="text-13-4-2">
+
+<p>OBJECTIVES 2
+</p><ul>
+<li>systematic
+</li>
+<li>capable of describing the musical surface
+</li>
+<li>perceptual relevance
+</li>
+<li>how is it different to existing approaches?
+</li>
+<li>benefits?
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13-5" class="outline-3">
+<h3 id="sec-13-5"><span class="section-number-3">13.5</span> Similarity Measures</h3>
+<div class="outline-text-3" id="text-13-5">
+
+<p>TOOL FOR REPRESENTATION
+</p>
+</div>
+
+<div id="outline-container-13-5-1" class="outline-4">
+<h4 id="sec-13-5-1"><span class="section-number-4">13.5.1</span> Introduction</h4>
+<div class="outline-text-4" id="text-13-5-1">
+
+<ul>
+<li>What?
+<ul>
+<li>theoretical models of similarity
+</li>
+<li>many different models and approaches
+</li>
+<li>why are there so many models.
+</li>
+<li>what do they measure
+</li>
+</ul>
+
+</li>
+<li>Why?
+<ul>
+<li>EXPLAIN WHY SIMILARITY MEASURES ARE IMPORTANT IN GENERAL.
+</li>
+<li>visualisation
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13-5-2" class="outline-4">
+<h4 id="sec-13-5-2"><span class="section-number-4">13.5.2</span> Survey</h4>
+<div class="outline-text-4" id="text-13-5-2">
+
+<p>OBJECTIVE 3
+</p><ul>
+<li>surveyed how
+</li>
+<li>outcomes
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13-5-3" class="outline-4">
+<h4 id="sec-13-5-3"><span class="section-number-4">13.5.3</span> Total Measures</h4>
+<div class="outline-text-4" id="text-13-5-3">
+
+<ul>
+<li>Subset vector based
+</li>
+<li>consider subsets of all sizes
+</li>
+<li>6 total measures
+</li>
+<li>example plot of chord comparisons
+</li>
+<li>general conclusions
+</li>
+<li>this will be used later
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13-6" class="outline-3">
+<h3 id="sec-13-6"><span class="section-number-3">13.6</span> Set Class Analysis</h3>
+<div class="outline-text-3" id="text-13-6">
+
+<ul>
+<li>basic steps
+<ul>
+<li>Desrcibe/model
+<ul>
+<li>segment
+</li>
+<li>describe each segment with its SC
+</li>
+</ul>
+
+</li>
+<li>representation
+<ul>
+<li>find a appropriate representation of the data
+</li>
+<li>visualise
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li>not much previous work has been done
+<ul>
+<li>class scapes
+</li>
+</ul>
+
+</li>
+<li>segmentations is a crucial 
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13-7" class="outline-3">
+<h3 id="sec-13-7"><span class="section-number-3">13.7</span> Segmentation</h3>
+<div class="outline-text-3" id="text-13-7">
+
+<p>THIS IS THE MOST IMPORTANT STAGE
+</p><ul>
+<li>why is it important (timing/scale of oberservation)
+<ul>
+<li>the segment size determines the size of the sets
+</li>
+</ul>
+
+</li>
+<li>two segmentation policies to be used in conjunction
+<ol>
+<li>fully systematic segmentation
+<ul>
+<li>retrieve the entire sc contents of a piece
+</li>
+</ul>
+
+</li>
+<li>sliding window
+<ul>
+<li>for represntation stage
+</li>
+<li>tune in to sets of interest
+</li>
+</ul>
+
+</li>
+</ol>
+
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-13-7-1" class="outline-4">
+<h4 id="sec-13-7-1"><span class="section-number-4">13.7.1</span> Systematic</h4>
+<div class="outline-text-4" id="text-13-7-1">
+
+<ul>
+<li>how?
+</li>
+<li>class-scape
+</li>
+<li>class matrix
+</li>
+<li>class vector
+</li>
+<li>Example class matrix and class vector for bach prelude
+</li>
+<li>what do they show?
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13-7-2" class="outline-4">
+<h4 id="sec-13-7-2"><span class="section-number-4">13.7.2</span> Sliding Window</h4>
+<div class="outline-text-4" id="text-13-7-2">
+
+<ul>
+<li>window and hop size selection
+</li>
+<li>what are the sets of interest?
+</li>
+<li>window and hop size can be informed by the previous plots
+</li>
+<li>Example: Average seg size for SCs and card
+</li>
+<li>choose 3 and 4 note chords
+</li>
+<li>Example: class vector with superimposed sliding window contents
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13-8" class="outline-3">
+<h3 id="sec-13-8"><span class="section-number-3">13.8</span> Representation</h3>
+<div class="outline-text-3" id="text-13-8">
+
+
+</div>
+
+<div id="outline-container-13-8-1" class="outline-4">
+<h4 id="sec-13-8-1"><span class="section-number-4">13.8.1</span> Distance Plot</h4>
+<div class="outline-text-4" id="text-13-8-1">
+
+<ul>
+<li>what?
+<ul>
+<li>represents tonal change in time "with respect to specific sets"
+</li>
+</ul>
+
+</li>
+<li>how?
+<ul>
+<li>segmentation (window and hop size selection)
+</li>
+<li>comparison set selection
+</li>
+<li>what are the sets of interest and why?
+</li>
+</ul>
+
+</li>
+<li>peaks
+</li>
+<li>recurring patterns in the curve
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13-8-2" class="outline-4">
+<h4 id="sec-13-8-2"><span class="section-number-4">13.8.2</span> autocorrelation</h4>
+<div class="outline-text-4" id="text-13-8-2">
+
+<ul>
+<li>autocorrelate distance plot
+</li>
+<li>peaks
+</li>
+<li>reveals structure
+</li>
+<li>example plot
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13-8-3" class="outline-4">
+<h4 id="sec-13-8-3"><span class="section-number-4">13.8.3</span> Self-similarity matrix</h4>
+<div class="outline-text-4" id="text-13-8-3">
+
+<ul>
+<li>no comparison set
+</li>
+<li>systematically compare all segments
+</li>
+<li>reveals structure
+</li>
+<li>example plot
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13-9" class="outline-3">
+<h3 id="sec-13-9"><span class="section-number-3">13.9</span> Analysis Tool</h3>
+<div class="outline-text-3" id="text-13-9">
+
+<ul>
+<li>many parameters
+</li>
+<li>exploratory tool
+</li>
+<li>demonstration
+<ul>
+<li>cadential sets
+</li>
+<li>diatonic set
+</li>
+<li>chromatic sets
+</li>
+<li>8-23
+</li>
+<li>different measures
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13-10" class="outline-3">
+<h3 id="sec-13-10"><span class="section-number-3">13.10</span> Conclusions</h3>
+<div class="outline-text-3" id="text-13-10">
+
+<ul>
+<li>systematic mid-level descriptions are a starting point for many
+  applications
+</li>
+<li>pc set theory
+</li>
+<li>similarity measures
+</li>
+<li>visualisation techniques
+</li>
+<li>analysis tool
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-13-11" class="outline-3">
+<h3 id="sec-13-11"><span class="section-number-3">13.11</span> Future work</h3>
+<div class="outline-text-3" id="text-13-11">
+
+<ul>
+<li>
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Agustin Comments</h2>
+<div class="outline-text-2" id="text-14">
+
+<ul>
+<li>main differences between pc-set and other tonal descriptions, in the
+  sense of the "benefits" with respect to other ways of describing
+  tonality.
+
+</li>
+<li>The same about the similarity measures. Something (very general) has
+  to be said in this respect from the very beginning, so as to
+  motivate best the approach and catch the audience attention.
+
+</li>
+<li>Said differently, which are the limitations/shortcomings of other
+  standard tonal descriptions and measures, that call for a different
+  approach?
+
+</li>
+<li>problem to be approached rather than "a way of doing things", as
+  well as a clear statement of your approach (in relation to other
+  commonly used tonal descriptions)
+
+</li>
+<li>SC similarity measures:
+<ul>
+<li>why there are that many models (what they measure or attempt
+    to measure).
+
+</li>
+</ul>
+
+</li>
+<li>As for the term "similarity", I can't figure out what
+  do you plan to explain (qualitative, perceptual, purely theoretical,
+  analysis-related, &hellip;). I think the similarity issue will trigger
+  questions from the committee, as it is a hot topic in MIR.
+
+</li>
+<li>Maybe more than emphasizing the term "visualisation", I would use
+  "representation". It is not actually necessary to "visualise" the
+  resulting time series, for them to be informative. Some of them are
+  actually used as input to other algorithms (e.g. SSM), and can be
+  mined automatically without human intervention.
+
+</li>
+<li>Segmentation: I'm curious about what you plan to say about the
+  segment length statistics. It is just a preliminar exploration or
+  did you find some insights? I think some interesting stuff could be
+  derived from this analysis.
+
+</li>
+<li>Visualisation: to me, the point here is to observe the tonal change
+  in time "with respect to specific sets" (stress here), so I would
+  maybe give stress to the "sets of interest" (and why they may be of
+  interest). Which time-evolving musical (relevant) aspects are (or
+  could be) evidenced?
+
+</li>
+<li>I like the visual sparsity of your slides (I would be even more
+  sparse). In general, it is desirable to explain every concept
+  directly with easy-to-understand examples, when possible, and to
+  minimize the text and number of concepts in a single slide.
+
+</li>
+<li>Contributions of your work: 
+<ul>
+<li>Your SOA is not only comprehensive, but it is also a
+
+</li>
+<li>deep and distilled review of the similarity measures
+<ul>
+<li>(sparse, not easy to find, not always properly documented,
+      mostly used in non-analytical contexts, &hellip;).
+</li>
+<li>The organization of this information constitutes a nice
+      contribution in itself.
+</li>
+<li>Implementation of the measures in an easy-to-use way, which was
+      something unavailable so far.
+</li>
+<li>This brings tools, which were used only for
+      specialists/theorists, closer to a broad community and to a
+      range of potential applications.
+
+</li>
+</ul>
+
+</li>
+<li>The quantitative comparison between them for common sets (chords,
+    scales). Did you conclude some general/clear discriminatory power
+    among the measures, that it is worth mentioning?
+
+</li>
+</ul>
+
+</li>
+<li>The application context: structure / pattern recognition. You should
+  also state at the end
+
+</li>
+<li>what has not been done yet, in the context of the thesis. Are your
+  results just exploratory/preliminary? Do the results point to some
+  specific analysis target, to be addressed during the summer?
+
+</li>
+<li>Some questions that may arise from the thesis' committee:
+<ul>
+<li>How are your results comparable to existing analyses of Bach's WTC?
+    (In any case, it is desirable to overlap some manual annotation
+    showing the relevance/limitations of your plots, so as to be
+    self-informative).
+</li>
+<li>Is your approach saying something new/better about the piece, or is
+    it just confirming what other approaches already do? If they just
+    confirm existing knowledge, what is the (not yet exploited)
+    potential? (e.g. using different comparison sets may reveal
+    different musical aspects, which ones, &hellip;).
+</li>
+<li>Are the measures "better" than, let's say, Euclidian or correlation
+    distances? In which respect?
+</li>
+<li>The term "evaluation" in your title is maybe the strongest word,
+    which may probably trigger questions from the committee. Do you plan
+    to evaluate this with respect to some baseline/ground-truth?
+    (e.g. structure segmentation tasks in MIREX). In general, I would
+    try to reinforce and clarify "what" has been (or will be) evaluated,
+    throughout your presentation.
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Presentation Script</h2>
+<div class="outline-text-2" id="text-15">
+
+
+</div>
+
+<div id="outline-container-15-1" class="outline-3">
+<h3 id="sec-15-1"><span class="section-number-3">15.1</span> Title slide</h3>
+<div class="outline-text-3" id="text-15-1">
+
+<ul>
+<li>name, title, supervisor
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-2" class="outline-3">
+<h3 id="sec-15-2"><span class="section-number-3">15.2</span> outline</h3>
+<div class="outline-text-3" id="text-15-2">
+
+<ul>
+<li>introduction
+</li>
+<li>methodology
+</li>
+<li>representation
+</li>
+<li>conclusions
+</li>
+<li>future work
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-3" class="outline-3">
+<h3 id="sec-15-3"><span class="section-number-3">15.3</span> Introduxtion - Definitions</h3>
+<div class="outline-text-3" id="text-15-3">
+
+<ul>
+<li>first i want to do a quick clarification of the some of terms in the
+  title as a preface the problem and objectives.
+</li>
+<li>firstly, tonal analysis:
+<ul>
+<li>used to here as a general term for any computational activities
+    involving tonality. MIR etc
+</li>
+<li>and it encompasses 2 stages
+<ul>
+<li>description: describing the tonal content.
+</li>
+<li>representation: represent the content in a meaningful way.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li>the other terms&hellip;
+</li>
+<li>set class theoy: a tool for description stage
+</li>
+<li>similarity measures: a tool fot the representation stage
+</li>
+<li>all these things will be gone into further later on
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-4" class="outline-3">
+<h3 id="sec-15-4"><span class="section-number-3">15.4</span> Problem</h3>
+<div class="outline-text-3" id="text-15-4">
+
+<ul>
+<li>the problem has 2 parts
+</li>
+<li>firstly: existing approaches to tonal analysis lack depth
+<ul>
+<li>for example: the predominant use of template plate matching for
+    chord and key recognition limit many systems to discrete
+    boundaries.
+</li>
+<li>when in fact fact tonality is a very fluid concept.
+</li>
+<li>these approaches are ofter limited to the major-minor paradigm.
+</li>
+<li>which is often an insufficient explanation of tonality even for
+    some western music.
+</li>
+</ul>
+
+</li>
+<li>the second part of the problem is use of non musical similarity
+  measures
+<ul>
+<li>such as correlation or euclidean distance
+</li>
+<li>using these purely mathematical measures seems counterintuituive
+    in some cases as they most likely lack musical or perceptual
+    relevance
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-5" class="outline-3">
+<h3 id="sec-15-5"><span class="section-number-3">15.5</span> Objectives</h3>
+<div class="outline-text-3" id="text-15-5">
+
+<ul>
+<li>so, with those problems in mind, my objectives are as follows:
+<ol>
+<li>To adopt a systematic approach to description of tonality.
+</li>
+<li>Use set class theoy
+<ul>
+<li>but not just to use it. i also want to 
+</li>
+<li>justify its use as a systematic descriptive tool, capable of
+       relating useful musical information as well as having a degree
+       of perceptual relevance.
+</li>
+<li>To position set class analysis among existing methods of tonal
+       description such as chroma vector time-series.
+</li>
+</ul>
+
+</li>
+<li>To create a comprehensive and practical survey of set class
+     similarity measures.
+<ul>
+<li>To examine the measures in terms of systematicity and
+       perceptual relevance.
+</li>
+</ul>
+
+</li>
+<li>To develop techniques for the representation of set class
+     description so as to expose useful musical information.
+<ul>
+<li>To utilise set class similarity in these representation.
+</li>
+</ul>
+
+</li>
+<li>To demonstrate the utility of these techniques through specific
+     analysis examples.
+</li>
+</ol>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-6" class="outline-3">
+<h3 id="sec-15-6"><span class="section-number-3">15.6</span> Systematic Description</h3>
+<div class="outline-text-3" id="text-15-6">
+
+<ul>
+<li>here address objective 1: explain the fundamental basis of my
+  apporach.
+</li>
+<li>so what does it mean to be systematic?
+</li>
+<li>the objective here is to not limit the description by basing it on
+  high level concepts such as chord and key.
+</li>
+<li>but rather base it on mid-level concepts such as notes.
+</li>
+<li>by systematically detailing the position of every note you produce a
+  description that is independent of high level concepts but none the
+  less capable of capturing them.
+</li>
+<li>this kind of description is sometimes referred to as the musical
+  surface.
+</li>
+<li>So that is the fundamental aim here in terms of description. its
+  being sytematic.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-7" class="outline-3">
+<h3 id="sec-15-7"><span class="section-number-3">15.7</span> Set Class Theory - What?</h3>
+<div class="outline-text-3" id="text-15-7">
+
+<ul>
+<li>so now set class theory
+</li>
+<li>as i said before, it is a descriptive tool
+</li>
+<li>and before i go on to address onjective 2 i will briefly explain the
+  basic principles for those who might be unfamiliar.
+</li>
+<li>the basic idea is pitches as numbers
+</li>
+<li>and the use of equivelance relations to reduce the amound of data
+  required to describe.
+</li>
+<li>so first this is a pitch set with four members corresponding to an A
+  mjor chord.
+</li>
+<li>the concept of set means that we dont care about the order of the
+  members or whether the occur simulaneously or in sequence. and we
+  inore repetitions.
+</li>
+<li>underneath there are the correpondning midi note numbers.
+</li>
+<li>so a pitch class is the residue class modulo 12 of the pitch numbers
+  which are as follows.
+</li>
+<li>and of course as we ignore repetitions in a set the pitch class set
+  is as follows.
+</li>
+<li>then you have a set class which is a way of grouping pitch class
+  sets.
+</li>
+<li>for example all pitch class sets that are transpostions of each
+  other belong to the same set class.
+</li>
+<li>the prime form of a set class is merely a convention for referring
+  to the class by arranging the entries so that they start on 0 and
+  are most tightly packed to the left.
+</li>
+<li>in addition theres another convention for ordering and naming the
+  set classes called forte name after the guy who devised it. like so.
+</li>
+<li>this just means this is the 11th set class of cardinality 3 or
+  size 3.
+</li>
+<li>so those are the basics&hellip;
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-8" class="outline-3">
+<h3 id="sec-15-8"><span class="section-number-3">15.8</span> Set Class Theory - Why?</h3>
+<div class="outline-text-3" id="text-15-8">
+
+<ul>
+<li>now ill try and address objective 2. why use set class theory.
+</li>
+<li>well, it fits the mid-level critera i spoke of earlier as any
+  collection of pitches can be described by its set class regardless
+  of whether they have a specific harmonic role.
+</li>
+<li>it coalesces fairly tightly with perception.
+<ul>
+<li>by this i mean the fundamental principles i.e.:
+<ul>
+<li>octave equivelance
+</li>
+<li>division of the octave into equivelance classes
+</li>
+<li>and transpositional equivelance
+</li>
+</ul>
+
+</li>
+<li>have been shown to have a solid basis in perception.
+</li>
+</ul>
+
+</li>
+<li>so interms of benefits and differences,
+</li>
+<li>well, as ive mentioned it constitues a substantial reduction of
+  information but whilst presuming to still be systematic and
+  perceptually relevant.
+</li>
+<li>the crucial difference between this type of description and other
+  based on say chroma is that the relationships are all relative.
+</li>
+<li>by which i mean it is not capable of capturing the absolute note or
+  chord labels. only the type.
+</li>
+<li>so thats set class theory&hellip;
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-9" class="outline-3">
+<h3 id="sec-15-9"><span class="section-number-3">15.9</span> Similarity Measures - What?</h3>
+<div class="outline-text-3" id="text-15-9">
+
+<ul>
+<li>now: set class similarity measures:
+</li>
+<li>first, what are they?
+<ul>
+<li>well since the development of set class theory, many theorists
+    have developed theoretical models that attempt to quantify which
+    how similarity or distance detween two set classes.
+</li>
+<li>there are countless different models that start from a wide range
+    of theoretical or musical principles.
+</li>
+</ul>
+
+</li>
+<li>so how exactly do they work?
+<ul>
+<li>well in this project i have limited by examination to a specific
+    type of measure
+</li>
+<li>which compare the subsets of set classes.
+</li>
+<li>so a subset is smaller set class which can be embedded in a larger
+    on.
+</li>
+<li>and for a given set you can count all the instances of a smaller
+    set classes which can be embedded in it and represent that
+    information as a vector.
+</li>
+<li>so these measures generally consist of a technique for comparing
+    these subset vecotrs.
+</li>
+</ul>
+
+</li>
+<li>so why use these measures?
+<ul>
+<li>well this goes back to the second part of the problem.
+</li>
+<li>these measure are musically relevant
+</li>
+<li>and potentially perceptually relevant.
+</li>
+<li>although the perceptual relevance of these measures has only been
+    investigated somehwta sporadically and inconclusively
+</li>
+<li>they have none the less be formed with musical intuition in mind.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-10" class="outline-3">
+<h3 id="sec-15-10"><span class="section-number-3">15.10</span> Similarity Measures - Survey</h3>
+<div class="outline-text-3" id="text-15-10">
+
+<ul>
+<li>so this brings us to objective 3:
+</li>
+<li>a survey of the measures which as i mentioned are numerous.
+</li>
+<li>so i surveyed 25+ different measures.
+</li>
+<li>then categorised them in terms of two things.
+<ul>
+<li>firstly, how systematic their approach. in terms of what ive
+    already explained.
+</li>
+<li>and secondly, their perceptual relevance.
+</li>
+</ul>
+
+</li>
+<li>the outcome of this survey was the selection of 6 differnt measures
+  from 4 theorists.
+</li>
+<li>these are their cryptic names
+</li>
+<li>they all have a different fundamental approach.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-11" class="outline-3">
+<h3 id="sec-15-11"><span class="section-number-3">15.11</span> Similarity Measures - survey 2</h3>
+<div class="outline-text-3" id="text-15-11">
+
+<ul>
+<li>the second party of the survey was to examine the specific
+  capabilities of each.
+</li>
+<li>by this i mean the descriminatory power.
+</li>
+<li>so here it useful to visualise some of the values.
+</li>
+<li>this plot shows:
+<ul>
+<li>the values produced for comparisons involving common tonal objects
+    such as chords and scales.
+</li>
+<li>the x and y axis show the set class corresponding to
+</li>
+<li>and each square is coloured accoridng to the distance between
+    them.
+</li>
+</ul>
+
+</li>
+<li>from visualisations like this it was possible to draw some basic
+  conclusions about the differences between the measures.
+</li>
+<li>but these difference i will discuss later in the context of
+  representation.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-12" class="outline-3">
+<h3 id="sec-15-12"><span class="section-number-3">15.12</span> Segmentation</h3>
+<div class="outline-text-3" id="text-15-12">
+
+<ul>
+<li>so now the final part of my methodology is segmentation
+</li>
+<li>which is a really crucial stage.
+</li>
+<li>because the scale of observation has a huge effect on what can be
+  observed.
+</li>
+<li>so my approach uses two segementation policies that work in
+  conjunction.
+<ul>
+<li>first a fully systematic method
+<ul>
+<li>which contains the entire SC contents of piece
+</li>
+</ul>
+
+</li>
+<li>second a sliding window
+<ul>
+<li>with fixed window and hop size
+</li>
+<li>and this is for tuning into certain sets of interest
+</li>
+</ul>
+
+</li>
+<li>ill talk about what i mean by sets of interest a bit later.
+</li>
+<li>the reason for the two methods is that selecting the size of the
+    sliding window can be based on information from the systematic
+    segmentation.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-13" class="outline-3">
+<h3 id="sec-15-13"><span class="section-number-3">15.13</span> Systematic Segmentation</h3>
+<div class="outline-text-3" id="text-15-13">
+
+<ul>
+<li>so to explain the function of the each of the segmentation methods
+  ill use an example.
+</li>
+<li>its this piece which some people may know.
+</li>
+<li>and so the we apply the systematic segmentation method to this
+</li>
+<li>and it exhaustively finds every change in pitch material
+</li>
+<li>segmenting the piece in every possible way.
+</li>
+<li>the resulting data structure can be thought of a 3-dimensional
+  binary matrix.
+</li>
+<li>with axes representing time, time-scale (segment length) and set
+  class.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-14" class="outline-3">
+<h3 id="sec-15-14"><span class="section-number-3">15.14</span> Class Matrix and vector</h3>
+<div class="outline-text-3" id="text-15-14">
+
+<ul>
+<li>an intermediate representation can be used to view some global
+  information about the sc contents of the piece.
+</li>
+<li>this is called class vector.
+<ul>
+<li>it shows the total time that each set class is present as a
+    proportion of the total length.
+</li>
+<li>this gives quite a compact picture of the overall set class
+    contents of the piece.
+</li>
+<li>these three largest bars correspond to
+<ul>
+<li>major triads
+</li>
+<li>the authentic cadence
+</li>
+<li>and the diatonic set
+</li>
+</ul>
+
+</li>
+<li>so that tells you something about the general sonority of the
+    music.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-15" class="outline-3">
+<h3 id="sec-15-15"><span class="section-number-3">15.15</span> Sliding Window</h3>
+<div class="outline-text-3" id="text-15-15">
+
+<ul>
+<li>now, the sliding window is used tune in or focus on the specific set
+  classes that youre interested in.
+</li>
+<li>obviously you have to select the right window and hopsize and these
+  will depend on the sets you want to observe.
+</li>
+<li>so its possible to use data from the systematic segmentation to
+  inform choices about the sliding window parameters.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-16" class="outline-3">
+<h3 id="sec-15-16"><span class="section-number-3">15.16</span> Sliding window card avg</h3>
+<div class="outline-text-3" id="text-15-16">
+
+<ul>
+<li>this plot shows:
+</li>
+<li>for each cardinality the average length of the segments in which
+  they appear.
+</li>
+<li>and the standard deviation.
+</li>
+<li>so if we wanted to capture 3 and 4 note chords for example we can
+  see that they appear in segments of mainly between 1 and 2 beats.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-17" class="outline-3">
+<h3 id="sec-15-17"><span class="section-number-3">15.17</span> Sliding window sc avg</h3>
+<div class="outline-text-3" id="text-15-17">
+
+<ul>
+<li>alternatively we can view the same information but for each separate
+  setclass.
+</li>
+<li>for example we want to capture major triads which we can see appear
+  mainly in segment of around 2 beats.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-18" class="outline-3">
+<h3 id="sec-15-18"><span class="section-number-3">15.18</span> Sliding window class vec + slding content</h3>
+<div class="outline-text-3" id="text-15-18">
+
+<ul>
+<li>so if we apply a sliding window with window size 2 beats and hop
+  size 1 beat&hellip;
+</li>
+<li>we can view the contents of the sliding window description in
+  relation to the class vector which i explained earlier.
+</li>
+<li>as you can see we've managed to capture a large number of major
+  triads
+</li>
+<li>as well as&hellip;
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-19" class="outline-3">
+<h3 id="sec-15-19"><span class="section-number-3">15.19</span> Representation</h3>
+<div class="outline-text-3" id="text-15-19">
+
+<ul>
+<li>so those are the two segmentation methods, and how they can be used
+  together.
+</li>
+<li>now i will explain 3 techniques that utilise sc similarity measures
+  to represent the sc data from these descriptions.
+<ul>
+<li>they are distance plot
+</li>
+<li>autocorrelation
+</li>
+<li>and self similarity matrix
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-20" class="outline-3">
+<h3 id="sec-15-20"><span class="section-number-3">15.20</span> Distance Plot</h3>
+<div class="outline-text-3" id="text-15-20">
+
+<ul>
+<li>so, distance plot:
+</li>
+<li>the basic idea of the distance plot is to represent tonal change
+  in time with respect to a comparison set.
+</li>
+<li>There are three interdependent parameters which must be selected
+  according to your spcific intentions:
+<ul>
+<li>Segmentation (window and hop size),
+</li>
+<li>comparison set
+</li>
+<li>and similarity/distance measure.
+</li>
+</ul>
+
+</li>
+<li>The segmentation determines the captured SC content which should be
+  targeted according to its relationship to the comparison set. This
+  relationship is determined by the measure used which must possess an
+  adequate degree of discrimination so as to produce noticeable
+  changes in the time series.
+</li>
+<li>so here we have the distance plot calculated using the sliding
+  window segmentation described before,
+</li>
+<li>a comparison set 3-11B the major triad
+</li>
+<li>and the atmemb distance.
+</li>
+<li>as we know that this window captures a high proportion of major
+  triads from the previous section,
+</li>
+<li>it is unsurprising to see the distance plot dropping to zero where
+  the segment coincides with the comparison set.
+</li>
+<li>the points where it rises higher correspond to departures from
+  familiar major chords.
+</li>
+<li>actually we can already see a kind of pattern:
+<ul>
+<li>the major triad seems to appear at fairly regular intervals.
+</li>
+</ul>
+
+</li>
+<li>this is where the next representation technique come in&hellip;
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-21" class="outline-3">
+<h3 id="sec-15-21"><span class="section-number-3">15.21</span> Autocorrelation</h3>
+<div class="outline-text-3" id="text-15-21">
+
+<ul>
+<li>most people are familiar with autocorrelation im sure.
+</li>
+<li>so, this is the autocorrelation of the distance plot we just saw.
+</li>
+<li>as you can see there are peaks at regular intervals two bar
+  intervals.
+</li>
+<li>the highest being at four bars.
+</li>
+<li>this would seem to indicate that some aspect of the music is
+  repeating at regular 2 intervals.
+</li>
+<li>and that probably makes sense. most music is strucutered somehow in
+  even groups like this.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-22" class="outline-3">
+<h3 id="sec-15-22"><span class="section-number-3">15.22</span> Self-Similarity Matrix</h3>
+<div class="outline-text-3" id="text-15-22">
+
+<ul>
+<li>finally, the self-similarity matrix,
+</li>
+<li>which again im sure most people are familiar with.
+</li>
+<li>this despenses with the comparison set
+</li>
+<li>and instead compares each segment to every other segment.
+</li>
+<li>this is a good way of finding repetitions in any time-series.
+</li>
+<li>so this is the ssm for the sliding window that we've been using.
+</li>
+<li>theres the familair diagonal down the middle.
+</li>
+<li>but the there are a few other features visible.
+</li>
+<li>most notable is the diagonal ive highlighted. 
+</li>
+<li>and this corresponds to the repetition of bars 7-11 in bars 15-19
+  but with a transposition.
+</li>
+<li>so those are the three techniques.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-23" class="outline-3">
+<h3 id="sec-15-23"><span class="section-number-3">15.23</span> Analysis Tool</h3>
+<div class="outline-text-3" id="text-15-23">
+
+<ul>
+<li>finally
+</li>
+<li>Due to the complex relationship between the different parameters
+  involved in this kind of analysis, it is desirable to work in an
+  interactive and exploratory environment.
+</li>
+<li>The analysis tool combines all of the presented representation
+  techniques in a single Matlab GUI.
+</li>
+<li>This kind of tool provides a test bench for exploring the
+  capabilities of these techniques and an environment for conducting
+  preliminary experiments.
+</li>
+<li>this is screen shot shows is of the example that i have just
+  explained.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-24" class="outline-3">
+<h3 id="sec-15-24"><span class="section-number-3">15.24</span> Conclusions</h3>
+<div class="outline-text-3" id="text-15-24">
+
+<ul>
+<li>approach:
+</li>
+<li>that is, objectives 1 and 2,
+</li>
+<li>this work has demonstrated the capability of systematic set class
+  descritpions to convey useful musical information.
+</li>
+<li>analysis outcomes: so objectives 4 and 5.
+</li>
+<li>the experiments ive done have constituted a preliminary examination
+  of the complex relationship between the various parameters.
+</li>
+<li>they have also revealed that the 
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-15-25" class="outline-3">
+<h3 id="sec-15-25"><span class="section-number-3">15.25</span> Future Work</h3>
+<div class="outline-text-3" id="text-15-25">
+
+<ul>
+<li>
+</li>
+</ul>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Presentation Script again</h2>
+<div class="outline-text-2" id="text-16">
+
+
+</div>
+
+<div id="outline-container-16-1" class="outline-3">
+<h3 id="sec-16-1"><span class="section-number-3">16.1</span> Introduction</h3>
+<div class="outline-text-3" id="text-16-1">
+
+
+</div>
+
+<div id="outline-container-16-1-1" class="outline-4">
+<h4 id="sec-16-1-1"><span class="section-number-4">16.1.1</span> Definitions</h4>
+<div class="outline-text-4" id="text-16-1-1">
+
+<ul>
+<li>Clarification
+<ul>
+<li>tonal analysis
+</li>
+<li>Set class theory
+</li>
+<li>similarity measures
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-1-2" class="outline-4">
+<h4 id="sec-16-1-2"><span class="section-number-4">16.1.2</span> Problem</h4>
+<div class="outline-text-4" id="text-16-1-2">
+
+<ol>
+<li>existing approaches to tonal analysis lack depth.
+<ul>
+<li>the predominant use of template matching for chord and key
+     estimation gives systems a narrow view of tonality and restrict
+     it in many cases to major-minor paradigm, which is insufficient
+     for even some western music.
+</li>
+</ul>
+
+</li>
+<li>the use of non-musical similarity measures
+<ul>
+<li>such as correlation and euclidean distance.
+</li>
+<li>the use of these purely mathematical measures seems inappropriate
+     when considering musical objects.
+</li>
+</ul>
+
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-1-3" class="outline-4">
+<h4 id="sec-16-1-3"><span class="section-number-4">16.1.3</span> Objectives</h4>
+<div class="outline-text-4" id="text-16-1-3">
+
+<ol>
+<li>adopt a systematic approach to description
+</li>
+<li>use set class theory
+<ul>
+<li>justify
+</li>
+<li>position
+</li>
+</ul>
+
+</li>
+<li>survey similarity measures
+</li>
+<li>develop techniques for the representation of set class data
+   utilising these similarity measures.
+</li>
+<li>demonstrate the capabilities of the method through specific
+   analysis examples.
+</li>
+</ol>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-16-2" class="outline-3">
+<h3 id="sec-16-2"><span class="section-number-3">16.2</span> Methodology</h3>
+<div class="outline-text-3" id="text-16-2">
+
+
+</div>
+
+<div id="outline-container-16-2-1" class="outline-4">
+<h4 id="sec-16-2-1"><span class="section-number-4">16.2.1</span> Systematic description</h4>
+<div class="outline-text-4" id="text-16-2-1">
+
+<ul>
+<li>this addresses objective 1
+</li>
+<li>and explains the fundamental basis to my approach.
+</li>
+<li>what does it mean to be systematic.
+</li>
+<li>the key here, is not base the description on high level concepts
+  such as chord and key, which is restrictive.
+</li>
+<li>instead base it on mid-level concepts such as notes.
+</li>
+<li>mid-level descriptions should be fundamentally independent of high
+  level concepts but at the same time capable of capturing them.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-2-2" class="outline-4">
+<h4 id="sec-16-2-2"><span class="section-number-4">16.2.2</span> Set class theory - what?</h4>
+<div class="outline-text-4" id="text-16-2-2">
+
+<ul>
+<li>before addressing objective 2 i will explain the basic principles
+  for those who are unfamiliar.
+</li>
+<li>pitch set
+</li>
+<li>set: ignore order and repetitions
+</li>
+<li>pitch class: residue class modulo 12 of the pitchs
+</li>
+<li>ignore repeated 9
+</li>
+<li>set class groups pitch class sets which are transpositions of each
+  other.
+</li>
+<li>prime form is a convention for notating set class. with entries
+  packed most tightly left and starting on zero.
+</li>
+<li>forte name is another convention for ordering and naming scs.
+</li>
+<li>3-11B just means the 11th set of size 3. the B is not important for
+  this explanation.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-2-3" class="outline-4">
+<h4 id="sec-16-2-3"><span class="section-number-4">16.2.3</span> Set class theory - why?</h4>
+<div class="outline-text-4" id="text-16-2-3">
+
+<ul>
+<li>so that was the what now the why
+</li>
+<li>it fulfills the mid-level critera i specified earlier
+<ul>
+<li>in that any collection of pitchs can be represented by a set class
+    regardless of any specific harmonic role.
+</li>
+<li>so its systematic in that respect.
+</li>
+</ul>
+
+</li>
+<li>it has a degree of perceptual relevance
+<ul>
+<li>octave equivelance and transpositional equivelance both have a
+    solid basis in perception.
+</li>
+</ul>
+
+</li>
+<li>the benefits:
+<ul>
+<li>it provides a substantial reduction in information whilst
+    remaining systematic and perceptually relevant.
+</li>
+</ul>
+
+</li>
+<li>differences:
+<ul>
+<li>all the relations ships are relative
+</li>
+<li>meaning it does not capture absolute note and chord labels only
+    types.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-2-4" class="outline-4">
+<h4 id="sec-16-2-4"><span class="section-number-4">16.2.4</span> Set Class Similarity Measures - What and Why</h4>
+<div class="outline-text-4" id="text-16-2-4">
+
+<ul>
+<li>what are they?
+<ul>
+<li>models that attempt to quantify the similarity ordistance between
+    2 set classes.
+</li>
+<li>there are countless different models starting from a wide range of
+    fundamental principles.
+</li>
+</ul>
+
+</li>
+<li>for the most part they work by comparing the subsets of two set classes.
+</li>
+<li>why?
+<ul>
+<li>this goes back to the second part of the problem.
+</li>
+<li>these measures are musical
+</li>
+<li>although the perceptual relevance has only be examined
+    sporadically and inconclusively&hellip;
+</li>
+<li>these measures were designed to reflect musical intuitions.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-2-5" class="outline-4">
+<h4 id="sec-16-2-5"><span class="section-number-4">16.2.5</span> Set Class Similarity Measures - Survey</h4>
+<div class="outline-text-4" id="text-16-2-5">
+
+<ul>
+<li>objective 3 - the survey
+</li>
+<li>i surveys 25+ measures
+</li>
+<li>categorised them according to
+<ul>
+<li>how systematic their approach
+</li>
+<li>and how perceptually relevant
+</li>
+</ul>
+
+</li>
+<li>the outcome was to select 6 measure from 4 theorists.
+</li>
+<li>and examine the values they produced for common tonal objects such
+  as chords and scales.
+</li>
+<li>the preliminary conclusions were that different measures have
+  different capabilities and discriminatory power.
+</li>
+<li>each might potentially be useful in a certain context.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-2-6" class="outline-4">
+<h4 id="sec-16-2-6"><span class="section-number-4">16.2.6</span> Segmentation</h4>
+<div class="outline-text-4" id="text-16-2-6">
+
+<ul>
+<li>so now the final part of the methodology: segmentation.
+</li>
+<li>this is a crucial stage as the scale of observation greatly affects
+  the tonality of a piece.
+</li>
+<li>so for this method i propose two segmentation methods to be used in
+  conjustion.
+<ol>
+<li>fisrt a fully systematic method (from the work of agustin)
+<ul>
+<li>this provides the complete sc contents of a piece
+</li>
+</ul>
+
+</li>
+<li>second a sliding window
+<ul>
+<li>with fixed window and hope size
+</li>
+<li>for tuneing in to sets on interest
+</li>
+<li>i will explain&hellip; later
+</li>
+</ul>
+
+</li>
+</ol>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-2-7" class="outline-4">
+<h4 id="sec-16-2-7"><span class="section-number-4">16.2.7</span> Segmentation - Fully systematic</h4>
+<div class="outline-text-4" id="text-16-2-7">
+
+<ul>
+<li>to demonstrate how the two methods work in conjunction i will use an
+  example.
+</li>
+<li>its this piece which some people may know.
+</li>
+<li>so first we apply the systematic segmentation
+</li>
+<li>which exhaustively records every combination of adjacent notes
+</li>
+<li>so that every possible set class is recorded
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-2-8" class="outline-4">
+<h4 id="sec-16-2-8"><span class="section-number-4">16.2.8</span> Segmentation - Fully Systematic</h4>
+<div class="outline-text-4" id="text-16-2-8">
+
+<ul>
+<li>a useful intermediate representation of this data is the
+  class-vector.
+</li>
+<li>which shows the activation time of each set class as a proportion of
+  the total duration.
+</li>
+<li>from this its possible to see a global picture of the set class
+  contents and deduce certain things about the sonority
+</li>
+<li>for example:
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-2-9" class="outline-4">
+<h4 id="sec-16-2-9"><span class="section-number-4">16.2.9</span> Segmentation - Sliding window</h4>
+<div class="outline-text-4" id="text-16-2-9">
+
+<ul>
+<li>so now the sliding window.
+</li>
+<li>we need to select a window and hop size
+</li>
+<li>this depends on the "sets of interest"
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-2-10" class="outline-4">
+<h4 id="sec-16-2-10"><span class="section-number-4">16.2.10</span> segmentation - sliding window</h4>
+<div class="outline-text-4" id="text-16-2-10">
+
+<ul>
+<li>so say for example we want to capture major triads in our sliding
+  window
+</li>
+<li>we can use information from the systematic segmentation to inform
+  our parameter selection.
+</li>
+<li>this plot shows, for each set class, the average segment length in
+  which it occurs.
+</li>
+<li>so for major triads (3-11B) we can see they mainly occur in segments
+  around 2 beats
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-2-11" class="outline-4">
+<h4 id="sec-16-2-11"><span class="section-number-4">16.2.11</span> Segmentation - sliding window</h4>
+<div class="outline-text-4" id="text-16-2-11">
+
+<ul>
+<li>so using this information
+</li>
+<li>we set the window size to 2 beats and hop size to 1 beat
+</li>
+<li>and we can view the contents of our sliding window in relation to
+  the class vector from before.
+</li>
+<li>this is shown here with the class vector in blue and the sliding
+  window contents in red.
+</li>
+<li>so you can see we capture a high proportion of major triads as well
+  as some of these other set classes.
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-16-3" class="outline-3">
+<h3 id="sec-16-3"><span class="section-number-3">16.3</span> Representaion</h3>
+<div class="outline-text-3" id="text-16-3">
+
+
+</div>
+
+<div id="outline-container-16-3-1" class="outline-4">
+<h4 id="sec-16-3-1"><span class="section-number-4">16.3.1</span> Representation</h4>
+<div class="outline-text-4" id="text-16-3-1">
+
+<ul>
+<li>so now we have segmented and tuned into our sets of interest.
+</li>
+<li>we need to represent the data.
+</li>
+<li>here i will describe the three representation techniques that use
+  the set class similarity measures.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-3-2" class="outline-4">
+<h4 id="sec-16-3-2"><span class="section-number-4">16.3.2</span> Distance plot</h4>
+<div class="outline-text-4" id="text-16-3-2">
+
+<ul>
+<li>first there is the distance plot
+</li>
+<li>the main idea of the distance plot is to represent the tonal change
+  in time with respect to a comparison set
+</li>
+<li>there are three interdependent parameters here that need selecting:
+<ul>
+<li>window and hop size determine the captured sc contents
+</li>
+<li>which should be targeted according to their relationship to the
+    comparison set.
+</li>
+<li>this relationship is determined by the measure used.
+</li>
+</ul>
+
+</li>
+<li>here is the resulting distance plot from the sliding window applied
+  earlier.
+</li>
+<li>with a comparison set of 3-11B major triad.
+</li>
+<li>the points where the curve goes to zero are where the segment and
+  the comparison set coincide.
+</li>
+<li>the higher points of the curve indicate a departure from major
+  triads to possible more complex or less familiar chords.
+</li>
+<li>as you can see there is some element of repetition to the curve.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-3-3" class="outline-4">
+<h4 id="sec-16-3-3"><span class="section-number-4">16.3.3</span> Autocorrelation</h4>
+<div class="outline-text-4" id="text-16-3-3">
+
+<ul>
+<li>and thats where the next representation comes in.
+</li>
+<li>autocorrelation: which im sure everyone is familiar with.
+</li>
+<li>this is the auto correlation of the distance plot you just saw.
+</li>
+<li>as you can see there are peaks occuring at regular intervals
+</li>
+<li>indicating that some tonal aspect of the music is repeating
+  regularly at 2 and 4 bar intervals.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-3-4" class="outline-4">
+<h4 id="sec-16-3-4"><span class="section-number-4">16.3.4</span> SSM</h4>
+<div class="outline-text-4" id="text-16-3-4">
+
+<ul>
+<li>the final technique is SSM
+</li>
+<li>which again im sure everyone is familiar with.
+</li>
+<li>this despenses with the comparison set and instead compares each
+  segment to every other.
+</li>
+<li>this is a good way of finding repetitions in a time series.
+</li>
+<li>so here is the SSM of previous example.
+</li>
+<li>you can the familiar diagonal down the middle
+</li>
+<li>and there are a few other features specifically this diagonal which
+  ive highlighted
+</li>
+<li>and it corresponds to this passage from bars 7-11 which is repeated
+  in bars 15 to 19 with a transposition.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-3-5" class="outline-4">
+<h4 id="sec-16-3-5"><span class="section-number-4">16.3.5</span> Analysis Tool</h4>
+<div class="outline-text-4" id="text-16-3-5">
+
+<ul>
+<li>so those are the three representation techniques.
+</li>
+<li>the complex relation ship between the parameters makes it desireable
+  to work in an interactive and exploratory environment.
+</li>
+<li>so i develiped this tool which combines all the techniques into a
+  single matlab gui.
+</li>
+<li>so this can act as a kind of test bench and an environment for
+  conducting preliminary experiments.
+</li>
+<li>this is a screen shot displaing the example that i just described.
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-16-4" class="outline-3">
+<h3 id="sec-16-4"><span class="section-number-3">16.4</span> Conclusions</h3>
+<div class="outline-text-3" id="text-16-4">
+
+<ul>
+<li>so in terms of the approach:
+<ul>
+<li>i think that this work demonstrates that set class descriptions
+    and representations involving sc similarity measures. are capable
+    of relating useful musicological information
+</li>
+<li>and that they are a starting point for addressing the this
+    research problem.
+</li>
+<li>in particular they seem adept in capturing musical structure and
+    significant boundaries.
+</li>
+</ul>
+
+</li>
+<li>in terms of the analysis conclusions:
+<ul>
+<li>the work i have done constitutes preliminary experiments which
+    explore the relation ship between the various parameters.
+</li>
+<li>and i have some very basic conclusions relating to this in terms
+    of what are the sets of interest and why and what measure to use
+    etc.
+</li>
+</ul>
+
+</li>
+<li>as for the contribution of this work
+<ul>
+<li>i think the survey of similarity measures constitues a substantial
+    contribution as this information is
+<ul>
+<li>sparse, not easy to find, not always properly documented
+</li>
+<li>so the organisation of this information and the implementation
+      of the measures brings helps bring these potentially useful
+      tools into the mainstream of music research.
+</li>
+</ul>
+
+</li>
+<li>secondly the analysis tool:
+<ul>
+<li>will be invaluable to anyone wishing to explore these techniques
+      further.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-16-5" class="outline-3">
+<h3 id="sec-16-5"><span class="section-number-3">16.5</span> Further Work</h3>
+<div class="outline-text-3" id="text-16-5">
+
+<ul>
+<li>so future work
+<ul>
+<li>well in the near future, and by this i mean potentiall over the
+    summer:
+<ul>
+<li>I intendt to obtain a better understanding of the relationship
+      between the parameters.
+<ul>
+<li>better understanding the set class contents of a piece and
+        what different sets signify.
+</li>
+<li>what are the sets of interest and why?
+</li>
+<li>which measure to use in which context.
+</li>
+<li>and this could be achieved through simpler analysis examples.
+</li>
+<li>althought the bach prelude.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li>so where is this all leading in the farther future
+<ul>
+<li>with sufficiant conprehension of how to select parameters
+</li>
+<li>an eventual goal of would be using set class information of this
+      type as feature vector with which to perform other MIR or music
+      research tasks.
+</li>
+<li>there are two aspces to this: baring in mind this work occupies
+      a mid level perspective. it is neccessary to
+<ul>
+<li>approach the this mid level description from low level
+        descriptions such as those from audio signals
+</li>
+<li>approaching high level musicological understanding from the
+        mid-level.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2014-07-02T14:11+0200</p>
+<p class="author">Author: Nick</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

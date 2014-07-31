@@ -13,14 +13,23 @@ function table = calcTables()
 			table(i,j) = msr(sets(i),sets(j));
 			%table(j,i) = msr(sets(i),sets(j));
 
-			%chordsRELa(i,j) = RELa_prime(sets(i),sets(j));
-			%chordsRELb(i,j) = RELb_prime(sets(i),sets(j));
-			%chordsRELc(i,j) = RELc_prime(sets(i),sets(j));
-			%chordsATMEMB(i,j) = ATMEMB_prime(sets(i),sets(j));
-			%chordsRECREL(i,j) = RECREL_prime(sets(i),sets(j));
-			%chordsTpREL(i,j) = TpREL_prime(sets(i),sets(j));
-			%chordsAvgSATSIM(i,j) = AvgSATSIM_prime(sets(i),sets(j));
-			%chordsTSATSIM(i,j) = TSATSIM_prime(sets(i),sets(j));
+			chordsRELa(i,j) = RELa_prime(sets(i),sets(j));
+			chordsRELb(i,j) = RELb_prime(sets(i),sets(j));
+			chordsRELc(i,j) = RELc_prime(sets(i),sets(j));
+			chordsATMEMB(i,j) = ATMEMB_prime(sets(i),sets(j));
+			chordsRECREL(i,j) = RECREL_prime(sets(i),sets(j));
+			chordsTpREL(i,j) = TpREL_prime(sets(i),sets(j));
+			chordsAvgSATSIM(i,j) = AvgSATSIM_prime(sets(i),sets(j));
+			chordsTSATSIM(i,j) = TSATSIM_prime(sets(i),sets(j));
+
+			chordsRELa(j,i) = RELa_prime(sets(i),sets(j));
+			chordsRELb(j,i) = RELb_prime(sets(i),sets(j));
+			chordsRELc(j,i) = RELc_prime(sets(i),sets(j));
+			chordsATMEMB(j,i) = ATMEMB_prime(sets(i),sets(j));
+			chordsRECREL(j,i) = RECREL_prime(sets(i),sets(j));
+			chordsTpREL(j,i) = TpREL_prime(sets(i),sets(j));
+			chordsAvgSATSIM(j,i) = AvgSATSIM_prime(sets(i),sets(j));
+			chordsTSATSIM(j,i) = TSATSIM_prime(sets(i),sets(j));
 		end
 	end
 
@@ -49,3 +58,5 @@ function table = calcTables()
 	c = colorbar;
 	title(c,'Distance')
 	grid
+
+	

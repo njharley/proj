@@ -1,0 +1,942 @@
+#+STARTUP: indent
+* Title
+- Evaluation of PC-Set Similarity Measures for Tonal Analysis
+* Outline
+-
+-
+-
+* Introduction
+** Tonal Analysis
+1. describe/model
+2. find patterns
+** Pitch Class Set Theory
+- a descriptive tool
+** Similarity Measures
+- what?
+  - theoretical models
+  - different approaches
+- similarity is important
+  - dimensionality
+  - visualisation (distance)
+  - perception
+* Tonal Analysis
+1. describe/model
+   - describe what?
+     - describe musical surface
+   - describe how?
+     - systematically
+2. find patterns
+   - visualise data
+   - retrieve traditional musicology
+   - augment traditional musicology
+* Pitch Class Set Theory
+** Introduction
+- what?
+  - pitches as numbers
+  - equivelance relations
+- Why?
+  - mid level description
+  - systematic
+  - perceptual relevant
+** Basics
+- Pitch class
+- PC-set
+- Set Class
+- SC Similarity
+* Similarity Measures
+** Introduction
+- What?
+  - theoretical models of similarity
+  - many different models and approaches
+- Why?
+  - visualisation
+** Total Measures
+- Subset vector based
+- consider subsets of all sizes
+- 6 total measures
+* Pitch Class Set Analysis
+** Basics
+- segment
+- describe each segment
+- visualise
+** Previous Work
+- class scape
+- work in midi domain
+* Segmentation
+- why is it important (timing/scale of oberservation)
+- two segmentation policies
+  1. systematic segmentation
+     - retrieve the entire sc contents of a piece
+  2. sliding window
+     - for visualisation
+** Example
+- complete sc contents example
+* Visualisation
+** Distance Plot
+- what?
+  - time series of distances between segments and comparison set
+- how?
+  - segmentation (window and hop size selection)
+  - comparison set selection
+- peaks
+- recurring patterns in the curve
+** autocorrelation
+- autocorrelate distance plot
+- peaks
+- reveals structure
+- example plot
+** Self-similarity matrix
+- no comparison set
+- systematically compare all segments
+- reveals structure
+- example plot
+* Analysis Tool
+- many parameters
+- exploratory tool
+- demonstration
+* Conclusions
+- systematic mid-level descriptions are a starting point for many
+  applications
+- pc set theory
+- similarity measures
+- visualisation techniques
+- analysis tool
+* Future work
+- 
+- 
+- 
+* New Presentation Outline
+** Title Slide
+- name
+- title
+** Introduction
+*** Definitions
+BRIEFLY EXPLAIN THE TITLE AS A ANTECEDENT TO THE PROBLEMS AND
+OBJECTIVES.
+- Tonal Analysis:
+    1. description
+    2. representation
+- Set class theory
+  - tool for the description stage
+- Similarity measures
+  - tool for the representation stage
+*** Problem
+EXPLAIN THE TWO MAIN ASPECTS OF THE RESEARCH PROBLEM
+1. Existing descriptions of tonality lack depth
+   - chord and key
+   - template matching
+   - major-minor paradigm
+2. Use of non-musical similarity measures
+   - euclidean distance
+   - correlation
+   - counter-intuitive
+   - not musically or perceptually relevant
+SEMANTIC GAP
+*** Objectives
+1. SYSTEMATIC description of tonality
+   - To adopt a SYSTEMATIC approach to description of tonality.
+2. Use Set class theory
+   - To justify set class analysis as a systematic descriptive tool
+     capable of relating useful musical information as well as having
+     a degree of perceptual relevance.
+   - To position set class analysis among existing methods of tonal
+     description such as chroma vector time-series.
+3. Survey set class similarity measures
+   - comprehensive and practical
+   - To examine the measures in terms of systematicity and perceptual
+     relevance.
+4. To develop techniques for the representation of set class
+   information
+   - appropriate representations of the data from set class
+     descriptions so as to expose meaningful musical information.
+5. To utilise set class similarity in these representations.
+6. To evaluate the analytical potential of this approach
+   - The analytical potential of the model will be evidenced through
+     specific analysis examples.
+   - these examples will constitue preliminary experiments and
+     exploration of the techniques. a proof of concept.
+** Systematic Description
+OBJECTIVE 1: WHAT DOES IT MEAN TO BE SYSTEMATIC.
+- mid-level approach
+- musical surface of notes
+** Set Class Theory
+THE TOOL USED FOR SYSTEMATIC DESCRIPTION
+*** Basics
+DESCRIBE THE BASIC PRINCIPLES IN SET CLASS THEORY.
+- Pitch class
+- PC-set
+- Set Class
+*** Justify and position
+OBJECTIVES 2
+- systematic
+- capable of describing the musical surface
+- perceptual relevance
+- how is it different to existing approaches?
+- benefits?
+** Similarity Measures
+TOOL FOR REPRESENTATION
+*** Introduction
+- What?
+  - theoretical models of similarity
+  - many different models and approaches
+  - why are there so many models.
+  - what do they measure
+- Why?
+  - EXPLAIN WHY SIMILARITY MEASURES ARE IMPORTANT IN GENERAL.
+  - visualisation
+*** Survey
+OBJECTIVE 3
+- surveyed how
+- outcomes
+*** Total Measures
+- Subset vector based
+- consider subsets of all sizes
+- 6 total measures
+- example plot of chord comparisons
+- general conclusions
+- this will be used later
+** Set Class Analysis
+- basic steps
+  - Desrcibe/model
+    - segment
+    - describe each segment with its SC
+  - representation
+    - find a appropriate representation of the data
+    - visualise
+- not much previous work has been done
+  - class scapes
+- segmentations is a crucial 
+** Segmentation
+THIS IS THE MOST IMPORTANT STAGE
+- why is it important (timing/scale of oberservation)
+  - the segment size determines the size of the sets
+- two segmentation policies to be used in conjunction
+  1. fully systematic segmentation
+     - retrieve the entire sc contents of a piece
+  2. sliding window
+     - for represntation stage
+     - tune in to sets of interest
+*** Systematic
+- how?
+- class-scape
+- class matrix
+- class vector
+- Example class matrix and class vector for bach prelude
+- what do they show?
+*** Sliding Window
+- window and hop size selection
+- what are the sets of interest?
+- window and hop size can be informed by the previous plots
+- Example: Average seg size for SCs and card
+- choose 3 and 4 note chords
+- Example: class vector with superimposed sliding window contents
+** Representation
+*** Distance Plot
+- what?
+  - represents tonal change in time "with respect to specific sets"
+- how?
+  - segmentation (window and hop size selection)
+  - comparison set selection
+  - what are the sets of interest and why?
+- peaks
+- recurring patterns in the curve
+*** autocorrelation
+- autocorrelate distance plot
+- peaks
+- reveals structure
+- example plot
+*** Self-similarity matrix
+- no comparison set
+- systematically compare all segments
+- reveals structure
+- example plot
+** Analysis Tool
+- many parameters
+- exploratory tool
+- demonstration
+  - cadential sets
+  - diatonic set
+  - chromatic sets
+  - 8-23
+  - different measures
+** Conclusions
+- systematic mid-level descriptions are a starting point for many
+  applications
+- pc set theory
+- similarity measures
+- visualisation techniques
+- analysis tool
+** Future work
+- 
+* Agustin Comments
+- main differences between pc-set and other tonal descriptions, in the
+  sense of the "benefits" with respect to other ways of describing
+  tonality.
+
+- The same about the similarity measures. Something (very general) has
+  to be said in this respect from the very beginning, so as to
+  motivate best the approach and catch the audience attention.
+
+- Said differently, which are the limitations/shortcomings of other
+  standard tonal descriptions and measures, that call for a different
+  approach?
+
+- problem to be approached rather than "a way of doing things", as
+  well as a clear statement of your approach (in relation to other
+  commonly used tonal descriptions)
+
+- SC similarity measures:
+  - why there are that many models (what they measure or attempt
+    to measure).
+
+- As for the term "similarity", I can't figure out what
+  do you plan to explain (qualitative, perceptual, purely theoretical,
+  analysis-related, ...). I think the similarity issue will trigger
+  questions from the committee, as it is a hot topic in MIR.
+
+- Maybe more than emphasizing the term "visualisation", I would use
+  "representation". It is not actually necessary to "visualise" the
+  resulting time series, for them to be informative. Some of them are
+  actually used as input to other algorithms (e.g. SSM), and can be
+  mined automatically without human intervention.
+
+- Segmentation: I'm curious about what you plan to say about the
+  segment length statistics. It is just a preliminar exploration or
+  did you find some insights? I think some interesting stuff could be
+  derived from this analysis.
+
+- Visualisation: to me, the point here is to observe the tonal change
+  in time "with respect to specific sets" (stress here), so I would
+  maybe give stress to the "sets of interest" (and why they may be of
+  interest). Which time-evolving musical (relevant) aspects are (or
+  could be) evidenced?
+
+- I like the visual sparsity of your slides (I would be even more
+  sparse). In general, it is desirable to explain every concept
+  directly with easy-to-understand examples, when possible, and to
+  minimize the text and number of concepts in a single slide.
+
+- Contributions of your work: 
+  - Your SOA is not only comprehensive, but it is also a
+
+  - deep and distilled review of the similarity measures
+    - (sparse, not easy to find, not always properly documented,
+      mostly used in non-analytical contexts, ...).
+    - The organization of this information constitutes a nice
+      contribution in itself.
+    - Implementation of the measures in an easy-to-use way, which was
+      something unavailable so far.
+    - This brings tools, which were used only for
+      specialists/theorists, closer to a broad community and to a
+      range of potential applications.
+
+  - The quantitative comparison between them for common sets (chords,
+    scales). Did you conclude some general/clear discriminatory power
+    among the measures, that it is worth mentioning?
+
+- The application context: structure / pattern recognition. You should
+  also state at the end
+
+- what has not been done yet, in the context of the thesis. Are your
+  results just exploratory/preliminary? Do the results point to some
+  specific analysis target, to be addressed during the summer?
+
+- Some questions that may arise from the thesis' committee:
+  - How are your results comparable to existing analyses of Bach's WTC?
+    (In any case, it is desirable to overlap some manual annotation
+    showing the relevance/limitations of your plots, so as to be
+    self-informative).
+  - Is your approach saying something new/better about the piece, or is
+    it just confirming what other approaches already do? If they just
+    confirm existing knowledge, what is the (not yet exploited)
+    potential? (e.g. using different comparison sets may reveal
+    different musical aspects, which ones, ...).
+  - Are the measures "better" than, let's say, Euclidian or correlation
+    distances? In which respect?
+  - The term "evaluation" in your title is maybe the strongest word,
+    which may probably trigger questions from the committee. Do you plan
+    to evaluate this with respect to some baseline/ground-truth?
+    (e.g. structure segmentation tasks in MIREX). In general, I would
+    try to reinforce and clarify "what" has been (or will be) evaluated,
+    throughout your presentation.
+
+
+* Presentation Script
+** Title slide
+- name, title, supervisor
+** outline
+- introduction
+- methodology
+- representation
+- conclusions
+- future work
+** Introduxtion - Definitions
+- first i want to do a quick clarification of the some of terms in the
+  title as a preface the problem and objectives.
+- firstly, tonal analysis:
+  - used to here as a general term for any computational activities
+    involving tonality. MIR etc
+  - and it encompasses 2 stages
+    - description: describing the tonal content.
+    - representation: represent the content in a meaningful way.
+- the other terms...
+- set class theoy: a tool for description stage
+- similarity measures: a tool fot the representation stage
+- all these things will be gone into further later on
+** Problem
+- the problem has 2 parts
+- firstly: existing approaches to tonal analysis lack depth
+  - for example: the predominant use of template plate matching for
+    chord and key recognition limit many systems to discrete
+    boundaries.
+  - when in fact fact tonality is a very fluid concept.
+  - these approaches are ofter limited to the major-minor paradigm.
+  - which is often an insufficient explanation of tonality even for
+    some western music.
+- the second part of the problem is use of non musical similarity
+  measures
+  - such as correlation or euclidean distance
+  - using these purely mathematical measures seems counterintuituive
+    in some cases as they most likely lack musical or perceptual
+    relevance
+** Objectives
+- so, with those problems in mind, my objectives are as follows:
+  1. To adopt a systematic approach to description of tonality.
+  2. Use set class theoy
+     - but not just to use it. i also want to 
+     - justify its use as a systematic descriptive tool, capable of
+       relating useful musical information as well as having a degree
+       of perceptual relevance.
+     - To position set class analysis among existing methods of tonal
+       description such as chroma vector time-series.
+  3. To create a comprehensive and practical survey of set class
+     similarity measures.
+     - To examine the measures in terms of systematicity and
+       perceptual relevance.
+  4. To develop techniques for the representation of set class
+     description so as to expose useful musical information.
+     - To utilise set class similarity in these representation.
+  5. To demonstrate the utility of these techniques through specific
+     analysis examples.
+** Systematic Description
+- here address objective 1: explain the fundamental basis of my
+  apporach.
+- so what does it mean to be systematic?
+- the objective here is to not limit the description by basing it on
+  high level concepts such as chord and key.
+- but rather base it on mid-level concepts such as notes.
+- by systematically detailing the position of every note you produce a
+  description that is independent of high level concepts but none the
+  less capable of capturing them.
+- this kind of description is sometimes referred to as the musical
+  surface.
+- So that is the fundamental aim here in terms of description. its
+  being sytematic.
+** Set Class Theory - What?
+- so now set class theory
+- as i said before, it is a descriptive tool
+- and before i go on to address onjective 2 i will briefly explain the
+  basic principles for those who might be unfamiliar.
+- the basic idea is pitches as numbers
+- and the use of equivelance relations to reduce the amound of data
+  required to describe.
+- so first this is a pitch set with four members corresponding to an A
+  mjor chord.
+- the concept of set means that we dont care about the order of the
+  members or whether the occur simulaneously or in sequence. and we
+  inore repetitions.
+- underneath there are the correpondning midi note numbers.
+- so a pitch class is the residue class modulo 12 of the pitch numbers
+  which are as follows.
+- and of course as we ignore repetitions in a set the pitch class set
+  is as follows.
+- then you have a set class which is a way of grouping pitch class
+  sets.
+- for example all pitch class sets that are transpostions of each
+  other belong to the same set class.
+- the prime form of a set class is merely a convention for referring
+  to the class by arranging the entries so that they start on 0 and
+  are most tightly packed to the left.
+- in addition theres another convention for ordering and naming the
+  set classes called forte name after the guy who devised it. like so.
+- this just means this is the 11th set class of cardinality 3 or
+  size 3.
+- so those are the basics...
+** Set Class Theory - Why?
+- now ill try and address objective 2. why use set class theory.
+- well, it fits the mid-level critera i spoke of earlier as any
+  collection of pitches can be described by its set class regardless
+  of whether they have a specific harmonic role.
+- it coalesces fairly tightly with perception.
+  - by this i mean the fundamental principles i.e.:
+    - octave equivelance
+    - division of the octave into equivelance classes
+    - and transpositional equivelance
+  - have been shown to have a solid basis in perception.
+- so interms of benefits and differences,
+- well, as ive mentioned it constitues a substantial reduction of
+  information but whilst presuming to still be systematic and
+  perceptually relevant.
+- the crucial difference between this type of description and other
+  based on say chroma is that the relationships are all relative.
+- by which i mean it is not capable of capturing the absolute note or
+  chord labels. only the type.
+- so thats set class theory...
+** Similarity Measures - What?
+- now: set class similarity measures:
+- first, what are they?
+  - well since the development of set class theory, many theorists
+    have developed theoretical models that attempt to quantify which
+    how similarity or distance detween two set classes.
+  - there are countless different models that start from a wide range
+    of theoretical or musical principles.
+- so how exactly do they work?
+  - well in this project i have limited by examination to a specific
+    type of measure
+  - which compare the subsets of set classes.
+  - so a subset is smaller set class which can be embedded in a larger
+    on.
+  - and for a given set you can count all the instances of a smaller
+    set classes which can be embedded in it and represent that
+    information as a vector.
+  - so these measures generally consist of a technique for comparing
+    these subset vecotrs.
+- so why use these measures?
+  - well this goes back to the second part of the problem.
+  - these measure are musically relevant
+  - and potentially perceptually relevant.
+  - although the perceptual relevance of these measures has only been
+    investigated somehwta sporadically and inconclusively
+  - they have none the less be formed with musical intuition in mind.
+** Similarity Measures - Survey
+- so this brings us to objective 3:
+- a survey of the measures which as i mentioned are numerous.
+- so i surveyed 25+ different measures.
+- then categorised them in terms of two things.
+  - firstly, how systematic their approach. in terms of what ive
+    already explained.
+  - and secondly, their perceptual relevance.
+- the outcome of this survey was the selection of 6 differnt measures
+  from 4 theorists.
+- these are their cryptic names
+- they all have a different fundamental approach.
+** Similarity Measures - survey 2
+- the second party of the survey was to examine the specific
+  capabilities of each.
+- by this i mean the descriminatory power.
+- so here it useful to visualise some of the values.
+- this plot shows:
+  - the values produced for comparisons involving common tonal objects
+    such as chords and scales.
+  - the x and y axis show the set class corresponding to
+  - and each square is coloured accoridng to the distance between
+    them.
+- from visualisations like this it was possible to draw some basic
+  conclusions about the differences between the measures.
+- but these difference i will discuss later in the context of
+  representation.
+** Segmentation
+- so now the final part of my methodology is segmentation
+- which is a really crucial stage.
+- because the scale of observation has a huge effect on what can be
+  observed.
+- so my approach uses two segementation policies that work in
+  conjunction.
+  - first a fully systematic method
+    - which contains the entire SC contents of piece
+  - second a sliding window
+    - with fixed window and hop size
+    - and this is for tuning into certain sets of interest
+  - ill talk about what i mean by sets of interest a bit later.
+  - the reason for the two methods is that selecting the size of the
+    sliding window can be based on information from the systematic
+    segmentation.
+** Systematic Segmentation
+- so to explain the function of the each of the segmentation methods
+  ill use an example.
+- its this piece which some people may know.
+- and so the we apply the systematic segmentation method to this
+- and it exhaustively finds every change in pitch material
+- segmenting the piece in every possible way.
+- the resulting data structure can be thought of a 3-dimensional
+  binary matrix.
+- with axes representing time, time-scale (segment length) and set
+  class.
+** Class Matrix and vector
+- an intermediate representation can be used to view some global
+  information about the sc contents of the piece.
+- this is called class vector.
+  - it shows the total time that each set class is present as a
+    proportion of the total length.
+  - this gives quite a compact picture of the overall set class
+    contents of the piece.
+  - these three largest bars correspond to
+    - major triads
+    - the authentic cadence
+    - and the diatonic set
+  - so that tells you something about the general sonority of the
+    music.
+** Sliding Window
+- now, the sliding window is used tune in or focus on the specific set
+  classes that youre interested in.
+- obviously you have to select the right window and hopsize and these
+  will depend on the sets you want to observe.
+- so its possible to use data from the systematic segmentation to
+  inform choices about the sliding window parameters.
+** Sliding window card avg
+- this plot shows:
+- for each cardinality the average length of the segments in which
+  they appear.
+- and the standard deviation.
+- so if we wanted to capture 3 and 4 note chords for example we can
+  see that they appear in segments of mainly between 1 and 2 beats.
+** Sliding window sc avg
+- alternatively we can view the same information but for each separate
+  setclass.
+- for example we want to capture major triads which we can see appear
+  mainly in segment of around 2 beats.
+** Sliding window class vec + slding content
+- so if we apply a sliding window with window size 2 beats and hop
+  size 1 beat...
+- we can view the contents of the sliding window description in
+  relation to the class vector which i explained earlier.
+- as you can see we've managed to capture a large number of major
+  triads
+- as well as...
+** Representation
+- so those are the two segmentation methods, and how they can be used
+  together.
+- now i will explain 3 techniques that utilise sc similarity measures
+  to represent the sc data from these descriptions.
+  - they are distance plot
+  - autocorrelation
+  - and self similarity matrix
+** Distance Plot
+- so, distance plot:
+- the basic idea of the distance plot is to represent tonal change
+  in time with respect to a comparison set.
+- There are three interdependent parameters which must be selected
+  according to your spcific intentions:
+  - Segmentation (window and hop size),
+  - comparison set
+  - and similarity/distance measure.
+- The segmentation determines the captured SC content which should be
+  targeted according to its relationship to the comparison set. This
+  relationship is determined by the measure used which must possess an
+  adequate degree of discrimination so as to produce noticeable
+  changes in the time series.
+- so here we have the distance plot calculated using the sliding
+  window segmentation described before,
+- a comparison set 3-11B the major triad
+- and the atmemb distance.
+- as we know that this window captures a high proportion of major
+  triads from the previous section,
+- it is unsurprising to see the distance plot dropping to zero where
+  the segment coincides with the comparison set.
+- the points where it rises higher correspond to departures from
+  familiar major chords.
+- actually we can already see a kind of pattern:
+  - the major triad seems to appear at fairly regular intervals.
+- this is where the next representation technique come in...
+** Autocorrelation
+- most people are familiar with autocorrelation im sure.
+- so, this is the autocorrelation of the distance plot we just saw.
+- as you can see there are peaks at regular intervals two bar
+  intervals.
+- the highest being at four bars.
+- this would seem to indicate that some aspect of the music is
+  repeating at regular 2 intervals.
+- and that probably makes sense. most music is strucutered somehow in
+  even groups like this.
+** Self-Similarity Matrix
+- finally, the self-similarity matrix,
+- which again im sure most people are familiar with.
+- this despenses with the comparison set
+- and instead compares each segment to every other segment.
+- this is a good way of finding repetitions in any time-series.
+- so this is the ssm for the sliding window that we've been using.
+- theres the familair diagonal down the middle.
+- but the there are a few other features visible.
+- most notable is the diagonal ive highlighted. 
+- and this corresponds to the repetition of bars 7-11 in bars 15-19
+  but with a transposition.
+- so those are the three techniques.
+** Analysis Tool
+- finally
+- Due to the complex relationship between the different parameters
+  involved in this kind of analysis, it is desirable to work in an
+  interactive and exploratory environment.
+- The analysis tool combines all of the presented representation
+  techniques in a single Matlab GUI.
+- This kind of tool provides a test bench for exploring the
+  capabilities of these techniques and an environment for conducting
+  preliminary experiments.
+- this is screen shot shows is of the example that i have just
+  explained.
+** Conclusions
+- approach:
+- that is, objectives 1 and 2,
+- this work has demonstrated the capability of systematic set class
+  descritpions to convey useful musical information.
+- analysis outcomes: so objectives 4 and 5.
+- the experiments ive done have constituted a preliminary examination
+  of the complex relationship between the various parameters.
+- they have also revealed that the 
+** Future Work
+- 
+
+
+
+* Presentation Script again
+** Outline
+- this is the outline of my presentation
+- first and introduction:
+  - where i outline the problem and objectives
+- then my methodology in which i address each of the objectives
+- and finally conclusions and future work
+** Introduction
+*** Problem
+1. existing approaches to tonal analysis lack depth.
+   - the predominant use of template matching for chord and key
+     estimation gives systems a narrow view of tonality and restricts
+     them in many cases to the major-minor paradigm, which is arguably
+     insufficient for even some western music.
+2. the use of non-musical similarity measures
+   - such as correlation and euclidean distance.
+   - the use of these purely mathematical measures seems inappropriate
+     when considering musical objects.
+*** Definitions
+- now i want to just give a quick clarification of some terms from the
+  title as a preface to the objectives.
+  - tonal analysis
+  - Set class theory
+  - similarity measures
+*** Objectives
+1. adopt a systematic approach to description
+2. use set class theory
+   - justify
+   - position
+3. survey similarity measures
+4. develop techniques for the representation of set class data
+   utilising these similarity measures.
+5. demonstrate the capabilities of the method through specific
+   analysis examples.
+** Methodology
+*** Systematic description
+- this addresses objective 1
+- and explains the fundamental basis to my approach.
+- what does it mean to be systematic.
+- the key here, is not base the description on high level concepts
+  such as chord and key, which is restrictive.
+- instead base it on mid-level concepts such as notes.
+- systematic mid-level descriptions based on notes can be
+  fundamentally independent of high level concepts but at the same
+  time capable of capturing them.
+- so the two importent terms here are systematic and midlevel.
+*** Set class theory - what?
+- as i said before its a tool for description
+- before justifying it i will first explain the basic principles for
+  those who are unfamiliar.
+- pitch set 4 members corresponding to an a major chord.
+- below is the corresponding pitch class set
+- with the octave information removed
+- 
+- pitch class: residue class modulo 12 of the pitchs
+- ignore repeated 9
+- set class groups pitch class sets which are transpositions of each
+  other.
+- prime form is a convention for notating set class. with entries
+  packed most tightly left and starting on zero.
+- forte name is another convention for ordering and naming scs.
+- 3-11B just means the 11th set of size 3. the B is not important for
+  this explanation.
+*** Set class theory - why?
+- so that was the what now the why
+- it fulfills the mid-level critera i specified earlier
+  - in that any collection of pitchs can be represented by a set class
+    regardless of any specific harmonic role.
+  - so its systematic in that respect.
+- it has a degree of perceptual relevance
+  - octave equivelance and transpositional equivelance both have a
+    solid basis in perception.
+- the benefits:
+  - it provides a substantial reduction in information whilst
+    remaining systematic and perceptually relevant.
+- differences:
+  - all the relations ships are relative
+  - meaning it does not capture absolute note and chord labels only
+    types.
+*** Set Class Similarity Measures - What and Why
+- what are they?
+  - models that attempt to quantify the similarity ordistance between
+    2 set classes.
+  - there are countless different models starting from a wide range of
+    fundamental principles.
+- for the most part they work by comparing the subsets of two set classes.
+- why?
+  - this goes back to the second part of the problem.
+  - these measures are musical
+  - although the perceptual relevance has only be examined
+    sporadically and inconclusively...
+  - these measures were designed to reflect musical intuitions.
+*** Set Class Similarity Measures - Survey
+- objective 3 - the survey
+- i surveys 25+ measures
+- categorised them according to
+  - how systematic their approach
+  - and how perceptually relevant
+- the outcome was to select 6 measure from 4 theorists.
+- and examine the values they produced for common tonal objects such
+  as chords and scales.
+- the preliminary conclusions were that different measures have
+  different capabilities and discriminatory power.
+- each might potentially be useful in a certain context.
+*** Segmentation
+- so now the final part of the methodology: segmentation.
+- this is a crucial stage as the scale of observation greatly affects
+  the tonality of a piece.
+- so for this method i propose two segmentation methods to be used in
+  conjustion.
+  1. fisrt a fully systematic method (from the work of agustin)
+     - this provides the complete sc contents of a piece
+  2. second a sliding window
+     - with fixed window and hope size
+     - for tuneing in to sets on interest
+     - i will explain... later
+*** Segmentation - Fully systematic
+- to demonstrate how the two methods work in conjunction i will use an
+  example.
+- its this piece which some people may know.
+- so first we apply the systematic segmentation
+- which exhaustively records every combination of adjacent notes
+- so that every possible set class is recorded
+*** Segmentation - Fully Systematic
+- a useful intermediate representation of this data is the
+  class-vector.
+- which shows the activation time of each set class as a proportion of
+  the total duration.
+- from this its possible to see a global picture of the set class
+  contents and deduce certain things about the sonority
+- for example:
+*** Segmentation - Sliding window
+- so now the sliding window.
+- we need to select a window and hop size
+- this depends on the "sets of interest"
+*** segmentation - sliding window
+- so say for example we want to capture major triads in our sliding
+  window
+- we can use information from the systematic segmentation to inform
+  our parameter selection.
+- this plot shows, for each set class, the average segment length in
+  which it occurs.
+- so for major triads (3-11B) we can see they mainly occur in segments
+  around 2 beats
+*** Segmentation - sliding window
+- so using this information
+- we set the window size to 2 beats and hop size to 1 beat
+- and we can view the contents of our sliding window in relation to
+  the class vector from before.
+- this is shown here with the class vector in blue and the sliding
+  window contents in red.
+- so you can see we capture a high proportion of major triads as well
+  as some of these other set classes.
+** Representaion
+*** Representation
+- so now we have segmented and tuned into our sets of interest.
+- we need to represent the data.
+- here i will describe the three representation techniques that use
+  the set class similarity measures.
+*** Distance plot
+- first there is the distance plot
+- the main idea of the distance plot is to represent the tonal change
+  in time with respect to a comparison set
+- there are three interdependent parameters here that need selecting:
+  - window and hop size determine the captured sc contents
+  - which should be targeted according to their relationship to the
+    comparison set.
+  - this relationship is determined by the measure used.
+- here is the resulting distance plot from the sliding window applied
+  earlier.
+- with a comparison set of 3-11B major triad.
+- the points where the curve goes to zero are where the segment and
+  the comparison set coincide.
+- the higher points of the curve indicate a departure from major
+  triads to possible more complex or less familiar chords.
+- as you can see there is some element of repetition to the curve.
+*** Autocorrelation
+- and thats where the next representation comes in.
+- autocorrelation: which im sure everyone is familiar with.
+- this is the auto correlation of the distance plot you just saw.
+- as you can see there are peaks occuring at regular intervals
+- indicating that some tonal aspect of the music is repeating
+  regularly at 2 and 4 bar intervals.
+*** SSM
+- the final technique is SSM
+- which again im sure everyone is familiar with.
+- this despenses with the comparison set and instead compares each
+  segment to every other.
+- this is a good way of finding repetitions in a time series.
+- so here is the SSM of previous example.
+- you can the familiar diagonal down the middle
+- and there are a few other features specifically this diagonal which
+  ive highlighted
+- and it corresponds to this passage from bars 7-11 which is repeated
+  in bars 15 to 19 with a transposition.
+*** Analysis Tool
+- so those are the three representation techniques.
+- the complex relation ship between the parameters makes it desireable
+  to work in an interactive and exploratory environment.
+- so i develiped this tool which combines all the techniques into a
+  single matlab gui.
+- so this can act as a kind of test bench and an environment for
+  conducting preliminary experiments.
+- this is a screen shot displaing the example that i just described.
+** Conclusions
+- so in terms of the approach:
+  - i think that this work demonstrates that set class descriptions
+    and representations involving sc similarity measures. are capable
+    of relating useful musicological information
+  - and that they are a starting point for addressing the this
+    research problem.
+  - in particular they seem adept in capturing musical structure and
+    significant boundaries.
+- in terms of the analysis conclusions:
+  - the work i have done constitutes preliminary experiments which
+    explore the relation ship between the various parameters.
+  - and i have some very basic conclusions relating to this in terms
+    of what are the sets of interest and why and what measure to use
+    etc.
+- as for the contribution of this work
+  - i think the survey of similarity measures constitues a substantial
+    contribution as this information is
+    - sparse, not easy to find, not always properly documented
+    - so the organisation of this information and the implementation
+      of the measures brings helps bring these potentially useful
+      tools into the mainstream of music research.
+  - secondly the analysis tool:
+    - will be invaluable to anyone wishing to explore these techniques
+      further.
+** Further Work
+- so future work
+  - well in the near future, and by this i mean potentiall over the
+    summer:
+    - I intendt to obtain a better understanding of the relationship
+      between the parameters.
+      - better understanding the set class contents of a piece and
+        what different sets signify.
+      - what are the sets of interest and why?
+      - which measure to use in which context.
+      - and this could be achieved through simpler analysis examples.
+      - althought the bach prelude.
+  - so where is this all leading in the farther future
+    - with sufficiant conprehension of how to select parameters
+    - an eventual goal of would be using set class information of this
+      type as feature vector with which to perform other MIR or music
+      research tasks.
+    - there are two aspces to this: baring in mind this work occupies
+      a mid level perspective. it is neccessary to
+      - approach the this mid level description from low level
+        descriptions such as those from audio signals
+      - approaching high level musicological understanding from the
+        mid-level.
+    

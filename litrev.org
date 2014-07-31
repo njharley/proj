@@ -6,6 +6,7 @@
 #+LATEX_HEADER: \usepackage[nonumberlist]{glossaries}
 #+LATEX_HEADER: \usepackage{enumitem}
 #+LATEX_HEADER: \setlist{nolistsep}
+#+LATEX_HEADER: \usepackage{graphicx}
 
 #+LATEX_HEADER:\newglossaryentry{pc}{name={PC}, description={Pitch Class}}
 #+LATEX_HEADER:\newglossaryentry{pcset}{name={PC-Set}, description={Pitch Class Set}}
@@ -36,6 +37,27 @@
 \clearpage
 #+TITLE: Evaluation of Pitch-Class Set Similarity Measures for Tonal Analysis (Draft)
 #+AUTHOR: Nicholas Harley - Masters Thesis UPF
+
+* Abstract
+This work explores the limitations of exiting approaches to
+computational modelling and description of tonality.
+
+PC-set theory is presented as alternative or complement to existing
+approaches.
+
+The methodology emphasised systematicity and perceptual relevance.
+
+SC similarity is presented as tool for aiding in the representation of
+SC information.
+
+A survey of SC similarity measures is conducted.
+
+Systematic SC descriptions of specific examples are represented
+through techniques rovolving around SC similarity.
+
+The analytical potential of the techniques is evidenced in the
+retrieval of musicological information from the model.
+
 * Introduction
 The objectives of the present work are principally concerned with
 descriptive modelling of tonality using PC-set theory. In particular,
@@ -44,24 +66,62 @@ assessed and evaluated through comparison with similar work. The
 tentative goal, therefore, is to present this approach in such a way
 as to make it relevant to the wider community of music researchers,
 such as those in MIR.
-
+** Problem
+1. Existing computational description of tonality is often limited in
+   its scope.
+2. The predominant use of template matching for chord and key
+   estimations limits the knowledge of music-capable systems to
+   repertoire of the major-minor paradigm. This narrow view of
+   tonality is insufficient for even some western music.
+3. The predominant use of non-musical similarity measures in MIR such
+   as Euclidean distance and correlation seems counter-intuitive in
+   many cases.
+4. The above may be contributing to the "semantic gap".
+** Objectives
+1. To adopt a systematic approach to description of tonality.
+2. To justify set class analysis as a systematic descriptive tool,
+   capable of relating useful musical information as well as having a
+   degree of perceptual relevance.
+3. To position set class analysis among existing methods of tonal
+   description such as chroma vector time-series.
+4. To create a comprehensive and practical survey of set class
+   similarity measures.
+5. To examine the measures in terms of systematicity and perceptual
+   relevance.
+6. To develop techniques for the representation of set class
+   information so as to expose meaningful musicological information.
+7. To utilise set class similarity in these representation.
+8. To evaluate the utility of these similarity measures through
+   exploration of SC information to extract a priori knowledge about
+   specific pieces. The analytical potential of the model will be
+   evidenced through specific analysis examples.
+** Outline
 Chapters [[Tonality]]-[[Spatial Models of Tonality]] comprise a literature
 review containing background information and some basic
 theory. Chapter [[Tonality]] addresses the challenges and problems
 involved in descriptive modelling of tonality as a means of
 justification for the proposed approach. Chapter [[Pitch-Class Set
 Theory]] introduces the basic concepts of PC-set theory including
-set-class similarity measures. Chapter [[Multidimensional Scaling]]
-gives a basic description of MDS techniques and how they can play a
-role in set-class analysis. Chapter [[Spatial Models of Tonality]]
-contains a review of the relevant tonal models that exist so as to
-give context work that follows.
+set-class similarity measures. Chapter [[Multidimensional Scaling]] gives
+a basic description of MDS techniques and how they can play a role in
+set-class analysis. Chapter [[Spatial Models of Tonality]] contains a
+review of the relevant tonal models that exist so as to give context
+work that follows. Chapter [[Similarity Measure Selection]] evaluates the
+similarity measures from the literature in terms of some specific
+criteria and in doing so a subset of measures are selected for further
+investigation. Chapter [[Total Measures]] examines this subset of measures
+more closely and comparisons are made. Chapter [[Segmentation]] outlines
+the segmentation techniques required for a systematic description of a
+piece while Chaprer [[Visualisation]] presents three techniques for
+representing this data for the extraction of meaningful musical
+information. Chapters [[Conclusions]] and [[Future Work]] present the
+conclusions and discussion of future work respectively.
 * Tonality
 ** Defining Tonality
 *** General Definition
 Tonality is a notoriously complex musical phenomenon and numerous
 definitions have been proposed from a variety of viewpoints. Perhaps
-the most general definition is that provided by \citet(Hyer2013):
+the most general definition is that provided by \citet{Hyer2013}:
 "... refers to the systematic arrangements of pitch phenomena and
 relations between them." Explanations of tonality have been provided
 through many different disciplines (acoustics, music theory,
@@ -81,7 +141,7 @@ majority of reasoning about tonaility, reside mainly in the Babbitt's
 graphemic domain, although arguably they reflect some aspects of the
 other two. Each domain, whilst connected to every other, provides only
 a projection of the musical whole and examination of tonality from
-just one will most likley result in an incomplete picture. However,
+just one will most likely result in an incomplete picture. However,
 these three domains provide a convenient framework for the discussion
 that follows.
 ** Modelling Tonality
@@ -277,11 +337,11 @@ referred to as interval-class (IC) and there are 6 distinct
 interval-classes.
 #+CAPTION: Forte's Prime form and numbering convention
 #+NAME: tab:fortename
-| PC-set            | {1,4,9} |
-| Prime Form (TnI)  | {0,3,7} |
-| Prime Form (Tn)   | {0,4,7} |
-| Forte Name (TnI)  | 3-11    |
-| Forte Name (Tn)   | 3-11B   |
+| PC-set           | {0,4,9} |
+| Prime Form (TnI) | {0,3,7} |
+| Prime Form (Tn)  | {0,4,7} |
+| Forte Name (TnI) | 3-11    |
+| Forte Name (Tn)  | 3-11A   |
 
 #+CAPTION: Numbers of objects
 #+NAME: tab:sctype
@@ -613,44 +673,50 @@ example all major chords are considered equivelant regardless of the
 root.
 #+CAPTION: Chord types and their SCs
 #+NAME: tab:chordSC
-|------------+--------------------+------------+-------|
-|            | Tn-Type SC         | Forte Name |       |
-| Chord      | (Prime Form)       | (Tn-type)  | index |
-|------------+--------------------+------------+-------|
-| maj        | {0,4,7}            | 3-11B      |    25 |
-| min        | {0,3,7}            | 3-11A      |    24 |
-| dim        | {0,3,6}            | 3-10       |    23 |
-| aug        | {0,4,8}            | 3-12       |    26 |
-| sus4       | {0,2,7}            | 3-9        |    22 |
-| sus2       | {0,2,7}            | 3-9        |    22 |
-|------------+--------------------+------------+-------|
-| maj7       | {0,1,5,8}          | 4-20       |    57 |
-| min7       | {0,3,5,8}          | 4-26       |    64 |
-| hdim7      | {0,2,5,8}          | 4-27A      |    65 |
-| 7          | {0,3,6,8}          | 4-27B      |    66 |
-| dim7       | {0,3,6,9}          | 4-28       |    67 |
-| min(7)     | {0,1,4,8}          | 4-19A      |    55 |
-| aug(7)     | {0,3,4,8}          | 4-19B      |    56 |
-| maj(9)     | {0,2,4,7}          | 4-22A      |    59 |
-| min(9)     | {0,2,3,7}          | 4-14A      |    46 |
-| maj6       | {0,3,5,8}          | 4-26       |    64 |
-| min6       | {0,1,5,8}          | 4-20       |    57 |
-| sus4(7)    | {0,2,6,7}          | 4-16B      |    51 |
-| sus4(b7)   | {0,2,5,7}          | 4-23       |    61 |
-|------------+--------------------+------------+-------|
-| 9          | {0,2,4,6,9}        | 5-34       |   129 |
-| maj9       | {0,1,3,5,8}        | 5-27A      |   116 |
-| min9       | {0,3,5,7,8}        | 5-27B      |   117 |
-|------------+--------------------+------------+-------|
-| V-I/IV-I   | {0,1,3,5,8}        | 5-27A      |   116 |
-| V7-I       | {0,1,3,5,6,8}      | 6-Z25A     |   176 |
-| V-IV       | {0,2,4,6,7,9}      | 6-33B      |   189 |
-|------------+--------------------+------------+-------|
-| Pentatonic | {0,2,4,7,9}        | 5-35       |   130 |
-| Wholetone  | {0,2,4,6,8,10}     | 6-35       |   192 |
-| Diatonic   | {0,1,3,5,6,8,10}   | 7-35       |   276 |
-| Octatonic  | {0,1,3,4,6,7,9,10} | 8-28       |   322 |
-|------------+--------------------+------------+-------|
+|---+------------+--------------------+------------+-------|
+|   |            | Tn-Type SC         | Forte Name |       |
+|   | Chord      | (Prime Form)       | (Tn-type)  | index |
+|---+------------+--------------------+------------+-------|
+|   | maj        | {0,4,7}            | 3-11B      |    25 |
+|   | min        | {0,3,7}            | 3-11A      |    24 |
+|   | dim        | {0,3,6}            | 3-10       |    23 |
+|   | aug        | {0,4,8}            | 3-12       |    26 |
+|   | sus4       | {0,2,7}            | 3-9        |    22 |
+|   | sus2       | {0,2,7}            | 3-9        |    22 |
+|---+------------+--------------------+------------+-------|
+|   | maj7       | {0,1,5,8}          | 4-20       |    57 |
+|   | min7       | {0,3,5,8}          | 4-26       |    64 |
+|   | hdim7      | {0,2,5,8}          | 4-27A      |    65 |
+|   | 7          | {0,3,6,8}          | 4-27B      |    66 |
+|   | dim7       | {0,3,6,9}          | 4-28       |    67 |
+|   | min(7)     | {0,1,4,8}          | 4-19A      |    55 |
+|   | aug(7)     | {0,3,4,8}          | 4-19B      |    56 |
+|   | maj(9)     | {0,2,4,7}          | 4-22A      |    59 |
+|   | min(9)     | {0,2,3,7}          | 4-14A      |    46 |
+|   | maj6       | {0,3,5,8}          | 4-26       |    64 |
+|   | min6       | {0,1,5,8}          | 4-20       |    57 |
+|   | maj7sus4   | {0,2,6,7}          | 4-16B      |    51 |
+|   | 7sus47     | {0,2,5,7}          | 4-23       |    61 |
+|   | maj7sus2   |                    |            |       |
+|   | 7sus2      |                    |            |       |
+|---+------------+--------------------+------------+-------|
+|   | 9          | {0,2,4,6,9}        | 5-34       |   129 |
+|   | maj9       | {0,1,3,5,8}        | 5-27A      |   116 |
+|   | min9       | {0,3,5,7,8}        | 5-27B      |   117 |
+|---+------------+--------------------+------------+-------|
+|   | 11         |                    |            |       |
+|   | maj11      |                    |            |       |
+|   | min11      |                    |            |       |
+|---+------------+--------------------+------------+-------|
+|   | V-I/IV-I   | {0,1,3,5,8}        | 5-27A      |   116 |
+|   | V7-I       | {0,1,3,5,6,8}      | 6-Z25A     |   176 |
+|   | V-IV       | {0,2,4,6,7,9}      | 6-33B      |   189 |
+|---+------------+--------------------+------------+-------|
+|   | Pentatonic | {0,2,4,7,9}        | 5-35       |   130 |
+|   | Wholetone  | {0,2,4,6,8,10}     | 6-35       |   192 |
+|   | Diatonic   | {0,1,3,5,6,8,10}   | 7-35       |   276 |
+|   | Octatonic  | {0,1,3,4,6,7,9,10} | 8-28       |   322 |
+|---+------------+--------------------+------------+-------|
 * Multidimensional Scaling
 Multidimensional scaling (MDS) is a numerical visualisation technique
 that, given a matrix of pairwise distances between objects, provides a
@@ -844,16 +910,16 @@ of SC being compared. Many of the measures are designed for comparison
 of TnI-type SCs, however, owing to issues riased in [[Perceptual
 Relevance]] regarding the perceptual relevance of invertionally related
 sets, here, measures will be selected for use with Tn-type SCs. This
-means that the measure should be able to discrimate between
+means that the measure should be able to discriminate between
 inversionally related sets. All the single-nC measures which
-exclusivly consider interval content (ICVs) in the comparison
+exclusively consider interval content (ICVs) in the comparison
 procedure can therefore be discounted, as inversionally related sets
 have identical ICVs.
 ** Measure Type
 Although many theorists have supposed that interval-class subsets are
 of paramount importance in similarity judgments, no thorough
 investigation has been carried out as to the exact perceptual
-significance of subset cardinality. Single-nC measures presupose that
+significance of subset cardinality. Single-nC measures presuppose that
 subsets of one particular cardinality contribute to similarity above
 all others. In the interest of systematicity, we will not make this
 assumption instead assuming that subsets of all cardinalities are
@@ -890,7 +956,7 @@ The total measures which will be discussed make comparisons based on
 the subset content of a set. SC 1-1, which has no subsets, is rarely
 accounted for in such measures and in these cases a simple method will
 be used: Comparisons involving X = 1-1 and Y will be given the value
-1/#Y. Thus, the value will be the ratios of the cardinalities with 1
+$1\#Y$. Thus, the value will be the ratios of the cardinalities with 1
 indicating maximum similarity.
 #+CAPTION: Trivial Forms
 #+NAME: tab:trivialforms
@@ -904,14 +970,14 @@ resulting in values suggesting suspiciously high degrees of
 dissimilarity between SCs of clearly different cardinalities. The
 general reliability and usefulness of the measure is difficulty to
 determine" \citep[pp. 89]{Castren1994}. The trivial forms 11-1 and
-12-1 are accommodated explicitly by the fomulation of
+12-1 are accommodated explicitly by the formulation of
 \citet{Rahn1979}, however SC 1-1 is not and thus values will be
 obtained using the method specified in [[Trivial Forms]].
 ** Lewin: REL
 Details on how to calculate REL are given in [[REL]]. From the basic
 equation it is possible to define three different formulations
 depending on the exact nature of SUB(X). In each formulation the
-trivial forms 11-1 and 12-1 are accomodated. The three formulations
+trivial forms 11-1 and 12-1 are accommodated. The three formulations
 are as follows:
 1) SUB(X) consists of the concatenated nCVs from 2 to 12. Here
    comparisons involving SC 1-1 will be evaluated with the method
@@ -937,9 +1003,9 @@ Details on how to calculate T%REL and RECREL are given in [[T%REL]] and
 accommodated in both by Castren's formulation. Comparisons involving
 SC 1-1 will be given values by the method specified in [[Trivial
 Forms]]. Castren comments that some T%REL values are too high to be
-intuitvely plausible. Finally, it should be noted that the basic
+intuitively plausible. Finally, it should be noted that the basic
 algorithm provided by Castren for calculating RECREL is not feasible
-for large sets. Compaisons of such sets require tables of pre-computed
+for large sets. Comparisons of such sets require tables of pre-computed
 branch values.
 ** Scale of Values
 The values of each measure will be adjusted to the same scale for
@@ -971,36 +1037,83 @@ common tonal objects described in [[Chords as PC-Sets]]. This information
 can be visualised as 2D grids with each square corresponding to the
 comparison between two tonal objects and coloured according the
 distance between them i.e. the value of MEASURE-prime (see [[Scale of
-Values]]).
+Values]]). Figures \ref{fig:atmembchordcomp} and
+\ref{fig:avgsatsimchordcomp} show two such grids for ATMEMB and
+AvgSATSIM respectively.
 
-- Figure XXXX shows
-- These plots form a useful reference guide when selecting parameter
-  in values for the visualisation techniques described in
-  [[Visualisation]].
+#+CAPTION: ATMEMB distance between tonal objects
+#+LABEL: fig:atmembchordcomp
+[[../plots/ATMEMB_chord_comparison.png]]
+#+CAPTION: AvgSATSIM distance between tonal objects
+#+LABEL: fig:avgsatsimchordcomp
+[[../plots/AvgSATSIM_chord_comparison.png]]
+
+As can be seen, the values for these chord types are quite dissimilar
+for the different measures. Thus, measure selection will be an
+important part of the analysis depending on their specific
+discriminatory power. Therefore, these plots will form a useful
+reference guide when selecting parameters and values for the
+visualisation techniques described in Chapter [[Visualisation]].
 ** Total Measure Comparison
-- plot difference between plots
-- correlate chord comparison values
-- correlation of all values
-** Conclusions
-- general comments about measure discrimination
-- chord comparison plots
-  - for choosing a comparison set
-  - maximum discrimination
-- class scape comparison
-- measures tend to agree
-  - high degree of correlation
-- time scale
-- mir chord recognition
+For a more quantitative comparison of the measures, the absolute
+difference between corresponding values can be calculated and plotted
+on similar grids. This gives an overall visualisation of where the
+measures most disagree. Figure \ref{fig:absdiff} shows a matrix of
+plots each comparing the values of two measures. Each plot displays
+only half the table as the they are symmetric. The lighter blue and
+green areas indicate higher discrepancy between the measures' values.
+
+#+CAPTION: Absolute difference between measures' values
+#+LABEL: fig:absdiff
+[[../plots/Measure_comparisons.png]] 
+
+A more compact representation of these comparisons can be obtained by
+correlation of the vectors containing the values from each
+measure. Figure \ref{fig:measurecorrchords} shows a grid where each
+square corresponds to the comparison between two measures and is
+coloured according the correlation of the values for the common chord
+types. For the purposes of comparison, Figure \ref{fig:measurecorrall}
+shows a similar plot to Figure \ref{fig:measurecorrchords} but rather
+displays the correlation involving all the 61425 pairwise Tn-type SC
+comparisons for each measure.
+
+#+CAPTION: Correlation between measures' values for common chords
+#+LABEL: fig:measurecorrchords
+[[../plots/Measure_Correlation.png]]
+
+#+CAPTION: Correlation between measures' values for all SCs
+#+LABEL: fig:measurecorrall
+[[../plots/Measure_Correlation_All.png]]
+** Chapter Conclusions
+- general comments about measure discrimination?
+  - high/low
+  - major minor
+  - cardinality
+  - symmetric sets
+  - inversionally related sets
+- these plots will aid selection of comparison sets
+
+- abs diff plot
+  - which measures are closest
+  - avgsatsim - tsatsim
+  - which measures are furthest
+  - closer inspection
+
+- chord corr plot
+  - measures tend to agree
+  - most different measures
+  - recrel - relb: why?
+
+- SC corr plot
+  - means of comparison
+  - common chord types have common properties that the measures tend
+    to treat in a similar way.
+
 - repertiore
+  - what repertoire contains what chords
   - billboard
   - beatles
-*** Repertoire
-What are the SC contents of different repertiore.
-
-In addition it is also useful to understand the tonal or chordal
-content of some specific music. This section details existing analysis
-and annotations of the tonal content of some music collections.
-*** Billboard Chords
+*** Billboard Chords                                             :noexport:
 The McGill Billboard data set constitutes an expert ground truth for
 chord recognition algorithms in MIR. It contains detailed
 transcriptions of the chords for more than one thousand songs selected
@@ -1010,109 +1123,290 @@ distribution of the 50 most common chord types in the data set. Major
 chords alone account for more than half of the data set, followed by
 minor chords and the basic 7th chords. No information is given as to
 the scales or modes used.
-*** Beatles Chords
+*** Beatles Chords                                               :noexport:
 \citet[chap. 6]{Harte2010} provides a collection chord transcriptions
 for 180 Beatles songs and statistical analysis of the
 collection. Again, over 70% by both occurence and time are major and
 minor chords.
 * Segmentation
-- As mentioned in [[PC-set Theory for Analysis]], segmentation is a very
-  important stage of the analysis. The segmentation policy used
-  strongly influeces the SC content that can be observed, with larger
-  segments tending to contain higher cardinality sets.
-- Using a sliding window to segment the music requires careful
-  consideration of the specific window length and hop size depending
-  not only on the type and cardinality of sets that the analyst
-  desires to observe but also on the way in which the data will then
-  be visualised. 
-- In this chapter we outline two segmentation policies:
-  - A sliding window with fixed window length and hopsize.
-  - The systematic segmentation policy of \citet{Martorell2013}.
+As mentioned in [[PC-set Theory for Analysis]], segmentation is a very
+important stage of the analysis. The segmentation policy used strongly
+influences the SC content that can be observed, with larger segments
+tending to contain higher cardinality sets. Using a sliding window to
+segment the music requires careful consideration of the specific
+window length and hop size depending not only on the type and
+cardinality of sets that the analyst desires to observe but also on
+the way in which the data will then be visualised.
+
+In this chapter we outline two segmentation policies:
+  1. A sliding window with fixed length and hop size.
+  2. The systematic segmentation policy of \citet{Martorell2013}.
 ** Systematic Segmentation
-- \citet{Martorell2013} specifies a fully systematic segmentation
-  policy which exhaustivly records every change in the PC material of
-  a piece. The segments are of variable length but together capture
-  the entire SC contents of the music. With each segment indexed in
-  time by its center, the data structure, known as a cass-scape, is a
-  sparse 3-dimensional binary matrix with axes representing time,
-  time-scale (segment length) and set class.
-- Two, more compact, representations of this data are the class-matrix
-  and class-vector.
-- Class-matrix: The class-matrix is a 2d projection the class-scape
-  obtained by removing the time-scale information. This, in effect,
-  acts to expand each point to the actual duration of the segment it
-  represents.
-- Class-vector: The class-vector is a further reduction of data
-  showing the relative active duration of each class in the
-  class-matrix and is expressed as a percentage of the total duration
-  of the piece.
-- EXAMPLE:
+\citet[chap. 5.3]{Martorell2013} specifies a fully systematic
+segmentation policy which exhaustively records every change in the PC
+material of a piece. The segments are of variable length but together
+capture the entire SC contents of the music. With each segment indexed
+in time by its centre, the data structure, known as a cass-scape, is a
+sparse 3-dimensional binary matrix with axes representing time,
+time-scale (segment length) and set class.
+
+\citet[chap. 5.3.5]{Martorell2013} specifies two compact
+representations of this data as a means of observing the the global SC
+content of a piece.
+
+Class-matrix: The class-matrix is a 2d projection the class-scape
+obtained by removing the time-scale information. This, in effect, acts
+to expand each point to the actual duration of the segment it
+represents.
+
+Class-vector: The class-vector is a further reduction of data showing
+the relative active duration of each class in the class-matrix and is
+expressed as a percentage of the total duration of the piece.
+
+The systematic segmentation policy was applied to a MIDI
+representation of the C major Prelude from Book 1 of The Well Tempered
+Clavier by Bach. Figures \ref{fig:classmat} and \ref{fig:classvec}
+show the class-matrix and class-vector respectively for the Bach
+prelude. This information gives a global indications as to the types
+of sonorities contained within the piece.
+
+#+CAPTION: Class-matrix for Bach WTCi Prelude 1
+#+LABEL: fig:classmat
+[[../plots/classmat.png]]
+#+CAPTION: Class-vector for Bach WTCi Prelude 1
+#+LABEL: fig:classvec
+[[../plots/classvec.png]]
+
+From this complete information it is also possible to view statistical
+information about which SCs or type of SCs appear in which time
+scale. Figure \ref{fig:avgseglengthsc} plots the average segment
+length and standard deviation for each SC. Figure
+\ref{fig:avgseglengthcard} shows the same information for each
+cardinality class.
+
+#+CAPTION: Average segment length and STD for each SC in Bach WTCi Prelude 1
+#+LABEL: fig:avgseglengthsc
+[[../plots/avgseglengthsc.png]]
+
+#+CAPTION: Average Segment length and STD for each nC in Bach WTCi Prelude 1
+#+LABEL: fig:avgseglengthcard
+[[../plots/avgseglengthcard.png]]
 ** Sliding Window
-- Segmentation using a sliding window with fixed window and hop size
-  is used to obtain a SC time series of one specific time-scale. This
-  time series is then used for the visualisation techniques outlined
-  in the next chapter.
-- The purpose of the sliding window is to allow the analyst to focus
-  on particular sets or tune in to one particular cardinality. This
-  tuning process is performed through selection of an appropriate
-  window and hop size.
-- The selection of window and hop size can be informed by exploration
-  of the data obtained from the systematic segmentation.
-- SC v seg length
-- Cardinality v seg length
+Segmentation using a sliding window with fixed window and hop size is
+used to obtain an SC time series of one specific time-scale. This time
+series is then used for the visualisation techniques outlined in the
+next chapter. The purpose of the sliding window is to allow the
+analyst to focus on particular sets or tune in to one particular
+cardinality. This tuning process is performed through selection of an
+appropriate window and hop size. The selection of window and hop size
+can be informed by exploration of the data obtained from the
+systematic segmentation.
+
+For example, from Figure \ref{fig:avgseglengthcard} in the previous
+section it can be seen that three note chords have an average window
+length of between one and two beats. Specifically, from Figure
+\ref{fig:avgseglengthsc}, major chords (3-11B) have an average window
+length of closer to two beats. Figure \ref{fig:cvplusswseg} displays
+the results of a sliding window segmentation of the piece with a
+window size of two beats and hop size of one beat. The SC contents
+extracted from this segmentation are displayed in red on top of the
+class-vector. This representation gives an indication of what
+proportion of the overall class contents have been retrieved by the
+sliding window segmentation.
+
+#+CAPTION: SC contents from sliding window segmentation (red) superimposed on class-vector (black)
+#+LABEL: fig:cvplusswseg
+[[../plots/classvecclasshist.png]]
+
+The plot shows that the particular segmentation policy has captured a
+higher proportion of SC 3-11B than other types. This specific
+targeting of SCs will be exploited in the visualisation techniques
+described in [[Visualisation]].
 * Visualisation
-- proposes 3 methods for visualising sc descriptions of segmented
-  pieces.
+This chapter outlines three visualisation techniques that may be used
+in conjunction to represent SC class information of a musical piece so
+as to retrieve meaningful analysis.
 ** Distance Plot
-- A simple visualisation technique involves segmenting the piece with
-  a fixed sliding window and then calculating the distance of each
-  segment to a comparison set. The resulting distance time series can
-  visualised with a simple line plot.
-- Example: ???
-- how was the segmentation done and why?
-- how was the comparison set chosen?
-- Compare plots with the different measures.
-- recurring patterns?
+The distance plot provides a simple means of capturing how the pitch
+content of a piece evolves in time with respect to a specific SC. It
+involves segmenting the piece using a fixed sliding window and
+calculating the distance between each segment and a comparison set.
+
+There are three interdependent parameters which must be selected
+according to the specific intentions of the analyst: Segmentation
+(window and hop size), comparison set and similarity/distance
+measure. The segmentation determines the captured SC content which
+should be targeted according to its relationship to the comparison
+set. This relationship is determined by the measure used which must
+possess an adequate degree of discrimination so as to produce
+noticeable changes in the time series.
+
+Figure \ref{fig:distplot} shows an example distance time series
+plotted in as a line for the Bach Prelude. The same sliding window
+segmentation as Figure \ref{fig:cvplusswseg} was used so as to capture
+three note chords, specifically major chords (3-11B). Each segment was
+compared to SC 3-11B using the ATMEMB-prime distance.
+
+#+CAPTION: ATMEMB-prime distance plot (3-11B)
+#+LABEL: fig:distplot
+[[./plots/distplot.png]]
+
+As Figure \ref{fig:cvplusswseg} indicates a higher proportion of SC
+3-11B present in the segments, it is unsurprising to see the line
+frequently displaying a distance of 0 where the segment coincides with
+the comparison set. A plot such as this gives an indication as to the
+tonal progression of the piece, indicating where the sonority most
+resembles that of a simple major triads. Higher parts of the curve
+indicate a departure from these triads and possibly more complicated
+or less familiar harmonic passages.
+
+- different measures (strengths and weaknesses)
+- different comparison sets (5-27A,6-Z27A,7-35,8-32)
 ** Auto-correlation
-- The distance plots described in the previous section can give a
-  basic view of the tonal progression of a piece. In many cases they
-  contain recurring patterns where passages with similar SC content
-  produce similar curves. A further visualisation technique is
-  autocorrelation. By autocorrelating the distance plot it may be
-  possible to capture some structural elements of the piece. The
-  autocorrelation time series will contain peaks corresponding to
-  "similar" passages. For example, an piece with a structure of A-B-A
-  will have an autocorrelation plot with a slight peak corresponding
-  to beginning of the repeat of section A. 
+The distance plots described in the previous section can give a basic
+view of the tonal progression of a piece. In many cases they contain
+recurring patterns where passages with similar SC content producing
+similar curves. A further visualisation technique is
+autocorrelation. By autocorrelating the distance plot it may be
+possible to capture some structural elements of the piece. The
+autocorrelation time series will contain peaks corresponding to
+"similar" passages. For example, an piece with a structure of A-B-A
+will have an autocorrelation plot with a slight peak corresponding to
+beginning of the repeat of section A.
 
-- Example:
+Figure \ref{fig:autocorr} shows the autocorrelation function of the
+distance plot in Figure \ref{fig:distplot}. The peaks that appear at
+regular intervals correspond to an approximate tonal tonal pattern
+that recurs throughout the piece.
 
-- Structural segmentation
+#+CAPTION: Autocorrelation of distance plot
+#+LABEL: fig:autocorr
+[[../plots/autocorr.png]]
 ** Self-similarity matrix
-- As an alternative to using a specific comparison set, the distance
-  of a segment to other segments in the piece could be observed. A
-  systematic way of doing this is computing the self-similarity matrix
-  which provides a simples means for descovery of repetitions in a
-  time series. The patterns present in a visualisation of a
-  self-similarity matrix can indicate similar passages and structural
-  elements of a piece.
-- Example: ????
+As an alternative to using a specific comparison set, the distance of
+a segment to other segments in the piece could be observed. A
+systematic way of doing this is computing the self-similarity matrix
+which provides a simples means for discovery of repetitions in a time
+series. The patterns present in a visualisation of a self-similarity
+matrix can indicate similar passages and structural elements of a
+piece.
+
+Figure \ref{fig:selfsimmat} shows the self-similarity matrix computed
+from the sliding window SC time-series. The diagonal line highlighted
+in red represents the repetition of a four bar sequence: bars 5-11 in
+the tonic key are repeated in bars 15-19 with a transposition to the
+dominant key.
+
+#+CAPTION: Self-similarity matrix of SC time series
+#+LABEL: fig:selfsimmat
+[[../plots/selfsimmat.png]]
 ** Conclusions
-- 
+1. The techniques outlined in this chapter have proved capable of
+   exposing some relevant musicological understanding of the example
+   piece.
+2. The sliding window segmentation can be tuned to target specific SCs
+   using the global statistics obtained from a fully systematic
+   segmentation policy.
+3. The distance plot can represent intuitions about the tonal
+   progression of a piece through comparison with a reference set.
+4. The autocorrelation can highlight recurring patterns in the distance
+   plot which can correspond to structurally important elements of the
+   piece.
+5. The self-similarity matrix is capable of capturing not only exact
+   repetitions within a piece, but transposed, inverted and reversed
+   repetitions.
+6. Working on the assumption that the similarity measures have some
+   perceptual relevance, these representation can be used not only to
+   find repetitions in SC content, but also passages where the some
+   quality of perceptual distance or ratio is preserved. These
+   relationships might have a sophisticated musicological basis and
+   might not be as easily observable from listening or from the score.
 * Analysis Tool
-- Due to the complex relationship between the selection of the various
-  parameters involved in this kind of analysis, it is desireable to
-  work in an interactive and exploratory environment. 
-- in the spirit of martorell
-- for exploratory analysis
-* MDS
+1. Due to the complex relationship between the selection of the various
+   parameters involved in this kind of analysis, it is desirable to
+   work in an interactive and exploratory environment. 
+2. The analysis tool combines all of the presented representation
+   techniques in a single Matlab GUI.
+3. This kind of tool provides a test bench for exploring the
+   capabilities of the analytic techniques. Preliminary results can
+   quickly be obtained and compared.
+#+CAPTION: Analysis Tool Screenshot
+#+LABEL: fig:analysistool
+[[./plots/analysistool.png]]
+* MDS                                                              :noexport:
 - Visualisation of values using MDS
 - r2 against stress for different measures
 - comparison
 - visualisation
 * Conclusions
+1. This work has attempted to assess the analytical potential of six SC
+   similarity measures.
+2. Systematic SC descriptions of music have been discussed in terms of
+   their perceptual and analytical relevance and have been shown to
+   possess a lot potential as a starting point in many music research
+   areas.
+3. The importance of individual sets that correspond to chords of
+   interest is less than than a hierarchical understanding of these
+   sets' subsets and supersets and their evolution in time.
+4. A combination of two segmentation policies have been presented to
+   work in conjunction for extracting a SC description of a musical
+   piece.
+5. Three techniques have been presented for representing SC
+   information. These techniques exploit theoretical similarity
+   measures to retrieve structural information about a musical piece.
+6. The distance plot tracks the change in SC contents of a piece with
+   respect to a comparison set and is capable of exposing recurring
+   sequences or sonically and perceptually similar sequences.
+7. This recurrences can be quantified by autocorrelation of the
+   distance plot. Peaks in the autocorrelation can point to important
+   structural boundaries in a piece.
+8. The self-similarity matrix gives a comprehensive comparison between
+   all SCs in a time series and has been shown to expose structural
+   repetitions.
+9. The analysis tool allows all of these techniques to be used in
+   conjunction, enabling the analyst to explore the numerous
+   combinations and approaches. The demonstrations here are just the
+   beginning of what could potentially be explored.
+10. A systematic SC description combined with these techniques for
+    representation of the data could be employed in MIR systems for the
+    automatic detection of structure and musical similarity.
 * Future Work
-* Latex Stuff
+1. A more concrete and quantitative analysis of the discriminatory
+   power of the SC similarity measures will better inform the
+   selection of appropriate comparison sets and measure.
+2. The addition of peak selecting and structural marking in the
+   analysis tool would inform tests as to the suitability of the
+   proposed techniques for automatic structual segmentation.
+3. A more thorough understanding of the SC contents of a piece would
+   enable more exhaustive exploitation of the systematic SC
+   description. Understanding cadential sets is a step in this
+   direction, however understanding the supersets that result from say
+   a typical progression of major and minor triads would bring this
+   approach closer the requirements of MIR researchers in chord
+   recognition.
+4. Implicit SC spaces from multi-dimensional scaling of similarity
+   measure values. Such spaces could provide deeper understanding of
+   tonal progressions by analogy to trajectories in space. Partial SC
+   spaces that include only a subset of all SCs could replicate some
+   perceptual intuitions about the piece. Spaces could be specifically
+   constructed for a piece through targeting of the relevant SC
+   content as in the techniques specified here. The SCs incorporated
+   may not necessarily be familiar chord types but could be supersets
+   of progressions or represent the sonority of different structural
+   elements.
+5. There are many further ways in the which data could be extracted
+   from a systematic SC description and represented so as to expose
+   relevant tonal information about a piece. 
+   - The use of multiple measures, comparison sets and sliding windows
+     could allow for a more finely tuned targeting of structural
+     information.
+   - Computationally combining different distance plots
+     (multiplying, convolving, correlating etc.) could reinforce or
+     weaken a particular analytical hypothesis.
+   - Peaks present in an approximate differential of a distance plot
+     would correspond to rapid changes in the tonal content and might
+     signify some point of musical interest.
+
 \clearpage
 \bibliographystyle{plainnat}
 \bibliography{/Users/nick/Documents/MendeleyDesktop/library.bib}
@@ -1574,3 +1868,1206 @@ Saturartion Vector Similarity index) is an extension of
 SATSIM_{n}. TSATSIM is the quotient of the sum of all SATSIM_{n}
 numerators and denominators for all values of n from 2 to m-1 where
 $m=MIN(\#X,\#Y)$.
+* Table
+#+CAPTION: Chord types and their SCs
+#+NAME: tab:chordSC
+|---+------------+--------------------+------------+-------|
+|   |            | Tn-Type SC         | Forte Name |       |
+|   | Chord      | (Prime Form)       |  (Tn-type) | index |
+|---+------------+--------------------+------------+-------|
+|   | 5          | {0,5}              |        2-5 |     6 |
+|   | sus4       | {0,2,7}            |        3-9 |    22 |
+|   | sus2       | {0,2,7}            |        3-9 |    22 |
+|   | dim        | {0,3,6}            |       3-10 |    23 |
+|   | min        | {0,3,7}            |      3-11A |    24 |
+|   | maj        | {0,4,7}            |      3-11B |    25 |
+|   | aug        | {0,4,8}            |       3-12 |    26 |
+|   |            |                    |            |       |
+|---+------------+--------------------+------------+-------|
+|   | min(9)     | {0,2,3,7}          |      4-14A |    46 |
+|   | sus4(b7)   | {0,2,5,7}          |       4-23 |    61 |
+|   | sus4(7)    | {0,2,6,7}          |      4-16B |    51 |
+|   | min(7)     | {0,1,4,8}          |      4-19A |    55 |
+|   | aug(7)     | {0,3,4,8}          |      4-19B |    56 |
+|   | min(6)     | {0,1,5,8}          |       4-20 |    57 |
+|   | maj7       | {0,1,5,8}          |       4-20 |    57 |
+|   | maj(9)     | {0,2,4,7}          |      4-22A |    59 |
+|   | maj(6)     | {0,3,5,8}          |       4-26 |    64 |
+|   | min7       | {0,3,5,8}          |       4-26 |    64 |
+|   | hdim7      | {0,2,5,8}          |      4-27A |    65 |
+|   | 7          | {0,3,6,8}          |      4-27B |    66 |
+|   | dim7       | {0,3,6,9}          |       4-28 |    67 |
+|---+------------+--------------------+------------+-------|
+|   | 9          | {0,2,4,6,9}        |       5-34 |   129 |
+|   | maj9       | {0,1,3,5,8}        |      5-27A |   116 |
+|   | min9       | {0,3,5,7,8}        |      5-27B |   117 |
+|   |            |                    |            |       |
+|   | maj(6/9)   | {0,2,4,7,9}        |       5-35 |   130 |
+|   | min(6/9)   | {0,2,3,7,9}        |      5-29B |   121 |
+|   |            |                    |            |       |
+|---+------------+--------------------+------------+-------|
+|   | 11         |                    |            |       |
+|---+------------+--------------------+------------+-------|
+|   |            |                    |            |       |
+|   | V-I/IV-I   | {0,1,3,5,8}        |      5-27A |   116 |
+|   | V7-I       | {0,1,3,5,6,8}      |     6-Z25A |   176 |
+|   | V-IV       | {0,2,4,6,7,9}      |      6-33B |   189 |
+|---+------------+--------------------+------------+-------|
+|   | Pentatonic | {0,2,4,7,9}        |       5-35 |   130 |
+|   | Wholetone  | {0,2,4,6,8,10}     |       6-35 |   192 |
+|   | Diatonic   | {0,1,3,5,6,8,10}   |       7-35 |   276 |
+|   | Octatonic  | {0,1,3,4,6,7,9,10} |       8-28 |   322 |
+|---+------------+--------------------+------------+-------|
+
+
+| 5         |   |   |
+|-----------+---+---|
+| Maj       |   |   |
+| Min       |   |   |
+| Aug       |   |   |
+| Dim       |   |   |
+|-----------+---+---|
+| Sus4      |   |   |
+| Sus2      |   |   |
+|-----------+---+---|
+| Maj(6)    |   |   |
+| Min(6)    |   |   |
+| Maj(6/9)  |   |   |
+| Min(6/9)  |   |   |
+|-----------+---+---|
+| 7         |   |   |
+| Maj7      |   |   |
+| Min(7)    |   |   |
+| Min7      |   |   |
+| Aug7      |   |   |
+| AugMaj7   |   |   |
+| hDim7     |   |   |
+| Dim7      |   |   |
+| 7b5       |   |   |
+|-----------+---+---|
+| 9         |   |   |
+| Maj 9     |   |   |
+| Min #9    |   |   |
+| Min 9     |   |   |
+| Aug #9    |   |   |
+| Aug 9     |   |   |
+| hDim 9    |   |   |
+| Dim 9     |   |   |
+| Dim b9    |   |   |
+|-----------+---+---|
+| 11        |   |   |
+| Maj 11    |   |   |
+| Min Maj11 |   |   |
+| Min 11    |   |   |
+| Aug Maj11 |   |   |
+| Aug 11    |   |   |
+| hDim 11   |   |   |
+| Dim 11    |   |   |
+|-----------+---+---|
+| 13        |   |   |
+| Maj 13    |   |   |
+| Min Maj13 |   |   |
+| Min 11    |   |   |
+| Aug Maj13 |   |   |
+| Aug 13    |   |   |
+| hDim 13   |   |   |
+|-----------+---+---|
+
+|-----+---+----+---+----+---+---+----+---+----+---+----+----+----+----+----+----+----+----+----+----+----+----|
+|     | C | Db | D | Eb | E | F | Gb | G | Ab | A | Bb |  B |  C | Db |  D | Eb |  E |  F | Gb |  G | Ab |  A |
+|-----+---+----+---+----+---+---+----+---+----+---+----+----+----+----+----+----+----+----+----+----+----+----|
+| M   | 0 |  1 | 2 |  3 | 4 | 5 |  6 | 7 |  8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 |
+|-----+---+----+---+----+---+---+----+---+----+---+----+----+----+----+----+----+----+----+----+----+----+----|
+| Ion | R |    | 2 |    | 3 | 4 |    | 5 |    | 6 |    |  7 |    |    |  9 |    |    | 11 |    |    |    | 13 |
+| Dor | R |    | 2 |  3 |   | 4 |    | 5 |    | 6 |  7 |    |    |    |  9 |    |    | 11 |    |    |    | 13 |
+| Phy | R |  2 |   |  3 |   | 4 |    | 5 |  6 |   |  7 |    |    |  9 |    |    |    | 11 |    |    | 13 |    |
+| Lyd | R |    | 2 |    | 3 |   |  4 | 5 |    | 6 |    |  7 |    |    |  9 |    |    |    | 11 |    |    | 13 |
+| Mix | R |    | 2 |    | 3 | 4 |    | 5 |    | 6 |  7 |    |    |    |  9 |    |    | 11 |    |    |    | 13 |
+| Aeo | R |    | 2 |  3 |   | 4 |    | 5 |  6 |   |  7 |    |    |    |  9 |    |    | 11 |    |    | 13 |    |
+| Loc | R |  2 |   |  3 |   | 4 |  5 |   |  6 |   |  7 |    |    |  9 |    |    |    | 11 |    |    | 13 |    |
+|-----+---+----+---+----+---+---+----+---+----+---+----+----+----+----+----+----+----+----+----+----+----+----|
+
+
+|------------+------+-----+-----+-----+-----+-----+-----+-----+------+------|
+| Mode       | Root | 2nd | 3rd | 4th | 5th | 6th | 7th | 9th | 11th | 13th |
+|------------+------+-----+-----+-----+-----+-----+-----+-----+------+------|
+| Lydian     |    0 |   2 |   4 |   6 |   7 |   9 |  11 |  14 |   18 |   21 |
+| Ionian     |    0 |   2 |   4 |   5 |   7 |   9 |  11 |  14 |   17 |   21 |
+| Mixolydian |    0 |   2 |   4 |   5 |   7 |   9 |  10 |  14 |   17 |   21 |
+| Dorian     |    0 |   2 |   3 |   5 |   7 |   9 |  10 |  14 |   17 |   21 |
+| Aeolian    |    0 |   2 |   3 |   5 |   7 |   8 |  10 |  14 |   17 |   20 |
+| Phrygian   |    0 |   1 |   3 |   5 |   7 |   8 |  10 |  13 |   17 |   20 |
+| Locrian    |    0 |   1 |   3 |   5 |   6 |   8 |  10 |  13 |   17 |   20 |
+|------------+------+-----+-----+-----+-----+-----+-----+-----+------+------|
+
+|------------+------+-----+-----+-----+-----+-----+-----+-----+------+------|
+| Mode       | Root | 2nd | 3rd | 4th | 5th | 6th | 7th | 9th | 11th | 13th |
+|------------+------+-----+-----+-----+-----+-----+-----+-----+------+------|
+| Lydian     | P    | Maj | Maj | Aug | P   | Maj | Maj | Maj | Aug  | Maj  |
+| Ionian     | P    | Maj | Maj | P   | P   | Maj | Maj | Maj | P    | Maj  |
+| Mixolydian | P    | Maj | Maj | P   | P   | Maj | min | Maj | P    | Maj  |
+| Dorian     | P    | Maj | min | P   | P   | Maj | min | Maj | P    | Maj  |
+| Aeolian    | P    | Maj | min | P   | P   | min | min | Maj | P    | min  |
+| Phrygian   | P    | Min | min | P   | P   | min | min | min | P    | min  |
+| Locrian    | P    | Min | min | P   | Dim | min | min | min | P    | min  |
+|------------+------+-----+-----+-----+-----+-----+-----+-----+------+------|
+
+|------------+-------+------+------+---+-----|
+| Mode       | Triad | Sus4 | Sus2 | 6 | 6/9 |
+|------------+-------+------+------+---+-----|
+| Lydian     | Maj   | n    | y    | y | y   |
+| Ionian     | Maj   | y    | y    | y | y   |
+| Mixolydian | Maj   | y    | y    | y | y   |
+| Dorian     | min   | y    | y    | y | y   |
+| Aeolian    | min   | y    | y    | n | n   |
+| Phrygian   | min   | y    | n    | n | n   |
+| Locrian    | Dim   | y    | n    | n | n   |
+|------------+-------+------+------+---+-----|
+
+| Ionian                    |
+| Dorian                    |
+| Phrygian                  |
+| Lydian                    |
+| Mixolydian                |
+| Aeolian                   |
+| Locrian                   |
+| Jazz Minor                |
+| Dorian b9                 |
+| Lydian Augmented          |
+| Lydian Dominant           |
+| Mixolydian b13            |
+| Semilocrian               |
+| Superlocrian              |
+| Harmonic Minor            |
+| Locrian #6                |
+| Ionian Augmented          |
+| Romainian                 |
+| Phrygian Dominant         |
+| Lydian #2                 |
+| Ultralocrian              |
+| Harmonic Major            |
+| Dorian b5                 |
+| Phrygian b4               |
+| Lydian b3                 |
+| Mixolydian b9             |
+| Lydian #2 #5              |
+| Locrian bb7               |
+| Neapolitan                |
+| Leading Whole-Tone        |
+| Lydian Augmented Dominant |
+| Lydian Dominant b6        |
+| Major Locrian             |
+| Semilocrian b4            |
+| Superlocrian bb3          |
+| Neapolitan Minor          |
+| Lydian #6                 |
+| Mixolydian Augmented      |
+| Hungarian Gypsy           |
+| Locrian Dominant          |
+| Ionian #2                 |
+| Ultralocrian bb3          |
+| Double Harmonic Major     |
+| Lydian #2 #6              |
+| Ultraphrygian             |
+| Hungarian Minor           |
+| Oriental                  |
+| Ionian Augmented #2       |
+| Locrian bb3 bb7           |
+| Hungarian                 |
+| Superlocrian bb6 bb7      |
+| Harmonic Minor b5         |
+| Superlocrian #6           |
+| Melodic Minor #5          |
+| Dorian b9 #11             |
+| Lydian Augmented #3       |
+| Diminished                |
+| Octatonic                 |
+| Whole-tone                |
+| Augmented                 |
+| Augmented inverse         |
+| Major Pentatonic          |
+| Suspended Pentatonic      |
+| Man Gong                  |
+| Ritusen                   |
+| Minor Pentatonic          |
+| Blues                     |
+
+
+|                  | Mode  | Mode                      |           |
+| Scale            | Grade | Name                      | Structure |
+|------------------+-------+---------------------------+-----------|
+| Diatonic         | I     | Ionian                    |   2212221 |
+|                  | II    | Dorian                    |   2122212 |
+|                  | III   | Phrygian                  |   1222122 |
+|                  | IV    | Lydian                    |   2221221 |
+|                  | V     | Mixolydian                |   2212212 |
+|                  | VI    | Aeolian                   |   2122122 |
+|                  | VII   | Locrian                   |   1221222 |
+|------------------+-------+---------------------------+-----------|
+| Melodic Minor    | I     | Jazz Minor                |   2122221 |
+|                  | II    | Dorian b9                 |           |
+|                  | III   | Lydian Augmented          |           |
+|                  | IV    | Lydian Dominant           |           |
+|                  | V     | Mixolydian b13            |           |
+|                  | VI    | Semilocrian               |           |
+|                  | VII   | Superlocrian              |           |
+|------------------+-------+---------------------------+-----------|
+| Harmonic Minor   | I     | Harmonic Minor            |   2122131 |
+|                  | II    | Locrian #6                |           |
+|                  | III   | Ionian Augmented          |           |
+|                  | IV    | Romainian                 |           |
+|                  | V     | Phrygian Dominant         |           |
+|                  | VI    | Lydian #2                 |           |
+|                  | VII   | Ultralocrian              |           |
+|------------------+-------+---------------------------+-----------|
+| Harmonic Major   | I     | Harmonic Major            |   2212131 |
+|                  | II    | Dorian b5                 |           |
+|                  | III   | Phrygian b4               |           |
+|                  | IV    | Lydian b3                 |           |
+|                  | V     | Mixolydian b9             |           |
+|                  | VI    | Lydian #2 #5              |           |
+|                  | VII   | Locrian bb7               |           |
+|------------------+-------+---------------------------+-----------|
+| Neapolitan       | I     | Neapolitan                |   1222221 |
+|                  | II    | Leading Whole-Tone        |           |
+|                  | III   | Lydian Augmented Dominant |           |
+|                  | IV    | Lydian Dominant b6        |           |
+|                  | V     | Major Locrian             |           |
+|                  | VI    | Semilocrian b4            |           |
+|                  | VII   | Superlocrian bb3          |           |
+|------------------+-------+---------------------------+-----------|
+| Neapolitan Minor | I     | Neapolitan Minor          |   1222131 |
+|                  | II    | Lydian #6                 |           |
+|                  | III   | Mixolydian Augmented      |           |
+|                  | IV    | Hungarian Gypsy           |           |
+|                  | V     | Locrian Dominant          |           |
+|                  | VI    | Ionian #2                 |           |
+|                  | VII   | Ultralocrian bb3          |           |
+|------------------+-------+---------------------------+-----------|
+| Double Harmonic  | I     | Double Harmonic Major     |   1312131 |
+|                  | II    | Lydian #2 #6              |           |
+|                  | III   | Ultraphrygian             |           |
+|                  | IV    | Hungarian Minor           |           |
+|                  | V     | Oriental                  |           |
+|                  | VI    | Ionian Augmented #2       |           |
+|                  | VII   | Locrian bb3 bb7           |           |
+|------------------+-------+---------------------------+-----------|
+| Hungarian        | I     | Hungarian                 |   3121212 |
+|                  | II    | Superlocrian bb6 bb7      |           |
+|                  | III   | Harmonic Minor b5         |           |
+|                  | IV    | Superlocrian #6           |           |
+|                  | V     | Melodic Minor #5          |           |
+|                  | VI    | Dorian b9 #11             |           |
+|                  | VII   | Lydian Augmented #3       |           |
+|------------------+-------+---------------------------+-----------|
+| Diminished       | I     | Diminished                |  21212121 |
+|                  | II    | Octatonic                 |  12121212 |
+|------------------+-------+---------------------------+-----------|
+| Whole Tone       | I     | Whole-tone                |    222222 |
+|------------------+-------+---------------------------+-----------|
+| Augmented        | I     | Augmented                 |    313131 |
+|                  | II    | Augmented inverse         |    131313 |
+|------------------+-------+---------------------------+-----------|
+| Pentatonic       | I     | Major Pentatonic          |     22323 |
+|                  | II    | Suspended Pentatonic      |           |
+|                  | III   | Man Gong                  |           |
+|                  | IV    | Ritusen                   |           |
+|                  | V     | Minor Pentatonic          |           |
+|------------------+-------+---------------------------+-----------|
+| Blues            | I     | Blues                     |    321132 |
+|------------------+-------+---------------------------+-----------|
+| Bebop            |       |                           |           |
+|------------------+-------+---------------------------+-----------|
+| Enigmatic        | I     | Enigmatic                 |           |
+|------------------+-------+---------------------------+-----------|
+* Ionian
+| Mode   | 7th | 9th | 11th | 13th | Chord           |    |
+|--------+-----+-----+------+------+-----------------+----|
+| Ionian |     |     |      |      | Maj             |  0 |
+|        | X   |     |      |      | Maj7            |  1 |
+|        |     | X   |      |      | Maj(9)          |  2 |
+|        | X   | X   |      |      | Maj9            |  3 |
+|        |     |     | X    |      | Maj(11)         |  4 |
+|        | X   |     | X    |      | Maj7(11)        |  5 |
+|        |     | X   | X    |      | Maj(9/11)       |  6 |
+|        | X   | X   | X    |      | Maj11           |  7 |
+|        |     |     |      | X    | Maj(13)         |  8 |
+|        | X   |     |      | X    | Maj7(13)        |  9 |
+|        |     | X   |      | X    | Maj(9/13)       | 10 |
+|        | X   | X   |      | X    | Maj9(13)        | 11 |
+|        |     |     | X    | X    | Maj(11/13)      | 12 |
+|        | X   |     | X    | X    | Maj7(11/13)     | 13 |
+|        |     | X   | X    | X    | Maj(9/11/13)    | 14 |
+|        | X   | X   | X    | X    | Maj13           | 15 |
+|--------+-----+-----+------+------+-----------------+----|
+|        |     |     |      |      | Sus4            |  0 |
+|        | X   |     |      |      | Maj7Sus4        |  1 |
+|        |     | X   |      |      | Sus4(9)         |  2 |
+|        | X   | X   |      |      | Maj9Sus4        |  3 |
+|        |     |     | X    |      | Sus4(11)        |  4 |
+|        | X   |     | X    |      | Maj7(11)Sus4    |  5 |
+|        |     | X   | X    |      | Sus4(9/11)      |  6 |
+|        | X   | X   | X    |      | Maj11Sus4       |  7 |
+|        |     |     |      | X    | Sus4(13)        |  8 |
+|        | X   |     |      | X    | Maj7(13)Sus4    |  9 |
+|        |     | X   |      | X    | Sus4(9/13)      | 10 |
+|        | X   | X   |      | X    | Maj9(13)Sus4    | 11 |
+|        |     |     | X    | X    | Sus4(11/13)     | 12 |
+|        | X   |     | X    | X    | Maj7(11/13)Sus4 | 13 |
+|        |     | X   | X    | X    | Sus4(9/11/13)   | 14 |
+|        | X   | X   | X    | X    | Maj13Sus4       | 15 |
+|--------+-----+-----+------+------+-----------------+----|
+|        |     |     |      |      | Sus2            |  0 |
+|        | X   |     |      |      | Maj7Sus2        |  1 |
+|        |     | X   |      |      | Sus2(9)         |  2 |
+|        | X   | X   |      |      | Maj9Sus2        |  3 |
+|        |     |     | X    |      | Sus2(11)        |  4 |
+|        | X   |     | X    |      | Maj7(11)Sus2    |  5 |
+|        |     | X   | X    |      | Sus2(9/11)      |  6 |
+|        | X   | X   | X    |      | Maj11Sus2       |  7 |
+|        |     |     |      | X    | Sus2(13)        |  8 |
+|        | X   |     |      | X    | Maj7(13)Sus2    |  9 |
+|        |     | X   |      | X    | Sus2(9/13)      | 10 |
+|        | X   | X   |      | X    | Maj9(13)Sus2    | 11 |
+|        |     |     | X    | X    | Sus2(11/13)     | 12 |
+|        | X   |     | X    | X    | Maj7(11/13)Sus2 | 13 |
+|        |     | X   | X    | X    | Sus2(9/11/13)   | 14 |
+|        | X   | X   | X    | X    | Maj13Sus2       | 15 |
+|--------+-----+-----+------+------+-----------------+----|
+|        |     |     |      |      | Maj(6)          |    |
+|        |     |     |      |      | Maj(6/9)        |    |
+|--------+-----+-----+------+------+-----------------+----|
+
+* Dorian
+| Mode   | 7th | 9th | 11th | 13th | Chord           |    |
+|--------+-----+-----+------+------+-----------------+----|
+| Dorian |     |     |      |      | min             |  0 |
+|        | X   |     |      |      | min7            |  1 |
+|        |     | X   |      |      | min(9)          |  2 |
+|        | X   | X   |      |      | min9            |  3 |
+|        |     |     | X    |      | min(11)         |  4 |
+|        | X   |     | X    |      | min7(11)        |  5 |
+|        |     | X   | X    |      | min(9/11)       |  6 |
+|        | X   | X   | X    |      | min11           |  7 |
+|        |     |     |      | X    | min(13)         |  8 |
+|        | X   |     |      | X    | min7(13)        |  9 |
+|        |     | X   |      | X    | min(9/13)       | 10 |
+|        | X   | X   |      | X    | min9(13)        | 11 |
+|        |     |     | X    | X    | min(11/13)      | 12 |
+|        | X   |     | X    | X    | min7(11/13)     | 13 |
+|        |     | X   | X    | X    | min(9/11/13)    | 14 |
+|        | X   | X   | X    | X    | min13           | 15 |
+|--------+-----+-----+------+------+-----------------+----|
+|        |     |     |      |      | Sus4            |  0 |
+|        | X   |     |      |      | min7Sus4        |  1 |
+|        |     | X   |      |      | Sus4(9)         |  2 |
+|        | X   | X   |      |      | min9Sus4        |  3 |
+|        |     |     | X    |      | Sus4(11)        |  4 |
+|        | X   |     | X    |      | min7(11)Sus4    |  5 |
+|        |     | X   | X    |      | Sus4(9/11)      |  6 |
+|        | X   | X   | X    |      | min11Sus4       |  7 |
+|        |     |     |      | X    | Sus4(13)        |  8 |
+|        | X   |     |      | X    | min7(13)Sus4    |  9 |
+|        |     | X   |      | X    | Sus4(9/13)      | 10 |
+|        | X   | X   |      | X    | min9(13)Sus4    | 11 |
+|        |     |     | X    | X    | Sus4(11/13)     | 12 |
+|        | X   |     | X    | X    | min7(11/13)Sus4 | 13 |
+|        |     | X   | X    | X    | Sus4(9/11/13)   | 14 |
+|        | X   | X   | X    | X    | min13Sus4       | 15 |
+|--------+-----+-----+------+------+-----------------+----|
+|        |     |     |      |      | Sus2            |  0 |
+|        | X   |     |      |      | min7Sus2        |  1 |
+|        |     | X   |      |      | Sus2(9)         |  2 |
+|        | X   | X   |      |      | min9Sus2        |  3 |
+|        |     |     | X    |      | Sus2(11)        |  4 |
+|        | X   |     | X    |      | min7(11)Sus2    |  5 |
+|        |     | X   | X    |      | Sus2(9/11)      |  6 |
+|        | X   | X   | X    |      | min11Sus2       |  7 |
+|        |     |     |      | X    | Sus2(13)        |  8 |
+|        | X   |     |      | X    | min7(13)Sus2    |  9 |
+|        |     | X   |      | X    | Sus2(9/13)      | 10 |
+|        | X   | X   |      | X    | min9(13)Sus2    | 11 |
+|        |     |     | X    | X    | Sus2(11/13)     | 12 |
+|        | X   |     | X    | X    | min7(11/13)Sus2 | 13 |
+|        |     | X   | X    | X    | Sus2(9/11/13)   | 14 |
+|        | X   | X   | X    | X    | min13Sus2       | 15 |
+|--------+-----+-----+------+------+-----------------+----|
+|        |     |     |      |      | min(6)          |    |
+|        |     |     |      |      | min(6/9)        |    |
+|--------+-----+-----+------+------+-----------------+----|
+* Phrygian
+| Mode     | 7th | 9th | 11th | 13th | Chord             |    |
+|----------+-----+-----+------+------+-------------------+----|
+| Phrygian |     |     |      |      | min               |  0 |
+|          | X   |     |      |      | min7              |  1 |
+|          |     | X   |      |      | min(b9)           |  2 |
+|          | X   | X   |      |      | min7(b9)          |  3 |
+|          |     |     | X    |      | min(11)           |  4 |
+|          | X   |     | X    |      | min7(11)          |  5 |
+|          |     | X   | X    |      | min(b9/11)        |  6 |
+|          | X   | X   | X    |      | min11(b9)         |  7 |
+|          |     |     |      | X    | min(b13)          |  8 |
+|          | X   |     |      | X    | min7(b13)         |  9 |
+|          |     | X   |      | X    | min(b9/b13)       | 10 |
+|          | X   | X   |      | X    | min7(b9/b13)      | 11 |
+|          |     |     | X    | X    | min(11/b13)       | 12 |
+|          | X   |     | X    | X    | min7(11/b13)      | 13 |
+|          |     | X   | X    | X    | min(b9/11/b13)    | 14 |
+|          | X   | X   | X    | X    | min11(b9/b13)     | 15 |
+|----------+-----+-----+------+------+-------------------+----|
+|          |     |     |      |      | Sus4              |  0 |
+|          | X   |     |      |      | min7Sus4          |  1 |
+|          |     | X   |      |      | Sus4(b9)          |  2 |
+|          | X   | X   |      |      | min7(b9)Sus4      |  3 |
+|          |     |     | X    |      | Sus4(11)          |  4 |
+|          | X   |     | X    |      | min7(11)Sus4      |  5 |
+|          |     | X   | X    |      | Sus4(b9/11)       |  6 |
+|          | X   | X   | X    |      | min11(b9)Sus4     |  7 |
+|          |     |     |      | X    | Sus4(b13)         |  8 |
+|          | X   |     |      | X    | min7(b13)Sus4     |  9 |
+|          |     | X   |      | X    | Sus4(b9/b13)      | 10 |
+|          | X   | X   |      | X    | min7(b9/b13)Sus4  | 11 |
+|          |     |     | X    | X    | Sus4(11/b13)      | 12 |
+|          | X   |     | X    | X    | min7(11/b13)Sus4  | 13 |
+|          |     | X   | X    | X    | Sus4(b9/11/b13)   | 14 |
+|          | X   | X   | X    | X    | min11(b9/b13)Sus4 | 15 |
+|----------+-----+-----+------+------+-------------------+----|
+
+* Lydian
+| Mode   | 7th | 9th | 11th | 13th | Chord            |    |
+|--------+-----+-----+------+------+------------------+----|
+| Lydian |     |     |      |      | Maj              |  0 |
+|        | X   |     |      |      | Maj7             |  1 |
+|        |     | X   |      |      | Maj(9)           |  2 |
+|        | X   | X   |      |      | Maj9             |  3 |
+|        |     |     | X    |      | Maj(#11)         |  4 |
+|        | X   |     | X    |      | Maj7(#11)        |  5 |
+|        |     | X   | X    |      | Maj(9/#11)       |  6 |
+|        | X   | X   | X    |      | Maj9(#11)        |  7 |
+|        |     |     |      | X    | Maj(13)          |  8 |
+|        | X   |     |      | X    | Maj7(13)         |  9 |
+|        |     | X   |      | X    | Maj(9/13)        | 10 |
+|        | X   | X   |      | X    | Maj9(13)         | 11 |
+|        |     |     | X    | X    | Maj(#11/13)      | 12 |
+|        | X   |     | X    | X    | Maj7(#11/13)     | 13 |
+|        |     | X   | X    | X    | Maj(9/#11/13)    | 14 |
+|        | X   | X   | X    | X    | Maj13(#11)       | 15 |
+|--------+-----+-----+------+------+------------------+----|
+|        |     |     |      |      | Sus2             |  0 |
+|        | X   |     |      |      | Maj7Sus2         |  1 |
+|        |     | X   |      |      | Sus2(9)          |  2 |
+|        | X   | X   |      |      | Maj9Sus2         |  3 |
+|        |     |     | X    |      | Sus2(#11)        |  4 |
+|        | X   |     | X    |      | Maj7(#11)Sus2    |  5 |
+|        |     | X   | X    |      | Sus2(9/#11)      |  6 |
+|        | X   | X   | X    |      | Maj9(#11)Sus2    |  7 |
+|        |     |     |      | X    | Sus2(13)         |  8 |
+|        | X   |     |      | X    | Maj7(13)Sus2     |  9 |
+|        |     | X   |      | X    | Sus2(9/13)       | 10 |
+|        | X   | X   |      | X    | Maj9(13)Sus2     | 11 |
+|        |     |     | X    | X    | Sus2(#11/13)     | 12 |
+|        | X   |     | X    | X    | Maj7(#11/13)Sus2 | 13 |
+|        |     | X   | X    | X    | Sus2(9/#11/13)   | 14 |
+|        | X   | X   | X    | X    | Maj13(#11)Sus2   | 15 |
+|--------+-----+-----+------+------+------------------+----|
+|        |     |     |      |      | Maj(6)           |    |
+|        |     |     |      |      | Maj(6/9)         |    |
+|--------+-----+-----+------+------+------------------+----|
+* Mixolydian
+| Mode       | 7th | 9th | 11th | 13th | Chord         |    |
+|------------+-----+-----+------+------+---------------+----|
+| Mixolydian |     |     |      |      | Maj           |  0 |
+|            | X   |     |      |      | 7             |  1 |
+|            |     | X   |      |      | Maj(9)        |  2 |
+|            | X   | X   |      |      | 9             |  3 |
+|            |     |     | X    |      | Maj(11)       |  4 |
+|            | X   |     | X    |      | 7(11)         |  5 |
+|            |     | X   | X    |      | Maj(9/11)     |  6 |
+|            | X   | X   | X    |      | 11            |  7 |
+|            |     |     |      | X    | Maj(13)       |  8 |
+|            | X   |     |      | X    | 7(13)         |  9 |
+|            |     | X   |      | X    | Maj(9/13)     | 10 |
+|            | X   | X   |      | X    | 9(13)         | 11 |
+|            |     |     | X    | X    | Maj(11/13)    | 12 |
+|            | X   |     | X    | X    | 7(11/13)      | 13 |
+|            |     | X   | X    | X    | Maj(9/11/13)  | 14 |
+|            | X   | X   | X    | X    | 13            | 15 |
+|------------+-----+-----+------+------+---------------+----|
+|            |     |     |      |      | Sus4          |  0 |
+|            | X   |     |      |      | 7Sus4         |  1 |
+|            |     | X   |      |      | Sus4(9)       |  2 |
+|            | X   | X   |      |      | 9Sus4         |  3 |
+|            |     |     | X    |      | Sus4(11)      |  4 |
+|            | X   |     | X    |      | 7(11)Sus4     |  5 |
+|            |     | X   | X    |      | Sus4(9/11)    |  6 |
+|            | X   | X   | X    |      | 11Sus4        |  7 |
+|            |     |     |      | X    | Sus4(13)      |  8 |
+|            | X   |     |      | X    | 7(13)Sus4     |  9 |
+|            |     | X   |      | X    | Sus4(9/13)    | 10 |
+|            | X   | X   |      | X    | 9(13)Sus4     | 11 |
+|            |     |     | X    | X    | Sus4(11/13)   | 12 |
+|            | X   |     | X    | X    | 7(11/13)Sus4  | 13 |
+|            |     | X   | X    | X    | Sus4(9/11/13) | 14 |
+|            | X   | X   | X    | X    | 13Sus4        | 15 |
+|------------+-----+-----+------+------+---------------+----|
+|            |     |     |      |      | Sus2          |  0 |
+|            | X   |     |      |      | 7Sus2         |  1 |
+|            |     | X   |      |      | Sus2(9)       |  2 |
+|            | X   | X   |      |      | 9Sus2         |  3 |
+|            |     |     | X    |      | Sus2(11)      |  4 |
+|            | X   |     | X    |      | 7(11)Sus2     |  5 |
+|            |     | X   | X    |      | Sus2(9/11)    |  6 |
+|            | X   | X   | X    |      | 11Sus2        |  7 |
+|            |     |     |      | X    | Sus2(13)      |  8 |
+|            | X   |     |      | X    | 7(13)Sus2     |  9 |
+|            |     | X   |      | X    | Sus2(9/13)    | 10 |
+|            | X   | X   |      | X    | 9(13)Sus2     | 11 |
+|            |     |     | X    | X    | Sus2(11/13)   | 12 |
+|            | X   |     | X    | X    | 7(11/13)Sus2  | 13 |
+|            |     | X   | X    | X    | Sus2(9/11/13) | 14 |
+|            | X   | X   | X    | X    | 13Sus2        | 15 |
+|------------+-----+-----+------+------+---------------+----|
+|            |     |     |      |      | Maj(6)        |    |
+|            |     |     |      |      | Maj(6/9)      |    |
+|------------+-----+-----+------+------+---------------+----|
+* Aeolian
+| Mode    | 7th | 9th | 11th | 13th | Chord            |    |
+|---------+-----+-----+------+------+------------------+----|
+| Aeolian |     |     |      |      | min              |  0 |
+|         | X   |     |      |      | min7             |  1 |
+|         |     | X   |      |      | min(9)           |  2 |
+|         | X   | X   |      |      | min9             |  3 |
+|         |     |     | X    |      | min(11)          |  4 |
+|         | X   |     | X    |      | min7(11)         |  5 |
+|         |     | X   | X    |      | min(9/11)        |  6 |
+|         | X   | X   | X    |      | min11            |  7 |
+|         |     |     |      | X    | min(b13)         |  8 |
+|         | X   |     |      | X    | min7(b13)        |  9 |
+|         |     | X   |      | X    | min(9/b13)       | 10 |
+|         | X   | X   |      | X    | min9(b13)        | 11 |
+|         |     |     | X    | X    | min(11/b13)      | 12 |
+|         | X   |     | X    | X    | min7(11/b13)     | 13 |
+|         |     | X   | X    | X    | min(9/11/b13)    | 14 |
+|         | X   | X   | X    | X    | min11(b13)       | 15 |
+|---------+-----+-----+------+------+------------------+----|
+|         |     |     |      |      | Sus4             |  0 |
+|         | X   |     |      |      | min7Sus4         |  1 |
+|         |     | X   |      |      | Sus4(9)          |  2 |
+|         | X   | X   |      |      | min9Sus4         |  3 |
+|         |     |     | X    |      | Sus4(11)         |  4 |
+|         | X   |     | X    |      | min7(11)Sus4     |  5 |
+|         |     | X   | X    |      | Sus4(9/11)       |  6 |
+|         | X   | X   | X    |      | min11Sus4        |  7 |
+|         |     |     |      | X    | Sus4(b13)        |  8 |
+|         | X   |     |      | X    | min7(b13)Sus4    |  9 |
+|         |     | X   |      | X    | Sus4(9/b13)      | 10 |
+|         | X   | X   |      | X    | min9(b13)Sus4    | 11 |
+|         |     |     | X    | X    | Sus4(11/b13)     | 12 |
+|         | X   |     | X    | X    | min7(11/b13)Sus4 | 13 |
+|         |     | X   | X    | X    | Sus4(9/11/b13)   | 14 |
+|         | X   | X   | X    | X    | min11(b13)Sus4   | 15 |
+|---------+-----+-----+------+------+------------------+----|
+|         |     |     |      |      | Sus2             |  0 |
+|         | X   |     |      |      | min7Sus2         |  1 |
+|         |     | X   |      |      | Sus2(9)          |  2 |
+|         | X   | X   |      |      | min9Sus2         |  3 |
+|         |     |     | X    |      | Sus2(11)         |  4 |
+|         | X   |     | X    |      | min7(11)Sus2     |  5 |
+|         |     | X   | X    |      | Sus2(9/11)       |  6 |
+|         | X   | X   | X    |      | min11Sus2        |  7 |
+|         |     |     |      | X    | Sus2(b13)        |  8 |
+|         | X   |     |      | X    | min7(b13)Sus2    |  9 |
+|         |     | X   |      | X    | Sus2(9/b13)      | 10 |
+|         | X   | X   |      | X    | min9(b13)Sus2    | 11 |
+|         |     |     | X    | X    | Sus2(11/b13)     | 12 |
+|         | X   |     | X    | X    | min7(11/b13)Sus2 | 13 |
+|         |     | X   | X    | X    | Sus2(9/11/b13)   | 14 |
+|         | X   | X   | X    | X    | min11(b13)Sus2   | 15 |
+|---------+-----+-----+------+------+------------------+----|
+* Locrian
+| Mode    | 7th | 9th | 11th | 13th | Chord             |    |
+|---------+-----+-----+------+------+-------------------+----|
+| Locrian |     |     |      |      | o                 |  0 |
+|         | X   |     |      |      | \o 7              |  1 |
+|         |     | X   |      |      | o (b9)            |  2 |
+|         | X   | X   |      |      | \o 7(b9)          |  3 |
+|         |     |     | X    |      | o (11)            |  4 |
+|         | X   |     | X    |      | \o 7(11)          |  5 |
+|         |     | X   | X    |      | o (b9/11)         |  6 |
+|         | X   | X   | X    |      | \o 11             |  7 |
+|         |     |     |      | X    | o (b13)           |  8 |
+|         | X   |     |      | X    | \o 7(b13)         |  9 |
+|         |     | X   |      | X    | o (b9/b13)        | 10 |
+|         | X   | X   |      | X    | \o 7(b9/b13)      | 11 |
+|         |     |     | X    | X    | o (11/b13)        | 12 |
+|         | X   |     | X    | X    | \o 7(11/b13)      | 13 |
+|         |     | X   | X    | X    | o (b9/11/b13)     | 14 |
+|         | X   | X   | X    | X    | \o 11(b13)        | 15 |
+|---------+-----+-----+------+------+-------------------+----|
+|         |     |     |      |      | o Sus4            |  0 |
+|         | X   |     |      |      | \o 7Sus4          |  1 |
+|         |     | X   |      |      | o (b9)Sus4        |  2 |
+|         | X   | X   |      |      | \o 7(b9)Sus4      |  3 |
+|         |     |     | X    |      | o (11)Sus4        |  4 |
+|         | X   |     | X    |      | \o 7(11)Sus4      |  5 |
+|         |     | X   | X    |      | o (b9/11)Sus4     |  6 |
+|         | X   | X   | X    |      | \o 11Sus4         |  7 |
+|         |     |     |      | X    | o (b13)Sus4       |  8 |
+|         | X   |     |      | X    | \o 7(b13)Sus4     |  9 |
+|         |     | X   |      | X    | o (b9/b13)Sus4    | 10 |
+|         | X   | X   |      | X    | \o 7(b9/b13)Sus4  | 11 |
+|         |     |     | X    | X    | o (11/b13)Sus4    | 12 |
+|         | X   |     | X    | X    | \o 7(11/b13)Sus4  | 13 |
+|         |     | X   | X    | X    | o (b9/11/b13)Sus4 | 14 |
+|         | X   | X   | X    | X    | \o 11(b13)Sus4    | 15 |
+|---------+-----+-----+------+------+-------------------+----|
+
+
+* More Tables
+** Table
+#+CAPTION: Chord types and their SCs
+#+NAME: tab:chordSC
+|---+------------+--------------------+------------+-------|
+|   |            | Tn-Type SC         | Forte Name |       |
+|   | Chord      | (Prime Form)       |  (Tn-type) | index |
+|---+------------+--------------------+------------+-------|
+|   | 5          | {0,5}              |        2-5 |     6 |
+|   | sus4       | {0,2,7}            |        3-9 |    22 |
+|   | sus2       | {0,2,7}            |        3-9 |    22 |
+|   | dim        | {0,3,6}            |       3-10 |    23 |
+|   | min        | {0,3,7}            |      3-11A |    24 |
+|   | maj        | {0,4,7}            |      3-11B |    25 |
+|   | aug        | {0,4,8}            |       3-12 |    26 |
+|---+------------+--------------------+------------+-------|
+|   | min(9)     | {0,2,3,7}          |      4-14A |    46 |
+|   | sus4(b7)   | {0,2,5,7}          |       4-23 |    61 |
+|   | sus4(7)    | {0,2,6,7}          |      4-16B |    51 |
+|   | min(7)     | {0,1,4,8}          |      4-19A |    55 |
+|   | aug(7)     | {0,3,4,8}          |      4-19B |    56 |
+|   | min(6)     | {0,1,5,8}          |       4-20 |    57 |
+|   | maj7       | {0,1,5,8}          |       4-20 |    57 |
+|   | maj(9)     | {0,2,4,7}          |      4-22A |    59 |
+|   | maj(6)     | {0,3,5,8}          |       4-26 |    64 |
+|   | min7       | {0,3,5,8}          |       4-26 |    64 |
+|   | hdim7      | {0,2,5,8}          |      4-27A |    65 |
+|   | 7          | {0,3,6,8}          |      4-27B |    66 |
+|   | dim7       | {0,3,6,9}          |       4-28 |    67 |
+|---+------------+--------------------+------------+-------|
+|   | 9          | {0,2,4,6,9}        |       5-34 |   129 |
+|   | maj9       | {0,1,3,5,8}        |      5-27A |   116 |
+|   | min9       | {0,3,5,7,8}        |      5-27B |   117 |
+|   |            |                    |            |       |
+|   | maj(6/9)   | {0,2,4,7,9}        |       5-35 |   130 |
+|   | min(6/9)   | {0,2,3,7,9}        |      5-29B |   121 |
+|   |            |                    |            |       |
+|---+------------+--------------------+------------+-------|
+|   | 11         |                    |            |       |
+|---+------------+--------------------+------------+-------|
+|   |            |                    |            |       |
+|   | V-I/IV-I   | {0,1,3,5,8}        |      5-27A |   116 |
+|   | V7-I       | {0,1,3,5,6,8}      |     6-Z25A |   176 |
+|   | V-IV       | {0,2,4,6,7,9}      |      6-33B |   189 |
+|---+------------+--------------------+------------+-------|
+|   | Pentatonic | {0,2,4,7,9}        |       5-35 |   130 |
+|   | Wholetone  | {0,2,4,6,8,10}     |       6-35 |   192 |
+|   | Diatonic   | {0,1,3,5,6,8,10}   |       7-35 |   276 |
+|   | Octatonic  | {0,1,3,4,6,7,9,10} |       8-28 |   322 |
+|---+------------+--------------------+------------+-------|
+
+
+|-----+---+----+---+----+---+---+----+---+----+---+----+----+----+----+----+----+----+----+----+----+----+----|
+|     | C | Db | D | Eb | E | F | Gb | G | Ab | A | Bb |  B |  C | Db |  D | Eb |  E |  F | Gb |  G | Ab |  A |
+|-----+---+----+---+----+---+---+----+---+----+---+----+----+----+----+----+----+----+----+----+----+----+----|
+| M   | 0 |  1 | 2 |  3 | 4 | 5 |  6 | 7 |  8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 |
+|-----+---+----+---+----+---+---+----+---+----+---+----+----+----+----+----+----+----+----+----+----+----+----|
+| Ion | R |    | 2 |    | 3 | 4 |    | 5 |    | 6 |    |  7 |    |    |  9 |    |    | 11 |    |    |    | 13 |
+| Dor | R |    | 2 |  3 |   | 4 |    | 5 |    | 6 |  7 |    |    |    |  9 |    |    | 11 |    |    |    | 13 |
+| Phy | R |  2 |   |  3 |   | 4 |    | 5 |  6 |   |  7 |    |    |  9 |    |    |    | 11 |    |    | 13 |    |
+| Lyd | R |    | 2 |    | 3 |   |  4 | 5 |    | 6 |    |  7 |    |    |  9 |    |    |    | 11 |    |    | 13 |
+| Mix | R |    | 2 |    | 3 | 4 |    | 5 |    | 6 |  7 |    |    |    |  9 |    |    | 11 |    |    |    | 13 |
+| Aeo | R |    | 2 |  3 |   | 4 |    | 5 |  6 |   |  7 |    |    |    |  9 |    |    | 11 |    |    | 13 |    |
+| Loc | R |  2 |   |  3 |   | 4 |  5 |   |  6 |   |  7 |    |    |  9 |    |    |    | 11 |    |    | 13 |    |
+|-----+---+----+---+----+---+---+----+---+----+---+----+----+----+----+----+----+----+----+----+----+----+----|
+
+
+|------------+------+-----+-----+-----+-----+-----+-----+-----+------+------|
+| Mode       | Root | 2nd | 3rd | 4th | 5th | 6th | 7th | 9th | 11th | 13th |
+|------------+------+-----+-----+-----+-----+-----+-----+-----+------+------|
+| Lydian     |    0 |   2 |   4 |   6 |   7 |   9 |  11 |  14 |   18 |   21 |
+| Ionian     |    0 |   2 |   4 |   5 |   7 |   9 |  11 |  14 |   17 |   21 |
+| Mixolydian |    0 |   2 |   4 |   5 |   7 |   9 |  10 |  14 |   17 |   21 |
+| Dorian     |    0 |   2 |   3 |   5 |   7 |   9 |  10 |  14 |   17 |   21 |
+| Aeolian    |    0 |   2 |   3 |   5 |   7 |   8 |  10 |  14 |   17 |   20 |
+| Phrygian   |    0 |   1 |   3 |   5 |   7 |   8 |  10 |  13 |   17 |   20 |
+| Locrian    |    0 |   1 |   3 |   5 |   6 |   8 |  10 |  13 |   17 |   20 |
+|------------+------+-----+-----+-----+-----+-----+-----+-----+------+------|
+
+|------------+------+-----+-----+-----+-----+-----+-----+-----+------+------|
+| Mode       | Root | 2nd | 3rd | 4th | 5th | 6th | 7th | 9th | 11th | 13th |
+|------------+------+-----+-----+-----+-----+-----+-----+-----+------+------|
+| Lydian     | P    | Maj | Maj | Aug | P   | Maj | Maj | Maj | Aug  | Maj  |
+| Ionian     | P    | Maj | Maj | P   | P   | Maj | Maj | Maj | P    | Maj  |
+| Mixolydian | P    | Maj | Maj | P   | P   | Maj | min | Maj | P    | Maj  |
+| Dorian     | P    | Maj | min | P   | P   | Maj | min | Maj | P    | Maj  |
+| Aeolian    | P    | Maj | min | P   | P   | min | min | Maj | P    | min  |
+| Phrygian   | P    | Min | min | P   | P   | min | min | min | P    | min  |
+| Locrian    | P    | Min | min | P   | Dim | min | min | min | P    | min  |
+|------------+------+-----+-----+-----+-----+-----+-----+-----+------+------|
+
+|------------+-------+------+------+---+-----|
+| Mode       | Triad | Sus4 | Sus2 | 6 | 6/9 |
+|------------+-------+------+------+---+-----|
+| Lydian     | Maj   | n    | y    | y | y   |
+| Ionian     | Maj   | y    | y    | y | y   |
+| Mixolydian | Maj   | y    | y    | y | y   |
+| Dorian     | min   | y    | y    | y | y   |
+| Aeolian    | min   | y    | y    | n | n   |
+| Phrygian   | min   | y    | n    | n | n   |
+| Locrian    | Dim   | y    | n    | n | n   |
+|------------+-------+------+------+---+-----|
+
+| Ionian                    |
+| Dorian                    |
+| Phrygian                  |
+| Lydian                    |
+| Mixolydian                |
+| Aeolian                   |
+| Locrian                   |
+| Jazz Minor                |
+| Dorian b9                 |
+| Lydian Augmented          |
+| Lydian Dominant           |
+| Mixolydian b13            |
+| Semilocrian               |
+| Superlocrian              |
+| Harmonic Minor            |
+| Locrian #6                |
+| Ionian Augmented          |
+| Romainian                 |
+| Phrygian Dominant         |
+| Lydian #2                 |
+| Ultralocrian              |
+| Harmonic Major            |
+| Dorian b5                 |
+| Phrygian b4               |
+| Lydian b3                 |
+| Mixolydian b9             |
+| Lydian #2 #5              |
+| Locrian bb7               |
+| Neapolitan                |
+| Leading Whole-Tone        |
+| Lydian Augmented Dominant |
+| Lydian Dominant b6        |
+| Major Locrian             |
+| Semilocrian b4            |
+| Superlocrian bb3          |
+| Neapolitan Minor          |
+| Lydian #6                 |
+| Mixolydian Augmented      |
+| Hungarian Gypsy           |
+| Locrian Dominant          |
+| Ionian #2                 |
+| Ultralocrian bb3          |
+| Double Harmonic Major     |
+| Lydian #2 #6              |
+| Ultraphrygian             |
+| Hungarian Minor           |
+| Oriental                  |
+| Ionian Augmented #2       |
+| Locrian bb3 bb7           |
+| Hungarian                 |
+| Superlocrian bb6 bb7      |
+| Harmonic Minor b5         |
+| Superlocrian #6           |
+| Melodic Minor #5          |
+| Dorian b9 #11             |
+| Lydian Augmented #3       |
+| Diminished                |
+| Octatonic                 |
+| Whole-tone                |
+| Augmented                 |
+| Augmented inverse         |
+| Major Pentatonic          |
+| Suspended Pentatonic      |
+| Man Gong                  |
+| Ritusen                   |
+| Minor Pentatonic          |
+| Blues                     |
+
+
+|                  | Mode  | Mode                      |           |
+| Scale            | Grade | Name                      | Structure |
+|------------------+-------+---------------------------+-----------|
+| Diatonic         | I     | Ionian                    |   2212221 |
+|                  | II    | Dorian                    |   2122212 |
+|                  | III   | Phrygian                  |   1222122 |
+|                  | IV    | Lydian                    |   2221221 |
+|                  | V     | Mixolydian                |   2212212 |
+|                  | VI    | Aeolian                   |   2122122 |
+|                  | VII   | Locrian                   |   1221222 |
+|------------------+-------+---------------------------+-----------|
+| Melodic Minor    | I     | Jazz Minor                |   2122221 |
+|                  | II    | Dorian b9                 |           |
+|                  | III   | Lydian Augmented          |           |
+|                  | IV    | Lydian Dominant           |           |
+|                  | V     | Mixolydian b13            |           |
+|                  | VI    | Semilocrian               |           |
+|                  | VII   | Superlocrian              |           |
+|------------------+-------+---------------------------+-----------|
+| Harmonic Minor   | I     | Harmonic Minor            |   2122131 |
+|                  | II    | Locrian #6                |           |
+|                  | III   | Ionian Augmented          |           |
+|                  | IV    | Romainian                 |           |
+|                  | V     | Phrygian Dominant         |           |
+|                  | VI    | Lydian #2                 |           |
+|                  | VII   | Ultralocrian              |           |
+|------------------+-------+---------------------------+-----------|
+| Harmonic Major   | I     | Harmonic Major            |   2212131 |
+|                  | II    | Dorian b5                 |           |
+|                  | III   | Phrygian b4               |           |
+|                  | IV    | Lydian b3                 |           |
+|                  | V     | Mixolydian b9             |           |
+|                  | VI    | Lydian #2 #5              |           |
+|                  | VII   | Locrian bb7               |           |
+|------------------+-------+---------------------------+-----------|
+| Neapolitan       | I     | Neapolitan                |   1222221 |
+|                  | II    | Leading Whole-Tone        |           |
+|                  | III   | Lydian Augmented Dominant |           |
+|                  | IV    | Lydian Dominant b6        |           |
+|                  | V     | Major Locrian             |           |
+|                  | VI    | Semilocrian b4            |           |
+|                  | VII   | Superlocrian bb3          |           |
+|------------------+-------+---------------------------+-----------|
+| Neapolitan Minor | I     | Neapolitan Minor          |   1222131 |
+|                  | II    | Lydian #6                 |           |
+|                  | III   | Mixolydian Augmented      |           |
+|                  | IV    | Hungarian Gypsy           |           |
+|                  | V     | Locrian Dominant          |           |
+|                  | VI    | Ionian #2                 |           |
+|                  | VII   | Ultralocrian bb3          |           |
+|------------------+-------+---------------------------+-----------|
+| Double Harmonic  | I     | Double Harmonic Major     |   1312131 |
+|                  | II    | Lydian #2 #6              |           |
+|                  | III   | Ultraphrygian             |           |
+|                  | IV    | Hungarian Minor           |           |
+|                  | V     | Oriental                  |           |
+|                  | VI    | Ionian Augmented #2       |           |
+|                  | VII   | Locrian bb3 bb7           |           |
+|------------------+-------+---------------------------+-----------|
+| Hungarian        | I     | Hungarian                 |   3121212 |
+|                  | II    | Superlocrian bb6 bb7      |           |
+|                  | III   | Harmonic Minor b5         |           |
+|                  | IV    | Superlocrian #6           |           |
+|                  | V     | Melodic Minor #5          |           |
+|                  | VI    | Dorian b9 #11             |           |
+|                  | VII   | Lydian Augmented #3       |           |
+|------------------+-------+---------------------------+-----------|
+| Diminished       | I     | Diminished                |  21212121 |
+|                  | II    | Octatonic                 |  12121212 |
+|------------------+-------+---------------------------+-----------|
+| Whole Tone       | I     | Whole-tone                |    222222 |
+|------------------+-------+---------------------------+-----------|
+| Augmented        | I     | Augmented                 |    313131 |
+|                  | II    | Augmented inverse         |    131313 |
+|------------------+-------+---------------------------+-----------|
+| Pentatonic       | I     | Major Pentatonic          |     22323 |
+|                  | II    | Suspended Pentatonic      |           |
+|                  | III   | Man Gong                  |           |
+|                  | IV    | Ritusen                   |           |
+|                  | V     | Minor Pentatonic          |           |
+|------------------+-------+---------------------------+-----------|
+| Blues            | I     | Blues                     |    321132 |
+|------------------+-------+---------------------------+-----------|
+| Bebop            |       |                           |           |
+|------------------+-------+---------------------------+-----------|
+| Enigmatic        | I     | Enigmatic                 |           |
+|------------------+-------+---------------------------+-----------|
+** Ionian
+|----------+------------+-----+-----+------+------+-----------------+----|
+| Scale    | Mode       | 7th | 9th | 11th | 13th | Chord           |    |
+|----------+------------+-----+-----+------+------+-----------------+----|
+| Diatonic | Ionian     |     |     |      |      | Maj             |  0 |
+|          |            | X   |     |      |      | Maj7            |  1 |
+|          |            |     | X   |      |      | Maj(9)          |  2 |
+|          |            | X   | X   |      |      | Maj9            |  3 |
+|          |            |     |     | X    |      | Maj(11)         |  4 |
+|          |            | X   |     | X    |      | Maj7(11)        |  5 |
+|          |            |     | X   | X    |      | Maj(9/11)       |  6 |
+|          |            | X   | X   | X    |      | Maj11           |  7 |
+|          |            |     |     |      | X    | Maj(13)         |  8 |
+|          |            | X   |     |      | X    | Maj7(13)        |  9 |
+|          |            |     | X   |      | X    | Maj(9/13)       | 10 |
+|          |            | X   | X   |      | X    | Maj9(13)        | 11 |
+|          |            |     |     | X    | X    | Maj(11/13)      | 12 |
+|          |            | X   |     | X    | X    | Maj7(11/13)     | 13 |
+|          |            |     | X   | X    | X    | Maj(9/11/13)    | 14 |
+|          |            | X   | X   | X    | X    | Maj13           | 15 |
+|----------+------------+-----+-----+------+------+-----------------+----|
+|          | Dorian     |     |     |      |      | min             |  0 |
+|          |            | X   |     |      |      | min7            |  1 |
+|          |            |     | X   |      |      | min(9)          |  2 |
+|          |            | X   | X   |      |      | min9            |  3 |
+|          |            |     |     | X    |      | min(11)         |  4 |
+|          |            | X   |     | X    |      | min7(11)        |  5 |
+|          |            |     | X   | X    |      | min(9/11)       |  6 |
+|          |            | X   | X   | X    |      | min11           |  7 |
+|          |            |     |     |      | X    | min(13)         |  8 |
+|          |            | X   |     |      | X    | min7(13)        |  9 |
+|          |            |     | X   |      | X    | min(9/13)       | 10 |
+|          |            | X   | X   |      | X    | min9(13)        | 11 |
+|          |            |     |     | X    | X    | min(11/13)      | 12 |
+|          |            | X   |     | X    | X    | min7(11/13)     | 13 |
+|          |            |     | X   | X    | X    | min(9/11/13)    | 14 |
+|          |            | X   | X   | X    | X    | min13           | 15 |
+|----------+------------+-----+-----+------+------+-----------------+----|
+|          | Phrygian   |     |     |      |      | min             |  0 |
+|          |            | X   |     |      |      | min7            |  1 |
+|          |            |     | X   |      |      | min(b9)         |  2 |
+|          |            | X   | X   |      |      | min7(b9)        |  3 |
+|          |            |     |     | X    |      | min(11)         |  4 |
+|          |            | X   |     | X    |      | min7(11)        |  5 |
+|          |            |     | X   | X    |      | min(b9/11)      |  6 |
+|          |            | X   | X   | X    |      | min11(b9)       |  7 |
+|          |            |     |     |      | X    | min(b13)        |  8 |
+|          |            | X   |     |      | X    | min7(b13)       |  9 |
+|          |            |     | X   |      | X    | min(b9/b13)     | 10 |
+|          |            | X   | X   |      | X    | min7(b9/b13)    | 11 |
+|          |            |     |     | X    | X    | min(11/b13)     | 12 |
+|          |            | X   |     | X    | X    | min7(11/b13)    | 13 |
+|          |            |     | X   | X    | X    | min(b9/11/b13)  | 14 |
+|          |            | X   | X   | X    | X    | min11(b9/b13)   | 15 |
+|----------+------------+-----+-----+------+------+-----------------+----|
+|          | Lydian     |     |     |      |      | Maj             |  0 |
+|          |            | X   |     |      |      | Maj7            |  1 |
+|          |            |     | X   |      |      | Maj(9)          |  2 |
+|          |            | X   | X   |      |      | Maj9            |  3 |
+|          |            |     |     | X    |      | Maj(#11)        |  4 |
+|          |            | X   |     | X    |      | Maj7(#11)       |  5 |
+|          |            |     | X   | X    |      | Maj(9/#11)      |  6 |
+|          |            | X   | X   | X    |      | Maj9(#11)       |  7 |
+|          |            |     |     |      | X    | Maj(13)         |  8 |
+|          |            | X   |     |      | X    | Maj7(13)        |  9 |
+|          |            |     | X   |      | X    | Maj(9/13)       | 10 |
+|          |            | X   | X   |      | X    | Maj9(13)        | 11 |
+|          |            |     |     | X    | X    | Maj(#11/13)     | 12 |
+|          |            | X   |     | X    | X    | Maj7(#11/13)    | 13 |
+|          |            |     | X   | X    | X    | Maj(9/#11/13)   | 14 |
+|          |            | X   | X   | X    | X    | Maj13(#11)      | 15 |
+|----------+------------+-----+-----+------+------+-----------------+----|
+|          | Mixolydian |     |     |      |      | Maj             |  0 |
+|          |            | X   |     |      |      | 7               |  1 |
+|          |            |     | X   |      |      | Maj(9)          |  2 |
+|          |            | X   | X   |      |      | 9               |  3 |
+|          |            |     |     | X    |      | Maj(11)         |  4 |
+|          |            | X   |     | X    |      | 7(11)           |  5 |
+|          |            |     | X   | X    |      | Maj(9/11)       |  6 |
+|          |            | X   | X   | X    |      | 11              |  7 |
+|          |            |     |     |      | X    | Maj(13)         |  8 |
+|          |            | X   |     |      | X    | 7(13)           |  9 |
+|          |            |     | X   |      | X    | Maj(9/13)       | 10 |
+|          |            | X   | X   |      | X    | 9(13)           | 11 |
+|          |            |     |     | X    | X    | Maj(11/13)      | 12 |
+|          |            | X   |     | X    | X    | 7(11/13)        | 13 |
+|          |            |     | X   | X    | X    | Maj(9/11/13)    | 14 |
+|          |            | X   | X   | X    | X    | 13              | 15 |
+|----------+------------+-----+-----+------+------+-----------------+----|
+|          | Aeolian    |     |     |      |      | min             |  0 |
+|          |            | X   |     |      |      | min7            |  1 |
+|          |            |     | X   |      |      | min(9)          |  2 |
+|          |            | X   | X   |      |      | min9            |  3 |
+|          |            |     |     | X    |      | min(11)         |  4 |
+|          |            | X   |     | X    |      | min7(11)        |  5 |
+|          |            |     | X   | X    |      | min(9/11)       |  6 |
+|          |            | X   | X   | X    |      | min11           |  7 |
+|          |            |     |     |      | X    | min(b13)        |  8 |
+|          |            | X   |     |      | X    | min7(b13)       |  9 |
+|          |            |     | X   |      | X    | min(9/b13)      | 10 |
+|          |            | X   | X   |      | X    | min9(b13)       | 11 |
+|          |            |     |     | X    | X    | min(11/b13)     | 12 |
+|          |            | X   |     | X    | X    | min7(11/b13)    | 13 |
+|          |            |     | X   | X    | X    | min(9/11/b13)   | 14 |
+|          |            | X   | X   | X    | X    | min11(b13)      | 15 |
+|----------+------------+-----+-----+------+------+-----------------+----|
+|          | Locrian    |     |     |      |      | o               |  0 |
+|          |            | X   |     |      |      | \o 7            |  1 |
+|          |            |     | X   |      |      | o (b9)          |  2 |
+|          |            | X   | X   |      |      | \o 7(b9)        |  3 |
+|          |            |     |     | X    |      | o (11)          |  4 |
+|          |            | X   |     | X    |      | \o 7(11)        |  5 |
+|          |            |     | X   | X    |      | o (b9/11)       |  6 |
+|          |            | X   | X   | X    |      | \o 11           |  7 |
+|          |            |     |     |      | X    | o (b13)         |  8 |
+|          |            | X   |     |      | X    | \o 7(b13)       |  9 |
+|          |            |     | X   |      | X    | o (b9/b13)      | 10 |
+|          |            | X   | X   |      | X    | \o 7(b9/b13)    | 11 |
+|          |            |     |     | X    | X    | o (11/b13)      | 12 |
+|          |            | X   |     | X    | X    | \o 7(11/b13)    | 13 |
+|          |            |     | X   | X    | X    | o (b9/11/b13)   | 14 |
+|          |            | X   | X   | X    | X    | \o 11(b13)      | 15 |
+|----------+------------+-----+-----+------+------+-----------------+----|
+| Melodic  | Jazz       |     |     |      |      | min             |    |
+| Minor    | Minor      | X   |     |      |      | min(maj7)       |    |
+|          |            |     | X   |      |      | min(9)          |    |
+|          |            | X   | X   |      |      | min(maj9)       |    |
+|          |            |     |     | X    |      | min(11)         |    |
+|          |            | X   |     | X    |      | min(maj7/11)    |    |
+|          |            |     | X   | X    |      | min(9/11)       |    |
+|          |            | X   | X   | X    |      | min(maj11)      |    |
+|          |            |     |     |      | X    | min(13)         |    |
+|          |            | X   |     |      | X    | min(13/maj7)    |    |
+|          |            |     | X   |      | X    | min(9/13)       |    |
+|          |            | X   | X   |      | X    | min9(maj7/13)   |    |
+|          |            |     |     | X    | X    | min(11/13)      |    |
+|          |            | X   |     | X    | X    | min(maj7/11/13) |    |
+|          |            |     | X   | X    | X    | min(9/11/13)    |    |
+|          |            | X   | X   | X    | X    | min(maj13)      |    |
+|----------+------------+-----+-----+------+------+-----------------+----|
+| Harmonic | Harmonic   |     |     |      |      |                 |    |
+| Minor    | Minor      |     |     |      |      |                 |    |
+|----------+------------+-----+-----+------+------+-----------------+----|
+|          | Ionian     |     |     |      |      |                 |    |
+|          | Augmented  |     |     |      |      |                 |    |
+|----------+------------+-----+-----+------+------+-----------------+----|
+| Harmonic |            |     |     |      |      |                 |    |
+| Major    |            |     |     |      |      |                 |    |
+
+
+* Ionian
+|----------------+----------------------+------------+-------------------|
+| Scale          | Mode                 | Chord      | Integer           |
+|----------------+----------------------+------------+-------------------|
+| Diatonic       | Ionian I             | Maj        | 0 4 7             |
+|                |                      | Maj7       | 0 4 7 11          |
+|                |                      | Maj9       | 0 4 7 11 14       |
+|                |                      | Maj11      | 0 4 7 11 14 17    |
+|                |                      | Maj13      | 0 4 7 11 14 17 21 |
+|                |                      | Maj(6)     | 0 4 7 9           |
+|                |                      | Maj(6/9)   | 0 4 7 9 14        |
+|                |                      | Sus4       | 0 5 7             |
+|                |                      | Sus2       | 0 2 7             |
+|                |                      | Maj7Sus4   | 0 5 7 11          |
+|                |                      | Maj7Sus2   | 0 2 7 11          |
+|                | Dorian II            | min        | 0 3 7             |
+|                |                      | min7       | 0 3 7 10          |
+|                |                      | min9       | 0 3 7 10 14       |
+|                |                      | min11      | 0 3 7 10 14 17    |
+|                |                      | min13      | 0 3 7 10 14 17 21 |
+|                |                      | min(6)     | 0 3 7 9           |
+|                |                      | min(6/9)   | 0 3 7 9 14        |
+|                | Aeolian VI           | min(b6)    | 0 3 7 8           |
+|                | Mixolydian V         | 7          | 0 4 7 10          |
+|                |                      | 9          | 0 4 7 10 14       |
+|                |                      | 11         | 0 4 7 10 14 17    |
+|                |                      | 13         | 0 4 7 10 14 17 21 |
+|                |                      | 7Sus4      | 0 5 7 10          |
+|                |                      | 7Sus2      | 0 2 7 10          |
+|                | Locrian VIII         | Dim        | 0 3 6             |
+|                |                      | hDim7      | 0 3 6 10          |
+| Melodic Minor  | Jazz Minor I         | min(maj7)  | 0 3 7 11          |
+|                |                      | min(maj9)  | 0 3 7 11 14       |
+|                |                      | min(maj11) | 0 3 7 11 14 17    |
+|                |                      | min(maj13) | 0 3 7 11 14 17 21 |
+|                | Dorian b9 II         | min7(b9)   | 0 3 7 10 13       |
+| Harmonic Minor | Ionian Augmented III | aug        | 0 4 8             |
+|                |                      | aug(maj7)  | 0 4 8 11          |
+|                |                      | aug(maj9)  | 0 4 8 11 14       |
+|                |                      | aug(maj11) | 0 4 8 11 14 17    |
+|                |                      | aug(maj13) | 0 4 8 11 14 17 21 |
+| Harmonic Major | Harmonic Major I     | Maj(b6)    | 0 4 7 8           |
+|                | Dorian b5 II         | hDim9      | 0 3 6 10 14       |
+|                | Mixolydian b9 V      | 7b9        | 0 4 7 10 13       |
+|                | Locrian bb7 VII      | Dim7       | 0 3 6 9           |
+|----------------+----------------------+------------+-------------------|
+
+
+
+* Chord Table
+|------------------+-------------------+--------------------+--------+-----|
+| Chord            | Integer           | Set Class          | Name   | Idx |
+|------------------+-------------------+--------------------+--------+-----|
+| Maj              | 0 4 7             | {0,4,7}            | 3-11B  |  25 |
+| Maj7             | 0 4 7 11          | {0,1,5,8}          | 4-20   |  57 |
+| Maj9             | 0 4 7 11 14       | {0,1,3,5,8}        | 5-27A  | 116 |
+| Maj11            | 0 4 7 11 14 17    | {0,1,3,5,6,8}      | 6-Z25A | 176 |
+| Maj13            | 0 4 7 11 14 17 21 | {0,1,3,5,6,8,10}   | 7-35   | 276 |
+| Maj(6)           | 0 4 7 9           | {0,3,5,8}          | 4-26   |  64 |
+| Maj(6/9)         | 0 4 7 9 14        | {0,2,4,7,9}        | 5-35   | 130 |
+|------------------+-------------------+--------------------+--------+-----|
+| 7                | 0 4 7 10          | {0,3,6,8}          | 4-27B  |  66 |
+| 9                | 0 4 7 10 2        | {0,2,4,6,9}        | 5-34   | 129 |
+| 11               | 0 4 7 10 2 5      | {0,2,4,6,7,9}      | 6-33B  | 189 |
+| 13               | 0 4 7 10 2 5 9    | {0,1,3,5,6,8,10}   | 7-35   | 276 |
+| 7b9              | 0 4 7 10 1        | {0,2,3,6,9}        | 5-31B  | 125 |
+|------------------+-------------------+--------------------+--------+-----|
+| min              | 0 3 7             | {0,3,7}            | 3-11A  |  24 |
+| min7             | 0 3 7 10          | {0,3,5,8}          | 4-26   |  64 |
+| min9             | 0 3 7 10 14       | {0,3,5,7,8}        | 5-27B  | 117 |
+| min11            | 0 3 7 10 14 17    | {0,2,4,5,7,9}      | 6-32   | 187 |
+| min13            | 0 3 7 10 14 17 21 | {0,1,3,5,6,8,10}   | 7-35   | 276 |
+| min(6)           | 0 3 7 9           | {0,2,5,8}          | 4-27A  |  65 |
+| min(b6)          | 0 3 7 8           | {0,1,5,8}          | 4-20   |  57 |
+| min(6/9)         | 0 3 7 9 14        | {0,2,5,7,8}        | 5-29B  | 121 |
+| min7b9           | 0 3 7 10 13       | {0,3,5,6,8}        | 5-23B  | 113 |
+|------------------+-------------------+--------------------+--------+-----|
+| min/Maj7         | 0 3 7 11          | {0,1,4,8}          | 4-19A  |  55 |
+| min/Maj9         | 0 3 7 11 14       | {0,1,3,4,8}        | 5-Z17  |  98 |
+| min/Maj11        | 0 3 7 11 14 17    | {0,1,3,4,6,8}      | 6-Z24B | 174 |
+| min/Maj13        | 0 3 7 11 14 17 21 | {0,1,3,4,6,8,10}   | 7-34   | 275 |
+|------------------+-------------------+--------------------+--------+-----|
+| Dim              | 0 3 6             | {0,3,6}            | 3-10   |  23 |
+| hDim7            | 0 3 6 10          | {0,2,5,8}          | 4-27A  |  65 |
+| hDim7(9)         | 0 3 6 10 14       | {0,2,4,5,8}        | 5-26A  | 114 |
+| Dim7             | 0 3 6 9           | {0,3,6,9}          | 4-28   |  67 |
+| Dim7(b9)         | 0 3 6 9 13        | {0,1,3,6,9}        | 5-31   | 124 |
+|------------------+-------------------+--------------------+--------+-----|
+| Aug              | 0 4 8             | {0,4,8}            | 3-12   |  26 |
+| Aug7             | 0 4 8 10          | {0,2,4,8}          | 4-24   |  62 |
+| Aug(maj7)        | 0 4 8 11          | {0,3,4,8}          | 4-19B  |  56 |
+| Aug(maj9)        | 0 4 8 11 14       | {0,3,4,6,8}        | 5-26B  | 115 |
+| Aug(maj11)       | 0 4 8 11 14 17    | {0,1,3,5,6,9}      | 6-Z28  | 181 |
+| Aug(maj13)       | 0 4 8 11 14 17 21 | {0,1,3,4,6,8,9}    | 7-32A  | 272 |
+|------------------+-------------------+--------------------+--------+-----|
+| Sus4             | 0 5 7             | {0,2,7}            | 3-9    |  22 |
+| 7Sus4            | 0 5 7 10          | {0,2,5,7}          | 4-23   |  61 |
+| Maj7Sus4         | 0 5 7 11          | {0,2,6,7}          | 4-16B  |  51 |
+| Sus2             | 0 2 7             | {0,2,7}            | 3-9    |  22 |
+| 7Sus2            | 0 2 7 10          | {0,3,5,7}          | 4-22B  |  60 |
+| Maj7Sus2         | 0 2 7 11          | {0,4,5,7}          | 4-14B  |  47 |
+|------------------+-------------------+--------------------+--------+-----|
+| Diatonic         | 0 2 4 5 7 9 11    | {0,1,3,5,6,8,10}   | 7-35   | 276 |
+| Melodic Minor    | 0 2 3 5 7 9 11    | {0,1,3,4,6,8,10}   | 7-34   | 275 |
+| Harmonic Minor   | 0 2 3 5 7 8 11    | {0,1,3,4,6,8,9}    | 7-32A  | 272 |
+| Harmonic Major   | 0 2 4 5 7 8 11    | {0,1,3,5,6,8,9}    | 7-32B  | 273 |
+| Neapolitan       | 0 1 3 5 7 9 11    | {0,1,2,4,6,8,10}   | 7-33   | 274 |
+| Neapolitan Minor | 0 1 3 5 7 8 11    | {0,1,2,4,6,8,9}    | 7-30A  | 268 |
+| Double Harmonic  | 0 1 4 5 7 8 11    | {0,1,2,5,6,8,9}    | 7-22   | 253 |
+| Hungarian        | 0 3 4 6 7 9 10    | {0,1,3,4,6,7,9}    | 7-31A  | 270 |
+| Octatonic        | 0 2 3 5 6 8 9 11  | {0,1,3,4,6,7,9,10} | 8-28   | 322 |
+| Whole-Tone       | 0 2 4 6 8 10      | {0,2,4,6,8,10}     | 6-35   | 192 |
+| Augmented        | 0 3 4 7 8 11      | {0,1,4,5,8,9}      | 6-20   | 168 |
+| Pentatonic       | 0 2 4 7 9         | {0,2,4,7,9}        | 5-35   | 130 |
+| Blues            | 0 3 5 6 7 10      | {0,2,3,4,7,9}      | 6-Z47B | 212 |
+|------------------+-------------------+--------------------+--------+-----|
+
+
+| Cadence           | Roman Numeral | Set Class        | Name |
+|-------------------+---------------+------------------+------|
+| Perfect Cadence   | V I           | {0,1,3,5,8}      |      |
+|                   | V7 I          | {0,1,3,5,6,8}    |      |
+|-------------------+---------------+------------------+------|
+| Turnaround        | ii V I        | {0,1,3,5,6,8,10} |      |
+|                   | ii V7 I       |                  |      |
+|                   | ii7 V7 I      |                  |      |
+|-------------------+---------------+------------------+------|
+|                   | IV V I        |                  |      |
+|                   |               |                  |      |
+|-------------------+---------------+------------------+------|
+| Circle Progession | vi ii V I     |                  |      |
+|                   | vi ii V I     |                  |      |
+|                   |               |                  |      |
+|-------------------+---------------+------------------+------|
+|                   | I IV V I      | {0,1,3,5,6,8,10} | 7-35 |
+|                   |               |                  |      |
+|-------------------+---------------+------------------+------|
+|-------------------+---------------+------------------+------|
+|                   | V i           |                  |      |

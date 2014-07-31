@@ -1,0 +1,50 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{glssymbols}\relax \glsresetentrylist %
+\glossaryentryfield{hashx}{\glsnamefont{\#X}}{Set cardinality}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{hashnc}{\glsnamefont{\#nC}}{Size of nC}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{hashncv}{\glsnamefont{\#nCV}}{Vector cardinality}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}\glsgroupskip
+\glsgroupheading{D}\relax \glsresetentrylist %
+\glossaryentryfield{dv}{\glsnamefont{DV}}{Difference Vector}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}\glsgroupskip
+\glsgroupheading{I}\relax \glsresetentrylist %
+\glossaryentryfield{ix}{\glsnamefont{I(X)}}{Inversion}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{itype}{\glsnamefont{I-Type}}{Inversional SC-Type}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{ic}{\glsnamefont{IC}}{Interval Class}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{icv}{\glsnamefont{ICV}}{Interval-class Vector}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}\glsgroupskip
+\glsgroupheading{N}\relax \glsresetentrylist %
+\glossaryentryfield{nc}{\glsnamefont{nC}}{Cardinality Class}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{ncpv}{\glsnamefont{nC\%V}}{n-class subset percentage vector}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{ncv}{\glsnamefont{nCV}}{n-class subset vector}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{nsatv}{\glsnamefont{nSATV}}{n-class subset saturation vector}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}\glsgroupskip
+\glsgroupheading{P}\relax \glsresetentrylist %
+\glossaryentryfield{pc}{\glsnamefont{PC}}{Pitch Class}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{pcset}{\glsnamefont{PC-Set}}{Pitch Class Set}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{primeform}{\glsnamefont{Prime Form}}{PC-set representing all members of an SC}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}\glsgroupskip
+\glsgroupheading{S}\relax \glsresetentrylist %
+\glossaryentryfield{sc}{\glsnamefont{SC}}{Set Class}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}\glsgroupskip
+\glsgroupheading{T}\relax \glsresetentrylist %
+\glossaryentryfield{tnx}{\glsnamefont{Tn(X)}}{Transposition}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{tntype}{\glsnamefont{Tn-Type}}{Transpositional SC-type}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{tnitype}{\glsnamefont{TnI-Type}}{Transpositional/Inversional SC-Type}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\glossaryentryfield{trivialform}{\glsnamefont{Trivial Form}}{SCs 1-1, 11-1 and 12-1}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\end{theglossary}\glossarypostamble

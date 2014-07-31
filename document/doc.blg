@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: doc.aux
+The style file: plainnat.bst
+Database file #1: /Users/nick/Documents/MendeleyDesktop/library.bib.bib
+Warning--I didn't find a database entry for "("
+Warning--I didn't find a database entry for "Huovinen"
+Warning--empty journal in Buchler1997
+Warning--there's a number but no volume in Buchler1997
+Warning--there's a number but no volume in Burgoyne2011
+Warning--can't use both volume and number fields in Foote2000
+Warning--can't use both volume and number fields in Forte1973
+Warning--can't use both volume and number fields in Gardenfors1995
+Warning--empty school in Harte2010
+Warning--empty school in Kuusi2001
+Warning--empty publisher in Riemann
+You've used 52 entries,
+            2773 wiz_defined-function locations,
+            939 strings with 11707 characters,
+and the built_in function-call counts, 19148 in all, are:
+= -- 1793
+> -- 624
+< -- 60
++ -- 238
+- -- 186
+* -- 1316
+:= -- 2985
+add.period$ -- 170
+call.type$ -- 52
+change.case$ -- 202
+chr.to.int$ -- 52
+cite$ -- 113
+duplicate$ -- 1062
+empty$ -- 1833
+format.name$ -- 246
+if$ -- 4019
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 54
+newline$ -- 280
+num.names$ -- 208
+pop$ -- 427
+preamble$ -- 1
+purify$ -- 166
+quote$ -- 0
+skip$ -- 734
+stack$ -- 0
+substring$ -- 753
+swap$ -- 109
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 517
+warning$ -- 9
+while$ -- 216
+width$ -- 0
+write$ -- 710
+(There were 11 warnings)

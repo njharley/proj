@@ -1,0 +1,13 @@
+Diatonic_Major
+Melodic_Minor
+Harmonic_Minor
+Harmonic_Major
+Neapolitan
+Neapolitan_Minor
+Double_Harmonic
+Hungarian
+Diminished
+Whole_Tone
+Augmented
+Pentatonic
+Blues
