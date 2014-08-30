@@ -1,0 +1,116 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Problem}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Objectives}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Outline}{section.1}% 4
+\BOOKMARK [0][-]{part.1}{I Background}{}% 5
+\BOOKMARK [1][-]{section.2}{Tonality}{part.1}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Defining Tonality}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.1.1}{General Definition}{subsection.2.1}% 8
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Babbitt's Domains}{subsection.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.2}{Modelling Tonality}{section.2}% 10
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Tonality as Context}{subsection.2.2}% 11
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Tonality in MIR}{subsection.2.2}% 12
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Similarity}{subsection.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.3}{The Semantic Gap}{section.2}% 14
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Acoustic Domain}{subsection.2.3}% 15
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Graphemic Domain}{subsection.2.3}% 16
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Problems}{subsection.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.4}{Systematicity}{section.2}% 18
+\BOOKMARK [3][-]{subsubsection.2.4.1}{The Musical Surface}{subsection.2.4}% 19
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Systematic Description}{subsection.2.4}% 20
+\BOOKMARK [1][-]{section.3}{Set Class Theory}{part.1}% 21
+\BOOKMARK [2][-]{subsection.3.1}{Pitch Class Set}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.2}{Set Classification}{section.3}% 23
+\BOOKMARK [2][-]{subsection.3.3}{Vector Analysis}{section.3}% 24
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Membership and Inclusion}{subsection.3.3}% 25
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Embedding Number}{subsection.3.3}% 26
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Subset Vectors}{subsection.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.4}{Set Class Similarity}{section.3}% 28
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Similarity Relations}{subsection.3.4}% 29
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Similarity Measures}{subsection.3.4}% 30
+\BOOKMARK [3][-]{subsubsection.3.4.3}{Castren's Criteria}{subsection.3.4}% 31
+\BOOKMARK [2][-]{subsection.3.5}{Perceptual Relevance}{section.3}% 32
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Octave Equivalence}{subsection.3.5}% 33
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Set Class Equivalence}{subsection.3.5}% 34
+\BOOKMARK [3][-]{subsubsection.3.5.3}{Perceived vs Theoretical Similarity}{subsection.3.5}% 35
+\BOOKMARK [2][-]{subsection.3.6}{Set Class Analysis}{section.3}% 36
+\BOOKMARK [1][-]{section.4}{Multidimensional Scaling}{part.1}% 37
+\BOOKMARK [2][-]{subsection.4.1}{Non-Metric MDS}{section.4}% 38
+\BOOKMARK [2][-]{subsection.4.2}{Cluster Analysis}{section.4}% 39
+\BOOKMARK [2][-]{subsection.4.3}{MDS with Similarity Measures}{section.4}% 40
+\BOOKMARK [1][-]{section.5}{Spatial Models of Tonality}{part.1}% 41
+\BOOKMARK [2][-]{subsection.5.1}{Similarity and Distance}{section.5}% 42
+\BOOKMARK [2][-]{subsection.5.2}{Spatial Representations}{section.5}% 43
+\BOOKMARK [2][-]{subsection.5.3}{Cognitive Psychology}{section.5}% 44
+\BOOKMARK [2][-]{subsection.5.4}{Set Class Spaces}{section.5}% 45
+\BOOKMARK [0][-]{part.2}{II Contribution}{}% 46
+\BOOKMARK [1][-]{section.6}{Similarity Measure Survey}{part.2}% 47
+\BOOKMARK [2][-]{subsection.6.1}{Criteria}{section.6}% 48
+\BOOKMARK [2][-]{subsection.6.2}{Cardinality}{section.6}% 49
+\BOOKMARK [2][-]{subsection.6.3}{Set Class Type}{section.6}% 50
+\BOOKMARK [2][-]{subsection.6.4}{Measure Type}{section.6}% 51
+\BOOKMARK [2][-]{subsection.6.5}{Total Measure Comparison}{section.6}% 52
+\BOOKMARK [1][-]{section.7}{Analysis Methodology}{part.2}% 53
+\BOOKMARK [2][-]{subsection.7.1}{Overview}{section.7}% 54
+\BOOKMARK [2][-]{subsection.7.2}{Reference Set Class Selection}{section.7}% 55
+\BOOKMARK [2][-]{subsection.7.3}{Segmentation}{section.7}% 56
+\BOOKMARK [2][-]{subsection.7.4}{Measure Selection}{section.7}% 57
+\BOOKMARK [1][-]{section.8}{Analysis Examples}{part.2}% 58
+\BOOKMARK [2][-]{subsection.8.1}{Musical Examples}{section.8}% 59
+\BOOKMARK [3][-]{subsubsection.8.1.1}{BWV-846}{subsection.8.1}% 60
+\BOOKMARK [3][-]{subsubsection.8.1.2}{Dvorak-Op101-1}{subsection.8.1}% 61
+\BOOKMARK [2][-]{subsection.8.2}{Distance Time Series}{section.8}% 62
+\BOOKMARK [2][-]{subsection.8.3}{Time Series Differential}{section.8}% 63
+\BOOKMARK [2][-]{subsection.8.4}{Time Series Autocorrelation}{section.8}% 64
+\BOOKMARK [2][-]{subsection.8.5}{Self-Similarity Matrix}{section.8}% 65
+\BOOKMARK [2][-]{subsection.8.6}{Set Class Space}{section.8}% 66
+\BOOKMARK [0][-]{part.3}{III Discussion}{}% 67
+\BOOKMARK [1][-]{section.9}{Conclusions}{part.3}% 68
+\BOOKMARK [1][-]{section.10}{Future Work}{part.3}% 69
+\BOOKMARK [0][-]{part.4}{IV Appendices}{}% 70
+\BOOKMARK [1][-]{appendix.A}{Set Class Similarity Measures}{part.4}% 71
+\BOOKMARK [2][-]{subsection.A.1}{On Notation}{appendix.A}% 72
+\BOOKMARK [2][-]{subsection.A.2}{MORRIS}{appendix.A}% 73
+\BOOKMARK [3][-]{subsubsection.A.2.1}{K}{subsection.A.2}% 74
+\BOOKMARK [3][-]{subsubsection.A.2.2}{SIM}{subsection.A.2}% 75
+\BOOKMARK [3][-]{subsubsection.A.2.3}{ASIM}{subsection.A.2}% 76
+\BOOKMARK [2][-]{subsection.A.3}{LORD}{appendix.A}% 77
+\BOOKMARK [3][-]{subsubsection.A.3.1}{sf}{subsection.A.3}% 78
+\BOOKMARK [2][-]{subsection.A.4}{TEITELBAUM}{appendix.A}% 79
+\BOOKMARK [3][-]{subsubsection.A.4.1}{s.i.}{subsection.A.4}% 80
+\BOOKMARK [2][-]{subsection.A.5}{ROGERS}{appendix.A}% 81
+\BOOKMARK [3][-]{subsubsection.A.5.1}{IcVD1}{subsection.A.5}% 82
+\BOOKMARK [3][-]{subsubsection.A.5.2}{IcVD2}{subsection.A.5}% 83
+\BOOKMARK [3][-]{subsubsection.A.5.3}{Cos\(\)}{subsection.A.5}% 84
+\BOOKMARK [2][-]{subsection.A.6}{RAHN}{appendix.A}% 85
+\BOOKMARK [3][-]{subsubsection.A.6.1}{AK}{subsection.A.6}% 86
+\BOOKMARK [3][-]{subsubsection.A.6.2}{MEMBn}{subsection.A.6}% 87
+\BOOKMARK [3][-]{subsubsection.A.6.3}{TMEMB}{subsection.A.6}% 88
+\BOOKMARK [3][-]{subsubsection.A.6.4}{ATMEMB}{subsection.A.6}% 89
+\BOOKMARK [2][-]{subsection.A.7}{ISAACSON}{appendix.A}% 90
+\BOOKMARK [3][-]{subsubsection.A.7.1}{AMEMB2}{subsection.A.7}% 91
+\BOOKMARK [3][-]{subsubsection.A.7.2}{IcVSIM}{subsection.A.7}% 92
+\BOOKMARK [3][-]{subsubsection.A.7.3}{ISIM2}{subsection.A.7}% 93
+\BOOKMARK [3][-]{subsubsection.A.7.4}{ANGLE \(Isaacson \046 Scott\)}{subsection.A.7}% 94
+\BOOKMARK [2][-]{subsection.A.8}{LEWIN}{appendix.A}% 95
+\BOOKMARK [3][-]{subsubsection.A.8.1}{REL}{subsection.A.8}% 96
+\BOOKMARK [3][-]{subsubsection.A.8.2}{REL2}{subsection.A.8}% 97
+\BOOKMARK [2][-]{subsection.A.9}{CASTREN}{appendix.A}% 98
+\BOOKMARK [3][-]{subsubsection.A.9.1}{Castr\351n's Difference Vector}{subsection.A.9}% 99
+\BOOKMARK [3][-]{subsubsection.A.9.2}{nC\045V}{subsection.A.9}% 100
+\BOOKMARK [3][-]{subsubsection.A.9.3}{\045RELn}{subsection.A.9}% 101
+\BOOKMARK [3][-]{subsubsection.A.9.4}{T\045REL}{subsection.A.9}% 102
+\BOOKMARK [3][-]{subsubsection.A.9.5}{RECREL}{subsection.A.9}% 103
+\BOOKMARK [2][-]{subsection.A.10}{BUCHLER}{appendix.A}% 104
+\BOOKMARK [3][-]{subsubsection.A.10.1}{nSATV}{subsection.A.10}% 105
+\BOOKMARK [3][-]{subsubsection.A.10.2}{SATSIMn}{subsection.A.10}% 106
+\BOOKMARK [3][-]{subsubsection.A.10.3}{AvgSATSIM}{subsection.A.10}% 107
+\BOOKMARK [3][-]{subsubsection.A.10.4}{TSATSIM}{subsection.A.10}% 108
+\BOOKMARK [1][-]{appendix.B}{Total Measures: Additional Information}{part.4}% 109
+\BOOKMARK [2][-]{subsection.B.1}{Trivial Forms}{appendix.B}% 110
+\BOOKMARK [2][-]{subsection.B.2}{Scale of Values}{appendix.B}% 111
+\BOOKMARK [2][-]{subsection.B.3}{ATMEMB \(Rahn\)}{appendix.B}% 112
+\BOOKMARK [2][-]{subsection.B.4}{REL \(Lewin\)}{appendix.B}% 113
+\BOOKMARK [2][-]{subsection.B.5}{AvgSATSIM and TSATSIM \(Buchler\)}{appendix.B}% 114
+\BOOKMARK [2][-]{subsection.B.6}{T\045REL and RECREL \(Castren\)}{appendix.B}% 115
+\BOOKMARK [1][-]{appendix.C}{Set Class Reference}{part.4}% 116

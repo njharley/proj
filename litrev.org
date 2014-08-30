@@ -42,10 +42,10 @@
 This work explores the limitations of exiting approaches to
 computational modelling and description of tonality.
 
-PC-set theory is presented as alternative or complement to existing
+Set class theory is presented as alternative or complement to existing
 approaches.
 
-The methodology emphasised systematicity and perceptual relevance.
+The methodology emphasises systematicity and perceptual relevance.
 
 SC similarity is presented as tool for aiding in the representation of
 SC information.
@@ -116,6 +116,8 @@ piece while Chaprer [[Visualisation]] presents three techniques for
 representing this data for the extraction of meaningful musical
 information. Chapters [[Conclusions]] and [[Future Work]] present the
 conclusions and discussion of future work respectively.
+
+
 * Tonality
 ** Defining Tonality
 *** General Definition
@@ -220,8 +222,8 @@ mind is a scientific failure.
 *** Problems
 The two assertions of Wiggins sit contrary to a number of the aspects
 of the tonal models discussed in [[Modelling Tonality]]. Firstly, the
-major-minor paradigm, upon which so many approaches are based, whilst
-certainly possessing cognitive significance, is still a musicological
+major-minor paradigm, upon which many systems are based, whilst
+certainly possessing perceptual significance, is still a musicological
 concept and therefore a misleading basis for both mathematical and
 cognitive approaches. A second problem is that of the numerical
 methods used by some MIR systems, in particular, distance measures. As
@@ -262,14 +264,14 @@ With a systematic description of the musical surface, theories and
 models from different domains can be gathered and evaluated together in
 the same analytical arena, thus helping to bridge the gap between
 traditional musicology, cognitive psychology and MIR.
-* Pitch-Class Set Theory
+* Set Class Theory
 One such method available for systematic description of the musical
-surface is Pitch class set theory. PC-set theory is a system for
-analysing the pitch content of music. It uses class equivalence
-relations to reduce the amount of data required to describe any
-collection of pitches. This chapter will outline the basic principles.
-** Pitch Class
-Pitch-class set theory uses octave equivalence. In Western equal
+surface is set class theory. PC-set theory is a system for analysing
+the pitch content of music. It uses class equivalence relations to
+reduce the amount of data required to describe any collection of
+pitches. This chapter will outline the basic principles.
+** Pitch Class Set
+Pitch class set theory uses octave equivalence. In Western equal
 temperament (TET), a pitch-class (PC) is an integer representing the
 residue class modulo 12 of a pitch \citep(Babbit1955) and indicates
 the position of a note within the octave. A PC-set is a collection of
@@ -390,7 +392,7 @@ SC, Y (Example 7). X is ring-shifted 11 times and each unique
 resulting set which is included in Y adds one to the embedding number.
 #+NAME: tab:embeddingnumnber
 | Example 7: | Embedding Number | X = {0,4} and Y = {0,4,8} |
-|            |                  | so EMB(X,Y) = 3           |
+|            |                  | so... EMB(X,Y) = 3        |
 *** Subset Vectors
 An n-class subset vector of X, nCV(X), is an array of values of
 EMB(A,X) where A is each of the SCs in the cardinality-class, nC
@@ -409,27 +411,11 @@ necessary.
 | Example 8: | Subset Vector      | S = {0,4,9}                     |
 |            |                    | 2CV(S) = ICV(S) = [0 0 1 1 1 0] |
 | Example 9: | Vector Cardinality | #ICV(S) = 0+0+1+1+1+0 = 3       |
-*** Notation
-Some additional vector notation is required for the comparison
-procedures of the similarity measures described in [[Set-Class
-Similarity]].
-\begin{description}
-\item[Difference Vector] is the absolute
-difference between corresponding terms in the nCVs of two SCs, X and Y:\\
-$$DV(nCV(X),nCV(Y))=\left|nCV(X)-nCV(Y)\right|$$ \item[Vector
-Magnitude] is the length of the nCV in euclidean space:\\
-$$\left\|nCV(X)\right\|=\sqrt{\sum_{i=1}^{\#nC}{(nCV(X)_{i})^{2}}}$$
-\item[Unit Vector] is the normalised nCV (unit length):\\
-$$\hat{nCV(X)}=\frac{nCV(X)}{\left\|nCV(X)\right\|}$$ \item[Euclidean
-Distance] is the distance between the points defined by two nCVs in
-n-dimensional Euclidean space:\\
-$$d(X,Y)=\sqrt{\sum_{i=1}^{n}{(X_{i}-Y_{i})^{2}}}=\left\|DV(X,Y)\right\|$$
-\end{description}
 ** Set-Class Similarity
 *** Similarity Relations
 The assessment of similarity between two SCs has been discussed in the
 literature for decades and a large number theoretical models have been
-proposed. Different models approache the problem from different
+proposed. Different models approach the problem from different
 conceptual standpoints and theorists have different opinions about the
 contributing factors. All these models are described under the blanket
 term "similarity relations". Despite the perennial fascination with
@@ -449,14 +435,14 @@ known range. This property appears to be more inline with the
 perceptual notion of similarity and therefore the focus of this work
 shall be exclusively on similarity measures.
 *** Similarity Measures
-The vast number and diversity of the different approaches to
-similarity measures can only be approached by narrowing the focus to a
-specific type. Here we will focus on measures that use the Tn and
-TnI-type SCs ([[Set Classification]]), and furthermore we will only
-consider those methods based on vector analysis ([[Vector
-Analysis]]). These measure usually involve the comparison of the SCs'
-nCVs. Of this (still sizeable) subset, \citet{Castren1994} identifies
-two main categories.
+The vast number and diversity of approaches to similarity measures
+renders concise summation challenging if not impossible. The problem
+can only be approached by narrowing the focus to a specific type. This
+work focuses on measures that use the Tn and TnI-type SCs ([[Set
+Classification]]), and furthermore we will only consider those methods
+based on vector analysis ([[Vector Analysis]]). These measures usually
+involve the comparison of the SCs' nCVs. Of this (still sizeable)
+subset, \citet{Castren1994} identifies two main categories.
 #+NAME: tab:measuretypes
 | Single nC:      | Single nC measures compare the nCVs of the two SCs   |
 |                 | for one particular value of n. Many of the relations |
@@ -466,13 +452,14 @@ two main categories.
 |                 | relevant nCVs are compared to produce a final value. |
 
 Table 4 shows the majority of the Tn and TnI-Type, vector based
-similarity measures from the PC-set theoretical literature organised
-by theorist. Vector Type indicates whether the measure compares ICVs
-or nCVs. Card (Cardinality) indicates whether the measure is capable
-of comparing SCs of different cardinalities while the Measure Type
-indicates which of Castren's categories it belongs to. nC indicates it
-is a Single nC measure and TOTAL indicates it is a Total Measure. All
-these measure are described more thoroughly in [[SC Similarity Measures]].
+similarity measures from the literature organised by theorist. Vector
+Type indicates whether the measure compares ICVs or nCVs (nC%V, nSATV
+and CSATV are all variations on the basic nCV). Card (Cardinality)
+indicates whether the measure is capable of comparing SCs of different
+cardinalities while the Measure Type indicates which of Castren's
+categories it belongs to. nC indicates it is a Single nC measure and
+TOTAL indicates it is a Total Measure. All these measure are described
+more thoroughly in [[SC Similarity Measures]].
 
 #+CAPTION: Comparison table of similarity measures
 #+NAME: tab:comparisontable
@@ -552,8 +539,8 @@ to be bent into a helix. Division of the octave into a number of
 categories is thought to offer a more efficient cognitive
 representation in memory and thus confers evolutionary advantage. The
 resulting pitch equivalence classes are implicitly learned through
-exposure at an early age. TET has 12 pitch equivalence classes which,
-in PC-set theory, are modelled as a circular projection of the pitch
+repeated exposure. TET has 12 pitch equivalence classes which, in
+PC-set theory, are modelled as a circular projection of the pitch
 helix. Thus the two most fundamental components of PC-set theory,
 i.e. octave equivalence and pitch-class labelling, would appear to
 have a solid basis in perception.
@@ -591,7 +578,7 @@ under TnI and I equivalence.
 *** Perceived vs Theoretical Similarity
 A number of studies have been done to ascertain the connection between
 perceptual similarity ratings and the theoretical values obtained from
-some PC-set similarity measures. A large number of relevant studies
+some set class similarity measures. A large number of relevant studies
 are summarised by \citet{Kuusi2001} and the most significant ones are
 mentioned here.
 
@@ -635,88 +622,24 @@ SC.
 
 \citet{Huovinen2007} used a pentachordal tail segmentation policy
 (each successive note defines a segment that includes the preceding
-four notes) and compared these segments to comparison sets 7-1
-(chromaticism) and 7-35 (diatonicism) using the REL distance
-([[REL]]). They claim that the visual results of their analysis "reflect
-pertinent aspects of our listening experience"
-\citep[pp. 204]{Huovinen}.
+four notes) and compared these segments to sets 7-1 (chromaticism) and
+7-35 (diatonicism) using the REL distance ([[REL]]). They claim that the
+visual results of their analysis "reflect pertinent aspects of our
+listening experience" \citep[pp. 204]{Huovinen}.
 
 \citet[chap. 5.3]{Martorell2013} uses a more systematic approach to
 segmentation using multiple time scales. He proposes the class-scape,
 a two-dimensional visualisation of a piece of music with time on the
-x-axis and segmentation time-scale on the y-axis. A single SC can be
-represented by highlighting the segment or alternatively each segment
-can be shaded according to its REL distance from a comparison SC. He
-emphasises that the class-scape is an exploratory tool rather than an
-automated analysis system.
+x-axis and segmentation time-scale on the y-axis. The presence of a
+single SC can be indicated by highlighting the segment or
+alternatively each segment can be shaded according to its REL distance
+from a comparison SC. He emphasises that the class-scape is an
+exploratory tool rather than an automated analysis system.
 
 Perhaps the most crucial aspect of using SC descriptions for tonal
 analysis is the way in which a piece of music is segmented. The issue
 of segmentation will be discussed further in Chapter [[Segmentation]].
-** Chords as PC-Sets
-So far, PC-set theory and the similarity measures have been discussed
-with only the broadest reference to familiar musical or musicologial
-concepts. In order to use these techniques for real music description
-and analysis some effort should be made to link SC theoretical
-concepts to musicological ones.
 
-The table below shows a collection of familiar chord types, cadence
-types and scale types with their corresponding Tn-type prime-form SC,
-Forte Name and index number (the position in an ordered list of all
-351 Tn-type SCs). The table is divided into five vertical segments:
-three-note chords, four-note chords, five-note chords, cadences and
-scales.
-
-In PC-set theory it is only the chord type that is relevant seeing as
-transpositionally related (Tn-type) SCs are considered equivelant. For
-example all major chords are considered equivelant regardless of the
-root.
-#+CAPTION: Chord types and their SCs
-#+NAME: tab:chordSC
-|---+------------+--------------------+------------+-------|
-|   |            | Tn-Type SC         | Forte Name |       |
-|   | Chord      | (Prime Form)       | (Tn-type)  | index |
-|---+------------+--------------------+------------+-------|
-|   | maj        | {0,4,7}            | 3-11B      |    25 |
-|   | min        | {0,3,7}            | 3-11A      |    24 |
-|   | dim        | {0,3,6}            | 3-10       |    23 |
-|   | aug        | {0,4,8}            | 3-12       |    26 |
-|   | sus4       | {0,2,7}            | 3-9        |    22 |
-|   | sus2       | {0,2,7}            | 3-9        |    22 |
-|---+------------+--------------------+------------+-------|
-|   | maj7       | {0,1,5,8}          | 4-20       |    57 |
-|   | min7       | {0,3,5,8}          | 4-26       |    64 |
-|   | hdim7      | {0,2,5,8}          | 4-27A      |    65 |
-|   | 7          | {0,3,6,8}          | 4-27B      |    66 |
-|   | dim7       | {0,3,6,9}          | 4-28       |    67 |
-|   | min(7)     | {0,1,4,8}          | 4-19A      |    55 |
-|   | aug(7)     | {0,3,4,8}          | 4-19B      |    56 |
-|   | maj(9)     | {0,2,4,7}          | 4-22A      |    59 |
-|   | min(9)     | {0,2,3,7}          | 4-14A      |    46 |
-|   | maj6       | {0,3,5,8}          | 4-26       |    64 |
-|   | min6       | {0,1,5,8}          | 4-20       |    57 |
-|   | maj7sus4   | {0,2,6,7}          | 4-16B      |    51 |
-|   | 7sus47     | {0,2,5,7}          | 4-23       |    61 |
-|   | maj7sus2   |                    |            |       |
-|   | 7sus2      |                    |            |       |
-|---+------------+--------------------+------------+-------|
-|   | 9          | {0,2,4,6,9}        | 5-34       |   129 |
-|   | maj9       | {0,1,3,5,8}        | 5-27A      |   116 |
-|   | min9       | {0,3,5,7,8}        | 5-27B      |   117 |
-|---+------------+--------------------+------------+-------|
-|   | 11         |                    |            |       |
-|   | maj11      |                    |            |       |
-|   | min11      |                    |            |       |
-|---+------------+--------------------+------------+-------|
-|   | V-I/IV-I   | {0,1,3,5,8}        | 5-27A      |   116 |
-|   | V7-I       | {0,1,3,5,6,8}      | 6-Z25A     |   176 |
-|   | V-IV       | {0,2,4,6,7,9}      | 6-33B      |   189 |
-|---+------------+--------------------+------------+-------|
-|   | Pentatonic | {0,2,4,7,9}        | 5-35       |   130 |
-|   | Wholetone  | {0,2,4,6,8,10}     | 6-35       |   192 |
-|   | Diatonic   | {0,1,3,5,6,8,10}   | 7-35       |   276 |
-|   | Octatonic  | {0,1,3,4,6,7,9,10} | 8-28       |   322 |
-|---+------------+--------------------+------------+-------|
 * Multidimensional Scaling
 Multidimensional scaling (MDS) is a numerical visualisation technique
 that, given a matrix of pairwise distances between objects, provides a
@@ -725,10 +648,10 @@ provides an efficient means of observing relationships in large,
 complex data sets and the resulting dimensions often give valuable
 insight into the data as a whole.
 ** Non-Metric MDS
-Non-Metric MDS was described by \citet{Shepard1962} and it assumes
-that the distance matrix values are related to points in an abstract
-N-dimensional Euclidean space. An important consideration is that of
-the dimensionality of the solution. For comprehension and
+Non-Metric MDS was first described by \citet{Shepard1962} and it
+assumes that the distance matrix values are related to points in an
+abstract N-dimensional Euclidean space. An important consideration is
+that of the dimensionality of the solution. For comprehension and
 visualisation it is important to minimise the number of dimensions
 however, there is a trade-off between the number of dimensions and the
 accuracy of the model. For a given dimensionality, we obtain two
@@ -754,8 +677,8 @@ Using MDS on the values produced by similarity measures is one way to
 approach an understanding of the constructs they are measuring. There
 are two potentially interesting issues to consider. Firstly, a measure
 may be inconsistent with itself, meaning that the geometries it
-produces are not "robust" (changing the set of objects changes the
-distances between the original set). This kind of problem cannot be
+produces are not "robust"; changing the set of objects changes the
+distances between the original set. This kind of problem cannot be
 observed through inspection of the values alone. The second issue is
 that two different measures that are both self-consistent may produce
 very different geometries from the same group of SCs. The question
@@ -771,13 +694,13 @@ in geometric space. For example, some tonal objects (chords, for
 example) are perceived as close to one another whereas others are
 further apart. In addition, the number of dimensions of the geometric
 space is in connection with the number of independent properties that
-are relevant for similarity comparisons. \citet{Gardenfors1995}
-suggests that humans are naturally predisposed to create spatial
-cognitive representations of perceptual stimuli due to the geometric
-nature of the world we have evolved to inhabit. Therefore spatial
-modelling of tonality, as well as helping to visualise the complex
-multidimensional relationships between tonal phenomena, has the
-potential to reflect cognitive aspects of the way they are perceived.
+are relevant for similarity judgments. \citet{Gardenfors1995} suggests
+that humans are naturally predisposed to create spatial cognitive
+representations of perceptual stimuli due to the geometric nature of
+the world we have evolved to inhabit. Therefore spatial modelling of
+tonality, as well as helping to visualise the complex multidimensional
+relationships between tonal phenomena, has the potential to reflect
+cognitive aspects of the way they are perceived.
 ** Spatial Representations
 Throughout history theorists have proposed many spatial
 representations of tonality from different domains. From the graphemic
@@ -840,7 +763,9 @@ spaces difficult to interpret. Nevertheless, he concluded that values
 from similarity measure tend to agree (with some exceptions) and that
 they measure constructs relating to familiar scales (diatonic,
 hexatonic, octatonic, etc.).
-* Similarity Measure Selection
+
+
+* Similarity Measure Survey
 So far, PC-set theory has been presented as viable means for
 systematic decriptive modelling of tonality and brief reference has
 been made to the extensive existing literature on SC similarity
@@ -904,7 +829,7 @@ and K ([[K]]) give unintuitive values when the cardinalities of the SCs
 being compared differ greatly and, in addition, the range of values
 produced depends on the cardinality of the sets (failure to meet
 criteria C3.1). Measures of this type will also be excluded.
-** SC-Type
+** Set Class Type
 An important consideration when using similarity measures is the type
 of SC being compared. Many of the measures are designed for comparison
 of TnI-type SCs, however, owing to issues riased in [[Perceptual
@@ -922,347 +847,250 @@ investigation has been carried out as to the exact perceptual
 significance of subset cardinality. Single-nC measures presuppose that
 subsets of one particular cardinality contribute to similarity above
 all others. In the interest of systematicity, we will not make this
-assumption instead assuming that subsets of all cardinalities are
+assumption, instead assuming that subsets of all cardinalities are
 equally relevant and should be considered. Similarity measures that
 exhaustively consider all subset cardinalities meet criteria C5 and
-are total measures (see [[Similarity Measures]]). The six total measures
+are "total" measures (see [[Similarity Measures]]). The six total measures
 from [[Similarity Measures]] shall therefore become the focus of this
 work.
-* Total Measures
-In previous chapters we have examined the fundamental aspects of tonal
-models and proposed PC-set theory as a descriptive tool, potentially
-capable of capturing the three important elements of tonality as
-context. Through a desire for both perceptual relevance and
-systematicity a subset of these techniques has been identified as most
-pertinent, specifically Tn-type SCs and total similarity measures.
-
-In this chapter the six total similarity measures will be examined
-more closely and placed in practical context through examination of
-the values they produce. Section [[Trivial Froms]] describes the concept
-of trivial forms and for each measure the method for handling these
-cases is described. Section [[Total Measure Comparison]] gives a brief
-comparison of the measures.
-** Trivial Forms
-Three of the 351 Tn-type SCs are known as trivial forms: 1-1, 11-1 and
-12-1. Due to their lack of musical or harmonic significance, these SCs
-are usually excluded from the work of SC-theorists. However, it is
-important that they be included in any systematic description and that
-their similarity to other sets be given a meaningful value. The next
-chapter will discuss each of the total measures and specify how each
-of the trivial forms is to be dealt with if it was not made explicit
-by the theorist. 
-
-The total measures which will be discussed make comparisons based on
-the subset content of a set. SC 1-1, which has no subsets, is rarely
-accounted for in such measures and in these cases a simple method will
-be used: Comparisons involving X = 1-1 and Y will be given the value
-$1\#Y$. Thus, the value will be the ratios of the cardinalities with 1
-indicating maximum similarity.
-#+CAPTION: Trivial Forms
-#+NAME: tab:trivialforms
-|  1-1 | {0}                         |
-| 11-1 | {0,1,2,3,4,5,6,7,8,9,10}    |
-| 12-1 | {0,1,2,3,4,5,6,7,8,9,10,11} |
-** Rahn: ATMEMB
-Details on how to calculate ATMEMB are give in [[ATMEMB]]. In his analysis
-of the measure, Castren concludes that "divisor term is flawed,
-resulting in values suggesting suspiciously high degrees of
-dissimilarity between SCs of clearly different cardinalities. The
-general reliability and usefulness of the measure is difficulty to
-determine" \citep[pp. 89]{Castren1994}. The trivial forms 11-1 and
-12-1 are accommodated explicitly by the formulation of
-\citet{Rahn1979}, however SC 1-1 is not and thus values will be
-obtained using the method specified in [[Trivial Forms]].
-** Lewin: REL
-Details on how to calculate REL are given in [[REL]]. From the basic
-equation it is possible to define three different formulations
-depending on the exact nature of SUB(X). In each formulation the
-trivial forms 11-1 and 12-1 are accommodated. The three formulations
-are as follows:
-1) SUB(X) consists of the concatenated nCVs from 2 to 12. Here
-   comparisons involving SC 1-1 will be evaluated with the method
-   specified in [[Trivial Forms]].
-2) SUB(X) consists of the concatenated nCVs from 1 to 12 ($1CV(X) =
-   \#X%). This formulation accommodates SC 1-1.
-3) \citet{Martorell2013} specifies an alternative formulation where
-   SUB(X) begins with the ICV (2CV) followed by the concatenated nCVs
-   from 1 to 12. This formulation accommodates SC 1-1.
-** Buchler: AvgSATSIM and TSATSIM
-Details on how to calculate AvgSATSIM and TSATSIM are given in
-[[AvgSATSIM]] and [[TSATSIM]] respectively. Comparisons involving SC 1-1 are
-not accommodated and thus the method specified in [[Trivial Forms]] will
-be used to provide values. Comparisons involving SCs 11-1 and 12-1 are
-accommodated except for the single comparison that involves both. This
-is because their MAX_{n}(#X) and MIN_{n}(#X) vectors are equal and
-thus all terms of the nSATVs are 0. The value for this comparison will
-be set to 0 (indicating maximal similarity). For comparisons involving
-ICs the value will be given by SATSIM_{2}(X,Y) (see [[SATSIM_{n}]]).
-** Castren: T%REL and RECREL
-Details on how to calculate T%REL and RECREL are given in [[T%REL]] and
-[[RECREL]] respectively. Comparisons involving SCs 11-1 and 12-1 are
-accommodated in both by Castren's formulation. Comparisons involving
-SC 1-1 will be given values by the method specified in [[Trivial
-Forms]]. Castren comments that some T%REL values are too high to be
-intuitively plausible. Finally, it should be noted that the basic
-algorithm provided by Castren for calculating RECREL is not feasible
-for large sets. Comparisons of such sets require tables of pre-computed
-branch values.
-** Scale of Values
-The values of each measure will be adjusted to the same scale for
-comparability by the same method as \citet[pp. 48]{Kuusi2001}). This
-scale is from 0 to 100 with with 0 indicating maximum similarity. The
-modified values will be signalled by adding the symbol "prime" to the
-name.
-#+CAPTION: Adjustment for MEASURE-prime scale
-#+NAME: tab:measureprime
-| Measure-prime(X,Y)  |
-|---------------------|
-| (1-ATMEMB(X,Y))*100 |
-| (1-REL(X,Y))*100    |
-| T%REL(X,Y)          |
-| RECREL(X,Y)         |
-| AvgSATSIM(X,Y)*100  |
-| TSATSIM(X,Y)*100    |
-
-- ATMEMB-prime(X,Y) = (1-ATMEMB(X,Y))*100
-- REL-prime(X,Y) = (1-REL(X,Y))*100
-- AvgSATSIM-prime(X,Y) = AvgSATSIM(X,Y)*100
-- TSATSIM-prime(X,Y) = TSATSIM(X,Y)*100
-- T%REL-prime(X,Y) = T%REL(X,Y)
-- RECREL-prime(X,Y) = RECREL(X,Y)
-** Comparison of Chord Types
-For a preliminary idea of the utility of the total measures it is
-useful to visualise the vlaues produced for comparisons involving the
-common tonal objects described in [[Chords as PC-Sets]]. This information
-can be visualised as 2D grids with each square corresponding to the
-comparison between two tonal objects and coloured according the
-distance between them i.e. the value of MEASURE-prime (see [[Scale of
-Values]]). Figures \ref{fig:atmembchordcomp} and
-\ref{fig:avgsatsimchordcomp} show two such grids for ATMEMB and
-AvgSATSIM respectively.
-
-#+CAPTION: ATMEMB distance between tonal objects
-#+LABEL: fig:atmembchordcomp
-[[../plots/ATMEMB_chord_comparison.png]]
-#+CAPTION: AvgSATSIM distance between tonal objects
-#+LABEL: fig:avgsatsimchordcomp
-[[../plots/AvgSATSIM_chord_comparison.png]]
-
-As can be seen, the values for these chord types are quite dissimilar
-for the different measures. Thus, measure selection will be an
-important part of the analysis depending on their specific
-discriminatory power. Therefore, these plots will form a useful
-reference guide when selecting parameters and values for the
-visualisation techniques described in Chapter [[Visualisation]].
 ** Total Measure Comparison
-For a more quantitative comparison of the measures, the absolute
-difference between corresponding values can be calculated and plotted
-on similar grids. This gives an overall visualisation of where the
-measures most disagree. Figure \ref{fig:absdiff} shows a matrix of
-plots each comparing the values of two measures. Each plot displays
-only half the table as the they are symmetric. The lighter blue and
-green areas indicate higher discrepancy between the measures' values.
+For a preliminary idea of the utility of the total measures it is
+useful to visualise the vlaues produced for comparisons involving some
+of the common tonal objects described in Appendix XXXX. This
+information can be visualised as 2D grids with each square
+corresponding to the comparison between two tonal objects and shaded
+according the distance between them i.e. the value of MEASURE-prime
+(see [[Scale of Values]]). Figure \ref{fig:chordcomps} shows two such
+grids for ATMEMB (left) and AvgSATSIM (right). As can be seen, the
+values produced by the two measures are quite different. Thus, measure
+selection will be an important part of the analysis and these grids
+will form a useful reference guide when selecting parameters.
+
+\begin{multicols}{2}
+#+CAPTION: ATMEMB (left) and AvgSATSIM (right) distances between tonal objects
+#+LABEL: fig:chordcomps
+[[./plots/chordcomps.png]]
+\end{multicols}
+
+Plotting the absolute difference between the values in these grids
+gives a local indication of comparisons for which the measures most
+disagree. Figure \ref{fig:absdiff} shows such a plot, in which the
+darker areas indicate a higher degree of discrepancy between the
+measures' values. A more quantitative comparison of the measures can
+be obtained by correlation of the vectors containing all 61425
+values. Figure \ref{fig:measurecorrall} shows a grid with each square
+corresponding to a global measure comparison and coloured according to
+the correlation value.
 
 #+CAPTION: Absolute difference between measures' values
 #+LABEL: fig:absdiff
-[[../plots/Measure_comparisons.png]] 
-
-A more compact representation of these comparisons can be obtained by
-correlation of the vectors containing the values from each
-measure. Figure \ref{fig:measurecorrchords} shows a grid where each
-square corresponds to the comparison between two measures and is
-coloured according the correlation of the values for the common chord
-types. For the purposes of comparison, Figure \ref{fig:measurecorrall}
-shows a similar plot to Figure \ref{fig:measurecorrchords} but rather
-displays the correlation involving all the 61425 pairwise Tn-type SC
-comparisons for each measure.
-
-#+CAPTION: Correlation between measures' values for common chords
-#+LABEL: fig:measurecorrchords
-[[../plots/Measure_Correlation.png]]
-
+[[./plots/absdiff.png]] 
 #+CAPTION: Correlation between measures' values for all SCs
 #+LABEL: fig:measurecorrall
-[[../plots/Measure_Correlation_All.png]]
-** Chapter Conclusions
-- general comments about measure discrimination?
-  - high/low
-  - major minor
-  - cardinality
-  - symmetric sets
-  - inversionally related sets
-- these plots will aid selection of comparison sets
+[[./plots/Measure_Correlation_All.png]]
 
-- abs diff plot
-  - which measures are closest
-  - avgsatsim - tsatsim
-  - which measures are furthest
-  - closer inspection
+The shear quantity of values for all the measures means that a
+thorough and meaningful comparison of the would be difficult and time
+consuming. Still, from a superficial inspection of these grids it is
+possible to draw some basic conclusions:
 
-- chord corr plot
-  - measures tend to agree
-  - most different measures
-  - recrel - relb: why?
+1. The values produced by the measures are sufficiently different as to
+   produce different outcomes in the proposed analysis.
+2. No one measure can be assumed "better" than all the others; the
+   measure used becomes a variable in the analysis process.
+3. Different measure possess different discriminatory power and give
+   different contrast for different collections of set classes.
+4. Whilst all the measures can in principle discriminate between
+   inversionally related sets only ATMEMB and REL discriminate between
+   major and minor triads.
+5. AvgSATSIM and TSATSIM are very similar and the values they produce
+   are overall lower indicating greater proximity between common chord
+   set classes.
+6. AvgSATSIM and TSATSIM disriminate poorly between smaller set
+   (cardinality 3/4) but bettwen between larger sets (cardinality 7+).
+7. The values produced by TPREL are overall higher indicating greater
+   separation between common chord set classes.
+8. ATMEMB gives a high degree of discrimination between set classes of
+   very different cardinalities.
+9. RECREL and REL discriminate the best between smaller set classes
+   (cardinality 3/4).
+* Analysis Methodology
+This chapter describes a set of computational techniques, centered
+round set class similarity measure, that can be used in conjunction
+for analysis of a musical piece. [[Overview]] gives a concise overview of
+the analysis process and introduces the key variables whilst [[Reference
+Class Selection]] to [[Measure Selection]] give a more detailed explaination
+of the factors involved in the selection of the parameters. In the
+interests of clarity, demontration of the techniques with examples
+will be postponed until chapter [[Analysis Examples]], however cross
+references will be.
 
-- SC corr plot
-  - means of comparison
-  - common chord types have common properties that the measures tend
-    to treat in a similar way.
-
-- repertiore
-  - what repertoire contains what chords
-  - billboard
-  - beatles
-*** Billboard Chords                                             :noexport:
-The McGill Billboard data set constitutes an expert ground truth for
-chord recognition algorithms in MIR. It contains detailed
-transcriptions of the chords for more than one thousand songs selected
-at random from Billboard magazine’s “Hot 100”
-charts. \citet[pp. 637]{Burgoyne2011} privides the frequency
-distribution of the 50 most common chord types in the data set. Major
-chords alone account for more than half of the data set, followed by
-minor chords and the basic 7th chords. No information is given as to
-the scales or modes used.
-*** Beatles Chords                                               :noexport:
-\citet[chap. 6]{Harte2010} provides a collection chord transcriptions
-for 180 Beatles songs and statistical analysis of the
-collection. Again, over 70% by both occurence and time are major and
-minor chords.
-* Segmentation
-As mentioned in [[PC-set Theory for Analysis]], segmentation is a very
-important stage of the analysis. The segmentation policy used strongly
-influences the SC content that can be observed, with larger segments
-tending to contain higher cardinality sets. Using a sliding window to
-segment the music requires careful consideration of the specific
-window length and hop size depending not only on the type and
-cardinality of sets that the analyst desires to observe but also on
-the way in which the data will then be visualised.
-
-In this chapter we outline two segmentation policies:
-  1. A sliding window with fixed length and hop size.
-  2. The systematic segmentation policy of \citet{Martorell2013}.
-** Systematic Segmentation
-\citet[chap. 5.3]{Martorell2013} specifies a fully systematic
-segmentation policy which exhaustively records every change in the PC
-material of a piece. The segments are of variable length but together
-capture the entire SC contents of the music. With each segment indexed
-in time by its centre, the data structure, known as a cass-scape, is a
-sparse 3-dimensional binary matrix with axes representing time,
-time-scale (segment length) and set class.
-
-\citet[chap. 5.3.5]{Martorell2013} specifies two compact
-representations of this data as a means of observing the the global SC
-content of a piece.
-
-Class-matrix: The class-matrix is a 2d projection the class-scape
-obtained by removing the time-scale information. This, in effect, acts
-to expand each point to the actual duration of the segment it
-represents.
-
-Class-vector: The class-vector is a further reduction of data showing
-the relative active duration of each class in the class-matrix and is
-expressed as a percentage of the total duration of the piece.
-
-The systematic segmentation policy was applied to a MIDI
-representation of the C major Prelude from Book 1 of The Well Tempered
-Clavier by Bach. Figures \ref{fig:classmat} and \ref{fig:classvec}
-show the class-matrix and class-vector respectively for the Bach
-prelude. This information gives a global indications as to the types
-of sonorities contained within the piece.
-
-#+CAPTION: Class-matrix for Bach WTCi Prelude 1
-#+LABEL: fig:classmat
-[[../plots/classmat.png]]
-#+CAPTION: Class-vector for Bach WTCi Prelude 1
-#+LABEL: fig:classvec
-[[../plots/classvec.png]]
-
-From this complete information it is also possible to view statistical
-information about which SCs or type of SCs appear in which time
-scale. Figure \ref{fig:avgseglengthsc} plots the average segment
-length and standard deviation for each SC. Figure
-\ref{fig:avgseglengthcard} shows the same information for each
-cardinality class.
-
-#+CAPTION: Average segment length and STD for each SC in Bach WTCi Prelude 1
-#+LABEL: fig:avgseglengthsc
-[[../plots/avgseglengthsc.png]]
-
-#+CAPTION: Average Segment length and STD for each nC in Bach WTCi Prelude 1
-#+LABEL: fig:avgseglengthcard
-[[../plots/avgseglengthcard.png]]
-** Sliding Window
-Segmentation using a sliding window with fixed window and hop size is
-used to obtain an SC time series of one specific time-scale. This time
-series is then used for the visualisation techniques outlined in the
-next chapter. The purpose of the sliding window is to allow the
-analyst to focus on particular sets or tune in to one particular
-cardinality. This tuning process is performed through selection of an
-appropriate window and hop size. The selection of window and hop size
-can be informed by exploration of the data obtained from the
-systematic segmentation.
-
-For example, from Figure \ref{fig:avgseglengthcard} in the previous
-section it can be seen that three note chords have an average window
-length of between one and two beats. Specifically, from Figure
-\ref{fig:avgseglengthsc}, major chords (3-11B) have an average window
-length of closer to two beats. Figure \ref{fig:cvplusswseg} displays
-the results of a sliding window segmentation of the piece with a
-window size of two beats and hop size of one beat. The SC contents
-extracted from this segmentation are displayed in red on top of the
-class-vector. This representation gives an indication of what
-proportion of the overall class contents have been retrieved by the
-sliding window segmentation.
-
-#+CAPTION: SC contents from sliding window segmentation (red) superimposed on class-vector (black)
-#+LABEL: fig:cvplusswseg
-[[../plots/classvecclasshist.png]]
-
-The plot shows that the particular segmentation policy has captured a
-higher proportion of SC 3-11B than other types. This specific
-targeting of SCs will be exploited in the visualisation techniques
-described in [[Visualisation]].
-* Visualisation
-This chapter outlines three visualisation techniques that may be used
-in conjunction to represent SC class information of a musical piece so
-as to retrieve meaningful analysis.
-** Distance Plot
-The distance plot provides a simple means of capturing how the pitch
-content of a piece evolves in time with respect to a specific SC. It
-involves segmenting the piece using a fixed sliding window and
-calculating the distance between each segment and a comparison set.
+In this work, analysis is done in the symbolic domain using MIDI
+scores. The advantage of this is that it avoids the potential
+inaccuracies involved in extracting chroma from an audio
+signal. Symbolic data such as MIDI allows direct access to the pitch
+material upon which the analysis techniques are applied.
+** Overview
+The central component in analysis of a piece using similarity measures
+is the distance time series. This provides a simple means of capturing
+how the pitch content of a piece evolves in time with respect to a
+specific set class or sonority. It involves segmenting the piece using
+a fixed sliding window and calculating the distance between each
+segment and a reference set. Such representations of tonal progression
+in time lend themselves very well to analysis of tonal and musical
+structure. Specific features of the curve can indicate structurally
+important events while repetitions in the time series can indicate
+passeges with similar tonal progressions.
 
 There are three interdependent parameters which must be selected
 according to the specific intentions of the analyst: Segmentation
-(window and hop size), comparison set and similarity/distance
-measure. The segmentation determines the captured SC content which
-should be targeted according to its relationship to the comparison
-set. This relationship is determined by the measure used which must
-possess an adequate degree of discrimination so as to produce
-noticeable changes in the time series.
+(window and hop size), the reference set and the similarity/distance
+measure. The segmentation determines the captured set class content,
+which should be targeted according to its relationship to the
+reference set. This relationship is determined by the measure used,
+which must possess an adequate degree of discrimination so as to
+produce characteristic changes in the time series.
+** Reference Class Selection
+Selection of the reference set will vary depending on the intentions
+of the analyst; different selections will reveal different musical
+features and types of harmonic structure. In traditional musicology,
+the components of harmonic structure are described by scales, chords
+and chord progressions. As a preliminary step towards the
+reconstruction of this conventional analysis, it is neccessary to make
+some conncetions between common musical objects and set class
+theory. Appendix XXX contains tables that list common chords, chord
+progressions, cadences and scales with their corresponding set
+classes. Before selecting a reference set it is necessary to identify
+which of these basic groups are most relevant to the analysis aims
+i.e. to establish the =sets of interest=. Below, three potential
+reference sets are proposed with and given musicological motivation.
 
-Figure \ref{fig:distplot} shows an example distance time series
-plotted in as a line for the Bach Prelude. The same sliding window
-segmentation as Figure \ref{fig:cvplusswseg} was used so as to capture
-three note chords, specifically major chords (3-11B). Each segment was
-compared to SC 3-11B using the ATMEMB-prime distance.
+1. Major/Minor Triad (3-11A/3-11B): The triad is widely considered to
+   be the basic building block of western harmony. A distance time
+   series with reference to the basic major or minor triad will give
+   an indication as to the complexity of the chords and harmonic
+   progressions.
+2. Perfect Authentic Cadence (6-Z25A): In much of western music
+   cadences punctuate harmonic progressions by suggesting varying
+   degrees of resolution. A distance time series with reference to the
+   perfect authentic cadence might contain characteristic features at
+   the boundaries between distinct passeges.
+3. Diatonic Scale (7-35): The pitch content of much western music is
+   confined to the diatonic scale. A distance time series with
+   reference to the diatonic set would indicate the degree to which
+   the music is diatonic or signal the use of other scales and
+   modulations.
+** Segmentation
+Using a fixed sliding window to segment the music requires considered
+selection of the window length and hop size so as to best taget the
+sets of interest. The selection of these parameters is a crucial stage
+in the analysis process, which is highly sensitive to the scale of
+observation. The window size determines the cardinality of the sets
+which are captured, with larger windows typically containing larger
+cardinality sets. The relationship between hop size and captured set
+class contents is rather subtle: smaller hop sizes are required for
+observing the notewise change in set class that occurs in passages of
+sequential (horizontal) notes, whereas larger hop sizes can be used
+when the harmony is built from concurrent (verticle) notes.
 
-#+CAPTION: ATMEMB-prime distance plot (3-11B)
-#+LABEL: fig:distplot
-[[./plots/distplot.png]]
+When working in the MIDI domain, an alternative segmentation policy
+can be adopted to supplement the analysis process. This method, from
+\citet[chap. 5.3]{Martorell2013}, is a fully systematic segmentation
+policy which exhaustively windows every possible combination of
+adjacent notes. \citet[chap. 5.3.5]{Martorell2013} also specifies two
+compact representations of this data as a means of observing the the
+global set class content of a piece:
 
-As Figure \ref{fig:cvplusswseg} indicates a higher proportion of SC
-3-11B present in the segments, it is unsurprising to see the line
-frequently displaying a distance of 0 where the segment coincides with
-the comparison set. A plot such as this gives an indication as to the
-tonal progression of the piece, indicating where the sonority most
-resembles that of a simple major triads. Higher parts of the curve
-indicate a departure from these triads and possibly more complicated
-or less familiar harmonic passages.
+\begin{description}
+\item[Class Matrix] The class-matrix is a 2d plot with time on the x
+axis and set class on the y axis. The set class of each window is
+calculated and plotted as a horizontal line.
 
-- different measures (strengths and weaknesses)
-- different comparison sets (5-27A,6-Z27A,7-35,8-32)
-** Auto-correlation
+\item[Class Vector] The class-vector is a further reduction of data
+showing the relative active duration of each class in the class-matrix
+and is expressed as a percentage of the total duration of the piece.
+\end{description}
+
+This information gives a global indications as to the types of
+sonorities contained within a piece and can aid reference set
+selection. From this complete information it is also possible to view
+statistical information about the time scale in which set classes or
+cardinality classes occur. This information can inform the selection
+of window and hop size so as to best target the =sets of
+interest=. Once the sliding window segmentation has been performed the
+captured set class contents can be viewed by superimposing them on top
+of the class matrix and class vector. This representation gives an
+indication of the proportion of the overall class contents that have
+been retrieved and thus the efficacy of the sliding window paramters.
+** Measure Selection
+As mentioned in [[Total Measure Comparison]] the different measures have
+different uses and each may be appropriate for different analysis
+contexts. Grids such as those shown in [[Total Measure Comparison]] form a
+simple way to visualise the values produced by a measure and can give
+an indication of the relationship between the set classes in a in a
+specific time scale. Comparison of these grids can reveal the 
+
+Often it is useful to direclty compare the time series produced by two
+measures by plotting both. In many cases this is the simplest way to
+select the best measure.
+
+A further method available for understanding the relationship between
+set classes is through multidimensional scaling. Spaces formed from
+the set classes contained in a specific segmentation time scale can be
+used for comparing different measures and can aid the selection of
+comparison set.
+* Analysis Examples
+This section contains...
+
+** PLAN
+*** Three examples
+- Reduced Bach
+- Bach 
+- Dvorak
+*** Reduced Bach
+- 
+
+** BWV 846
+In this example, the Bach C Major Prelude from book 1 of The
+Well-Tempered Clavier (BWV 846) will be analysed. A reduction of the
+piece has been performed so that each bar is reduced to a single chord
+of all contained notes. This provides a clearer expression of the
+tonal contents, which are limited mainly to well know triads and
+seventh chords, and are organised into familiar progressions and
+cadences. Figure \ref{fig:XXXXXX} shows the pianoroll (top), class
+matrix (middle) and class-vector (bottom) of the reduced prelude. The
+class vector shows a strong presence of major and minor triads
+(3-11A/B), dominant seventh chords (4-27B), perfect authentic cadences
+(6-Z25A) and diatonic scales (7-35).
+
+PLOT: CM and CV
+** Segmentation
+For maximum simplicity, a sliding window segmentation has been applied
+so as to window each bar in isoltation i.e. a window length of 1 bar
+and a hop size of 1 bar. Figure \ref{fig:XXXXXX} shows the set class
+contents oF this sliding window superimposed on top of the class
+matrix (top) and class vector (below).
+
+
+
+What can be seen
+
+SLIDING WINDOW CONTENTS
+TIME SERIES
+** Distance Vector
+Figure \ref{fig:XXXXXX} displays the distance time series computed using
+XXXXXX with reference set 3-11B (major triad).
+
+What can be seen?
+
+Figure \ref{fig:XXXXXX} the same 
+
+- Simple triad (different measures)
+- PAC
+- Diatonic set
+
+What is shown?
+** Autocorrelation
 The distance plots described in the previous section can give a basic
 view of the tonal progression of a piece. In many cases they contain
 recurring patterns where passages with similar SC content producing
@@ -1282,7 +1110,8 @@ that recurs throughout the piece.
 #+CAPTION: Autocorrelation of distance plot
 #+LABEL: fig:autocorr
 [[../plots/autocorr.png]]
-** Self-similarity matrix
+** Differential
+** Self Similarity Matrix
 As an alternative to using a specific comparison set, the distance of
 a segment to other segments in the piece could be observed. A
 systematic way of doing this is computing the self-similarity matrix
@@ -1300,7 +1129,8 @@ dominant key.
 #+CAPTION: Self-similarity matrix of SC time series
 #+LABEL: fig:selfsimmat
 [[../plots/selfsimmat.png]]
-** Conclusions
+** Set Class Space
+** Chapter Conclusions
 1. The techniques outlined in this chapter have proved capable of
    exposing some relevant musicological understanding of the example
    piece.
@@ -1321,6 +1151,8 @@ dominant key.
    quality of perceptual distance or ratio is preserved. These
    relationships might have a sophisticated musicological basis and
    might not be as easily observable from listening or from the score.
+
+
 * Analysis Tool
 1. Due to the complex relationship between the selection of the various
    parameters involved in this kind of analysis, it is desirable to
@@ -1333,11 +1165,6 @@ dominant key.
 #+CAPTION: Analysis Tool Screenshot
 #+LABEL: fig:analysistool
 [[./plots/analysistool.png]]
-* MDS                                                              :noexport:
-- Visualisation of values using MDS
-- r2 against stress for different measures
-- comparison
-- visualisation
 * Conclusions
 1. This work has attempted to assess the analytical potential of six SC
    similarity measures.
@@ -1413,6 +1240,8 @@ dominant key.
 
 \clearpage
 \appendix
+
+
 * SC Similarity Measures
 This chapter contains a concise summary of the SC similarity measures
 from the literature organised by theorist. Each section specifies the
@@ -1439,6 +1268,25 @@ section contains a table specifying important statistics:
 - I-related: whether the measure descriminates between inversionally
   related sets.
 - Z-related: whether the measure discriminated between Z-related sets.
+** On Notation
+Many of the formulas for similarity measures in the following sections
+appear differently to the way they were originally published. The
+reason for this is an attempt to standardise their symbolic
+representation through common vector notation in order to illuminate
+and compare the underlying mathematical concepts. Below are
+definitions of the of the required symbols.
+\begin{description}
+\item[Difference Vector] is the absolute
+difference between corresponding terms in the nCVs of two SCs, X and Y:\\
+$$DV(nCV(X),nCV(Y))=\left|nCV(X)-nCV(Y)\right|$$ \item[Vector
+Magnitude] is the length of the nCV in euclidean space:\\
+$$\left\|nCV(X)\right\|=\sqrt{\sum_{i=1}^{\#nC}{(nCV(X)_{i})^{2}}}$$
+\item[Unit Vector] is the normalised nCV (unit length):\\
+$$\hat{nCV(X)}=\frac{nCV(X)}{\left\|nCV(X)\right\|}$$ \item[Euclidean
+Distance] is the distance between the points defined by two nCVs in
+n-dimensional Euclidean space:\\
+$$d(X,Y)=\sqrt{\sum_{i=1}^{n}{(X_{i}-Y_{i})^{2}}}=\left\|DV(X,Y)\right\|$$
+\end{description}
 ** MORRIS
 *** K
 Presented in \citet[pp. 448]{Morris1979}, the K measure gives the
@@ -1789,8 +1637,8 @@ and [[RECREL]]). $$\%REL_n(X,Y)=\frac{\#DV(nC\%V(X),nC\%V(Y))}{2}$$
 | Z-related:      | Sometimes                    |
 *** T%REL
 Presented in \citet{Castren1994}, T%REL (Total Percentage Relation) is
-the mean average of the vlaues of %REL_{n} for all values of $n$ from $2$
-to $m$ where, if $\#X\neq\#Y$, $m = MIN(\#X,\#Y)$ else $m=\#X-1$.
+the mean average of the vlaues of %REL_{n} for all values of $n$ from
+$2$ to $m$ where, if $\#X\neq\#Y$, $m = MIN(\#X,\#Y)$ else $m=\#X-1$.
 $$T\%REL(X,Y)=\frac{\sum_{n=2}^{m}{\%REL_n\left(X,Y\right)}}{m-1}$$
 #+NAME: tab:t%rel
 | SC Type:        | TnI or Tn                       |
@@ -1862,13 +1710,195 @@ Saturation Similarity index) is the mean of SATSIM_{n} values where
 $m=MIN(\#X,\#Y)$.
 
 $$ AvgSATSIM(X,Y)=\frac{\sum_{n=2}^{m-1}{SATSIM_{n}(X,Y)}}{m-2}$$
+
 *** TSATSIM
 Presented in \citet[chap. 2.10]{Buchler1997}, TSATSIM (Total
 Saturartion Vector Similarity index) is an extension of
 SATSIM_{n}. TSATSIM is the quotient of the sum of all SATSIM_{n}
 numerators and denominators for all values of n from 2 to m-1 where
 $m=MIN(\#X,\#Y)$.
-* Table
+
+* Total Measure Additional Information
+** ATMEMB (Rahn)
+Details on how to calculate ATMEMB are give in [[ATMEMB]]. In his analysis
+of the measure, Castren concludes that "divisor term is flawed,
+resulting in values suggesting suspiciously high degrees of
+dissimilarity between SCs of clearly different cardinalities. The
+general reliability and usefulness of the measure is difficulty to
+determine" \citep[pp. 89]{Castren1994}. The trivial forms 11-1 and
+12-1 are accommodated explicitly by the formulation of
+\citet{Rahn1979}, however SC 1-1 is not and thus values will be
+obtained using the method specified in [[Trivial Forms]].
+** REL (Lewin)
+Details on how to calculate REL are given in [[REL]]. From the basic
+equation it is possible to define three different formulations
+depending on the exact nature of SUB(X). In each formulation the
+trivial forms 11-1 and 12-1 are accommodated. The three formulations
+are as follows:
+1) SUB(X) consists of the concatenated nCVs from 2 to 12. Here
+   comparisons involving SC 1-1 will be evaluated with the method
+   specified in [[Trivial Forms]].
+2) SUB(X) consists of the concatenated nCVs from 1 to 12 ($1CV(X) =
+   \#X%). This formulation accommodates SC 1-1.
+3) \citet{Martorell2013} specifies an alternative formulation where
+   SUB(X) begins with the ICV (2CV) followed by the concatenated nCVs
+   from 1 to 12. This formulation accommodates SC 1-1.
+** AvgSATSIM and TSATSIM (Buchler)
+Details on how to calculate AvgSATSIM and TSATSIM are given in
+[[AvgSATSIM]] and [[TSATSIM]] respectively. Comparisons involving SC 1-1 are
+not accommodated and thus the method specified in [[Trivial Forms]] will
+be used to provide values. Comparisons involving SCs 11-1 and 12-1 are
+accommodated except for the single comparison that involves both. This
+is because their MAX_{n}(#X) and MIN_{n}(#X) vectors are equal and
+thus all terms of the nSATVs are 0. The value for this comparison will
+be set to 0 (indicating maximal similarity). For comparisons involving
+ICs the value will be given by SATSIM_{2}(X,Y) (see [[SATSIM_{n}]]).
+** T%REL and RECREL (Castren)
+Details on how to calculate T%REL and RECREL are given in [[T%REL]] and
+[[RECREL]] respectively. Comparisons involving SCs 11-1 and 12-1 are
+accommodated in both by Castren's formulation. Comparisons involving
+SC 1-1 will be given values by the method specified in [[Trivial
+Forms]]. Castren comments that some T%REL values are too high to be
+intuitively plausible. Finally, it should be noted that the basic
+algorithm provided by Castren for calculating RECREL is not feasible
+for large sets. Comparisons of such sets require tables of pre-computed
+branch values.
+** Trivial Forms
+Three of the 351 Tn-type SCs are known as trivial forms: 1-1, 11-1 and
+12-1. Due to their lack of musical or harmonic significance, these SCs
+are usually excluded from the work of SC-theorists. However, it is
+important that they be included in any systematic description and that
+their similarity to other sets be given a meaningful value.
+
+The total measures make comparisons based on the subset content of a
+set. SC 1-1, which has no subsets, is rarely accounted for in such
+measures and in these cases a simple method will be used: Comparisons
+involving X = 1-1 and Y will be given the value $1\#Y$. Thus, the
+value will be the ratios of the cardinalities with 1 indicating
+maximum similarity.
+#+CAPTION: Trivial Forms
+#+NAME: tab:trivialforms
+|  1-1 | {0}                         |
+| 11-1 | {0,1,2,3,4,5,6,7,8,9,10}    |
+| 12-1 | {0,1,2,3,4,5,6,7,8,9,10,11} |
+** Scale of Values
+The values of each measure were adjusted to the same scale for
+comparability by the same method as \citet[pp. 48]{Kuusi2001}). This
+scale is from 0 to 100 with with 0 indicating maximum similarity. The
+modified values are signalled by adding the symbol "prime" to the
+name.
+#+CAPTION: Adjustment for MEASURE-prime scale
+#+NAME: tab:measureprime
+|    ATMEMB-prime(X,Y) | $=$ | (1-ATMEMB(X,Y))*100 |
+|       REL-prime(X,Y) | $=$ | (1-REL(X,Y))*100    |
+| AvgSATSIM-prime(X,Y) | $=$ | T%REL(X,Y)          |
+|   TSATSIM-prime(X,Y) | $=$ | RECREL(X,Y)         |
+|     TpREL-prime(X,Y) | $=$ | AvgSATSIM(X,Y)*100  |
+|    RECREL-prime(X,Y) | $=$ | TSATSIM(X,Y)*100    |
+
+* Set Class Reference
+** Chords as Set Classes
+|----------------+------------------+--------+-----|
+| Chord          | Set Class        | Name   | Idx |
+|----------------+------------------+--------+-----|
+| Maj            | {0,4,7}          | 3-11B  |  25 |
+| Maj7           | {0,1,5,8}        | 4-20   |  57 |
+| Maj9           | {0,1,3,5,8}      | 5-27A  | 116 |
+| Maj11          | {0,1,3,5,6,8}    | 6-Z25A | 176 |
+| Maj13          | {0,1,3,5,6,8,10} | 7-35   | 276 |
+| Maj(6)         | {0,3,5,8}        | 4-26   |  64 |
+| Maj(6/9)       | {0,2,4,7,9}      | 5-35   | 130 |
+|----------------+------------------+--------+-----|
+| 7              | {0,3,6,8}        | 4-27B  |  66 |
+| 9              | {0,2,4,6,9}      | 5-34   | 129 |
+| 11             | {0,2,4,6,7,9}    | 6-33B  | 189 |
+| 13             | {0,1,3,5,6,8,10} | 7-35   | 276 |
+| 7b9            | {0,2,3,6,9}      | 5-31B  | 125 |
+|----------------+------------------+--------+-----|
+| min            | {0,3,7}          | 3-11A  |  24 |
+| min7           | {0,3,5,8}        | 4-26   |  64 |
+| min9           | {0,3,5,7,8}      | 5-27B  | 117 |
+| min11          | {0,2,4,5,7,9}    | 6-32   | 187 |
+| min13          | {0,1,3,5,6,8,10} | 7-35   | 276 |
+| min(6)         | {0,2,5,8}        | 4-27A  |  65 |
+| min(b6)        | {0,1,5,8}        | 4-20   |  57 |
+| min(6/9)       | {0,2,5,7,8}      | 5-29B  | 121 |
+| min7b9         | {0,3,5,6,8}      | 5-23B  | 113 |
+|----------------+------------------+--------+-----|
+| min/Maj7       | {0,1,4,8}        | 4-19A  |  55 |
+| min/Maj9       | {0,1,3,4,8}      | 5-Z17  |  98 |
+| min/Maj11      | {0,1,3,4,6,8}    | 6-Z24B | 174 |
+| min/Maj13      | {0,1,3,4,6,8,10} | 7-34   | 275 |
+|----------------+------------------+--------+-----|
+| Dim            | {0,3,6}          | 3-10   |  23 |
+| hDim7          | {0,2,5,8}        | 4-27A  |  65 |
+| hDim7(9)       | {0,2,4,5,8}      | 5-26A  | 114 |
+| Dim7           | {0,3,6,9}        | 4-28   |  67 |
+| Dim7(b9)       | {0,1,3,6,9}      | 5-31A  | 124 |
+|----------------+------------------+--------+-----|
+| Aug            | {0,4,8}          | 3-12   |  26 |
+| Aug7           | {0,2,4,8}        | 4-24   |  62 |
+| Aug(maj7)      | {0,3,4,8}        | 4-19B  |  56 |
+| Aug(maj9)      | {0,3,4,6,8}      | 5-26B  | 115 |
+| Aug(maj11)     | {0,1,3,5,6,9}    | 6-Z28  | 181 |
+| Aug(maj13)     | {0,1,3,4,6,8,9}  | 7-32A  | 272 |
+|----------------+------------------+--------+-----|
+| Sus4           | {0,2,7}          | 3-9    |  22 |
+| 7Sus4          | {0,2,5,7}        | 4-23   |  61 |
+| Maj7Sus4       | {0,2,6,7}        | 4-16B  |  51 |
+| Sus2           | {0,2,7}          | 3-9    |  22 |
+| 7Sus2          | {0,3,5,7}        | 4-22B  |  60 |
+| Maj7Sus2       | {0,4,5,7}        | 4-14B  |  47 |
+|----------------+------------------+--------+-----|
+| N6 (bII)       | {0,4,7}          | 3-11B  |  25 |
+| It6 (bVI7/no5) | {0,2,7}          | 3-8A   |  20 |
+| Fr6 (bVI7/b5)  | {0,2,6,8}        | 4-25   |  63 |
+| Gr6 (bVI7)     | {0,3,6,8}        | 4-27B  |  66 |
+|----------------+------------------+--------+-----|
+
+** Scales as Set Classes
+|------------------+--------------------+--------+-----|
+| Scale            | Set Class          | Name   | Idx |
+|------------------+--------------------+--------+-----|
+| Diatonic         | {0,1,3,5,6,8,10}   | 7-35   | 276 |
+| Melodic Minor    | {0,1,3,4,6,8,10}   | 7-34   | 275 |
+| Harmonic Minor   | {0,1,3,4,6,8,9}    | 7-32A  | 272 |
+| Harmonic Major   | {0,1,3,5,6,8,9}    | 7-32B  | 273 |
+| Neapolitan       | {0,1,2,4,6,8,10}   | 7-33   | 274 |
+| Neapolitan Minor | {0,1,2,4,6,8,9}    | 7-30A  | 268 |
+| Double Harmonic  | {0,1,2,5,6,8,9}    | 7-22   | 253 |
+| Hungarian        | {0,1,3,4,6,7,9}    | 7-31A  | 270 |
+| Octatonic        | {0,1,3,4,6,7,9,10} | 8-28   | 322 |
+| Whole-Tone       | {0,2,4,6,8,10}     | 6-35   | 192 |
+| Augmented        | {0,1,4,5,8,9}      | 6-20   | 168 |
+| Pentatonic       | {0,2,4,7,9}        | 5-35   | 130 |
+| Blues            | {0,2,3,4,7,9}      | 6-Z47B | 212 |
+|------------------+--------------------+--------+-----|
+** Cadences as Set Classes
+
+
+|-------+--------+--------+--------+--------+--------+--------+-------+-------+--------+--------+--------+--------+--------+--------+-------|
+|       | I      | i      | ii     | ii7    | iio    | ii07   | IV    | iv    | V      | V7     | bVI    | vi     | viio   | vii07  | viiO7 |
+|-------+--------+--------+--------+--------+--------+--------+-------+-------+--------+--------+--------+--------+--------+--------+-------|
+| I     | 3-11B  | 4-17   | 6-33B  | 6-33B  | 6-Z24B | 6-Z24B | 5-27A | 5-Z17 | 5-27A  | 6-Z25A | 5-21B  | 4-26   | 6-Z25A | 7-35   | 7-32B |
+| i     | 4-17   | 3-11A  | 6-Z29  | 6-Z29  | 6-Z25B | 6-Z25B | 5-34  | 5-27B | 5-Z17  | 6-Z24A | 4-20   | 5-32A  | 6-Z24A | 7-34   | 7-32A |
+| ii    | 6-33B  | 6-Z29  | 3-11B  | 4-27B  | 5-16B  | 6-Z49  | 5-32B | 6-Z49 | 5-27A  | 6-Z46A | 6-30B  | 5-34   | 5-32A  | 5-32A  | 6-27A |
+| ii7   | 6-33B  | 6-Z29  | 4-27B  | 4-27B  | 6-Z49  | 6-Z49  | 5-32B | 6-Z49 | 6-Z25A | 7-29A  | 6-30B  | 5-34   | 6-Z50  | 6-Z50  | 7-31A |
+| iio   | 6-Z24B | 6-Z25B | 5-16B  | 6-Z49  | 3-10   | 4-27A  | 5-32A | 4-27A | 5-31B  | 5-31B  | 5-25A  | 6-31B  | 4-28   | 5-31A  | 4-28  |
+| ii07  | 6-Z24B | 6-Z25B | 6-Z49  | 6-Z49  | 4-27A  | 4-27A  | 5-32A | 4-27A | 6-Z29  | 6-Z29  | 5-25A  | 6-31B  | 5-31A  | 6-27A  | 5-31A |
+| IV    | 5-27A  | 5-34   | 5-32B  | 5-32B  | 5-32A  | 5-32A  | 3-11B | 4-17  | 6-33B  | 6-33B  | 5-32B  | 4-20   | 5-25A  | 5-25A  | 6-27A |
+| iv    | 5-Z17  | 5-27B  | 6-Z49  | 6-Z49  | 4-27A  | 4-27A  | 4-17  | 3-11A | 6-Z29  | 6-Z29  | 4-26   | 5-21A  | 5-31A  | 6-27A  | 5-31A |
+| V     | 5-27A  | 5-Z17  | 5-27A  | 6-Z25A | 5-31B  | 6-Z29  | 6-33B | 6-Z29 | 3-11B  | 4-27B  | 6-Z19B | 6-32   | 4-27B  | 5-34   | 5-31B |
+| V7    | 6-Z25A | 6-Z24A | 6-Z46A | 7-29A  | 5-31B  | 6-Z29  | 6-33B | 6-Z29 | 4-27B  | 4-27B  | 7-32A  | 7-35   | 4-27B  | 5-34   | 5-31B |
+| bVI   | 5-21B  | 4-20   | 6-30B  | 6-30B  | 5-25A  | 5-25A  | 5-32B | 4-26  | 6-Z19B | 7-32A  | 3-11B  | 5-22   | 6-27A  | 7-31A  | 6-27A |
+| vi    | 4-26   | 5-32A  | 5-34   | 5-34   | 6-31B  | 6-31B  | 4-20  | 5-21A | 6-32   | 7-35   | 5-22   | 3-11A  | 6-Z25B | 6-Z25B | 7-32A |
+| viio  | 6-Z25A | 6-Z24A | 5-32A  | 6-Z50  | 4-28   | 5-31A  | 5-25A | 5-31A | 4-27B  | 4-27B  | 6-27A  | 6-Z25B | 3-10   | 4-27A  | 4-28  |
+| vii07 | 7-35   | 7-34   | 5-32A  | 6-Z50  | 5-31A  | 6-27A  | 5-25A | 6-27A | 5-34   | 5-34   | 7-31A  | 6-Z25B | 4-27A  | 4-27A  | 5-31A |
+| viiO7 | 7-32B  | 7-32A  | 6-27A  | 7-31A  | 4-28   | 5-31A  | 6-27A | 5-31A | 5-31B  | 5-31B  | 6-27A  | 7-32A  | 4-28   | 5-31A  | 4-28  |
+|-------+--------+--------+--------+--------+--------+--------+-------+-------+--------+--------+--------+--------+--------+--------+-------|
+
+* Tables                                                           :noexport:
+** Table
 #+CAPTION: Chord types and their SCs
 #+NAME: tab:chordSC
 |---+------------+--------------------+------------+-------|
@@ -2180,7 +2210,7 @@ $m=MIN(\#X,\#Y)$.
 |------------------+-------+---------------------------+-----------|
 | Enigmatic        | I     | Enigmatic                 |           |
 |------------------+-------+---------------------------+-----------|
-* Ionian
+** Ionian
 | Mode   | 7th | 9th | 11th | 13th | Chord           |    |
 |--------+-----+-----+------+------+-----------------+----|
 | Ionian |     |     |      |      | Maj             |  0 |
@@ -2238,7 +2268,7 @@ $m=MIN(\#X,\#Y)$.
 |        |     |     |      |      | Maj(6/9)        |    |
 |--------+-----+-----+------+------+-----------------+----|
 
-* Dorian
+** Dorian
 | Mode   | 7th | 9th | 11th | 13th | Chord           |    |
 |--------+-----+-----+------+------+-----------------+----|
 | Dorian |     |     |      |      | min             |  0 |
@@ -2295,7 +2325,7 @@ $m=MIN(\#X,\#Y)$.
 |        |     |     |      |      | min(6)          |    |
 |        |     |     |      |      | min(6/9)        |    |
 |--------+-----+-----+------+------+-----------------+----|
-* Phrygian
+** Phrygian
 | Mode     | 7th | 9th | 11th | 13th | Chord             |    |
 |----------+-----+-----+------+------+-------------------+----|
 | Phrygian |     |     |      |      | min               |  0 |
@@ -2333,7 +2363,7 @@ $m=MIN(\#X,\#Y)$.
 |          | X   | X   | X    | X    | min11(b9/b13)Sus4 | 15 |
 |----------+-----+-----+------+------+-------------------+----|
 
-* Lydian
+** Lydian
 | Mode   | 7th | 9th | 11th | 13th | Chord            |    |
 |--------+-----+-----+------+------+------------------+----|
 | Lydian |     |     |      |      | Maj              |  0 |
@@ -2373,7 +2403,7 @@ $m=MIN(\#X,\#Y)$.
 |        |     |     |      |      | Maj(6)           |    |
 |        |     |     |      |      | Maj(6/9)         |    |
 |--------+-----+-----+------+------+------------------+----|
-* Mixolydian
+** Mixolydian
 | Mode       | 7th | 9th | 11th | 13th | Chord         |    |
 |------------+-----+-----+------+------+---------------+----|
 | Mixolydian |     |     |      |      | Maj           |  0 |
@@ -2430,7 +2460,7 @@ $m=MIN(\#X,\#Y)$.
 |            |     |     |      |      | Maj(6)        |    |
 |            |     |     |      |      | Maj(6/9)      |    |
 |------------+-----+-----+------+------+---------------+----|
-* Aeolian
+** Aeolian
 | Mode    | 7th | 9th | 11th | 13th | Chord            |    |
 |---------+-----+-----+------+------+------------------+----|
 | Aeolian |     |     |      |      | min              |  0 |
@@ -2484,7 +2514,7 @@ $m=MIN(\#X,\#Y)$.
 |         |     | X   | X    | X    | Sus2(9/11/b13)   | 14 |
 |         | X   | X   | X    | X    | min11(b13)Sus2   | 15 |
 |---------+-----+-----+------+------+------------------+----|
-* Locrian
+** Locrian
 | Mode    | 7th | 9th | 11th | 13th | Chord             |    |
 |---------+-----+-----+------+------+-------------------+----|
 | Locrian |     |     |      |      | o                 |  0 |
@@ -2522,9 +2552,8 @@ $m=MIN(\#X,\#Y)$.
 |         | X   | X   | X    | X    | \o 11(b13)Sus4    | 15 |
 |---------+-----+-----+------+------+-------------------+----|
 
-
-* More Tables
-** Table
+** More Tables
+*** Table
 #+CAPTION: Chord types and their SCs
 #+NAME: tab:chordSC
 |---+------------+--------------------+------------+-------|
@@ -2782,7 +2811,7 @@ $m=MIN(\#X,\#Y)$.
 |------------------+-------+---------------------------+-----------|
 | Enigmatic        | I     | Enigmatic                 |           |
 |------------------+-------+---------------------------+-----------|
-** Ionian
+*** Ionian
 |----------+------------+-----+-----+------+------+-----------------+----|
 | Scale    | Mode       | 7th | 9th | 11th | 13th | Chord           |    |
 |----------+------------+-----+-----+------+------+-----------------+----|
@@ -2931,8 +2960,7 @@ $m=MIN(\#X,\#Y)$.
 | Harmonic |            |     |     |      |      |                 |    |
 | Major    |            |     |     |      |      |                 |    |
 
-
-* Ionian
+** Ionian
 |----------------+----------------------+------------+-------------------|
 | Scale          | Mode                 | Chord      | Integer           |
 |----------------+----------------------+------------+-------------------|
@@ -2979,95 +3007,82 @@ $m=MIN(\#X,\#Y)$.
 |                | Locrian bb7 VII      | Dim7       | 0 3 6 9           |
 |----------------+----------------------+------------+-------------------|
 
+* Chords as PC-Sets                                                :noexport:
+So far, PC-set theory and the similarity measures have been discussed
+with only the broadest reference to familiar musical or musicologial
+concepts. In order to use these techniques for real music description
+and analysis some effort should be made to link SC theoretical
+concepts to musicological ones.
 
+The table below shows a collection of familiar chord types, cadence
+types and scale types with their corresponding Tn-type prime-form SC,
+Forte Name and index number (the position in an ordered list of all
+351 Tn-type SCs). The table is divided into five vertical segments:
+three-note chords, four-note chords, five-note chords, cadences and
+scales.
 
-* Chord Table
-|------------------+-------------------+--------------------+--------+-----|
-| Chord            | Integer           | Set Class          | Name   | Idx |
-|------------------+-------------------+--------------------+--------+-----|
-| Maj              | 0 4 7             | {0,4,7}            | 3-11B  |  25 |
-| Maj7             | 0 4 7 11          | {0,1,5,8}          | 4-20   |  57 |
-| Maj9             | 0 4 7 11 14       | {0,1,3,5,8}        | 5-27A  | 116 |
-| Maj11            | 0 4 7 11 14 17    | {0,1,3,5,6,8}      | 6-Z25A | 176 |
-| Maj13            | 0 4 7 11 14 17 21 | {0,1,3,5,6,8,10}   | 7-35   | 276 |
-| Maj(6)           | 0 4 7 9           | {0,3,5,8}          | 4-26   |  64 |
-| Maj(6/9)         | 0 4 7 9 14        | {0,2,4,7,9}        | 5-35   | 130 |
-|------------------+-------------------+--------------------+--------+-----|
-| 7                | 0 4 7 10          | {0,3,6,8}          | 4-27B  |  66 |
-| 9                | 0 4 7 10 2        | {0,2,4,6,9}        | 5-34   | 129 |
-| 11               | 0 4 7 10 2 5      | {0,2,4,6,7,9}      | 6-33B  | 189 |
-| 13               | 0 4 7 10 2 5 9    | {0,1,3,5,6,8,10}   | 7-35   | 276 |
-| 7b9              | 0 4 7 10 1        | {0,2,3,6,9}        | 5-31B  | 125 |
-|------------------+-------------------+--------------------+--------+-----|
-| min              | 0 3 7             | {0,3,7}            | 3-11A  |  24 |
-| min7             | 0 3 7 10          | {0,3,5,8}          | 4-26   |  64 |
-| min9             | 0 3 7 10 14       | {0,3,5,7,8}        | 5-27B  | 117 |
-| min11            | 0 3 7 10 14 17    | {0,2,4,5,7,9}      | 6-32   | 187 |
-| min13            | 0 3 7 10 14 17 21 | {0,1,3,5,6,8,10}   | 7-35   | 276 |
-| min(6)           | 0 3 7 9           | {0,2,5,8}          | 4-27A  |  65 |
-| min(b6)          | 0 3 7 8           | {0,1,5,8}          | 4-20   |  57 |
-| min(6/9)         | 0 3 7 9 14        | {0,2,5,7,8}        | 5-29B  | 121 |
-| min7b9           | 0 3 7 10 13       | {0,3,5,6,8}        | 5-23B  | 113 |
-|------------------+-------------------+--------------------+--------+-----|
-| min/Maj7         | 0 3 7 11          | {0,1,4,8}          | 4-19A  |  55 |
-| min/Maj9         | 0 3 7 11 14       | {0,1,3,4,8}        | 5-Z17  |  98 |
-| min/Maj11        | 0 3 7 11 14 17    | {0,1,3,4,6,8}      | 6-Z24B | 174 |
-| min/Maj13        | 0 3 7 11 14 17 21 | {0,1,3,4,6,8,10}   | 7-34   | 275 |
-|------------------+-------------------+--------------------+--------+-----|
-| Dim              | 0 3 6             | {0,3,6}            | 3-10   |  23 |
-| hDim7            | 0 3 6 10          | {0,2,5,8}          | 4-27A  |  65 |
-| hDim7(9)         | 0 3 6 10 14       | {0,2,4,5,8}        | 5-26A  | 114 |
-| Dim7             | 0 3 6 9           | {0,3,6,9}          | 4-28   |  67 |
-| Dim7(b9)         | 0 3 6 9 13        | {0,1,3,6,9}        | 5-31   | 124 |
-|------------------+-------------------+--------------------+--------+-----|
-| Aug              | 0 4 8             | {0,4,8}            | 3-12   |  26 |
-| Aug7             | 0 4 8 10          | {0,2,4,8}          | 4-24   |  62 |
-| Aug(maj7)        | 0 4 8 11          | {0,3,4,8}          | 4-19B  |  56 |
-| Aug(maj9)        | 0 4 8 11 14       | {0,3,4,6,8}        | 5-26B  | 115 |
-| Aug(maj11)       | 0 4 8 11 14 17    | {0,1,3,5,6,9}      | 6-Z28  | 181 |
-| Aug(maj13)       | 0 4 8 11 14 17 21 | {0,1,3,4,6,8,9}    | 7-32A  | 272 |
-|------------------+-------------------+--------------------+--------+-----|
-| Sus4             | 0 5 7             | {0,2,7}            | 3-9    |  22 |
-| 7Sus4            | 0 5 7 10          | {0,2,5,7}          | 4-23   |  61 |
-| Maj7Sus4         | 0 5 7 11          | {0,2,6,7}          | 4-16B  |  51 |
-| Sus2             | 0 2 7             | {0,2,7}            | 3-9    |  22 |
-| 7Sus2            | 0 2 7 10          | {0,3,5,7}          | 4-22B  |  60 |
-| Maj7Sus2         | 0 2 7 11          | {0,4,5,7}          | 4-14B  |  47 |
-|------------------+-------------------+--------------------+--------+-----|
-| Diatonic         | 0 2 4 5 7 9 11    | {0,1,3,5,6,8,10}   | 7-35   | 276 |
-| Melodic Minor    | 0 2 3 5 7 9 11    | {0,1,3,4,6,8,10}   | 7-34   | 275 |
-| Harmonic Minor   | 0 2 3 5 7 8 11    | {0,1,3,4,6,8,9}    | 7-32A  | 272 |
-| Harmonic Major   | 0 2 4 5 7 8 11    | {0,1,3,5,6,8,9}    | 7-32B  | 273 |
-| Neapolitan       | 0 1 3 5 7 9 11    | {0,1,2,4,6,8,10}   | 7-33   | 274 |
-| Neapolitan Minor | 0 1 3 5 7 8 11    | {0,1,2,4,6,8,9}    | 7-30A  | 268 |
-| Double Harmonic  | 0 1 4 5 7 8 11    | {0,1,2,5,6,8,9}    | 7-22   | 253 |
-| Hungarian        | 0 3 4 6 7 9 10    | {0,1,3,4,6,7,9}    | 7-31A  | 270 |
-| Octatonic        | 0 2 3 5 6 8 9 11  | {0,1,3,4,6,7,9,10} | 8-28   | 322 |
-| Whole-Tone       | 0 2 4 6 8 10      | {0,2,4,6,8,10}     | 6-35   | 192 |
-| Augmented        | 0 3 4 7 8 11      | {0,1,4,5,8,9}      | 6-20   | 168 |
-| Pentatonic       | 0 2 4 7 9         | {0,2,4,7,9}        | 5-35   | 130 |
-| Blues            | 0 3 5 6 7 10      | {0,2,3,4,7,9}      | 6-Z47B | 212 |
-|------------------+-------------------+--------------------+--------+-----|
-
-
-| Cadence           | Roman Numeral | Set Class        | Name |
-|-------------------+---------------+------------------+------|
-| Perfect Cadence   | V I           | {0,1,3,5,8}      |      |
-|                   | V7 I          | {0,1,3,5,6,8}    |      |
-|-------------------+---------------+------------------+------|
-| Turnaround        | ii V I        | {0,1,3,5,6,8,10} |      |
-|                   | ii V7 I       |                  |      |
-|                   | ii7 V7 I      |                  |      |
-|-------------------+---------------+------------------+------|
-|                   | IV V I        |                  |      |
-|                   |               |                  |      |
-|-------------------+---------------+------------------+------|
-| Circle Progession | vi ii V I     |                  |      |
-|                   | vi ii V I     |                  |      |
-|                   |               |                  |      |
-|-------------------+---------------+------------------+------|
-|                   | I IV V I      | {0,1,3,5,6,8,10} | 7-35 |
-|                   |               |                  |      |
-|-------------------+---------------+------------------+------|
-|-------------------+---------------+------------------+------|
-|                   | V i           |                  |      |
+In PC-set theory it is only the chord type that is relevant seeing as
+transpositionally related (Tn-type) SCs are considered equivelant. For
+example all major chords are considered equivelant regardless of the
+root.
+#+CAPTION: Chord types and their SCs
+#+NAME: tab:chordSC
+|---+------------+--------------------+------------+-------|
+|   |            | Tn-Type SC         | Forte Name |       |
+|   | Chord      | (Prime Form)       | (Tn-type)  | index |
+|---+------------+--------------------+------------+-------|
+|   | maj        | {0,4,7}            | 3-11B      |    25 |
+|   | min        | {0,3,7}            | 3-11A      |    24 |
+|   | dim        | {0,3,6}            | 3-10       |    23 |
+|   | aug        | {0,4,8}            | 3-12       |    26 |
+|   | sus4       | {0,2,7}            | 3-9        |    22 |
+|   | sus2       | {0,2,7}            | 3-9        |    22 |
+|---+------------+--------------------+------------+-------|
+|   | maj7       | {0,1,5,8}          | 4-20       |    57 |
+|   | min7       | {0,3,5,8}          | 4-26       |    64 |
+|   | hdim7      | {0,2,5,8}          | 4-27A      |    65 |
+|   | 7          | {0,3,6,8}          | 4-27B      |    66 |
+|   | dim7       | {0,3,6,9}          | 4-28       |    67 |
+|   | min(7)     | {0,1,4,8}          | 4-19A      |    55 |
+|   | aug(7)     | {0,3,4,8}          | 4-19B      |    56 |
+|   | maj(9)     | {0,2,4,7}          | 4-22A      |    59 |
+|   | min(9)     | {0,2,3,7}          | 4-14A      |    46 |
+|   | maj6       | {0,3,5,8}          | 4-26       |    64 |
+|   | min6       | {0,1,5,8}          | 4-20       |    57 |
+|   | maj7sus4   | {0,2,6,7}          | 4-16B      |    51 |
+|   | 7sus47     | {0,2,5,7}          | 4-23       |    61 |
+|   | maj7sus2   |                    |            |       |
+|   | 7sus2      |                    |            |       |
+|---+------------+--------------------+------------+-------|
+|   | 9          | {0,2,4,6,9}        | 5-34       |   129 |
+|   | maj9       | {0,1,3,5,8}        | 5-27A      |   116 |
+|   | min9       | {0,3,5,7,8}        | 5-27B      |   117 |
+|---+------------+--------------------+------------+-------|
+|   | 11         |                    |            |       |
+|   | maj11      |                    |            |       |
+|   | min11      |                    |            |       |
+|---+------------+--------------------+------------+-------|
+|   | V-I/IV-I   | {0,1,3,5,8}        | 5-27A      |   116 |
+|   | V7-I       | {0,1,3,5,6,8}      | 6-Z25A     |   176 |
+|   | V-IV       | {0,2,4,6,7,9}      | 6-33B      |   189 |
+|---+------------+--------------------+------------+-------|
+|   | Pentatonic | {0,2,4,7,9}        | 5-35       |   130 |
+|   | Wholetone  | {0,2,4,6,8,10}     | 6-35       |   192 |
+|   | Diatonic   | {0,1,3,5,6,8,10}   | 7-35       |   276 |
+|   | Octatonic  | {0,1,3,4,6,7,9,10} | 8-28       |   322 |
+|---+------------+--------------------+------------+-------|
+* Billboard Chords                                                 :noexport:
+The McGill Billboard data set constitutes an expert ground truth for
+chord recognition algorithms in MIR. It contains detailed
+transcriptions of the chords for more than one thousand songs selected
+at random from Billboard magazine’s “Hot 100”
+charts. \citet[pp. 637]{Burgoyne2011} privides the frequency
+distribution of the 50 most common chord types in the data set. Major
+chords alone account for more than half of the data set, followed by
+minor chords and the basic 7th chords. No information is given as to
+the scales or modes used.
+* Beatles Chords                                                   :noexport:
+\citet[chap. 6]{Harte2010} provides a collection chord transcriptions
+for 180 Beatles songs and statistical analysis of the
+collection. Again, over 70% by both occurence and time are major and
+minor chords.

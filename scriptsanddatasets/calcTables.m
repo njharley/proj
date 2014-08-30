@@ -1,6 +1,30 @@
 function table = calcTables()
 
-	load TotalMeasuresPrime
+	load TotalMeasuresPrime%load TotalMeasuresPrime
+	forteNames = textread('forteNamesAB.txt','%s');
+	
+	%{
+	maj 25
+	min 24
+	dim 23
+	aug 26
+	7 66
+	maj7 57
+	min7 64
+	07 65
+	O7 67
+	V7-I 176
+	Diatonic 276
+	Harmonic Minor 272
+	%}
+
+	scs = [25 24 23 26 66 57 64 65 67 176 276 272];
+	chord_labels = {'Maj';'Min';'Dim';'Aug';'7';'Maj7';'Min7';'07';'O7';'V7-I';'Diat';'HMin';};
+	sc_labels = forteNames(scs);
+	table = ATMEMB_prime(scs,scs);
+	table2 = AvgSATSIM_prime(scs, scs);
+	%{
+
 	%sets = [25 24 23 26 22 22 57 64 65 66 67 55 56 59 46 64 57 51 61 129 116 117 116 176 189 130 192 276 322];
 	sets = [25 24 23 26 22 57 64 65 66 67 55 56 59 46 51 61 129 117 116 176 189 130 192 276 322];
 
@@ -33,6 +57,8 @@ function table = calcTables()
 		end
 	end
 
+
+
 	for i = 1:size(table,1)
 		for j = i:size(table,2)
 			table(j,i) = table(i,j);
@@ -41,22 +67,37 @@ function table = calcTables()
 
 	%save chordTABLES.mat chordsRELa chordsRELb chordsRELc chordsRECREL chordsATMEMB chordsTpREL chordsAvgSATSIM chordsTSATSIM
 
+	%}
 	%labels = {'maj';'min';'dim';'aug';'sus4/sus2';'maj7/min6';'min7/maj6';'hdim7';'7';'dim7';'min(7)';'aug(7)';'maj(7)';'min(9)';'sus4(7)';'sus4(b7)';'9';'maj9';'min9';'V-I';'V7-I';'V-IV';'pent';'whole';'diat';'oct';};
-	labels = {'ma';'mi';'d';'au';'s';'ma7';'mi7';'hd7';'7';'d7';'mi(7)';'a(7)';'ma(7)';'mi(9)';'s4(7)';'s4(b7)';'9';'mi9';'V/I';'V7/I';'V/IV';'pnt';'whl';'dia';'oct';};
+	%labels = {'ma';'mi';'d';'au';'s';'ma7';'mi7';'hd7';'7';'d7';'mi(7)';'a(7)';'ma(7)';'mi(9)';'s4(7)';'s4(b7)';'9';'mi9';'V/I';'V7/I';'V/IV';'pnt';'whl';'dia';'oct';};
 
 	%length(sets)
 	%length(labels)
-	figure()
-	imagesc(table')
+	figure('Color', [.8 .8 .8]);	
+	%subplot(1,2,1)
+	imagesc(table)
 	aux=(1:29);
 	set(gca,'xtick',aux);
 	set(gca,'ytick',aux);
-	%set(gca,'XTickLabel',{'3-11B';'3-11A';'3-10';'3-12';'3-9';'3-9';'4-20';'4-26';'4-27A';'4-27B';'4-28';'4-19A';'4-19B';'4-22A';'4-14A';'4-26';'4-20';'4-16B';'4-23';'5-34';'5-27A';'5-27B';'5-35';'6-35';'7-35';'8-28';});
-	set(gca,'XTickLabel',labels);
-	set(gca,'YTickLabel',labels);
-	xlabel('Set-Class'); ylabel('Set-Class'); title('TSATSIM Distance');
-	c = colorbar;
-	title(c,'Distance')
-	grid
+	set(gca,'XTickLabel',sc_labels);
+	set(gca,'YTickLabel',chord_labels);
+	xlabel('Set-Class'); ylabel('Chord Type'); %title('TSATSIM Distance');
+	c = colorbar; 
+	caxis([0 100]); colormap(gray);
+	axis square;
+	ylabel(colorbar, 'Distance');
+	figure();
+	%subplot(1,2,2);
+	imagesc(table2)
+	aux=(1:29);
+	set(gca,'xtick',aux);
+	set(gca,'ytick',aux);
+	set(gca,'XTickLabel',sc_labels);
+	set(gca,'YTickLabel',chord_labels);
+	xlabel('Set-Class'); ylabel('Chord Type'); %title('TSATSIM Distance');
+	c = colorbar; caxis([0 100]); axis square;
+	ylabel(colorbar, 'Distance');
+	%title(c,'Distance'); 
+	colormap(gray);
 
 	

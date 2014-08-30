@@ -1,0 +1,5 @@
+function key()
+
+	ylabels = {'ATMEMB';'RELa';'RELb';'RELc';'RECREL';'TpREL';'AvgSATSIM';'TSATSIM'};
+
+	colours = {'-k';'-y';'-m';'-c';'-r';'-g';'-b';'-k';};

@@ -25,9 +25,6 @@ function correlate_all()
 				end
 			end
 
-			size(A)
-			size(B)
-
 			c = corrcoef(A',B');
 			correlations(i,j) = c(1,2);
 		end
